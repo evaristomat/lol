@@ -1,0 +1,505 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:42.488173",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179555583",
+    "sport_id": "151",
+    "time": "1755622800",
+    "time_status": "3",
+    "league": {
+      "id": "10086144",
+      "name": "LOL - ROL Summer"
+    },
+    "home": {
+      "id": "10453544",
+      "name": "mCon esports"
+    },
+    "away": {
+      "id": "11187716",
+      "name": "Jormungang"
+    },
+    "ss": "1-1",
+    "our_event_id": "10438572",
+    "r_id": "179555583C151A",
+    "updated_at": "1755632982",
+    "odds_updated_at": "1755632852"
+  },
+  "result_info": {
+    "id": "10438572",
+    "sport_id": "151",
+    "time": "1755622800",
+    "time_status": "3",
+    "league": {
+      "id": "40960",
+      "name": "LOL - ROL Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "653704",
+      "name": "mCon LG Ultragear",
+      "image_id": "287845",
+      "cc": "nl"
+    },
+    "o_home": {
+      "id": "248713",
+      "name": "mCon esports",
+      "image_id": "287845",
+      "cc": null
+    },
+    "away": {
+      "id": "1040820",
+      "name": "Jormungang",
+      "image_id": "1204145",
+      "cc": null
+    },
+    "ss": "2-1",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "3": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "1"
+      }
+    },
+    "events": [
+      {
+        "id": "257801361",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257802173",
+        "text": "Map  - 00:03:07 - 1st Blood - mCon esports"
+      },
+      {
+        "id": "257803347",
+        "text": "Map 1 - 00:05:51 - 1st Dragon (8) - mCon esports"
+      },
+      {
+        "id": "257803348",
+        "text": "Map 1 - 00:05:51 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257803829",
+        "text": "Map 1 - 00:09:39 - Race to 5 Kills - mCon esports"
+      },
+      {
+        "id": "257804241",
+        "text": "Map 1 - 00:12:47 - 2nd Dragon (5) - mCon esports"
+      },
+      {
+        "id": "257804242",
+        "text": "Map 1 - 00:12:47 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257804433",
+        "text": "Map 1 - 00:14:14 - 1st Tower - Jormungang"
+      },
+      {
+        "id": "257804448",
+        "text": "Map 1 - 00:14:23 - 2nd Tower - mCon esports"
+      },
+      {
+        "id": "257805014",
+        "text": "Map 1 - 00:18:44 - 3rd Tower - Jormungang"
+      },
+      {
+        "id": "257805031",
+        "text": "Map 1 - 00:18:51 - 3rd Dragon (3) - Jormungang"
+      },
+      {
+        "id": "257805033",
+        "text": "Map 1 - 00:18:51 - 4th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257805216",
+        "text": "Map 1 - 00:19:47 - 4th Tower - Jormungang"
+      },
+      {
+        "id": "257805261",
+        "text": "Map 1 - 00:19:58 - 1st Rift Herald Slain - mCon esports"
+      },
+      {
+        "id": "257805267",
+        "text": "Map 1 - 00:20:00 - Race to 10 Kills - mCon esports"
+      },
+      {
+        "id": "257805849",
+        "text": "Map 1 - 00:22:50 - Race to 15 Kills - mCon esports"
+      },
+      {
+        "id": "257805850",
+        "text": "Map 1 - 00:22:50 - 5th Tower - mCon esports"
+      },
+      {
+        "id": "257805964",
+        "text": "Map 1 - 00:23:29 - 6th Tower - mCon esports"
+      },
+      {
+        "id": "257806148",
+        "text": "Map 1 - 00:24:28 - 4th Dragon (3) - mCon esports"
+      },
+      {
+        "id": "257806149",
+        "text": "Map 1 - 00:24:28 - 4th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257806243",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257806259",
+        "text": "Map 1 - 00:25:06 - 7th Tower - mCon esports"
+      },
+      {
+        "id": "257806518",
+        "text": "Map 1 - 00:26:44 - Race to 20 Kills - mCon esports"
+      },
+      {
+        "id": "257806563",
+        "text": "Map 1 - 00:27:05 - 1st Baron - mCon esports"
+      },
+      {
+        "id": "257806717",
+        "text": "Map 1 - 00:27:59 - 8th Tower - mCon esports"
+      },
+      {
+        "id": "257806807",
+        "text": "Map 1 - 00:28:21 - 9th Tower - mCon esports"
+      },
+      {
+        "id": "257806820",
+        "text": "Map 1 - 00:28:26 - 10th Tower - mCon esports"
+      },
+      {
+        "id": "257806836",
+        "text": "Map 1 - 00:28:30 - 1st Inhibitor - mCon esports"
+      },
+      {
+        "id": "257806854",
+        "text": "Map 1 - 00:28:37 - 11th Tower - mCon esports"
+      },
+      {
+        "id": "257806868",
+        "text": "Map 1 - 00:28:43 - Race to 25 Kills - mCon esports"
+      },
+      {
+        "id": "257806884",
+        "text": "Map 1 - 00:28:47 - 12th Tower - mCon esports"
+      },
+      {
+        "id": "257806903",
+        "text": "Map 1 - Winner - mCon esports"
+      },
+      {
+        "id": "257809547",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257810818",
+        "text": "Map  - 00:03:06 - 1st Blood - Jormungang"
+      },
+      {
+        "id": "257811831",
+        "text": "Map 2 - 00:08:51 - Race to 5 Kills - Jormungang"
+      },
+      {
+        "id": "257811992",
+        "text": "Map 2 - 00:10:04 - 1st Dragon (4) - mCon esports"
+      },
+      {
+        "id": "257811993",
+        "text": "Map 2 - 00:10:04 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257812288",
+        "text": "Map 2 - 00:12:29 - 1st Tower - Jormungang"
+      },
+      {
+        "id": "257812534",
+        "text": "Map 2 - 00:14:37 - 2nd Tower - Jormungang"
+      },
+      {
+        "id": "257812624",
+        "text": "Map 2 - 00:15:23 - 2nd Dragon (9) - Jormungang"
+      },
+      {
+        "id": "257812625",
+        "text": "Map 2 - 00:15:23 - 3rd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257812671",
+        "text": "Map 2 - 00:15:44 - 1st Rift Herald Slain - Jormungang"
+      },
+      {
+        "id": "257813023",
+        "text": "Map 2 - 00:18:21 - Race to 10 Kills - Jormungang"
+      },
+      {
+        "id": "257813315",
+        "text": "Map 2 - 00:20:31 - 3rd Tower - mCon esports"
+      },
+      {
+        "id": "257813353",
+        "text": "Map 2 - 00:20:43 - 3rd Dragon (5) - Jormungang"
+      },
+      {
+        "id": "257813354",
+        "text": "Map 2 - 00:20:43 - 4th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257813611",
+        "text": "Map 2 - 00:22:38 - 4th Tower - Jormungang"
+      },
+      {
+        "id": "257813842",
+        "text": "Map 2 - 00:24:26 - Race to 15 Kills - mCon esports"
+      },
+      {
+        "id": "257813861",
+        "text": "Map 2 - 00:24:28 - 5th Tower - mCon esports"
+      },
+      {
+        "id": "257813901",
+        "text": "Map 2 - 00:24:46 - 6th Tower - mCon esports"
+      },
+      {
+        "id": "257813932",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257814194",
+        "text": "Map 2 - 00:26:38 - 4th Dragon (5) - Jormungang"
+      },
+      {
+        "id": "257814196",
+        "text": "Map 2 - 00:26:38 - 5th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257814226",
+        "text": "Map 2 - 00:26:49 - 7th Tower - mCon esports"
+      },
+      {
+        "id": "257814452",
+        "text": "Map 2 - 00:28:00 - 1st Baron - Jormungang"
+      },
+      {
+        "id": "257814519",
+        "text": "Map 2 - 00:28:22 - Race to 20 Kills - mCon esports"
+      },
+      {
+        "id": "257815095",
+        "text": "Map 2 - 00:31:48 - 5th Dragon (5) - mCon esports"
+      },
+      {
+        "id": "257815101",
+        "text": "Map 2 - 00:31:48 - 6th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257815134",
+        "text": "Map 2 - 00:32:00 - 8th Tower - Jormungang"
+      },
+      {
+        "id": "257815158",
+        "text": "Map 2 - 00:32:13 - 9th Tower - mCon esports"
+      },
+      {
+        "id": "257815177",
+        "text": "Map 2 - 00:32:19 - 1st Inhibitor - mCon esports"
+      },
+      {
+        "id": "257815450",
+        "text": "Map 2 - 00:34:01 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257815533",
+        "text": "Map 2 - 00:34:34 - 2nd Baron - Jormungang"
+      },
+      {
+        "id": "257815575",
+        "text": "Map 2 - 00:34:51 - 10th Tower - Jormungang"
+      },
+      {
+        "id": "257815605",
+        "text": "Map 2 - 00:35:00 - 11th Tower - Jormungang"
+      },
+      {
+        "id": "257815610",
+        "text": "Map 2 - 00:35:02 - 2nd Inhibitor - Jormungang"
+      },
+      {
+        "id": "257815678",
+        "text": "Map 2 - 00:35:21 - 12th Tower - Jormungang"
+      },
+      {
+        "id": "257815686",
+        "text": "Map 2 - 00:35:24 - 13th Tower - Jormungang"
+      },
+      {
+        "id": "257815709",
+        "text": "Map 2 - Winner - Jormungang"
+      },
+      {
+        "id": "257818175",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257821692",
+        "text": "Map 3 - 00:08:40 - 1st Dragon (3) - Jormungang"
+      },
+      {
+        "id": "257821700",
+        "text": "Map  - 00:08:40 - 1st Blood - mCon esports"
+      },
+      {
+        "id": "257822429",
+        "text": "Map 3 - 00:14:37 - Race to 5 Kills - mCon esports"
+      },
+      {
+        "id": "257822464",
+        "text": "Map 3 - 00:14:50 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257822475",
+        "text": "Map 3 - 00:14:52 - 2nd Dragon (5) - mCon esports"
+      },
+      {
+        "id": "257822668",
+        "text": "Map 3 - 00:15:52 - 1st Tower - mCon esports"
+      },
+      {
+        "id": "257822676",
+        "text": "Map 3 - 00:15:52 - 2nd Tower - mCon esports"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "58.3k",
+          "47.2k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "24",
+          "10"
+        ],
+        "towers": [
+          "8",
+          "3"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "2"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "65.8k",
+          "66.7k"
+        ],
+        "inhibitors": [
+          "1",
+          "1"
+        ],
+        "kills": [
+          "23",
+          "19"
+        ],
+        "towers": [
+          "5",
+          "7"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "53.6k",
+          "46.8k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "16",
+          "3"
+        ],
+        "towers": [
+          "9",
+          "2"
+        ]
+      }
+    },
+    "inplay_created_at": "1755622794",
+    "inplay_updated_at": "1755632982",
+    "confirmed_at": "1755649225",
+    "bet365_id": "179555583",
+    "event_data": {
+      "id": "179555583",
+      "sport_id": "151",
+      "time": "1755622800",
+      "time_status": "3",
+      "league": {
+        "id": "10086144",
+        "name": "LOL - ROL Summer"
+      },
+      "home": {
+        "id": "10453544",
+        "name": "mCon esports"
+      },
+      "away": {
+        "id": "11187716",
+        "name": "Jormungang"
+      },
+      "ss": "1-1",
+      "our_event_id": "10438572",
+      "r_id": "179555583C151A",
+      "updated_at": "1755632982",
+      "odds_updated_at": "1755632852"
+    }
+  },
+  "summary": {
+    "home_team": "mCon esports",
+    "away_team": "Jormungang",
+    "final_score": "2-1",
+    "league": "LOL - ROL Summer",
+    "match_date": "2025-08-19T13:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

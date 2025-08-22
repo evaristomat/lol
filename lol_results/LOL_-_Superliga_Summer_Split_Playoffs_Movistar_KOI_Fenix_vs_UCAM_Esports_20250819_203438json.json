@@ -1,0 +1,565 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:38.926989",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179541081",
+    "sport_id": "151",
+    "time": "1755619200",
+    "time_status": "3",
+    "league": {
+      "id": "10086483",
+      "name": "LOL - Superliga Summer Split Playoffs"
+    },
+    "home": {
+      "id": "11243183",
+      "name": "Movistar KOI Fenix"
+    },
+    "away": {
+      "id": "10514170",
+      "name": "UCAM Esports"
+    },
+    "ss": "0-3",
+    "our_event_id": "10476312",
+    "r_id": "179541081C151A",
+    "updated_at": "1755627932",
+    "odds_updated_at": "1755627930"
+  },
+  "result_info": {
+    "id": "10476312",
+    "sport_id": "151",
+    "time": "1755619200",
+    "time_status": "3",
+    "league": {
+      "id": "41290",
+      "name": "LOL - Superliga Summer Split Playoffs",
+      "cc": null
+    },
+    "home": {
+      "id": "1097547",
+      "name": "Movistar KOI Fenix",
+      "image_id": "977127",
+      "cc": null
+    },
+    "away": {
+      "id": "648305",
+      "name": "UCAM Tokiers",
+      "image_id": "672249",
+      "cc": null
+    },
+    "o_away": {
+      "id": "370745",
+      "name": "UCAM Esports",
+      "image_id": "672249",
+      "cc": null
+    },
+    "ss": "0-3",
+    "events": [
+      {
+        "id": "257792028",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257793209",
+        "text": "Map  - 00:03:42 - 1st Blood - UCAM Esports"
+      },
+      {
+        "id": "257793848",
+        "text": "Map 1 - 00:07:21 - 1st Dragon (8) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257793849",
+        "text": "Map 1 - 00:07:21 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257794518",
+        "text": "Map 1 - 00:12:38 - 2nd Dragon (4) - UCAM Esports"
+      },
+      {
+        "id": "257794521",
+        "text": "Map 1 - 00:12:38 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257794801",
+        "text": "Map 1 - 00:15:30 - 1st Rift Herald Slain - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795076",
+        "text": "Map 1 - 00:17:51 - 1st Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795219",
+        "text": "Map 1 - 00:19:28 - 2nd Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795230",
+        "text": "Map 1 - 00:19:33 - 3rd Dragon (3) - UCAM Esports"
+      },
+      {
+        "id": "257795231",
+        "text": "Map 1 - 00:19:33 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257795250",
+        "text": "Map 1 - 00:19:48 - Race to 5 Kills - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795264",
+        "text": "Map 1 - 00:19:57 - 3rd Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795526",
+        "text": "Map 1 - 00:22:24 - 4th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795923",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257795971",
+        "text": "Map 1 - 00:25:12 - 4th Dragon (3) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257795983",
+        "text": "Map 1 - 00:25:12 - 5th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257796037",
+        "text": "Map 1 - 00:25:33 - 5th Tower - UCAM Esports"
+      },
+      {
+        "id": "257796098",
+        "text": "Map 1 - 00:25:52 - 1st Baron - UCAM Esports"
+      },
+      {
+        "id": "257796272",
+        "text": "Map 1 - 00:26:52 - Race to 10 Kills - Movistar KOI Fenix"
+      },
+      {
+        "id": "257796308",
+        "text": "Map 1 - 00:27:03 - 6th Tower - UCAM Esports"
+      },
+      {
+        "id": "257796326",
+        "text": "Map 1 - 00:27:09 - 7th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257796818",
+        "text": "Map 1 - 00:30:04 - 8th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257796922",
+        "text": "Map 1 - 00:30:36 - 5th Dragon (3) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257796923",
+        "text": "Map 1 - 00:30:36 - 6th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257797139",
+        "text": "Map 1 - 00:31:49 - 9th Tower - UCAM Esports"
+      },
+      {
+        "id": "257797151",
+        "text": "Map 1 - 00:31:53 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257797220",
+        "text": "Map 1 - 00:32:20 - 10th Tower - UCAM Esports"
+      },
+      {
+        "id": "257797236",
+        "text": "Map 1 - 00:32:28 - 11th Tower - UCAM Esports"
+      },
+      {
+        "id": "257797247",
+        "text": "Map 1 - 00:32:34 - 1st Inhibitor - UCAM Esports"
+      },
+      {
+        "id": "257797268",
+        "text": "Map 1 - 00:32:43 - 12th Tower - UCAM Esports"
+      },
+      {
+        "id": "257797276",
+        "text": "Map 1 - 00:32:44 - 13th Tower - UCAM Esports"
+      },
+      {
+        "id": "257797290",
+        "text": "Map 1 - Winner - UCAM Esports"
+      },
+      {
+        "id": "257799810",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257801455",
+        "text": "Map 2 - 00:05:53 - 1st Dragon (5) - UCAM Esports"
+      },
+      {
+        "id": "257801465",
+        "text": "Map 2 - 00:05:53 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257801787",
+        "text": "Map  - 00:07:40 - 1st Blood - Movistar KOI Fenix"
+      },
+      {
+        "id": "257802462",
+        "text": "Map 2 - 00:11:44 - 2nd Dragon (3) - UCAM Esports"
+      },
+      {
+        "id": "257802463",
+        "text": "Map 2 - 00:11:44 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257802915",
+        "text": "Map 2 - 00:14:21 - 1st Tower - UCAM Esports"
+      },
+      {
+        "id": "257802985",
+        "text": "Map 2 - 00:14:48 - Race to 5 Kills - Movistar KOI Fenix"
+      },
+      {
+        "id": "257803113",
+        "text": "Map 2 - 00:15:40 - 2nd Tower - UCAM Esports"
+      },
+      {
+        "id": "257803134",
+        "text": "Map 2 - 00:15:48 - 3rd Tower - UCAM Esports"
+      },
+      {
+        "id": "257803152",
+        "text": "Map 2 - 00:15:58 - 4th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257803156",
+        "text": "Map 2 - 00:16:01 - 1st Rift Herald Slain - UCAM Esports"
+      },
+      {
+        "id": "257803407",
+        "text": "Map 2 - 00:17:50 - 3rd Dragon (6) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257803409",
+        "text": "Map 2 - 00:17:50 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257803414",
+        "text": "Map 2 - 00:17:52 - Race to 10 Kills - UCAM Esports"
+      },
+      {
+        "id": "257803470",
+        "text": "Map 2 - 00:18:14 - 5th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257804022",
+        "text": "Map 2 - 00:22:37 - 6th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804109",
+        "text": "Map 2 - 00:23:13 - 4th Dragon (6) - UCAM Esports"
+      },
+      {
+        "id": "257804110",
+        "text": "Map 2 - 00:23:13 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257804338",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257804374",
+        "text": "Map 2 - 00:25:17 - Race to 15 Kills - UCAM Esports"
+      },
+      {
+        "id": "257804442",
+        "text": "Map 2 - 00:25:53 - 1st Baron - UCAM Esports"
+      },
+      {
+        "id": "257804555",
+        "text": "Map 2 - 00:26:44 - 7th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804574",
+        "text": "Map 2 - 00:26:55 - 8th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804584",
+        "text": "Map 2 - 00:26:59 - 1st Inhibitor - UCAM Esports"
+      },
+      {
+        "id": "257804594",
+        "text": "Map 2 - 00:27:03 - 9th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257804641",
+        "text": "Map 2 - 00:27:20 - 10th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804651",
+        "text": "Map 2 - 00:27:24 - 2nd Inhibitor - UCAM Esports"
+      },
+      {
+        "id": "257804668",
+        "text": "Map 2 - 00:27:33 - Race to 20 Kills - UCAM Esports"
+      },
+      {
+        "id": "257804676",
+        "text": "Map 2 - 00:27:35 - 11th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804685",
+        "text": "Map 2 - 00:27:40 - 12th Tower - UCAM Esports"
+      },
+      {
+        "id": "257804694",
+        "text": "Map 2 - Winner - UCAM Esports"
+      },
+      {
+        "id": "257807829",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257808454",
+        "text": "Map  - 00:03:50 - 1st Blood - Movistar KOI Fenix"
+      },
+      {
+        "id": "257808835",
+        "text": "Map 3 - 00:06:28 - 1st Dragon (8) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257808836",
+        "text": "Map 3 - 00:06:28 - 2nd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257809688",
+        "text": "Map 3 - 00:13:47 - 2nd Dragon (4) - Movistar KOI Fenix"
+      },
+      {
+        "id": "257809691",
+        "text": "Map 3 - 00:13:47 - 3rd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257810052",
+        "text": "Map 3 - 00:15:49 - 1st Rift Herald Slain - UCAM Esports"
+      },
+      {
+        "id": "257810080",
+        "text": "Map 3 - 00:15:56 - 1st Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257810522",
+        "text": "Map 3 - 00:18:45 - 2nd Tower - UCAM Esports"
+      },
+      {
+        "id": "257810650",
+        "text": "Map 3 - 00:19:34 - Race to 5 Kills - UCAM Esports"
+      },
+      {
+        "id": "257810766",
+        "text": "Map 3 - 00:20:12 - 3rd Dragon (5) - UCAM Esports"
+      },
+      {
+        "id": "257810767",
+        "text": "Map 3 - 00:20:12 - 3rd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257811401",
+        "text": "Map 3 - 00:23:36 - 3rd Tower - UCAM Esports"
+      },
+      {
+        "id": "257811659",
+        "text": "Map 3 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257811841",
+        "text": "Map 3 - 00:26:14 - 4th Dragon (5) - UCAM Esports"
+      },
+      {
+        "id": "257811844",
+        "text": "Map 3 - 00:26:14 - 5th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257811906",
+        "text": "Map 3 - 00:26:43 - 4th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257812056",
+        "text": "Map 3 - 00:27:53 - 5th Tower - UCAM Esports"
+      },
+      {
+        "id": "257812074",
+        "text": "Map 3 - 00:27:59 - Race to 10 Kills - UCAM Esports"
+      },
+      {
+        "id": "257812432",
+        "text": "Map 3 - 00:31:00 - 6th Tower - Movistar KOI Fenix"
+      },
+      {
+        "id": "257812438",
+        "text": "Map 3 - 00:31:01 - 1st Baron - UCAM Esports"
+      },
+      {
+        "id": "257812521",
+        "text": "Map 3 - 00:31:47 - 7th Tower - UCAM Esports"
+      },
+      {
+        "id": "257812528",
+        "text": "Map 3 - 00:31:53 - 8th Tower - UCAM Esports"
+      },
+      {
+        "id": "257812677",
+        "text": "Map 3 - 00:33:07 - 9th Tower - UCAM Esports"
+      },
+      {
+        "id": "257812824",
+        "text": "Map 3 - 00:34:18 - 5th Dragon (5) - UCAM Esports"
+      },
+      {
+        "id": "257812826",
+        "text": "Map 3 - 00:34:18 - 6th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257812971",
+        "text": "Map 3 - 00:35:18 - Race to 15 Kills - UCAM Esports"
+      },
+      {
+        "id": "257812989",
+        "text": "Map 3 - 00:35:28 - 1st Inhibitor - UCAM Esports"
+      },
+      {
+        "id": "257813054",
+        "text": "Map 3 - 00:35:51 - 10th Tower - UCAM Esports"
+      },
+      {
+        "id": "257813065",
+        "text": "Map 3 - 00:35:55 - 11th Tower - UCAM Esports"
+      },
+      {
+        "id": "257813071",
+        "text": "Map 3 - Winner - UCAM Esports"
+      },
+      {
+        "id": "257813072",
+        "text": "Map 3 - 00:36:04 - 2nd Baron Spawned"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "59.2k",
+          "61.7k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "14",
+          "14"
+        ],
+        "towers": [
+          "6",
+          "7"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "3"
+        ],
+        "gold": [
+          "47.5k",
+          "56.2k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "8",
+          "20"
+        ],
+        "towers": [
+          "3",
+          "9"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "55.2k",
+          "66.6k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "5",
+          "17"
+        ],
+        "towers": [
+          "3",
+          "8"
+        ]
+      }
+    },
+    "inplay_created_at": "1755618904",
+    "inplay_updated_at": "1755627908",
+    "bet365_id": "179541081",
+    "event_data": {
+      "id": "179541081",
+      "sport_id": "151",
+      "time": "1755619200",
+      "time_status": "3",
+      "league": {
+        "id": "10086483",
+        "name": "LOL - Superliga Summer Split Playoffs"
+      },
+      "home": {
+        "id": "11243183",
+        "name": "Movistar KOI Fenix"
+      },
+      "away": {
+        "id": "10514170",
+        "name": "UCAM Esports"
+      },
+      "ss": "0-3",
+      "our_event_id": "10476312",
+      "r_id": "179541081C151A",
+      "updated_at": "1755627932",
+      "odds_updated_at": "1755627930"
+    }
+  },
+  "summary": {
+    "home_team": "Movistar KOI Fenix",
+    "away_team": "UCAM Esports",
+    "final_score": "0-3",
+    "league": "LOL - Superliga Summer Split Playoffs",
+    "match_date": "2025-08-19T12:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

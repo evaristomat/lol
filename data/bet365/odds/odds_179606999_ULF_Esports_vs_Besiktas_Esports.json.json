@@ -1,0 +1,667 @@
+{
+  "success": 1,
+  "results": [
+    {
+      "FI": "179606999",
+      "event_id": "10491466",
+      "main": {
+        "updated_at": "1755648290",
+        "key": "#AC#B151#C21077424#D19#E23471986#F19#",
+        "sp": {
+          "match_lines": {
+            "id": "1510001",
+            "name": "Match Lines",
+            "odds": [
+              {
+                "id": "1399122398",
+                "odds": "1.80",
+                "header": "1",
+                "name": "To Win",
+                "handicap": ""
+              },
+              {
+                "id": "1399122412",
+                "odds": "1.90",
+                "header": "2",
+                "name": "To Win",
+                "handicap": ""
+              }
+            ]
+          },
+          "map_1_first_team_to": {
+            "id": "1513007",
+            "name": "Map 1 - First Team To",
+            "odds": [
+              {
+                "id": "1407847364",
+                "odds": "1.83",
+                "header": "1",
+                "name": "First Blood",
+                "handicap": ""
+              },
+              {
+                "id": "1407847738",
+                "odds": "1.83",
+                "header": "1",
+                "name": "Slay Atakhan",
+                "handicap": ""
+              },
+              {
+                "id": "1407847541",
+                "odds": "1.80",
+                "header": "1",
+                "name": "Slay Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847402",
+                "odds": "1.80",
+                "header": "1",
+                "name": "Destroy Inhibitor",
+                "handicap": ""
+              },
+              {
+                "id": "1407847367",
+                "odds": "1.83",
+                "header": "2",
+                "name": "First Blood",
+                "handicap": ""
+              },
+              {
+                "id": "1407847743",
+                "odds": "1.83",
+                "header": "2",
+                "name": "Slay Atakhan",
+                "handicap": ""
+              },
+              {
+                "id": "1407847544",
+                "odds": "1.90",
+                "header": "2",
+                "name": "Slay Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847407",
+                "odds": "1.90",
+                "header": "2",
+                "name": "Destroy Inhibitor",
+                "handicap": ""
+              }
+            ]
+          },
+          "map_1_handicaps": {
+            "id": "1511010",
+            "name": "Map 1 - Handicaps",
+            "odds": [
+              {
+                "id": "1407847608",
+                "odds": "1.83",
+                "header": "1",
+                "name": "Kill Handicap",
+                "handicap": "-3.5"
+              },
+              {
+                "id": "1407847610",
+                "odds": "1.83",
+                "header": "2",
+                "name": "Kill Handicap",
+                "handicap": "+3.5"
+              }
+            ]
+          },
+          "map_1_totals": {
+            "id": "1510845",
+            "name": "Map 1 - Totals",
+            "odds": [
+              {
+                "id": "1407847513",
+                "odds": "1.83",
+                "header": "Over",
+                "name": "Total Kills",
+                "handicap": "30.5"
+              },
+              {
+                "id": "1407847692",
+                "odds": "2.20",
+                "header": "Over",
+                "name": "Total Towers",
+                "handicap": "12.5"
+              },
+              {
+                "id": "1407847094",
+                "odds": "1.57",
+                "header": "Over",
+                "name": "Total Dragons",
+                "handicap": "4.5"
+              },
+              {
+                "id": "1407847011",
+                "odds": "3.40",
+                "header": "Over",
+                "name": "Total Barons",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847186",
+                "odds": "1.57",
+                "header": "Over",
+                "name": "Total Inhibitors",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847514",
+                "odds": "1.83",
+                "header": "Under",
+                "name": "Total Kills",
+                "handicap": "30.5"
+              },
+              {
+                "id": "1407847697",
+                "odds": "1.61",
+                "header": "Under",
+                "name": "Total Towers",
+                "handicap": "12.5"
+              },
+              {
+                "id": "1407847146",
+                "odds": "2.25",
+                "header": "Under",
+                "name": "Total Dragons",
+                "handicap": "4.5"
+              },
+              {
+                "id": "1407847040",
+                "odds": "1.30",
+                "header": "Under",
+                "name": "Total Barons",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847201",
+                "odds": "2.25",
+                "header": "Under",
+                "name": "Total Inhibitors",
+                "handicap": "1.5"
+              }
+            ]
+          }
+        }
+      },
+      "map_1": {
+        "updated_at": "1755649270",
+        "key": "#AC#B151#C21077424#D19#E23471986#F19#I2#",
+        "sp": {
+          "map_1_first_team_to": {
+            "id": "1513007",
+            "name": "Map 1 - First Team To",
+            "odds": [
+              {
+                "id": "1407847364",
+                "odds": "1.83",
+                "header": "1",
+                "name": "First Blood",
+                "handicap": ""
+              },
+              {
+                "id": "1407847738",
+                "odds": "1.83",
+                "header": "1",
+                "name": "Slay Atakhan",
+                "handicap": ""
+              },
+              {
+                "id": "1407847541",
+                "odds": "1.80",
+                "header": "1",
+                "name": "Slay Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847402",
+                "odds": "1.80",
+                "header": "1",
+                "name": "Destroy Inhibitor",
+                "handicap": ""
+              },
+              {
+                "id": "1407847367",
+                "odds": "1.83",
+                "header": "2",
+                "name": "First Blood",
+                "handicap": ""
+              },
+              {
+                "id": "1407847743",
+                "odds": "1.83",
+                "header": "2",
+                "name": "Slay Atakhan",
+                "handicap": ""
+              },
+              {
+                "id": "1407847544",
+                "odds": "1.90",
+                "header": "2",
+                "name": "Slay Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847407",
+                "odds": "1.90",
+                "header": "2",
+                "name": "Destroy Inhibitor",
+                "handicap": ""
+              }
+            ]
+          },
+          "map_1_handicaps": {
+            "id": "1511010",
+            "name": "Map 1 - Handicaps",
+            "odds": [
+              {
+                "id": "1407847608",
+                "odds": "1.83",
+                "header": "1",
+                "name": "Kill Handicap",
+                "handicap": "-3.5"
+              },
+              {
+                "id": "1407847610",
+                "odds": "1.83",
+                "header": "2",
+                "name": "Kill Handicap",
+                "handicap": "+3.5"
+              }
+            ]
+          },
+          "map_1_totals": {
+            "id": "1510845",
+            "name": "Map 1 - Totals",
+            "odds": [
+              {
+                "id": "1407847513",
+                "odds": "1.83",
+                "header": "Over",
+                "name": "Total Kills",
+                "handicap": "30.5"
+              },
+              {
+                "id": "1407847692",
+                "odds": "2.20",
+                "header": "Over",
+                "name": "Total Towers",
+                "handicap": "12.5"
+              },
+              {
+                "id": "1407847094",
+                "odds": "1.57",
+                "header": "Over",
+                "name": "Total Dragons",
+                "handicap": "4.5"
+              },
+              {
+                "id": "1407847011",
+                "odds": "3.40",
+                "header": "Over",
+                "name": "Total Barons",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847186",
+                "odds": "1.57",
+                "header": "Over",
+                "name": "Total Inhibitors",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847514",
+                "odds": "1.83",
+                "header": "Under",
+                "name": "Total Kills",
+                "handicap": "30.5"
+              },
+              {
+                "id": "1407847697",
+                "odds": "1.61",
+                "header": "Under",
+                "name": "Total Towers",
+                "handicap": "12.5"
+              },
+              {
+                "id": "1407847146",
+                "odds": "2.25",
+                "header": "Under",
+                "name": "Total Dragons",
+                "handicap": "4.5"
+              },
+              {
+                "id": "1407847040",
+                "odds": "1.30",
+                "header": "Under",
+                "name": "Total Barons",
+                "handicap": "1.5"
+              },
+              {
+                "id": "1407847201",
+                "odds": "2.25",
+                "header": "Under",
+                "name": "Total Inhibitors",
+                "handicap": "1.5"
+              }
+            ]
+          },
+          "map_1_map_duration_2_way": {
+            "id": "1511013",
+            "name": "Map 1 - Map Duration 2-Way",
+            "odds": [
+              {
+                "id": "1408225854",
+                "odds": "1.83",
+                "header": "Over or Exactly",
+                "name": "33:30"
+              },
+              {
+                "id": "1408225857",
+                "odds": "1.83",
+                "header": "Under",
+                "name": "33:30"
+              }
+            ]
+          },
+          "map_1_race_to_#_kills": {
+            "id": "1511022",
+            "name": "Map 1 - Race to # Kills",
+            "odds": [
+              {
+                "id": "1407846913",
+                "odds": "1.83",
+                "header": "1",
+                "name": "5"
+              },
+              {
+                "id": "1407847466",
+                "odds": "1.80",
+                "header": "1",
+                "name": "10"
+              },
+              {
+                "id": "1407847504",
+                "odds": "1.80",
+                "header": "1",
+                "name": "15"
+              },
+              {
+                "id": "1407847509",
+                "odds": "1.80",
+                "header": "1",
+                "name": "20"
+              },
+              {
+                "id": "1407847511",
+                "odds": "1.80",
+                "header": "1",
+                "name": "25"
+              },
+              {
+                "id": "1407846847",
+                "odds": "1.80",
+                "header": "1",
+                "name": "30"
+              },
+              {
+                "id": "1407846964",
+                "odds": "1.83",
+                "header": "2",
+                "name": "5"
+              },
+              {
+                "id": "1407847471",
+                "odds": "1.90",
+                "header": "2",
+                "name": "10"
+              },
+              {
+                "id": "1407847506",
+                "odds": "1.90",
+                "header": "2",
+                "name": "15"
+              },
+              {
+                "id": "1407847510",
+                "odds": "1.90",
+                "header": "2",
+                "name": "20"
+              },
+              {
+                "id": "1407847512",
+                "odds": "1.90",
+                "header": "2",
+                "name": "25"
+              },
+              {
+                "id": "1407846853",
+                "odds": "1.90",
+                "header": "2",
+                "name": "30"
+              }
+            ]
+          },
+          "map_1_both_teams_to": {
+            "id": "1510999",
+            "name": "Map 1 - Both Teams to",
+            "odds": [
+              {
+                "id": "1407847531",
+                "odds": "8.00",
+                "header": "Yes",
+                "name": "Slay a Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847520",
+                "odds": "7.50",
+                "header": "Yes",
+                "name": "Destroy an Inhibitor",
+                "handicap": ""
+              },
+              {
+                "id": "1407847533",
+                "odds": "1.06",
+                "header": "No",
+                "name": "Slay a Baron",
+                "handicap": ""
+              },
+              {
+                "id": "1407847522",
+                "odds": "1.07",
+                "header": "No",
+                "name": "Destroy an Inhibitor",
+                "handicap": ""
+              }
+            ]
+          },
+          "map_1_first_dragon_to_spawn": {
+            "id": "1511004",
+            "name": "Map 1 - First Dragon to Spawn",
+            "odds": [
+              {
+                "id": "1407847558",
+                "odds": "5.50",
+                "name": "Cloud"
+              },
+              {
+                "id": "1407847560",
+                "odds": "5.50",
+                "name": "Infernal"
+              },
+              {
+                "id": "1407847562",
+                "odds": "5.50",
+                "name": "Mountain"
+              },
+              {
+                "id": "1407847571",
+                "odds": "5.50",
+                "name": "Ocean"
+              },
+              {
+                "id": "1407847585",
+                "odds": "5.50",
+                "name": "Chemtech"
+              },
+              {
+                "id": "1407847595",
+                "odds": "5.50",
+                "name": "Hextech"
+              }
+            ]
+          },
+          "map_1_either_team_to": {
+            "id": "1513006",
+            "name": "Map 1 - Either Team to",
+            "odds": [
+              {
+                "id": "1407847324",
+                "odds": "8.00",
+                "header": "Yes",
+                "name": "Score a Quadra",
+                "handicap": ""
+              },
+              {
+                "id": "1407847225",
+                "odds": "15.00",
+                "header": "Yes",
+                "name": "Score a Penta",
+                "handicap": ""
+              },
+              {
+                "id": "1407847346",
+                "odds": "1.06",
+                "header": "No",
+                "name": "Score a Quadra",
+                "handicap": ""
+              },
+              {
+                "id": "1407847261",
+                "odds": "1.01",
+                "header": "No",
+                "name": "Score a Penta",
+                "handicap": ""
+              }
+            ]
+          },
+          "map_1_largest_multi_kill": {
+            "id": "1511011",
+            "name": "Map 1 - Largest Multi-Kill",
+            "odds": [
+              {
+                "id": "1407847618",
+                "odds": "21.00",
+                "name": "Single"
+              },
+              {
+                "id": "1407847620",
+                "odds": "2.00",
+                "name": "Double"
+              },
+              {
+                "id": "1407847622",
+                "odds": "2.50",
+                "name": "Triple"
+              },
+              {
+                "id": "1407847624",
+                "odds": "8.00",
+                "name": "Quadra"
+              },
+              {
+                "id": "1407847625",
+                "odds": "15.00",
+                "name": "Penta"
+              }
+            ]
+          },
+          "map_1_total_kills_odd_even": {
+            "id": "1511047",
+            "name": "Map 1 - Total Kills Odd/Even",
+            "odds": [
+              {
+                "id": "1407847658",
+                "odds": "1.83",
+                "name": "Odd",
+                "handicap": ""
+              },
+              {
+                "id": "1407847663",
+                "odds": "1.83",
+                "name": "Even",
+                "handicap": ""
+              }
+            ]
+          }
+        }
+      },
+      "others": [
+        {
+          "updated_at": "1755644912",
+          "sp": {
+            "map_1_first_dragon_to_spawn": {
+              "id": "1511004",
+              "name": "Map 1 - First Dragon to Spawn",
+              "odds": [
+                {
+                  "id": "1407847558",
+                  "odds": "5.50",
+                  "name": "Cloud"
+                },
+                {
+                  "id": "1407847560",
+                  "odds": "5.50",
+                  "name": "Infernal"
+                },
+                {
+                  "id": "1407847562",
+                  "odds": "5.50",
+                  "name": "Mountain"
+                },
+                {
+                  "id": "1407847571",
+                  "odds": "5.50",
+                  "name": "Ocean"
+                },
+                {
+                  "id": "1407847585",
+                  "odds": "5.50",
+                  "name": "Chemtech"
+                },
+                {
+                  "id": "1407847595",
+                  "odds": "5.50",
+                  "name": "Hextech"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "schedule": {
+        "updated_at": "1755650211",
+        "key": "#AC#B151#C21077424#D48#E1510001#F10#",
+        "sp": {
+          "main": [
+            {
+              "id": "1399122398",
+              "odds": "1.80",
+              "name": "To Win"
+            },
+            {
+              "id": "1399122412",
+              "odds": "1.90",
+              "name": "To Win"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

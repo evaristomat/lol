@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:12.670572",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179331767",
+    "sport_id": "151",
+    "time": "1755442800",
+    "time_status": "3",
+    "league": {
+      "id": "10049229",
+      "name": "LOL - LEC Summer"
+    },
+    "home": {
+      "id": "10361254",
+      "name": "Team Vitality"
+    },
+    "away": {
+      "id": "10361300",
+      "name": "Natus Vincere"
+    },
+    "ss": "2-0",
+    "our_event_id": "10419470",
+    "r_id": "179331767C151A",
+    "updated_at": "1755448072",
+    "odds_updated_at": "1755447838"
+  },
+  "result_info": {
+    "id": "10419470",
+    "sport_id": "151",
+    "time": "1755442800",
+    "time_status": "3",
+    "league": {
+      "id": "16416",
+      "name": "LOL - LEC Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "72939",
+      "name": "Team Vitality",
+      "image_id": "544273",
+      "cc": "fr"
+    },
+    "away": {
+      "id": "4445",
+      "name": "Natus Vincere",
+      "image_id": "548571",
+      "cc": "ua"
+    },
+    "ss": "2-0",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "0"
+      }
+    },
+    "events": [
+      {
+        "id": "257500834",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257502118",
+        "text": "Map  - 00:07:15 - 1st Blood - Team Vitality"
+      },
+      {
+        "id": "257502734",
+        "text": "Map 1 - 00:11:07 - 1st Dragon (3) - Team Vitality"
+      },
+      {
+        "id": "257502735",
+        "text": "Map 1 - 00:11:07 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257503202",
+        "text": "Map 1 - 00:14:35 - Race to 5 Kills - Team Vitality"
+      },
+      {
+        "id": "257503236",
+        "text": "Map 1 - 00:14:50 - 1st Tower - Team Vitality"
+      },
+      {
+        "id": "257503410",
+        "text": "Map 1 - 00:16:27 - 2nd Dragon (5) - Team Vitality"
+      },
+      {
+        "id": "257503415",
+        "text": "Map 1 - 00:16:27 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257503506",
+        "text": "Map 1 - 00:17:16 - 1st Rift Herald Slain - Team Vitality"
+      },
+      {
+        "id": "257503527",
+        "text": "Map 1 - 00:17:30 - 2nd Tower - Natus Vincere"
+      },
+      {
+        "id": "257503671",
+        "text": "Map 1 - 00:18:50 - 3rd Tower - Team Vitality"
+      },
+      {
+        "id": "257503685",
+        "text": "Map 1 - 00:18:55 - 4th Tower - Natus Vincere"
+      },
+      {
+        "id": "257504006",
+        "text": "Map 1 - 00:21:42 - 3rd Dragon (4) - Team Vitality"
+      },
+      {
+        "id": "257504007",
+        "text": "Map 1 - 00:21:42 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257504311",
+        "text": "Map 1 - 00:23:07 - 5th Tower - Natus Vincere"
+      },
+      {
+        "id": "257504656",
+        "text": "Map 1 - 00:24:50 - Race to 10 Kills - Team Vitality"
+      },
+      {
+        "id": "257504695",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257504793",
+        "text": "Map 1 - 00:25:30 - 1st Baron - Team Vitality"
+      },
+      {
+        "id": "257504884",
+        "text": "Map 1 - 00:26:01 - 6th Tower - Team Vitality"
+      },
+      {
+        "id": "257504973",
+        "text": "Map 1 - 00:26:37 - 7th Tower - Team Vitality"
+      },
+      {
+        "id": "257505058",
+        "text": "Map 1 - 00:27:03 - Race to 15 Kills - Team Vitality"
+      },
+      {
+        "id": "257505104",
+        "text": "Map 1 - 00:27:13 - 4th Dragon (4) - Team Vitality"
+      },
+      {
+        "id": "257505107",
+        "text": "Map 1 - 00:27:13 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257505209",
+        "text": "Map 1 - 00:27:44 - 8th Tower - Team Vitality"
+      },
+      {
+        "id": "257505226",
+        "text": "Map 1 - 00:27:50 - 1st Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257505242",
+        "text": "Map 1 - 00:27:52 - 9th Tower - Team Vitality"
+      },
+      {
+        "id": "257505382",
+        "text": "Map 1 - 00:28:32 - 10th Tower - Team Vitality"
+      },
+      {
+        "id": "257505424",
+        "text": "Map 1 - 00:28:38 - 2nd Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257505482",
+        "text": "Map 1 - 00:28:58 - Race to 20 Kills - Team Vitality"
+      },
+      {
+        "id": "257505496",
+        "text": "Map 1 - 00:29:02 - 11th Tower - Team Vitality"
+      },
+      {
+        "id": "257505498",
+        "text": "Map 1 - 00:29:02 - 12th Tower - Team Vitality"
+      },
+      {
+        "id": "257505524",
+        "text": "Map 1 - Winner - Team Vitality"
+      },
+      {
+        "id": "257508608",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257509602",
+        "text": "Map 2 - 00:06:25 - 1st Dragon (3) - Natus Vincere"
+      },
+      {
+        "id": "257509603",
+        "text": "Map 2 - 00:06:25 - 2nd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257509722",
+        "text": "Map  - 00:07:00 - 1st Blood - Team Vitality"
+      },
+      {
+        "id": "257510877",
+        "text": "Map 2 - 00:12:37 - 2nd Dragon (8) - Team Vitality"
+      },
+      {
+        "id": "257510878",
+        "text": "Map 2 - 00:12:37 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257511492",
+        "text": "Map 2 - 00:15:38 - 1st Rift Herald Slain - Team Vitality"
+      },
+      {
+        "id": "257511498",
+        "text": "Map 2 - 00:15:41 - Race to 5 Kills - Team Vitality"
+      },
+      {
+        "id": "257511595",
+        "text": "Map 2 - 00:16:12 - 1st Tower - Team Vitality"
+      },
+      {
+        "id": "257511622",
+        "text": "Map 2 - 00:16:22 - 2nd Tower - Team Vitality"
+      },
+      {
+        "id": "257511664",
+        "text": "Map 2 - 00:16:32 - 3rd Tower - Team Vitality"
+      },
+      {
+        "id": "257512110",
+        "text": "Map 2 - 00:18:52 - 4th Tower - Team Vitality"
+      },
+      {
+        "id": "257512253",
+        "text": "Map 2 - 00:19:42 - 3rd Dragon (6) - Team Vitality"
+      },
+      {
+        "id": "257512256",
+        "text": "Map 2 - 00:19:42 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257512387",
+        "text": "Map 2 - 00:20:28 - Race to 10 Kills - Team Vitality"
+      },
+      {
+        "id": "257513010",
+        "text": "Map 2 - 00:24:56 - 4th Dragon (6) - Team Vitality"
+      },
+      {
+        "id": "257513011",
+        "text": "Map 2 - 00:24:56 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257513029",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257513266",
+        "text": "Map 2 - 00:26:35 - 1st Baron - Team Vitality"
+      },
+      {
+        "id": "257513352",
+        "text": "Map 2 - 00:27:30 - 5th Tower - Team Vitality"
+      },
+      {
+        "id": "257513380",
+        "text": "Map 2 - 00:27:45 - 6th Tower - Natus Vincere"
+      },
+      {
+        "id": "257513389",
+        "text": "Map 2 - 00:27:46 - 7th Tower - Team Vitality"
+      },
+      {
+        "id": "257513391",
+        "text": "Map 2 - 00:27:46 - Race to 15 Kills - Team Vitality"
+      },
+      {
+        "id": "257513397",
+        "text": "Map 2 - 00:27:51 - 1st Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257513400",
+        "text": "Map 2 - 00:27:51 - 8th Tower - Team Vitality"
+      },
+      {
+        "id": "257513417",
+        "text": "Map 2 - 00:27:56 - 2nd Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257513445",
+        "text": "Map 2 - 00:28:10 - 9th Tower - Team Vitality"
+      },
+      {
+        "id": "257513473",
+        "text": "Map 2 - 00:28:23 - 10th Tower - Team Vitality"
+      },
+      {
+        "id": "257513495",
+        "text": "Map 2 - Winner - Team Vitality"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "59.2k",
+          "48.9k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "19",
+          "6"
+        ],
+        "towers": [
+          "7",
+          "3"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "58.3k",
+          "44.5k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "16",
+          "0"
+        ],
+        "towers": [
+          "9",
+          "1"
+        ]
+      }
+    },
+    "inplay_created_at": "1755442435",
+    "inplay_updated_at": "1755448072",
+    "confirmed_at": "1755629254",
+    "bet365_id": "179331767",
+    "event_data": {
+      "id": "179331767",
+      "sport_id": "151",
+      "time": "1755442800",
+      "time_status": "3",
+      "league": {
+        "id": "10049229",
+        "name": "LOL - LEC Summer"
+      },
+      "home": {
+        "id": "10361254",
+        "name": "Team Vitality"
+      },
+      "away": {
+        "id": "10361300",
+        "name": "Natus Vincere"
+      },
+      "ss": "2-0",
+      "our_event_id": "10419470",
+      "r_id": "179331767C151A",
+      "updated_at": "1755448072",
+      "odds_updated_at": "1755447838"
+    }
+  },
+  "summary": {
+    "home_team": "Team Vitality",
+    "away_team": "Natus Vincere",
+    "final_score": "2-0",
+    "league": "LOL - LEC Summer",
+    "match_date": "2025-08-17T11:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

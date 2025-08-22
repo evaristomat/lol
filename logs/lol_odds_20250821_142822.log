@@ -1,0 +1,28 @@
+2025-08-21 14:28:22 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-21 14:28:22 | INFO     | run_update           | ============================================================
+2025-08-21 14:28:22 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-21 14:28:22 | INFO     | run_update           | ============================================================
+2025-08-21 14:28:22 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-21 14:28:22 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 3 dias
+2025-08-21 14:28:22 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-21 14:28:23 | INFO     | fetch_upcoming_events |    ✅ 17 jogos de LoL encontrados
+2025-08-21 14:28:23 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-21 14:28:24 | INFO     | fetch_upcoming_events |    ✅ 17 jogos de LoL encontrados
+2025-08-21 14:28:24 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-21 14:28:24 | INFO     | fetch_upcoming_events |    ✅ 14 jogos de LoL encontrados
+2025-08-21 14:28:24 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-21 14:28:25 | INFO     | fetch_upcoming_events |    ✅ 8 jogos de LoL encontrados
+2025-08-21 14:28:25 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 56
+2025-08-21 14:28:25 | INFO     | save_events          | 📝 Eventos processados - Novos: 0, Existentes: 56, Times criados: 0
+2025-08-21 14:28:25 | INFO     | run_update           | ✅ Fase 1 concluída - 0 novos eventos adicionados
+2025-08-21 14:28:25 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-21 14:28:25 | INFO     | fetch_and_save_odds  | 💰 Coletando odds para 1 eventos em lotes de 5
+2025-08-21 14:28:25 | INFO     | fetch_and_save_odds  |    📦 Processando lote 1/1
+2025-08-21 14:28:25 | INFO     | fetch_and_save_odds  | 📊 Coleta finalizada: 1/1 eventos com odds
+2025-08-21 14:28:25 | INFO     | run_update           | ✅ Fase 2 concluída - 1 eventos com odds atualizadas
+2025-08-21 14:28:26 | INFO     | run_update           | 💾 Dashboard salvo em: C:\ProgramData\anaconda3\envs\bet365\lol_api\reports\dashboard_20250821_142826.txt
+2025-08-21 14:28:26 | INFO     | run_update           | 
+✅ ATUALIZAÇÃO COMPLETA EM 3.4 SEGUNDOS
+2025-08-21 14:28:26 | INFO     | close                | 🔌 Conexões fechadas

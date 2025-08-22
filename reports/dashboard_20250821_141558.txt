@@ -1,0 +1,43 @@
+
+============================================================
+📊 DASHBOARD - LOL ODDS DATABASE
+============================================================
+
+📈 ESTATÍSTICAS GERAIS:
+  Total de Eventos: 86
+  Total de Times: 127
+  Odds Atuais: 11,712
+  Tamanho do Banco: 2.97 MB
+
+🎮 PRÓXIMOS EVENTOS:
+  Eventos Futuros: 86
+  Próximas 24h: 18
+
+📊 COBERTURA DE ODDS:
+  Eventos com Odds: 86/86 (100.0%)
+  Sem Odds: 0
+  Odds Antigas (>2h): 1
+
+🏆 TOP 5 LIGAS ATIVAS:
+  LOL - LPL Split 3: 18 jogos
+  LOL - LCK: 10 jogos
+  LOL - TCL Summer: 8 jogos
+  LOL - LCK CL Rounds 3-5: 6 jogos
+  LOL - LFL Summer: 5 jogos
+
+⭐ TOP 5 TIMES MAIS FREQUENTES:
+
+🎯 TOP 5 MERCADOS:
+  Map 1 - Totals: 1,094 seleções
+  Map 1 - First Dragon to Spawn: 912 seleções
+  Map 2 - First Dragon to Spawn: 858 seleções
+  Map 1 - First Team To: 808 seleções
+  Map 2 - First Team To: 760 seleções
+
+⚽ PRÓXIMOS 3 JOGOS COM ODDS:
+  20/08 01:00 - Gen.G.GA vs T1.EA (26 mercados)
+  20/08 01:00 - DN Freecs.Ch vs Dplus KIA.Ch (26 mercados)
+  20/08 04:00 - DRX vs DN Freecs (31 mercados)
+
+⏰ Última Atualização de Odds: 2025-08-21 18:15:57
+============================================================

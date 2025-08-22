@@ -1,0 +1,579 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:37.699331",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179761098",
+    "sport_id": "151",
+    "time": "1755612000",
+    "time_status": "3",
+    "league": {
+      "id": "10075173",
+      "name": "LOL - Hitpoint Masters Summer Playoffs"
+    },
+    "home": {
+      "id": "10511537",
+      "name": "Entropiq"
+    },
+    "away": {
+      "id": "11250127",
+      "name": "Nightbirds"
+    },
+    "ss": "3-0",
+    "our_event_id": "10500561",
+    "r_id": "179761098C151A",
+    "updated_at": "1755620994",
+    "odds_updated_at": "1755620986"
+  },
+  "result_info": {
+    "id": "10500561",
+    "sport_id": "151",
+    "time": "1755612000",
+    "time_status": "3",
+    "league": {
+      "id": "30551",
+      "name": "LOL - Hitpoint Masters Summer Playoffs",
+      "cc": null
+    },
+    "home": {
+      "id": "368481",
+      "name": "Entropiq",
+      "image_id": "784478",
+      "cc": null
+    },
+    "away": {
+      "id": "1104650",
+      "name": "Nightbirds",
+      "image_id": "1225039",
+      "cc": null
+    },
+    "ss": "3-0",
+    "events": [
+      {
+        "id": "257777951",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257778517",
+        "text": "Map  - 00:04:38 - 1st Blood - Entropiq"
+      },
+      {
+        "id": "257778787",
+        "text": "Map 1 - 00:07:12 - 1st Dragon (5) - Entropiq"
+      },
+      {
+        "id": "257778788",
+        "text": "Map 1 - 00:07:12 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257779294",
+        "text": "Map 1 - 00:12:50 - 2nd Dragon (3) - Nightbirds"
+      },
+      {
+        "id": "257779295",
+        "text": "Map 1 - 00:12:50 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257779304",
+        "text": "Map 1 - 00:12:54 - Race to 5 Kills - Entropiq"
+      },
+      {
+        "id": "257779560",
+        "text": "Map 1 - 00:16:13 - 1st Rift Herald Slain - Entropiq"
+      },
+      {
+        "id": "257779783",
+        "text": "Map 1 - 00:18:08 - 3rd Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257779788",
+        "text": "Map 1 - 00:18:08 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257780111",
+        "text": "Map 1 - 00:20:12 - Race to 10 Kills - Entropiq"
+      },
+      {
+        "id": "257780151",
+        "text": "Map 1 - 00:20:26 - 1st Tower - Entropiq"
+      },
+      {
+        "id": "257780351",
+        "text": "Map 1 - 00:21:53 - 2nd Tower - Nightbirds"
+      },
+      {
+        "id": "257780361",
+        "text": "Map 1 - 00:22:00 - 3rd Tower - Entropiq"
+      },
+      {
+        "id": "257780453",
+        "text": "Map 1 - 00:22:28 - 4th Tower - Entropiq"
+      },
+      {
+        "id": "257780457",
+        "text": "Map 1 - 00:22:30 - 5th Tower - Nightbirds"
+      },
+      {
+        "id": "257780674",
+        "text": "Map 1 - 00:23:52 - 4th Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257780675",
+        "text": "Map 1 - 00:23:52 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257780869",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257781073",
+        "text": "Map 1 - 00:26:18 - 6th Tower - Entropiq"
+      },
+      {
+        "id": "257781329",
+        "text": "Map 1 - 00:28:10 - 7th Tower - Entropiq"
+      },
+      {
+        "id": "257781437",
+        "text": "Map 1 - 00:29:03 - Race to 15 Kills - Entropiq"
+      },
+      {
+        "id": "257781530",
+        "text": "Map 1 - 00:29:41 - 5th Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257781532",
+        "text": "Map 1 - 00:29:41 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257781683",
+        "text": "Map 1 - 00:30:49 - 8th Tower - Nightbirds"
+      },
+      {
+        "id": "257781731",
+        "text": "Map 1 - 00:31:16 - 9th Tower - Nightbirds"
+      },
+      {
+        "id": "257781791",
+        "text": "Map 1 - 00:31:43 - 1st Baron - Entropiq"
+      },
+      {
+        "id": "257781808",
+        "text": "Map 1 - 00:31:49 - 10th Tower - Nightbirds"
+      },
+      {
+        "id": "257781995",
+        "text": "Map 1 - 00:33:04 - 11th Tower - Entropiq"
+      },
+      {
+        "id": "257782006",
+        "text": "Map 1 - 00:33:11 - 1st Inhibitor - Entropiq"
+      },
+      {
+        "id": "257782042",
+        "text": "Map 1 - 00:33:23 - 12th Tower - Entropiq"
+      },
+      {
+        "id": "257782043",
+        "text": "Map 1 - 00:33:24 - Race to 20 Kills - Entropiq"
+      },
+      {
+        "id": "257782053",
+        "text": "Map 1 - 00:33:29 - 2nd Inhibitor - Entropiq"
+      },
+      {
+        "id": "257782089",
+        "text": "Map 1 - 00:33:41 - 13th Tower - Entropiq"
+      },
+      {
+        "id": "257782103",
+        "text": "Map 1 - 00:33:46 - 14th Tower - Entropiq"
+      },
+      {
+        "id": "257782118",
+        "text": "Map 1 - Winner - Entropiq"
+      },
+      {
+        "id": "257784515",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257785466",
+        "text": "Map  - 00:06:04 - 1st Blood - Entropiq"
+      },
+      {
+        "id": "257785475",
+        "text": "Map 2 - 00:06:14 - 1st Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257785476",
+        "text": "Map 2 - 00:06:14 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257786256",
+        "text": "Map 2 - 00:12:05 - 2nd Dragon (6) - Entropiq"
+      },
+      {
+        "id": "257786257",
+        "text": "Map 2 - 00:12:05 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257786355",
+        "text": "Map 2 - 00:13:03 - Race to 5 Kills - Entropiq"
+      },
+      {
+        "id": "257786521",
+        "text": "Map 2 - 00:14:22 - 1st Tower - Nightbirds"
+      },
+      {
+        "id": "257786627",
+        "text": "Map 2 - 00:15:19 - Race to 10 Kills - Entropiq"
+      },
+      {
+        "id": "257786683",
+        "text": "Map 2 - 00:15:51 - 1st Rift Herald Slain - Entropiq"
+      },
+      {
+        "id": "257786806",
+        "text": "Map 2 - 00:16:55 - 2nd Tower - Entropiq"
+      },
+      {
+        "id": "257786887",
+        "text": "Map 2 - 00:17:32 - 3rd Dragon (9) - Nightbirds"
+      },
+      {
+        "id": "257786888",
+        "text": "Map 2 - 00:17:32 - 4th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257786898",
+        "text": "Map 2 - 00:17:36 - 3rd Tower - Entropiq"
+      },
+      {
+        "id": "257787063",
+        "text": "Map 2 - 00:19:28 - 4th Tower - Entropiq"
+      },
+      {
+        "id": "257787307",
+        "text": "Map 2 - 00:20:39 - Race to 15 Kills - Entropiq"
+      },
+      {
+        "id": "257787346",
+        "text": "Map 2 - 00:21:00 - 5th Tower - Nightbirds"
+      },
+      {
+        "id": "257787612",
+        "text": "Map 2 - 00:22:49 - 4th Dragon (9) - Entropiq"
+      },
+      {
+        "id": "257787614",
+        "text": "Map 2 - 00:22:49 - 5th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257787615",
+        "text": "Map 2 - 00:22:50 - 6th Tower - Entropiq"
+      },
+      {
+        "id": "257787954",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257788017",
+        "text": "Map 2 - 00:25:36 - Race to 20 Kills - Entropiq"
+      },
+      {
+        "id": "257788025",
+        "text": "Map 2 - 00:25:40 - 1st Baron - Entropiq"
+      },
+      {
+        "id": "257788228",
+        "text": "Map 2 - 00:26:59 - 7th Tower - Entropiq"
+      },
+      {
+        "id": "257788258",
+        "text": "Map 2 - 00:27:09 - 8th Tower - Entropiq"
+      },
+      {
+        "id": "257788263",
+        "text": "Map 2 - 00:27:12 - 9th Tower - Nightbirds"
+      },
+      {
+        "id": "257788265",
+        "text": "Map 2 - 00:27:13 - 1st Inhibitor - Entropiq"
+      },
+      {
+        "id": "257788288",
+        "text": "Map 2 - 00:27:21 - 10th Tower - Entropiq"
+      },
+      {
+        "id": "257788315",
+        "text": "Map 2 - 00:27:30 - 2nd Inhibitor - Entropiq"
+      },
+      {
+        "id": "257788460",
+        "text": "Map 2 - 00:28:20 - 5th Dragon (9) - Entropiq"
+      },
+      {
+        "id": "257788463",
+        "text": "Map 2 - 00:28:20 - 6th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257788466",
+        "text": "Map 2 - 00:28:23 - 11th Tower - Nightbirds"
+      },
+      {
+        "id": "257788574",
+        "text": "Map 2 - 00:29:00 - Race to 25 Kills - Entropiq"
+      },
+      {
+        "id": "257788603",
+        "text": "Map 2 - 00:29:08 - 12th Tower - Entropiq"
+      },
+      {
+        "id": "257788632",
+        "text": "Map 2 - 00:29:17 - 13th Tower - Entropiq"
+      },
+      {
+        "id": "257788658",
+        "text": "Map 2 - Winner - Entropiq"
+      },
+      {
+        "id": "257791415",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257792629",
+        "text": "Map 3 - 00:06:39 - 1st Dragon (6) - Entropiq"
+      },
+      {
+        "id": "257792631",
+        "text": "Map 3 - 00:06:39 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257792973",
+        "text": "Map  - 00:08:28 - 1st Blood - Entropiq"
+      },
+      {
+        "id": "257793450",
+        "text": "Map 3 - 00:10:46 - Race to 5 Kills - Entropiq"
+      },
+      {
+        "id": "257793648",
+        "text": "Map 3 - 00:11:55 - 2nd Dragon (5) - Entropiq"
+      },
+      {
+        "id": "257793651",
+        "text": "Map 3 - 00:11:55 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257793917",
+        "text": "Map 3 - 00:13:50 - 1st Tower - Entropiq"
+      },
+      {
+        "id": "257794230",
+        "text": "Map 3 - 00:15:48 - 1st Rift Herald Slain - Entropiq"
+      },
+      {
+        "id": "257794268",
+        "text": "Map 3 - 00:16:09 - 2nd Tower - Entropiq"
+      },
+      {
+        "id": "257794368",
+        "text": "Map 3 - 00:17:03 - 3rd Tower - Nightbirds"
+      },
+      {
+        "id": "257794402",
+        "text": "Map 3 - 00:17:17 - 3rd Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257794403",
+        "text": "Map 3 - 00:17:17 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257794427",
+        "text": "Map 3 - 00:17:35 - 4th Tower - Entropiq"
+      },
+      {
+        "id": "257794511",
+        "text": "Map 3 - 00:18:28 - 5th Tower - Entropiq"
+      },
+      {
+        "id": "257794544",
+        "text": "Map 3 - 00:18:45 - 6th Tower - Entropiq"
+      },
+      {
+        "id": "257794704",
+        "text": "Map 3 - 00:20:27 - Race to 10 Kills - Entropiq"
+      },
+      {
+        "id": "257794943",
+        "text": "Map 3 - 00:22:34 - 4th Dragon (4) - Entropiq"
+      },
+      {
+        "id": "257794945",
+        "text": "Map 3 - 00:22:34 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257795051",
+        "text": "Map 3 - 00:23:29 - 7th Tower - Nightbirds"
+      },
+      {
+        "id": "257795055",
+        "text": "Map 3 - 00:23:35 - 8th Tower - Entropiq"
+      },
+      {
+        "id": "257795192",
+        "text": "Map 3 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257795312",
+        "text": "Map 3 - 00:26:19 - 1st Baron - Entropiq"
+      },
+      {
+        "id": "257795460",
+        "text": "Map 3 - 00:27:33 - 9th Tower - Entropiq"
+      },
+      {
+        "id": "257795465",
+        "text": "Map 3 - 00:27:37 - 1st Inhibitor - Entropiq"
+      },
+      {
+        "id": "257795483",
+        "text": "Map 3 - 00:27:51 - 10th Tower - Entropiq"
+      },
+      {
+        "id": "257795495",
+        "text": "Map 3 - 00:28:00 - Race to 15 Kills - Entropiq"
+      },
+      {
+        "id": "257795505",
+        "text": "Map 3 - 00:28:06 - 11th Tower - Entropiq"
+      },
+      {
+        "id": "257795508",
+        "text": "Map 3 - 00:28:08 - 12th Tower - Entropiq"
+      },
+      {
+        "id": "257795516",
+        "text": "Map 3 - Winner - Entropiq"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "1"
+        ],
+        "gold": [
+          "67k",
+          "61.1k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "22",
+          "9"
+        ],
+        "towers": [
+          "8",
+          "5"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "1"
+        ],
+        "gold": [
+          "59.7k",
+          "51.2k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "26",
+          "6"
+        ],
+        "towers": [
+          "7",
+          "4"
+        ]
+      },
+      "3": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "58.7k",
+          "47.4k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "16",
+          "4"
+        ],
+        "towers": [
+          "10",
+          "2"
+        ]
+      }
+    },
+    "inplay_created_at": "1755611525",
+    "inplay_updated_at": "1755620994",
+    "bet365_id": "179761098",
+    "event_data": {
+      "id": "179761098",
+      "sport_id": "151",
+      "time": "1755612000",
+      "time_status": "3",
+      "league": {
+        "id": "10075173",
+        "name": "LOL - Hitpoint Masters Summer Playoffs"
+      },
+      "home": {
+        "id": "10511537",
+        "name": "Entropiq"
+      },
+      "away": {
+        "id": "11250127",
+        "name": "Nightbirds"
+      },
+      "ss": "3-0",
+      "our_event_id": "10500561",
+      "r_id": "179761098C151A",
+      "updated_at": "1755620994",
+      "odds_updated_at": "1755620986"
+    }
+  },
+  "summary": {
+    "home_team": "Entropiq",
+    "away_team": "Nightbirds",
+    "final_score": "3-0",
+    "league": "LOL - Hitpoint Masters Summer Playoffs",
+    "match_date": "2025-08-19T10:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

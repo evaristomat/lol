@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:45.239703",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179555585",
+    "sport_id": "151",
+    "time": "1755626400",
+    "time_status": "3",
+    "league": {
+      "id": "10086144",
+      "name": "LOL - ROL Summer"
+    },
+    "home": {
+      "id": "10968524",
+      "name": "ZennIT"
+    },
+    "away": {
+      "id": "11108031",
+      "name": "Once Upon A Team"
+    },
+    "ss": "1-0",
+    "our_event_id": "10438568",
+    "r_id": "179555585C151A",
+    "updated_at": "1755635501",
+    "odds_updated_at": "1755634924"
+  },
+  "result_info": {
+    "id": "10438568",
+    "sport_id": "151",
+    "time": "1755626400",
+    "time_status": "3",
+    "league": {
+      "id": "40960",
+      "name": "LOL - ROL Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "817637",
+      "name": "ZennIT",
+      "image_id": "984353",
+      "cc": null
+    },
+    "away": {
+      "id": "959030",
+      "name": "Once Upon A Team",
+      "image_id": "1098175",
+      "cc": null
+    },
+    "ss": "2-1",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "3": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "1"
+      }
+    },
+    "events": [
+      {
+        "id": "257811179",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257811702",
+        "text": "Map  - 00:02:59 - 1st Blood - Once Upon A Team"
+      },
+      {
+        "id": "257812280",
+        "text": "Map 1 - 00:07:23 - 1st Dragon (6) - ZennIT"
+      },
+      {
+        "id": "257812281",
+        "text": "Map 1 - 00:07:23 - 2nd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257812881",
+        "text": "Map 1 - 00:12:21 - 1st Tower - ZennIT"
+      },
+      {
+        "id": "257813008",
+        "text": "Map 1 - 00:13:16 - Race to 5 Kills - ZennIT"
+      },
+      {
+        "id": "257813032",
+        "text": "Map 1 - 00:13:22 - 2nd Dragon (4) - ZennIT"
+      },
+      {
+        "id": "257813033",
+        "text": "Map 1 - 00:13:22 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257813313",
+        "text": "Map 1 - 00:15:24 - 1st Rift Herald Slain - ZennIT"
+      },
+      {
+        "id": "257813366",
+        "text": "Map 1 - 00:15:47 - 2nd Tower - ZennIT"
+      },
+      {
+        "id": "257813427",
+        "text": "Map 1 - 00:16:14 - 3rd Tower - ZennIT"
+      },
+      {
+        "id": "257813446",
+        "text": "Map 1 - 00:16:24 - 4th Tower - Once Upon A Team"
+      },
+      {
+        "id": "257813620",
+        "text": "Map 1 - 00:17:39 - 5th Tower - ZennIT"
+      },
+      {
+        "id": "257813633",
+        "text": "Map 1 - 00:17:49 - 6th Tower - Once Upon A Team"
+      },
+      {
+        "id": "257813651",
+        "text": "Map 1 - 00:17:57 - 7th Tower - ZennIT"
+      },
+      {
+        "id": "257813825",
+        "text": "Map 1 - 00:19:17 - 3rd Dragon (8) - ZennIT"
+      },
+      {
+        "id": "257813826",
+        "text": "Map 1 - 00:19:17 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257814042",
+        "text": "Map 1 - 00:20:47 - Race to 10 Kills - ZennIT"
+      },
+      {
+        "id": "257814161",
+        "text": "Map 1 - 00:21:27 - 8th Tower - ZennIT"
+      },
+      {
+        "id": "257814827",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257814839",
+        "text": "Map 1 - 00:25:03 - 4th Dragon (8) - Once Upon A Team"
+      },
+      {
+        "id": "257814840",
+        "text": "Map 1 - 00:25:03 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257815265",
+        "text": "Map 1 - 00:27:51 - 1st Baron - ZennIT"
+      },
+      {
+        "id": "257815801",
+        "text": "Map 1 - 00:29:39 - Race to 15 Kills - ZennIT"
+      },
+      {
+        "id": "257815820",
+        "text": "Map 1 - 00:29:46 - 9th Tower - ZennIT"
+      },
+      {
+        "id": "257815858",
+        "text": "Map 1 - 00:29:58 - 10th Tower - ZennIT"
+      },
+      {
+        "id": "257815875",
+        "text": "Map 1 - 00:30:03 - 1st Inhibitor - ZennIT"
+      },
+      {
+        "id": "257815878",
+        "text": "Map 1 - 00:30:03 - 1st Inhibitor - ZennIT"
+      },
+      {
+        "id": "257815897",
+        "text": "Map 1 - 00:30:10 - 11th Tower - ZennIT"
+      },
+      {
+        "id": "257815931",
+        "text": "Map 1 - 00:30:20 - 12th Tower - ZennIT"
+      },
+      {
+        "id": "257815943",
+        "text": "Map 1 - 00:30:29 - Race to 20 Kills - ZennIT"
+      },
+      {
+        "id": "257815945",
+        "text": "Map 1 - Winner - ZennIT"
+      },
+      {
+        "id": "257819109",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257819643",
+        "text": "Map  - 00:03:38 - 1st Blood - Once Upon A Team"
+      },
+      {
+        "id": "257820305",
+        "text": "Map 2 - 00:07:44 - 1st Dragon (4) - Once Upon A Team"
+      },
+      {
+        "id": "257820306",
+        "text": "Map 2 - 00:07:44 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257820831",
+        "text": "Map 2 - 00:11:40 - 1st Tower - ZennIT"
+      },
+      {
+        "id": "257820990",
+        "text": "Map 2 - 00:13:12 - 2nd Dragon (5) - Once Upon A Team"
+      },
+      {
+        "id": "257820991",
+        "text": "Map 2 - 00:13:12 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257821015",
+        "text": "Map 2 - 00:13:25 - 2nd Tower - ZennIT"
+      },
+      {
+        "id": "257821258",
+        "text": "Map 2 - 00:15:55 - 1st Rift Herald Slain - ZennIT"
+      },
+      {
+        "id": "257821272",
+        "text": "Map 2 - 00:16:09 - Race to 5 Kills - ZennIT"
+      },
+      {
+        "id": "257821343",
+        "text": "Map 2 - 00:16:53 - 3rd Tower - ZennIT"
+      },
+      {
+        "id": "257821457",
+        "text": "Map 2 - 00:18:21 - 4th Tower - ZennIT"
+      },
+      {
+        "id": "257821541",
+        "text": "Map 2 - 00:19:11 - 3rd Dragon (9) - Once Upon A Team"
+      },
+      {
+        "id": "257821542",
+        "text": "Map 2 - 00:19:11 - 3rd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257821557",
+        "text": "Map 2 - 00:19:20 - 5th Tower - ZennIT"
+      },
+      {
+        "id": "257821760",
+        "text": "Map 2 - 00:21:18 - Race to 10 Kills - ZennIT"
+      },
+      {
+        "id": "257822157",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257822189",
+        "text": "Map 2 - 00:25:14 - 4th Dragon (9) - Once Upon A Team"
+      },
+      {
+        "id": "257822195",
+        "text": "Map 2 - 00:25:14 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257822208",
+        "text": "Map 2 - 00:25:19 - Race to 15 Kills - ZennIT"
+      },
+      {
+        "id": "257822285",
+        "text": "Map 2 - 00:25:47 - 6th Tower - ZennIT"
+      },
+      {
+        "id": "257822292",
+        "text": "Map 2 - 00:25:51 - 1st Inhibitor - ZennIT"
+      },
+      {
+        "id": "257822316",
+        "text": "Map 2 - 00:26:02 - 7th Tower - ZennIT"
+      },
+      {
+        "id": "257822325",
+        "text": "Map 2 - 00:26:04 - 8th Tower - ZennIT"
+      },
+      {
+        "id": "257822492",
+        "text": "Map 2 - 00:26:58 - 1st Baron - Once Upon A Team"
+      },
+      {
+        "id": "257822705",
+        "text": "Map 2 - 00:28:04 - 9th Tower - Once Upon A Team"
+      },
+      {
+        "id": "257822793",
+        "text": "Map 2 - 00:28:44 - 10th Tower - Once Upon A Team"
+      },
+      {
+        "id": "257823028",
+        "text": "Map 2 - 00:30:12 - 11th Tower - ZennIT"
+      },
+      {
+        "id": "257823037",
+        "text": "Map 2 - 00:30:16 - 2nd Inhibitor - ZennIT"
+      },
+      {
+        "id": "257823131",
+        "text": "Map 2 - 00:30:52 - 1st Inhibitor Spawned - ZennIT"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "60.1k",
+          "51.2k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "17",
+          "6"
+        ],
+        "towers": [
+          "9",
+          "2"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "0",
+          "4"
+        ],
+        "gold": [
+          "56k",
+          "54.8k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "18",
+          "15"
+        ],
+        "towers": [
+          "9",
+          "2"
+        ]
+      }
+    },
+    "inplay_created_at": "1755625716",
+    "inplay_updated_at": "1755635501",
+    "confirmed_at": "1755649390",
+    "bet365_id": "179555585",
+    "event_data": {
+      "id": "179555585",
+      "sport_id": "151",
+      "time": "1755626400",
+      "time_status": "3",
+      "league": {
+        "id": "10086144",
+        "name": "LOL - ROL Summer"
+      },
+      "home": {
+        "id": "10968524",
+        "name": "ZennIT"
+      },
+      "away": {
+        "id": "11108031",
+        "name": "Once Upon A Team"
+      },
+      "ss": "1-0",
+      "our_event_id": "10438568",
+      "r_id": "179555585C151A",
+      "updated_at": "1755635501",
+      "odds_updated_at": "1755634924"
+    }
+  },
+  "summary": {
+    "home_team": "ZennIT",
+    "away_team": "Once Upon A Team",
+    "final_score": "2-1",
+    "league": "LOL - ROL Summer",
+    "match_date": "2025-08-19T14:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

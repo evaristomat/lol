@@ -1,0 +1,421 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:57.686842",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179331773",
+    "sport_id": "151",
+    "time": "1755536400",
+    "time_status": "3",
+    "league": {
+      "id": "10049229",
+      "name": "LOL - LEC Summer"
+    },
+    "home": {
+      "id": "10361304",
+      "name": "G2 Esports"
+    },
+    "away": {
+      "id": "10476278",
+      "name": "Team BDS"
+    },
+    "ss": "2-0",
+    "our_event_id": "10418991",
+    "r_id": "179331773C151A",
+    "updated_at": "1755544586",
+    "odds_updated_at": "1755539073"
+  },
+  "result_info": {
+    "id": "10418991",
+    "sport_id": "151",
+    "time": "1755536400",
+    "time_status": "3",
+    "league": {
+      "id": "16416",
+      "name": "LOL - LEC Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "4003",
+      "name": "G2 Esports",
+      "image_id": "516754",
+      "cc": "es"
+    },
+    "away": {
+      "id": "337712",
+      "name": "Team BDS",
+      "image_id": "682455",
+      "cc": null
+    },
+    "ss": "2-0",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "0"
+      }
+    },
+    "events": [
+      {
+        "id": "257666468",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257666906",
+        "text": "Map  - 00:03:50 - 1st Blood - Team BDS"
+      },
+      {
+        "id": "257667672",
+        "text": "Map 1 - 00:10:25 - 1st Dragon (8) - Team BDS"
+      },
+      {
+        "id": "257667673",
+        "text": "Map 1 - 00:10:25 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257668552",
+        "text": "Map 1 - 00:16:23 - 2nd Dragon (4) - Team BDS"
+      },
+      {
+        "id": "257668553",
+        "text": "Map 1 - 00:16:23 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257668580",
+        "text": "Map 1 - 00:16:37 - 1st Tower - Team BDS"
+      },
+      {
+        "id": "257668604",
+        "text": "Map 1 - 00:16:47 - 1st Rift Herald Slain - G2 Esports"
+      },
+      {
+        "id": "257668743",
+        "text": "Map 1 - 00:17:46 - Race to 5 Kills - Team BDS"
+      },
+      {
+        "id": "257669266",
+        "text": "Map 1 - 00:21:27 - 2nd Tower - G2 Esports"
+      },
+      {
+        "id": "257669330",
+        "text": "Map 1 - 00:21:44 - 3rd Tower - Team BDS"
+      },
+      {
+        "id": "257669336",
+        "text": "Map 1 - 00:21:46 - 3rd Dragon (6) - G2 Esports"
+      },
+      {
+        "id": "257669337",
+        "text": "Map 1 - 00:21:46 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257669685",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257669881",
+        "text": "Map 1 - 00:26:28 - 4th Tower - Team BDS"
+      },
+      {
+        "id": "257669956",
+        "text": "Map 1 - 00:27:06 - 5th Tower - G2 Esports"
+      },
+      {
+        "id": "257670024",
+        "text": "Map 1 - 00:27:53 - 6th Tower - G2 Esports"
+      },
+      {
+        "id": "257670033",
+        "text": "Map 1 - 00:27:54 - 4th Dragon (6) - Team BDS"
+      },
+      {
+        "id": "257670034",
+        "text": "Map 1 - 00:27:54 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257670246",
+        "text": "Map 1 - 00:29:50 - 7th Tower - Team BDS"
+      },
+      {
+        "id": "257670281",
+        "text": "Map 1 - 00:30:08 - 1st Baron - G2 Esports"
+      },
+      {
+        "id": "257670416",
+        "text": "Map 1 - 00:31:24 - 8th Tower - G2 Esports"
+      },
+      {
+        "id": "257670463",
+        "text": "Map 1 - 00:31:48 - 9th Tower - G2 Esports"
+      },
+      {
+        "id": "257670467",
+        "text": "Map 1 - 00:31:50 - 10th Tower - G2 Esports"
+      },
+      {
+        "id": "257670496",
+        "text": "Map 1 - 00:32:11 - Race to 10 Kills - G2 Esports"
+      },
+      {
+        "id": "257670566",
+        "text": "Map 1 - 00:33:03 - 5th Dragon (6) - G2 Esports"
+      },
+      {
+        "id": "257670567",
+        "text": "Map 1 - 00:33:03 - 6th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257670635",
+        "text": "Map 1 - 00:33:39 - 11th Tower - G2 Esports"
+      },
+      {
+        "id": "257670645",
+        "text": "Map 1 - 00:33:43 - 1st Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257670654",
+        "text": "Map 1 - 00:33:49 - 2nd Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257670814",
+        "text": "Map 1 - 00:35:22 - 12th Tower - G2 Esports"
+      },
+      {
+        "id": "257670900",
+        "text": "Map 1 - 00:36:06 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257670902",
+        "text": "Map 1 - 00:36:09 - Race to 15 Kills - G2 Esports"
+      },
+      {
+        "id": "257670983",
+        "text": "Map 1 - 00:36:53 - 13th Tower - G2 Esports"
+      },
+      {
+        "id": "257670990",
+        "text": "Map 1 - 00:36:58 - 14th Tower - G2 Esports"
+      },
+      {
+        "id": "257671005",
+        "text": "Map 1 - Winner - G2 Esports"
+      },
+      {
+        "id": "257673594",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257674098",
+        "text": "Map  - 00:05:06 - 1st Blood - G2 Esports"
+      },
+      {
+        "id": "257674776",
+        "text": "Map 2 - 00:11:03 - 1st Dragon (4) - Team BDS"
+      },
+      {
+        "id": "257674777",
+        "text": "Map 2 - 00:11:03 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257675195",
+        "text": "Map 2 - 00:14:31 - 1st Tower - G2 Esports"
+      },
+      {
+        "id": "257675448",
+        "text": "Map 2 - 00:16:44 - 1st Rift Herald Slain - Team BDS"
+      },
+      {
+        "id": "257675474",
+        "text": "Map 2 - 00:16:56 - 2nd Tower - Team BDS"
+      },
+      {
+        "id": "257675475",
+        "text": "Map 2 - 00:16:58 - 2nd Dragon (8) - G2 Esports"
+      },
+      {
+        "id": "257675476",
+        "text": "Map 2 - 00:16:58 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257675572",
+        "text": "Map 2 - 00:17:43 - Race to 5 Kills - G2 Esports"
+      },
+      {
+        "id": "257675583",
+        "text": "Map 2 - 00:17:47 - Quadra Kill - Dr. Mundo"
+      },
+      {
+        "id": "257675802",
+        "text": "Map 2 - 00:19:15 - 3rd Tower - G2 Esports"
+      },
+      {
+        "id": "257675818",
+        "text": "Map 2 - 00:19:22 - 4th Tower - Team BDS"
+      },
+      {
+        "id": "257675822",
+        "text": "Map 2 - 00:19:25 - 5th Tower - G2 Esports"
+      },
+      {
+        "id": "257675869",
+        "text": "Map 2 - 00:19:43 - 6th Tower - Team BDS"
+      },
+      {
+        "id": "257676035",
+        "text": "Map 2 - 00:20:58 - 7th Tower - Team BDS"
+      },
+      {
+        "id": "257676277",
+        "text": "Map 2 - 00:22:52 - 8th Tower - G2 Esports"
+      },
+      {
+        "id": "257676312",
+        "text": "Map 2 - 00:23:07 - 9th Tower - G2 Esports"
+      },
+      {
+        "id": "257676326",
+        "text": "Map 2 - 00:23:15 - Race to 10 Kills - G2 Esports"
+      },
+      {
+        "id": "257676345",
+        "text": "Map 2 - 00:23:20 - 10th Tower - G2 Esports"
+      },
+      {
+        "id": "257676523",
+        "text": "Map 2 - 00:24:34 - 3rd Dragon (6) - G2 Esports"
+      },
+      {
+        "id": "257676524",
+        "text": "Map 2 - 00:24:34 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257676579",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257676659",
+        "text": "Map 2 - 00:25:45 - Race to 15 Kills - G2 Esports"
+      },
+      {
+        "id": "257676680",
+        "text": "Map 2 - 00:25:54 - 11th Tower - G2 Esports"
+      },
+      {
+        "id": "257676687",
+        "text": "Map 2 - 00:25:57 - 1st Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257676703",
+        "text": "Map 2 - 00:26:05 - 12th Tower - G2 Esports"
+      },
+      {
+        "id": "257676714",
+        "text": "Map 2 - 00:26:10 - 13th Tower - G2 Esports"
+      },
+      {
+        "id": "257676732",
+        "text": "Map 2 - Winner - G2 Esports"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "73.5k",
+          "62k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "18",
+          "9"
+        ],
+        "towers": [
+          "10",
+          "4"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "1"
+        ],
+        "gold": [
+          "53.3k",
+          "41.9k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "15",
+          "3"
+        ],
+        "towers": [
+          "9",
+          "4"
+        ]
+      }
+    },
+    "inplay_created_at": "1755538220",
+    "inplay_updated_at": "1755544586",
+    "confirmed_at": "1755648096",
+    "bet365_id": "179331773",
+    "event_data": {
+      "id": "179331773",
+      "sport_id": "151",
+      "time": "1755536400",
+      "time_status": "3",
+      "league": {
+        "id": "10049229",
+        "name": "LOL - LEC Summer"
+      },
+      "home": {
+        "id": "10361304",
+        "name": "G2 Esports"
+      },
+      "away": {
+        "id": "10476278",
+        "name": "Team BDS"
+      },
+      "ss": "2-0",
+      "our_event_id": "10418991",
+      "r_id": "179331773C151A",
+      "updated_at": "1755544586",
+      "odds_updated_at": "1755539073"
+    }
+  },
+  "summary": {
+    "home_team": "G2 Esports",
+    "away_team": "Team BDS",
+    "final_score": "2-0",
+    "league": "LOL - LEC Summer",
+    "match_date": "2025-08-18T13:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

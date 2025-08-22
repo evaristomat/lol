@@ -1,0 +1,64 @@
+2025-08-21 14:29:44 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-21 14:29:44 | INFO     | run_update           | ============================================================
+2025-08-21 14:29:44 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-21 14:29:44 | INFO     | run_update           | ============================================================
+2025-08-21 14:29:44 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-21 14:29:44 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 10 dias
+2025-08-21 14:29:44 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-21 14:29:45 | INFO     | fetch_upcoming_events |    ✅ 17 jogos de LoL encontrados
+2025-08-21 14:29:45 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-21 14:29:45 | INFO     | fetch_upcoming_events |    ✅ 17 jogos de LoL encontrados
+2025-08-21 14:29:45 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-21 14:29:46 | INFO     | fetch_upcoming_events |    ✅ 14 jogos de LoL encontrados
+2025-08-21 14:29:46 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-21 14:29:46 | INFO     | fetch_upcoming_events |    ✅ 8 jogos de LoL encontrados
+2025-08-21 14:29:46 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-25
+2025-08-21 14:29:47 | INFO     | fetch_upcoming_events |    ✅ 6 jogos de LoL encontrados
+2025-08-21 14:29:47 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-26
+2025-08-21 14:29:47 | INFO     | fetch_upcoming_events |    ✅ 6 jogos de LoL encontrados
+2025-08-21 14:29:47 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-27
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events |    ✅ 3 jogos de LoL encontrados
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-28
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events |    ✅ 2 jogos de LoL encontrados
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-29
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events |    ℹ️  Nenhum jogo de LoL encontrado
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-30
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-21 14:29:48 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-31
+2025-08-21 14:29:49 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-21 14:29:49 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 75
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: LGD Gaming vs Ultra Prime - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: FunPlus Phoenix vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: SK Gaming vs G2 Esports - LOL - LEC Summer
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Team BDS vs Team Heretics - LOL - LEC Summer
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: KaBuM! IDL vs Corinthians Esports - LOL - CD Split 2 Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Estral Esports vs SDM Tigers - LOL - LRN Split 2 Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Team WE vs Invictus Gaming - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Top Esports vs FunPlus Phoenix - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Team Vitality vs Movistar KOI - LOL - LEC Summer
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Natus Vincere vs GIANTX - LOL - LEC Summer
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Maze Gaming vs Seven Dark - LOL - LRS Split 2 Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: e-Champ Gaming vs Flamengo MDL - LOL - CD Split 2 Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Weibo Gaming vs JD Gaming - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Team WE vs Anyone's Legend - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Colossal Gaming vs GMBLERS ESPORTS - LOL - LIT Summer Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Invictus Gaming vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Zena Esports vs aNc Legends - LOL - LIT Summer Playoffs
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: DFM Academy vs QT DIG - LOL - LJL Finals
+2025-08-21 14:29:49 | INFO     | save_events          | ✅ Novo evento: Shopify Rebellion vs FlyQuest - LOL - LTA North Split 3
+2025-08-21 14:29:49 | INFO     | save_events          | 📝 Eventos processados - Novos: 19, Existentes: 56, Times criados: 19
+2025-08-21 14:29:49 | INFO     | run_update           | ✅ Fase 1 concluída - 19 novos eventos adicionados
+2025-08-21 14:29:49 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-21 14:29:49 | INFO     | fetch_and_save_odds  | 💰 Coletando odds para 19 eventos em lotes de 5
+2025-08-21 14:29:49 | INFO     | fetch_and_save_odds  |    📦 Processando lote 1/4
+2025-08-21 14:29:51 | INFO     | fetch_and_save_odds  |    📦 Processando lote 2/4
+2025-08-21 14:29:52 | INFO     | fetch_and_save_odds  |    📦 Processando lote 3/4
+2025-08-21 14:29:54 | INFO     | fetch_and_save_odds  |    📦 Processando lote 4/4
+2025-08-21 14:29:55 | INFO     | fetch_and_save_odds  | 📊 Coleta finalizada: 19/19 eventos com odds
+2025-08-21 14:29:55 | INFO     | run_update           | ✅ Fase 2 concluída - 19 eventos com odds atualizadas
+2025-08-21 14:29:55 | INFO     | run_update           | 💾 Dashboard salvo em: C:\ProgramData\anaconda3\envs\bet365\lol_api\reports\dashboard_20250821_142955.txt
+2025-08-21 14:29:55 | INFO     | run_update           | 
+✅ ATUALIZAÇÃO COMPLETA EM 11.0 SEGUNDOS
+2025-08-21 14:29:55 | INFO     | close                | 🔌 Conexões fechadas

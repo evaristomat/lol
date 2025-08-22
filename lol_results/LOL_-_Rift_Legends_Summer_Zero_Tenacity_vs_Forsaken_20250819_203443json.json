@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:43.649862",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179555500",
+    "sport_id": "151",
+    "time": "1755626400",
+    "time_status": "3",
+    "league": {
+      "id": "10086212",
+      "name": "LOL - Rift Legends Summer"
+    },
+    "home": {
+      "id": "10490589",
+      "name": "Zero Tenacity"
+    },
+    "away": {
+      "id": "10800507",
+      "name": "Forsaken"
+    },
+    "ss": "0-2",
+    "our_event_id": "10485201",
+    "r_id": "179555500C151A",
+    "updated_at": "1755632606",
+    "odds_updated_at": "1755632335"
+  },
+  "result_info": {
+    "id": "10485201",
+    "sport_id": "151",
+    "time": "1755626400",
+    "time_status": "3",
+    "league": {
+      "id": "41030",
+      "name": "LOL - Rift Legends Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "347892",
+      "name": "Zero Tenacity",
+      "image_id": "1207631",
+      "cc": null
+    },
+    "away": {
+      "id": "650465",
+      "name": "Forsaken",
+      "image_id": "866715",
+      "cc": null
+    },
+    "ss": "0-2",
+    "events": [
+      {
+        "id": "257811423",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257812289",
+        "text": "Map  - 00:03:37 - 1st Blood - Zero Tenacity"
+      },
+      {
+        "id": "257813359",
+        "text": "Map 1 - 00:11:51 - 1st Dragon (5) - Forsaken"
+      },
+      {
+        "id": "257813360",
+        "text": "Map 1 - 00:11:51 - 2nd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257813897",
+        "text": "Map 1 - 00:15:50 - 1st Rift Herald Slain - Zero Tenacity"
+      },
+      {
+        "id": "257813916",
+        "text": "Map 1 - 00:15:57 - Race to 5 Kills - Forsaken"
+      },
+      {
+        "id": "257814156",
+        "text": "Map 1 - 00:17:31 - 2nd Dragon (8) - Zero Tenacity"
+      },
+      {
+        "id": "257814157",
+        "text": "Map 1 - 00:17:31 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257814252",
+        "text": "Map 1 - 00:18:00 - 1st Tower - Zero Tenacity"
+      },
+      {
+        "id": "257814460",
+        "text": "Map 1 - 00:19:06 - 2nd Tower - Zero Tenacity"
+      },
+      {
+        "id": "257814612",
+        "text": "Map 1 - 00:19:53 - 3rd Tower - Zero Tenacity"
+      },
+      {
+        "id": "257814852",
+        "text": "Map 1 - 00:21:16 - 4th Tower - Forsaken"
+      },
+      {
+        "id": "257815112",
+        "text": "Map 1 - 00:22:56 - 3rd Dragon (9) - Zero Tenacity"
+      },
+      {
+        "id": "257815116",
+        "text": "Map 1 - 00:22:56 - 4th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257815336",
+        "text": "Map 1 - 00:24:29 - 5th Tower - Forsaken"
+      },
+      {
+        "id": "257815441",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257815572",
+        "text": "Map 1 - 00:25:53 - 6th Tower - Forsaken"
+      },
+      {
+        "id": "257815595",
+        "text": "Map 1 - 00:26:01 - Race to 10 Kills - Forsaken"
+      },
+      {
+        "id": "257816171",
+        "text": "Map 1 - 00:29:42 - 4th Dragon (9) - Forsaken"
+      },
+      {
+        "id": "257816173",
+        "text": "Map 1 - 00:29:42 - 5th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257816295",
+        "text": "Map 1 - 00:30:44 - 1st Baron - Zero Tenacity"
+      },
+      {
+        "id": "257816405",
+        "text": "Map 1 - 00:31:31 - Race to 15 Kills - Zero Tenacity"
+      },
+      {
+        "id": "257816543",
+        "text": "Map 1 - 00:32:23 - 7th Tower - Zero Tenacity"
+      },
+      {
+        "id": "257816716",
+        "text": "Map 1 - 00:33:26 - 8th Tower - Forsaken"
+      },
+      {
+        "id": "257816905",
+        "text": "Map 1 - 00:34:35 - Race to 20 Kills - Forsaken"
+      },
+      {
+        "id": "257816982",
+        "text": "Map 1 - 00:35:07 - 5th Dragon (9) - Forsaken"
+      },
+      {
+        "id": "257816983",
+        "text": "Map 1 - 00:35:07 - 6th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257817008",
+        "text": "Map 1 - 00:35:20 - 9th Tower - Forsaken"
+      },
+      {
+        "id": "257817153",
+        "text": "Map 1 - 00:36:42 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257817396",
+        "text": "Map 1 - 00:38:34 - Race to 25 Kills - Forsaken"
+      },
+      {
+        "id": "257817428",
+        "text": "Map 1 - 00:38:51 - 10th Tower - Forsaken"
+      },
+      {
+        "id": "257817444",
+        "text": "Map 1 - 00:38:56 - 1st Inhibitor - Forsaken"
+      },
+      {
+        "id": "257817456",
+        "text": "Map 1 - 00:39:02 - 11th Tower - Forsaken"
+      },
+      {
+        "id": "257817462",
+        "text": "Map 1 - 00:39:05 - 12th Tower - Forsaken"
+      },
+      {
+        "id": "257817483",
+        "text": "Map 1 - Winner - Forsaken"
+      },
+      {
+        "id": "257820523",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257821098",
+        "text": "Map  - 00:03:21 - 1st Blood - Forsaken"
+      },
+      {
+        "id": "257821315",
+        "text": "Map 2 - 00:05:44 - 1st Dragon (5) - Forsaken"
+      },
+      {
+        "id": "257821316",
+        "text": "Map 2 - 00:05:44 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257821780",
+        "text": "Map 2 - 00:10:41 - Race to 5 Kills - Forsaken"
+      },
+      {
+        "id": "257821830",
+        "text": "Map 2 - 00:11:09 - 2nd Dragon (8) - Forsaken"
+      },
+      {
+        "id": "257821832",
+        "text": "Map 2 - 00:11:09 - 3rd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257822152",
+        "text": "Map 2 - 00:14:04 - 1st Tower - Forsaken"
+      },
+      {
+        "id": "257822220",
+        "text": "Map 2 - 00:14:28 - 2nd Tower - Forsaken"
+      },
+      {
+        "id": "257822413",
+        "text": "Map 2 - 00:15:37 - 1st Rift Herald Slain - Forsaken"
+      },
+      {
+        "id": "257822445",
+        "text": "Map 2 - 00:15:48 - 3rd Tower - Zero Tenacity"
+      },
+      {
+        "id": "257822482",
+        "text": "Map 2 - 00:15:59 - 4th Tower - Forsaken"
+      },
+      {
+        "id": "257822678",
+        "text": "Map 2 - 00:16:58 - 3rd Dragon (9) - Forsaken"
+      },
+      {
+        "id": "257822679",
+        "text": "Map 2 - 00:16:58 - 3rd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257822690",
+        "text": "Map 2 - 00:17:06 - Race to 10 Kills - Forsaken"
+      },
+      {
+        "id": "257822758",
+        "text": "Map 2 - 00:17:34 - 5th Tower - Forsaken"
+      },
+      {
+        "id": "257822943",
+        "text": "Map 2 - 00:18:45 - 6th Tower - Forsaken"
+      },
+      {
+        "id": "257823005",
+        "text": "Map 2 - 00:19:09 - 7th Tower - Forsaken"
+      },
+      {
+        "id": "257823249",
+        "text": "Map 2 - 00:20:48 - Race to 15 Kills - Forsaken"
+      },
+      {
+        "id": "257823464",
+        "text": "Map 2 - 00:22:19 - Race to 20 Kills - Forsaken"
+      },
+      {
+        "id": "257823534",
+        "text": "Map 2 - 00:22:47 - 8th Tower - Forsaken"
+      },
+      {
+        "id": "257823535",
+        "text": "Map 2 - 00:22:48 - 9th Tower - Forsaken"
+      },
+      {
+        "id": "257823578",
+        "text": "Map 2 - 00:23:06 - 4th Dragon (9) - Forsaken"
+      },
+      {
+        "id": "257823580",
+        "text": "Map 2 - 00:23:06 - 4th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257823782",
+        "text": "Map 2 - 00:24:47 - Race to 25 Kills - Forsaken"
+      },
+      {
+        "id": "257823823",
+        "text": "Map 2 - 00:24:59 - 1st Inhibitor - Forsaken"
+      },
+      {
+        "id": "257823826",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257823829",
+        "text": "Map 2 - 00:25:03 - 10th Tower - Forsaken"
+      },
+      {
+        "id": "257823835",
+        "text": "Map 2 - 00:25:06 - 11th Tower - Forsaken"
+      },
+      {
+        "id": "257823859",
+        "text": "Map 2 - Winner - Forsaken"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "68.6k",
+          "75.8k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "18",
+          "27"
+        ],
+        "towers": [
+          "4",
+          "8"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "0",
+          "4"
+        ],
+        "gold": [
+          "40.9k",
+          "54.9k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "11",
+          "28"
+        ],
+        "towers": [
+          "1",
+          "10"
+        ]
+      }
+    },
+    "inplay_created_at": "1755625658",
+    "inplay_updated_at": "1755632606",
+    "bet365_id": "179555500",
+    "event_data": {
+      "id": "179555500",
+      "sport_id": "151",
+      "time": "1755626400",
+      "time_status": "3",
+      "league": {
+        "id": "10086212",
+        "name": "LOL - Rift Legends Summer"
+      },
+      "home": {
+        "id": "10490589",
+        "name": "Zero Tenacity"
+      },
+      "away": {
+        "id": "10800507",
+        "name": "Forsaken"
+      },
+      "ss": "0-2",
+      "our_event_id": "10485201",
+      "r_id": "179555500C151A",
+      "updated_at": "1755632606",
+      "odds_updated_at": "1755632335"
+    }
+  },
+  "summary": {
+    "home_team": "Zero Tenacity",
+    "away_team": "Forsaken",
+    "final_score": "0-2",
+    "league": "LOL - Rift Legends Summer",
+    "match_date": "2025-08-19T14:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

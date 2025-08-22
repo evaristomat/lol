@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:16.612999",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179331769",
+    "sport_id": "151",
+    "time": "1755450000",
+    "time_status": "3",
+    "league": {
+      "id": "10049229",
+      "name": "LOL - LEC Summer"
+    },
+    "home": {
+      "id": "10361260",
+      "name": "Fnatic"
+    },
+    "away": {
+      "id": "10361304",
+      "name": "G2 Esports"
+    },
+    "ss": "0-2",
+    "our_event_id": "10418992",
+    "r_id": "179331769C151A",
+    "updated_at": "1755454370",
+    "odds_updated_at": "1755454075"
+  },
+  "result_info": {
+    "id": "10418992",
+    "sport_id": "151",
+    "time": "1755449100",
+    "time_status": "3",
+    "league": {
+      "id": "16416",
+      "name": "LOL - LEC Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "2895",
+      "name": "Fnatic",
+      "image_id": "247431",
+      "cc": "gb"
+    },
+    "away": {
+      "id": "4003",
+      "name": "G2 Esports",
+      "image_id": "516754",
+      "cc": "es"
+    },
+    "ss": "0-2",
+    "scores": {
+      "1": {
+        "home": "0",
+        "away": "1"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "0",
+        "away": "2"
+      }
+    },
+    "events": [
+      {
+        "id": "257517950",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257518798",
+        "text": "Map  - 00:07:01 - 1st Blood - Fnatic"
+      },
+      {
+        "id": "257519018",
+        "text": "Map 1 - 00:08:57 - 1st Dragon (9) - Fnatic"
+      },
+      {
+        "id": "257519019",
+        "text": "Map 1 - 00:08:57 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257519779",
+        "text": "Map 1 - 00:14:29 - 2nd Dragon (6) - G2 Esports"
+      },
+      {
+        "id": "257519782",
+        "text": "Map 1 - 00:14:29 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257519991",
+        "text": "Map 1 - 00:15:36 - 1st Rift Herald Slain - Fnatic"
+      },
+      {
+        "id": "257520026",
+        "text": "Map 1 - 00:15:49 - Race to 5 Kills - G2 Esports"
+      },
+      {
+        "id": "257520186",
+        "text": "Map 1 - 00:16:34 - 1st Tower - G2 Esports"
+      },
+      {
+        "id": "257520707",
+        "text": "Map 1 - 00:19:25 - 2nd Tower - G2 Esports"
+      },
+      {
+        "id": "257520738",
+        "text": "Map 1 - 00:19:34 - 3rd Tower - Fnatic"
+      },
+      {
+        "id": "257520828",
+        "text": "Map 1 - 00:20:00 - 3rd Dragon (4) - G2 Esports"
+      },
+      {
+        "id": "257520829",
+        "text": "Map 1 - 00:20:00 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257520887",
+        "text": "Map 1 - 00:20:23 - 4th Tower - Fnatic"
+      },
+      {
+        "id": "257521543",
+        "text": "Map 1 - 00:23:59 - Race to 10 Kills - G2 Esports"
+      },
+      {
+        "id": "257521600",
+        "text": "Map 1 - 00:24:25 - 5th Tower - G2 Esports"
+      },
+      {
+        "id": "257521607",
+        "text": "Map 1 - 00:24:27 - 6th Tower - G2 Esports"
+      },
+      {
+        "id": "257521688",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257521741",
+        "text": "Map 1 - 00:25:16 - 4th Dragon (4) - G2 Esports"
+      },
+      {
+        "id": "257521742",
+        "text": "Map 1 - 00:25:16 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257521772",
+        "text": "Map 1 - 00:25:30 - 7th Tower - G2 Esports"
+      },
+      {
+        "id": "257522070",
+        "text": "Map 1 - 00:27:22 - 1st Baron - G2 Esports"
+      },
+      {
+        "id": "257522326",
+        "text": "Map 1 - 00:29:05 - 8th Tower - G2 Esports"
+      },
+      {
+        "id": "257522336",
+        "text": "Map 1 - 00:29:11 - 9th Tower - G2 Esports"
+      },
+      {
+        "id": "257522366",
+        "text": "Map 1 - 00:29:21 - 10th Tower - G2 Esports"
+      },
+      {
+        "id": "257522383",
+        "text": "Map 1 - 00:29:27 - 1st Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257522520",
+        "text": "Map 1 - 00:30:31 - 5th Dragon (4) - Fnatic"
+      },
+      {
+        "id": "257522521",
+        "text": "Map 1 - 00:30:31 - 6th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257522554",
+        "text": "Map 1 - 00:30:49 - Race to 15 Kills - G2 Esports"
+      },
+      {
+        "id": "257522633",
+        "text": "Map 1 - 00:31:28 - 11th Tower - G2 Esports"
+      },
+      {
+        "id": "257522638",
+        "text": "Map 1 - 00:31:32 - 12th Tower - G2 Esports"
+      },
+      {
+        "id": "257522665",
+        "text": "Map 1 - 00:31:43 - Race to 20 Kills - G2 Esports"
+      },
+      {
+        "id": "257522673",
+        "text": "Map 1 - Winner - G2 Esports"
+      },
+      {
+        "id": "257525368",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257526084",
+        "text": "Map  - 00:03:52 - 1st Blood - Fnatic"
+      },
+      {
+        "id": "257527600",
+        "text": "Map 2 - 00:13:57 - 1st Dragon (3) - Fnatic"
+      },
+      {
+        "id": "257527601",
+        "text": "Map 2 - 00:13:57 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257527662",
+        "text": "Map 2 - 00:14:26 - 1st Tower - G2 Esports"
+      },
+      {
+        "id": "257527783",
+        "text": "Map 2 - 00:15:23 - 1st Rift Herald Slain - Fnatic"
+      },
+      {
+        "id": "257528009",
+        "text": "Map 2 - 00:17:17 - 2nd Tower - G2 Esports"
+      },
+      {
+        "id": "257528255",
+        "text": "Map 2 - 00:19:11 - 3rd Tower - Fnatic"
+      },
+      {
+        "id": "257528343",
+        "text": "Map 2 - 00:19:46 - 2nd Dragon (5) - G2 Esports"
+      },
+      {
+        "id": "257528344",
+        "text": "Map 2 - 00:19:46 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257528849",
+        "text": "Map 2 - 00:23:26 - Race to 5 Kills - Fnatic"
+      },
+      {
+        "id": "257529037",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257529079",
+        "text": "Map 2 - 00:25:18 - 3rd Dragon (9) - G2 Esports"
+      },
+      {
+        "id": "257529085",
+        "text": "Map 2 - 00:25:18 - 4th Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257529347",
+        "text": "Map 2 - 00:27:07 - 4th Tower - G2 Esports"
+      },
+      {
+        "id": "257529349",
+        "text": "Map 2 - 00:27:10 - 5th Tower - G2 Esports"
+      },
+      {
+        "id": "257529582",
+        "text": "Map 2 - 00:28:38 - 1st Baron - G2 Esports"
+      },
+      {
+        "id": "257529617",
+        "text": "Map 2 - 00:28:52 - 6th Tower - G2 Esports"
+      },
+      {
+        "id": "257529663",
+        "text": "Map 2 - 00:29:10 - Race to 10 Kills - G2 Esports"
+      },
+      {
+        "id": "257529732",
+        "text": "Map 2 - 00:29:38 - 7th Tower - G2 Esports"
+      },
+      {
+        "id": "257529899",
+        "text": "Map 2 - 00:30:28 - 8th Tower - Fnatic"
+      },
+      {
+        "id": "257529928",
+        "text": "Map 2 - 00:30:44 - 9th Tower - G2 Esports"
+      },
+      {
+        "id": "257529995",
+        "text": "Map 2 - 00:31:08 - 10th Tower - G2 Esports"
+      },
+      {
+        "id": "257530016",
+        "text": "Map 2 - 00:31:19 - 1st Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257530051",
+        "text": "Map 2 - 00:31:30 - 11th Tower - G2 Esports"
+      },
+      {
+        "id": "257530054",
+        "text": "Map 2 - 00:31:31 - 2nd Inhibitor - G2 Esports"
+      },
+      {
+        "id": "257530058",
+        "text": "Map 2 - 00:31:35 - 12th Tower - G2 Esports"
+      },
+      {
+        "id": "257530061",
+        "text": "Map 2 - 00:31:38 - Race to 15 Kills - G2 Esports"
+      },
+      {
+        "id": "257530075",
+        "text": "Map 2 - Winner - G2 Esports"
+      },
+      {
+        "id": "257530076",
+        "text": "Map 2 - 00:31:45 - 2nd Baron Spawned"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "52.5k",
+          "63k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "4",
+          "17"
+        ],
+        "towers": [
+          "2",
+          "9"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "2"
+        ],
+        "gold": [
+          "52.2k",
+          "62.1k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "7",
+          "15"
+        ],
+        "towers": [
+          "2",
+          "10"
+        ]
+      }
+    },
+    "inplay_created_at": "1755448323",
+    "inplay_updated_at": "1755454370",
+    "confirmed_at": "1755634133",
+    "bet365_id": "179331769",
+    "event_data": {
+      "id": "179331769",
+      "sport_id": "151",
+      "time": "1755450000",
+      "time_status": "3",
+      "league": {
+        "id": "10049229",
+        "name": "LOL - LEC Summer"
+      },
+      "home": {
+        "id": "10361260",
+        "name": "Fnatic"
+      },
+      "away": {
+        "id": "10361304",
+        "name": "G2 Esports"
+      },
+      "ss": "0-2",
+      "our_event_id": "10418992",
+      "r_id": "179331769C151A",
+      "updated_at": "1755454370",
+      "odds_updated_at": "1755454075"
+    }
+  },
+  "summary": {
+    "home_team": "Fnatic",
+    "away_team": "G2 Esports",
+    "final_score": "0-2",
+    "league": "LOL - LEC Summer",
+    "match_date": "2025-08-17T12:45:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

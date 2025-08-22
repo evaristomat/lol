@@ -1,0 +1,387 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:46.456448",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179606646",
+    "sport_id": "151",
+    "time": "1755504000",
+    "time_status": "3",
+    "league": {
+      "id": "10086210",
+      "name": "LOL - LCK CL Rounds 3-5"
+    },
+    "home": {
+      "id": "11240857",
+      "name": "DN Freecs.Ch"
+    },
+    "away": {
+      "id": "10868535",
+      "name": "Hanwha Life Esports.Ch"
+    },
+    "ss": "0-2",
+    "our_event_id": "10489677",
+    "r_id": "179606646C151A",
+    "updated_at": "1755509674",
+    "odds_updated_at": "1755509644"
+  },
+  "result_info": {
+    "id": "10489677",
+    "sport_id": "151",
+    "time": "1755504000",
+    "time_status": "3",
+    "league": {
+      "id": "41028",
+      "name": "LOL - LCK CL Rounds 3-5",
+      "cc": null
+    },
+    "home": {
+      "id": "1095108",
+      "name": "DN Freecs.Ch",
+      "image_id": "770406",
+      "cc": null
+    },
+    "away": {
+      "id": "376807",
+      "name": "Hanwha Life Challengers",
+      "image_id": "770446",
+      "cc": null
+    },
+    "o_away": {
+      "id": "717925",
+      "name": "Hanwha Life Esports.Ch",
+      "image_id": "770446",
+      "cc": null
+    },
+    "ss": "0-2",
+    "events": [
+      {
+        "id": "257591265",
+        "text": "Map 1 - 00:00:51 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257591829",
+        "text": "Map 1 - 00:06:27 - 1st Dragon (9) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257591846",
+        "text": "Map 1 - 00:06:39 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257592063",
+        "text": "Map  - 00:09:11 - 1st Blood - DN Freecs.Ch"
+      },
+      {
+        "id": "257592534",
+        "text": "Map 1 - 00:14:06 - 2nd Dragon (3) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257592545",
+        "text": "Map 1 - 00:14:15 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257592713",
+        "text": "Map 1 - 00:15:57 - Race to 5 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593079",
+        "text": "Map 1 - 00:19:17 - 3rd Dragon (8) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593156",
+        "text": "Map 1 - 00:19:43 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257593192",
+        "text": "Map 1 - 00:19:58 - 1st Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593204",
+        "text": "Map 1 - 00:20:01 - 2nd Tower - DN Freecs.Ch"
+      },
+      {
+        "id": "257593320",
+        "text": "Map 1 - 00:20:51 - 1st Rift Herald Slain - DN Freecs.Ch"
+      },
+      {
+        "id": "257593369",
+        "text": "Map 1 - 00:21:06 - 3rd Tower - DN Freecs.Ch"
+      },
+      {
+        "id": "257593415",
+        "text": "Map 1 - 00:21:27 - 4th Tower - DN Freecs.Ch"
+      },
+      {
+        "id": "257593423",
+        "text": "Map 1 - 00:21:32 - Race to 10 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593546",
+        "text": "Map 1 - 00:22:33 - 5th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593807",
+        "text": "Map 1 - 00:24:18 - 4th Dragon (8) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593841",
+        "text": "Map 1 - 00:24:31 - Race to 15 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257593862",
+        "text": "Map 1 - 00:24:39 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257593928",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257594014",
+        "text": "Map 1 - 00:25:30 - 1st Baron - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594213",
+        "text": "Map 1 - 00:26:54 - 6th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594305",
+        "text": "Map 1 - 00:27:24 - Race to 20 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594315",
+        "text": "Map 1 - 00:27:30 - 7th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594322",
+        "text": "Map 1 - 00:27:33 - 8th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594325",
+        "text": "Map 1 - 00:27:34 - 1st Inhibitor - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594328",
+        "text": "Map 1 - 00:27:38 - 9th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594333",
+        "text": "Map 1 - 00:27:42 - 10th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594391",
+        "text": "Map 1 - 00:27:47 - 11th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257594572",
+        "text": "Map 1 - Winner - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257596762",
+        "text": "Map 2 - 00:00:53 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257597416",
+        "text": "Map  - 00:05:30 - 1st Blood - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257598030",
+        "text": "Map 2 - 00:10:22 - 1st Dragon (3) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257598037",
+        "text": "Map 2 - 00:10:26 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257598105",
+        "text": "Map 2 - 00:11:01 - Race to 5 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257598616",
+        "text": "Map 2 - 00:15:45 - 1st Rift Herald Slain - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257598702",
+        "text": "Map 2 - 00:16:25 - 2nd Dragon (6) - DN Freecs.Ch"
+      },
+      {
+        "id": "257598709",
+        "text": "Map 2 - 00:16:29 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257598800",
+        "text": "Map 2 - 00:17:21 - 1st Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599197",
+        "text": "Map 2 - 00:21:23 - 2nd Tower - DN Freecs.Ch"
+      },
+      {
+        "id": "257599310",
+        "text": "Map 2 - 00:22:46 - Race to 10 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599369",
+        "text": "Map 2 - 00:23:35 - 3rd Dragon (8) - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599453",
+        "text": "Map 2 - 00:24:44 - 3rd Tower - DN Freecs.Ch"
+      },
+      {
+        "id": "257599479",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257599547",
+        "text": "Map 2 - 00:25:51 - 4th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599629",
+        "text": "Map 2 - 00:26:40 - 5th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599640",
+        "text": "Map 2 - 00:26:48 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257599698",
+        "text": "Map 2 - 00:27:37 - Race to 15 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599703",
+        "text": "Map 2 - 00:27:44 - 1st Baron - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599786",
+        "text": "Map 2 - 00:28:43 - 6th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599826",
+        "text": "Map 2 - 00:28:57 - 7th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599846",
+        "text": "Map 2 - 00:29:07 - 8th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599912",
+        "text": "Map 2 - 00:29:30 - 9th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599933",
+        "text": "Map 2 - 00:29:40 - 1st Inhibitor - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599961",
+        "text": "Map 2 - 00:29:54 - Race to 20 Kills - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599994",
+        "text": "Map 2 - 00:30:03 - 2nd Inhibitor - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257599997",
+        "text": "Map 2 - 00:30:05 - 10th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257600019",
+        "text": "Map 2 - 00:30:14 - 11th Tower - Hanwha Life Esports.Ch"
+      },
+      {
+        "id": "257600168",
+        "text": "Map 2 - Winner - Hanwha Life Esports.Ch"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "0",
+          "4"
+        ],
+        "gold": [
+          "44.7k",
+          "54.9k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "6",
+          "21"
+        ],
+        "towers": [
+          "3",
+          "8"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "2"
+        ],
+        "gold": [
+          "24k",
+          "36.4k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "5",
+          "22"
+        ],
+        "towers": [
+          "2",
+          "9"
+        ]
+      }
+    },
+    "inplay_created_at": "1755503194",
+    "inplay_updated_at": "1755509674",
+    "bet365_id": "179606646",
+    "event_data": {
+      "id": "179606646",
+      "sport_id": "151",
+      "time": "1755504000",
+      "time_status": "3",
+      "league": {
+        "id": "10086210",
+        "name": "LOL - LCK CL Rounds 3-5"
+      },
+      "home": {
+        "id": "11240857",
+        "name": "DN Freecs.Ch"
+      },
+      "away": {
+        "id": "10868535",
+        "name": "Hanwha Life Esports.Ch"
+      },
+      "ss": "0-2",
+      "our_event_id": "10489677",
+      "r_id": "179606646C151A",
+      "updated_at": "1755509674",
+      "odds_updated_at": "1755509644"
+    }
+  },
+  "summary": {
+    "home_team": "DN Freecs.Ch",
+    "away_team": "Hanwha Life Esports.Ch",
+    "final_score": "0-2",
+    "league": "LOL - LCK CL Rounds 3-5",
+    "match_date": "2025-08-18T04:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,194 @@
+# Estrutura do Banco de Dados: lol_esports.db
+
+## Resumo Geral
+- **Total de tabelas:** 10
+- **Registros principais:** 3.402 estatísticas de mapas, 351 partidas, 563 mapas jogados
+- **Times cadastrados:** 192
+
+---
+
+## 📊 TABELAS PRINCIPAIS
+
+### 1. **teams** (192 registros)
+```
+team_id (INTEGER) 🔑 - ID único do time
+name (TEXT) ⚠️ - Nome do time
+image_id (TEXT) - ID da imagem
+country_code (TEXT) - Código do país
+created_at (DATETIME) - Data de criação
+```
+
+### 2. **matches** (351 registros)
+```
+match_id (INTEGER) 🔑 - ID único da partida
+bet365_id (TEXT) ⚠️ - ID no Bet365
+sport_id (INTEGER) - ID do esporte
+league_id (INTEGER) - ID da liga
+home_team_id (INTEGER) - ID do time da casa
+away_team_id (INTEGER) - ID do time visitante
+event_time (DATETIME) - Data/hora da partida
+time_status (INTEGER) - Status da partida
+final_score (TEXT) - Placar final (ex: "2-0")
+retrieved_at (DATETIME) - Quando foi coletado
+created_at (DATETIME) - Data de criação
+updated_at (DATETIME) - Última atualização
+```
+
+### 3. **game_maps** (563 registros)
+```
+map_id (INTEGER) 🔑 - ID único do mapa
+match_id (INTEGER) - ID da partida
+map_number (INTEGER) - Número do mapa (1, 2, 3...)
+created_at (DATETIME) - Data de criação
+```
+
+### 4. **map_statistics** (3.402 registros) ⭐ PRINCIPAL
+```
+stat_id (INTEGER) 🔑 - ID único da estatística
+map_id (INTEGER) - ID do mapa
+stat_name (TEXT) - Nome da estatística (kills, dragons, barons, etc.)
+home_value (TEXT) - Valor para o time da casa
+away_value (TEXT) - Valor para o time visitante
+created_at (DATETIME) - Data de criação
+```
+
+### 5. **leagues** (34 registros)
+```
+league_id (INTEGER) 🔑 - ID único da liga
+name (TEXT) ⚠️ - Nome da liga (ex: "LOL - LCK Summer")
+created_at (DATETIME) - Data de criação
+```
+
+---
+
+## 🔗 RELACIONAMENTOS
+
+```
+teams (team_id) ←→ matches (home_team_id, away_team_id)
+matches (match_id) ←→ game_maps (match_id)
+game_maps (map_id) ←→ map_statistics (map_id)
+leagues (league_id) ←→ matches (league_id)
+```
+
+---
+
+## 📈 TABELAS DE ODDS (VAZIAS)
+
+### event_odds (0 registros)
+```
+odds_id (INTEGER) 🔑
+event_id (TEXT) ⚠️
+bet365_id (TEXT) ⚠️
+updated_at (DATETIME)
+created_at (DATETIME)
+```
+
+### odds_markets (0 registros)
+```
+market_id (INTEGER) 🔑
+odds_id (INTEGER)
+market_type (TEXT)
+market_name (TEXT)
+updated_at (DATETIME)
+```
+
+### odds_values (0 registros)
+```
+odds_value_id (INTEGER) 🔑
+market_id (INTEGER)
+selection_id (TEXT)
+header (TEXT)
+name (TEXT)
+handicap (TEXT)
+odds (REAL)
+updated_at (DATETIME)
+```
+
+---
+
+## 🛠️ TABELAS AUXILIARES
+
+### update_logs (11 registros)
+```
+log_id (INTEGER) 🔑
+update_type (TEXT)
+items_processed (INTEGER)
+new_items (INTEGER)
+success (BOOLEAN)
+error_message (TEXT)
+created_at (DATETIME)
+```
+
+### sqlite_sequence (4 registros)
+```
+name () - Nome da tabela
+seq () - Próximo ID sequencial
+```
+
+---
+
+## 🎯 CONSULTAS PARA ESTATÍSTICAS
+
+Para implementar `get_team_stats()`, precisamos:
+
+1. **Buscar partidas do time:**
+```sql
+SELECT match_id, home_team_id, away_team_id 
+FROM matches 
+WHERE home_team_id = ? OR away_team_id = ?
+ORDER BY event_time DESC 
+LIMIT 10
+```
+
+2. **Buscar mapas das partidas:**
+```sql
+SELECT map_id 
+FROM game_maps 
+WHERE match_id IN (lista_de_match_ids)
+```
+
+3. **Buscar estatísticas dos mapas:**
+```sql
+SELECT stat_name, home_value, away_value
+FROM map_statistics 
+WHERE map_id IN (lista_de_map_ids)
+AND stat_name IN ('kills', 'dragons', 'barons', 'towers', 'inhibitors')
+```
+
+---
+
+## 📝 EXEMPLOS DE DADOS
+
+### Amostra teams:
+```
+team_id: 10359420, name: "DRX"
+team_id: 10361241, name: "Invictus Gaming"
+team_id: 10361254, name: "Team Vitality"
+```
+
+### Amostra matches:
+```
+match_id: 1, bet365_id: "179606648", home_team_id: 10868541, away_team_id: 11240855
+final_score: "2-0", event_time: "2025-08-19 04:00:00"
+```
+
+### Possíveis stat_name em map_statistics:
+- kills
+- dragons  
+- barons
+- towers
+- inhibitors
+- gold
+- damage
+- vision_score
+- etc.
+
+---
+
+## ⚠️ OBSERVAÇÕES IMPORTANTES
+
+1. **Dados de Odds:** As tabelas `event_odds`, `odds_markets` e `odds_values` estão vazias
+2. **IDs dos Times:** Usar `team_id` para relacionamentos
+3. **Estatísticas por Time:** Em `map_statistics`, `home_value` é para o time da casa, `away_value` para o visitante
+4. **Mapas por Partida:** Uma partida pode ter vários mapas (1, 2, 3...)
+5. **Dados Recentes:** Partidas de agosto/2025, dados bem atualizados

@@ -1,0 +1,515 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:50.507277",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179606647",
+    "sport_id": "151",
+    "time": "1755511200",
+    "time_status": "3",
+    "league": {
+      "id": "10086210",
+      "name": "LOL - LCK CL Rounds 3-5"
+    },
+    "home": {
+      "id": "11013220",
+      "name": "Gen.G.GA"
+    },
+    "away": {
+      "id": "10868532",
+      "name": "DRX.Ch"
+    },
+    "ss": "1-2",
+    "our_event_id": "10489655",
+    "r_id": "179606647C151A",
+    "updated_at": "1755519967",
+    "odds_updated_at": "1755519359"
+  },
+  "result_info": {
+    "id": "10489655",
+    "sport_id": "151",
+    "time": "1755511200",
+    "time_status": "3",
+    "league": {
+      "id": "41028",
+      "name": "LOL - LCK CL Rounds 3-5",
+      "cc": null
+    },
+    "home": {
+      "id": "376805",
+      "name": "Gen.G Challengers",
+      "image_id": "770442",
+      "cc": null
+    },
+    "o_home": {
+      "id": "863729",
+      "name": "Gen.G.GA",
+      "image_id": "770442",
+      "cc": null
+    },
+    "away": {
+      "id": "376806",
+      "name": "DRX Challengers",
+      "image_id": "770438",
+      "cc": null
+    },
+    "o_away": {
+      "id": "717922",
+      "name": "DRX.Ch",
+      "image_id": "770438",
+      "cc": null
+    },
+    "ss": "1-2",
+    "events": [
+      {
+        "id": "257605262",
+        "text": "Map 1 - 00:00:53 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257606305",
+        "text": "Map  - 00:08:41 - 1st Blood - DRX.Ch"
+      },
+      {
+        "id": "257606588",
+        "text": "Map 1 - 00:11:32 - 1st Dragon (6) - Gen.G.GA"
+      },
+      {
+        "id": "257606605",
+        "text": "Map 1 - 00:11:37 - 2nd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257606941",
+        "text": "Map 1 - 00:15:27 - 1st Rift Herald Slain - Gen.G.GA"
+      },
+      {
+        "id": "257606994",
+        "text": "Map 1 - 00:15:54 - 1st Tower - DRX.Ch"
+      },
+      {
+        "id": "257607008",
+        "text": "Map 1 - 00:16:06 - Race to 5 Kills - DRX.Ch"
+      },
+      {
+        "id": "257607068",
+        "text": "Map 1 - 00:16:50 - 2nd Dragon (8) - DRX.Ch"
+      },
+      {
+        "id": "257607081",
+        "text": "Map 1 - 00:16:54 - 3rd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257607123",
+        "text": "Map 1 - 00:17:19 - 2nd Tower - Gen.G.GA"
+      },
+      {
+        "id": "257607662",
+        "text": "Map 1 - 00:20:03 - 3rd Tower - DRX.Ch"
+      },
+      {
+        "id": "257607708",
+        "text": "Map 1 - 00:20:20 - Race to 10 Kills - DRX.Ch"
+      },
+      {
+        "id": "257607986",
+        "text": "Map 1 - 00:22:01 - 4th Tower - DRX.Ch"
+      },
+      {
+        "id": "257608196",
+        "text": "Map 1 - 00:23:17 - 3rd Dragon (9) - DRX.Ch"
+      },
+      {
+        "id": "257608488",
+        "text": "Map 1 - 00:25:03 - 1st Baron Spawned"
+      },
+      {
+        "id": "257608565",
+        "text": "Map 1 - 00:25:36 - Race to 15 Kills - DRX.Ch"
+      },
+      {
+        "id": "257608759",
+        "text": "Map 1 - 00:26:48 - 1st Baron - DRX.Ch"
+      },
+      {
+        "id": "257608766",
+        "text": "Map 1 - 00:26:53 - 5th Tower - DRX.Ch"
+      },
+      {
+        "id": "257608854",
+        "text": "Map 1 - 00:27:30 - 6th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257608893",
+        "text": "Map 1 - 00:27:50 - 7th Tower - DRX.Ch"
+      },
+      {
+        "id": "257608919",
+        "text": "Map 1 - 00:27:56 - 8th Tower - DRX.Ch"
+      },
+      {
+        "id": "257608920",
+        "text": "Map 1 - 00:27:58 - 9th Tower - DRX.Ch"
+      },
+      {
+        "id": "257608924",
+        "text": "Map 1 - 00:28:00 - 1st Inhibitor - DRX.Ch"
+      },
+      {
+        "id": "257608934",
+        "text": "Map 1 - 00:28:02 - 2nd Inhibitor - DRX.Ch"
+      },
+      {
+        "id": "257608944",
+        "text": "Map 1 - 00:28:09 - 10th Tower - DRX.Ch"
+      },
+      {
+        "id": "257609156",
+        "text": "Map 1 - 00:28:27 - 11th Tower - DRX.Ch"
+      },
+      {
+        "id": "257609186",
+        "text": "Map 1 - Winner - DRX.Ch"
+      },
+      {
+        "id": "257612639",
+        "text": "Map 2 - 00:01:02 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257613068",
+        "text": "Map  - 00:03:53 - 1st Blood - DRX.Ch"
+      },
+      {
+        "id": "257613705",
+        "text": "Map 2 - 00:07:38 - 1st Dragon (6) - DRX.Ch"
+      },
+      {
+        "id": "257613715",
+        "text": "Map 2 - 00:07:42 - 2nd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257614164",
+        "text": "Map 2 - 00:11:49 - 2nd Dragon (8) - DRX.Ch"
+      },
+      {
+        "id": "257614265",
+        "text": "Map 2 - 00:12:37 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257614615",
+        "text": "Map 2 - 00:15:29 - 1st Rift Herald Slain - Gen.G.GA"
+      },
+      {
+        "id": "257614645",
+        "text": "Map 2 - 00:15:43 - Race to 5 Kills - Gen.G.GA"
+      },
+      {
+        "id": "257614721",
+        "text": "Map 2 - 00:16:22 - 1st Tower - Gen.G.GA"
+      },
+      {
+        "id": "257614845",
+        "text": "Map 2 - 00:17:25 - 3rd Dragon (3) - Gen.G.GA"
+      },
+      {
+        "id": "257614848",
+        "text": "Map 2 - 00:17:28 - 4th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257614975",
+        "text": "Map 2 - 00:18:34 - 2nd Tower - DRX.Ch"
+      },
+      {
+        "id": "257615020",
+        "text": "Map 2 - 00:18:57 - Race to 10 Kills - Gen.G.GA"
+      },
+      {
+        "id": "257615203",
+        "text": "Map 2 - 00:20:30 - 3rd Tower - Gen.G.GA"
+      },
+      {
+        "id": "257615217",
+        "text": "Map 2 - 00:20:39 - 4th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257615514",
+        "text": "Map 2 - 00:22:49 - Race to 15 Kills - Gen.G.GA"
+      },
+      {
+        "id": "257615629",
+        "text": "Map 2 - 00:23:26 - 4th Dragon (3) - Gen.G.GA"
+      },
+      {
+        "id": "257615648",
+        "text": "Map 2 - 00:23:31 - 5th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257615806",
+        "text": "Map 2 - 00:24:32 - 5th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257615819",
+        "text": "Map 2 - 00:24:37 - 6th Tower - DRX.Ch"
+      },
+      {
+        "id": "257615876",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257616163",
+        "text": "Map 2 - 00:26:42 - Race to 20 Kills - Gen.G.GA"
+      },
+      {
+        "id": "257616186",
+        "text": "Map 2 - 00:26:46 - 7th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257616190",
+        "text": "Map 2 - 00:26:49 - 8th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257616194",
+        "text": "Map 2 - 00:26:51 - 9th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257616199",
+        "text": "Map 2 - 00:26:53 - 1st Inhibitor - Gen.G.GA"
+      },
+      {
+        "id": "257616225",
+        "text": "Map 2 - 00:26:58 - 10th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257616233",
+        "text": "Map 2 - 00:27:00 - 11th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257616454",
+        "text": "Map 2 - Winner - Gen.G.GA"
+      },
+      {
+        "id": "257619220",
+        "text": "Map 3 - 00:00:47 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257620166",
+        "text": "Map  - 00:07:05 - 1st Blood - Gen.G.GA"
+      },
+      {
+        "id": "257620604",
+        "text": "Map 3 - 00:09:43 - Race to 5 Kills - Gen.G.GA"
+      },
+      {
+        "id": "257621128",
+        "text": "Map 3 - 00:12:39 - 1st Dragon (8) - Gen.G.GA"
+      },
+      {
+        "id": "257621138",
+        "text": "Map 3 - 00:12:43 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257621722",
+        "text": "Map 3 - 00:16:30 - 1st Rift Herald Slain - Gen.G.GA"
+      },
+      {
+        "id": "257621952",
+        "text": "Map 3 - 00:18:11 - 1st Tower - DRX.Ch"
+      },
+      {
+        "id": "257621955",
+        "text": "Map 3 - 00:18:12 - 2nd Tower - Gen.G.GA"
+      },
+      {
+        "id": "257621966",
+        "text": "Map 3 - 00:18:18 - 2nd Dragon (3) - DRX.Ch"
+      },
+      {
+        "id": "257621985",
+        "text": "Map 3 - 00:18:22 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257622058",
+        "text": "Map 3 - 00:18:57 - 3rd Tower - Gen.G.GA"
+      },
+      {
+        "id": "257622326",
+        "text": "Map 3 - 00:21:20 - Race to 10 Kills - DRX.Ch"
+      },
+      {
+        "id": "257622364",
+        "text": "Map 3 - 00:21:39 - 4th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622381",
+        "text": "Map 3 - 00:21:48 - 5th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622530",
+        "text": "Map 3 - 00:23:23 - Race to 15 Kills - DRX.Ch"
+      },
+      {
+        "id": "257622593",
+        "text": "Map 3 - 00:24:11 - 3rd Dragon (6) - DRX.Ch"
+      },
+      {
+        "id": "257622670",
+        "text": "Map 3 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257622707",
+        "text": "Map 3 - 00:25:19 - 6th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622810",
+        "text": "Map 3 - 00:26:12 - 1st Baron - DRX.Ch"
+      },
+      {
+        "id": "257622822",
+        "text": "Map 3 - 00:26:16 - Race to 20 Kills - DRX.Ch"
+      },
+      {
+        "id": "257622849",
+        "text": "Map 3 - 00:26:28 - 7th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622850",
+        "text": "Map 3 - 00:26:32 - 8th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622854",
+        "text": "Map 3 - 00:26:35 - 1st Inhibitor - DRX.Ch"
+      },
+      {
+        "id": "257622870",
+        "text": "Map 3 - 00:26:43 - 9th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622877",
+        "text": "Map 3 - 00:26:47 - 10th Tower - DRX.Ch"
+      },
+      {
+        "id": "257622935",
+        "text": "Map 3 - 00:26:55 - 11th Tower - Gen.G.GA"
+      },
+      {
+        "id": "257622985",
+        "text": "Map 3 - Winner - DRX.Ch"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "2"
+        ],
+        "gold": [
+          "43.8k",
+          "55.8k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "3",
+          "20"
+        ],
+        "towers": [
+          "2",
+          "9"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "2"
+        ],
+        "gold": [
+          "52.7k",
+          "42.3k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "20",
+          "4"
+        ],
+        "towers": [
+          "9",
+          "2"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "2"
+        ],
+        "gold": [
+          "44.3k",
+          "54.5k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "8",
+          "22"
+        ],
+        "towers": [
+          "3",
+          "8"
+        ]
+      }
+    },
+    "inplay_created_at": "1755510427",
+    "inplay_updated_at": "1755519967",
+    "bet365_id": "179606647",
+    "event_data": {
+      "id": "179606647",
+      "sport_id": "151",
+      "time": "1755511200",
+      "time_status": "3",
+      "league": {
+        "id": "10086210",
+        "name": "LOL - LCK CL Rounds 3-5"
+      },
+      "home": {
+        "id": "11013220",
+        "name": "Gen.G.GA"
+      },
+      "away": {
+        "id": "10868532",
+        "name": "DRX.Ch"
+      },
+      "ss": "1-2",
+      "our_event_id": "10489655",
+      "r_id": "179606647C151A",
+      "updated_at": "1755519967",
+      "odds_updated_at": "1755519359"
+    }
+  },
+  "summary": {
+    "home_team": "Gen.G.GA",
+    "away_team": "DRX.Ch",
+    "final_score": "1-2",
+    "league": "LOL - LCK CL Rounds 3-5",
+    "match_date": "2025-08-18T06:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:07.481934",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179657895",
+    "sport_id": "151",
+    "time": "1755423000",
+    "time_status": "3",
+    "league": {
+      "id": "10086283",
+      "name": "LOL - LCP Season Finals"
+    },
+    "home": {
+      "id": "10486273",
+      "name": "PSG Talon"
+    },
+    "away": {
+      "id": "10410701",
+      "name": "Chiefs Esports Club"
+    },
+    "ss": "2-0",
+    "our_event_id": "10490219",
+    "r_id": "179657895C151A",
+    "updated_at": "1755429598",
+    "odds_updated_at": "1755429360"
+  },
+  "result_info": {
+    "id": "10490219",
+    "sport_id": "151",
+    "time": "1755423000",
+    "time_status": "3",
+    "league": {
+      "id": "41097",
+      "name": "LOL - LCP Season Finals",
+      "cc": null
+    },
+    "home": {
+      "id": "347821",
+      "name": "PSG Talon",
+      "image_id": "675247",
+      "cc": null
+    },
+    "away": {
+      "id": "8764",
+      "name": "Chiefs Esports Club",
+      "image_id": "786622",
+      "cc": null
+    },
+    "ss": "2-0",
+    "events": [
+      {
+        "id": "257454680",
+        "text": "Map  - 00:06:35 - 1st Blood - Chiefs Esports Club"
+      },
+      {
+        "id": "257455125",
+        "text": "Map 1 - 00:09:55 - Race to 5 Kills - Chiefs Esports Club"
+      },
+      {
+        "id": "257455167",
+        "text": "Map 1 - 00:10:21 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257455168",
+        "text": "Map 1 - 00:10:22 - 1st Dragon (8) - Chiefs Esports Club"
+      },
+      {
+        "id": "257455180",
+        "text": "Map 1 - 00:10:26 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257455872",
+        "text": "Map 1 - 00:17:23 - 2nd Dragon (5) - PSG Talon"
+      },
+      {
+        "id": "257455902",
+        "text": "Map 1 - 00:17:33 - Race to 10 Kills - Chiefs Esports Club"
+      },
+      {
+        "id": "257456395",
+        "text": "Map 1 - 00:20:35 - 1st Tower - PSG Talon"
+      },
+      {
+        "id": "257456397",
+        "text": "Map 1 - 00:20:36 - 2nd Tower - PSG Talon"
+      },
+      {
+        "id": "257456405",
+        "text": "Map 1 - 00:20:38 - 3rd Tower - PSG Talon"
+      },
+      {
+        "id": "257456675",
+        "text": "Map 1 - 00:22:39 - 3rd Dragon (5) - PSG Talon"
+      },
+      {
+        "id": "257456705",
+        "text": "Map 1 - 00:22:50 - 4th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257457057",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257457319",
+        "text": "Map 1 - 00:26:39 - Race to 15 Kills - PSG Talon"
+      },
+      {
+        "id": "257457404",
+        "text": "Map 1 - 00:27:12 - 1st Baron - PSG Talon"
+      },
+      {
+        "id": "257457581",
+        "text": "Map 1 - 00:28:22 - Race to 20 Kills - PSG Talon"
+      },
+      {
+        "id": "257457732",
+        "text": "Map 1 - 00:29:03 - 4th Dragon (5) - PSG Talon"
+      },
+      {
+        "id": "257457988",
+        "text": "Map 1 - 00:30:45 - 4th Tower - PSG Talon"
+      },
+      {
+        "id": "257457990",
+        "text": "Map 1 - 00:30:46 - 5th Tower - PSG Talon"
+      },
+      {
+        "id": "257457997",
+        "text": "Map 1 - 00:30:47 - 1st Inhibitor - PSG Talon"
+      },
+      {
+        "id": "257458003",
+        "text": "Map 1 - 00:30:49 - 6th Tower - PSG Talon"
+      },
+      {
+        "id": "257458006",
+        "text": "Map 1 - 00:30:50 - 7th Tower - PSG Talon"
+      },
+      {
+        "id": "257458301",
+        "text": "Map 1 - 00:33:13 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257458413",
+        "text": "Map 1 - 00:34:01 - Race to 25 Kills - PSG Talon"
+      },
+      {
+        "id": "257458509",
+        "text": "Map 1 - 00:34:31 - 8th Tower - PSG Talon"
+      },
+      {
+        "id": "257458510",
+        "text": "Map 1 - 00:34:31 - 9th Tower - PSG Talon"
+      },
+      {
+        "id": "257458514",
+        "text": "Map 1 - 00:34:31 - 10th Tower - PSG Talon"
+      },
+      {
+        "id": "257458530",
+        "text": "Map 1 - 00:34:31 - 2nd Inhibitor - PSG Talon"
+      },
+      {
+        "id": "257458569",
+        "text": "Map 1 - Winner - PSG Talon"
+      },
+      {
+        "id": "257461437",
+        "text": "Map 2 - 00:01:54 - 1st Dragon Spawned (Hextech)"
+      },
+      {
+        "id": "257461723",
+        "text": "Map  - 00:03:35 - 1st Blood - PSG Talon"
+      },
+      {
+        "id": "257463131",
+        "text": "Map 2 - 00:13:32 - 1st Dragon (9) - Chiefs Esports Club"
+      },
+      {
+        "id": "257463132",
+        "text": "Map 2 - 00:13:34 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257463601",
+        "text": "Map 2 - 00:17:33 - 1st Tower - Chiefs Esports Club"
+      },
+      {
+        "id": "257463811",
+        "text": "Map 2 - 00:19:25 - 2nd Dragon (3) - PSG Talon"
+      },
+      {
+        "id": "257463814",
+        "text": "Map 2 - 00:19:28 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257463886",
+        "text": "Map 2 - 00:19:58 - 2nd Tower - Chiefs Esports Club"
+      },
+      {
+        "id": "257463893",
+        "text": "Map 2 - 00:20:01 - 3rd Tower - PSG Talon"
+      },
+      {
+        "id": "257463894",
+        "text": "Map 2 - 00:20:02 - 4th Tower - PSG Talon"
+      },
+      {
+        "id": "257463900",
+        "text": "Map 2 - 00:20:07 - Race to 5 Kills - Chiefs Esports Club"
+      },
+      {
+        "id": "257464113",
+        "text": "Map 2 - 00:21:55 - 5th Tower - Chiefs Esports Club"
+      },
+      {
+        "id": "257464257",
+        "text": "Map 2 - 00:23:16 - 3rd Dragon (8) - Chiefs Esports Club"
+      },
+      {
+        "id": "257464454",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257464809",
+        "text": "Map 2 - 00:27:20 - 1st Baron - PSG Talon"
+      },
+      {
+        "id": "257464814",
+        "text": "Map 2 - 00:27:26 - Race to 10 Kills - PSG Talon"
+      },
+      {
+        "id": "257464980",
+        "text": "Map 2 - 00:28:30 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257464981",
+        "text": "Map 2 - 00:28:31 - 4th Dragon (8) - PSG Talon"
+      },
+      {
+        "id": "257465217",
+        "text": "Map 2 - 00:30:19 - 6th Tower - PSG Talon"
+      },
+      {
+        "id": "257465223",
+        "text": "Map 2 - 00:30:20 - 7th Tower - PSG Talon"
+      },
+      {
+        "id": "257465274",
+        "text": "Map 2 - 00:30:37 - 8th Tower - PSG Talon"
+      },
+      {
+        "id": "257465372",
+        "text": "Map 2 - 00:31:13 - 9th Tower - PSG Talon"
+      },
+      {
+        "id": "257465380",
+        "text": "Map 2 - 00:31:16 - 1st Inhibitor - PSG Talon"
+      },
+      {
+        "id": "257465682",
+        "text": "Map 2 - 00:33:18 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257465749",
+        "text": "Map 2 - 00:33:48 - 10th Tower - PSG Talon"
+      },
+      {
+        "id": "257465810",
+        "text": "Map 2 - 00:34:14 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257465814",
+        "text": "Map 2 - 00:34:15 - 5th Dragon (8) - PSG Talon"
+      },
+      {
+        "id": "257465840",
+        "text": "Map 2 - 00:34:26 - 2nd Baron - Chiefs Esports Club"
+      },
+      {
+        "id": "257466023",
+        "text": "Map 2 - 00:36:02 - Race to 15 Kills - PSG Talon"
+      },
+      {
+        "id": "257466050",
+        "text": "Map 2 - 00:36:16 - 1st Inhibitor Spawned - PSG Talon"
+      },
+      {
+        "id": "257466094",
+        "text": "Map 2 - 00:36:28 - 2nd Inhibitor - PSG Talon"
+      },
+      {
+        "id": "257466099",
+        "text": "Map 2 - 00:36:30 - 11th Tower - PSG Talon"
+      },
+      {
+        "id": "257466100",
+        "text": "Map 2 - 00:36:31 - 12th Tower - PSG Talon"
+      },
+      {
+        "id": "257466128",
+        "text": "Map 2 - Winner - PSG Talon"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "64.4k",
+          "55.7k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "26",
+          "16"
+        ],
+        "towers": [
+          "10",
+          "0"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "1"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "35.3k",
+          "31.2k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "17",
+          "11"
+        ],
+        "towers": [
+          "9",
+          "3"
+        ]
+      }
+    },
+    "inplay_created_at": "1755422722",
+    "inplay_updated_at": "1755429598",
+    "bet365_id": "179657895",
+    "event_data": {
+      "id": "179657895",
+      "sport_id": "151",
+      "time": "1755423000",
+      "time_status": "3",
+      "league": {
+        "id": "10086283",
+        "name": "LOL - LCP Season Finals"
+      },
+      "home": {
+        "id": "10486273",
+        "name": "PSG Talon"
+      },
+      "away": {
+        "id": "10410701",
+        "name": "Chiefs Esports Club"
+      },
+      "ss": "2-0",
+      "our_event_id": "10490219",
+      "r_id": "179657895C151A",
+      "updated_at": "1755429598",
+      "odds_updated_at": "1755429360"
+    }
+  },
+  "summary": {
+    "home_team": "PSG Talon",
+    "away_team": "Chiefs Esports Club",
+    "final_score": "2-0",
+    "league": "LOL - LCP Season Finals",
+    "match_date": "2025-08-17T05:30:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,123 @@
+2025-08-20 16:17:57 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-20 16:17:57 | INFO     | run_update           | ============================================================
+2025-08-20 16:17:57 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-20 16:17:57 | INFO     | run_update           | ============================================================
+2025-08-20 16:17:57 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-20 16:17:57 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 10 dias
+2025-08-20 16:17:57 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-20
+2025-08-20 16:18:00 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:18:00 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-20 16:18:00 | INFO     | fetch_upcoming_events |    ✅ 21 jogos de LoL encontrados
+2025-08-20 16:18:00 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-20 16:18:01 | INFO     | fetch_upcoming_events |    ✅ 15 jogos de LoL encontrados
+2025-08-20 16:18:01 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-20 16:18:01 | INFO     | fetch_upcoming_events |    ✅ 13 jogos de LoL encontrados
+2025-08-20 16:18:01 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-20 16:18:02 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:18:02 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-25
+2025-08-20 16:18:05 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:18:05 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-26
+2025-08-20 16:18:09 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:18:09 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-27
+2025-08-20 16:18:09 | INFO     | fetch_upcoming_events |    ✅ 3 jogos de LoL encontrados
+2025-08-20 16:18:09 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-28
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events |    ✅ 2 jogos de LoL encontrados
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-29
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events |    ℹ️  Nenhum jogo de LoL encontrado
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-30
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-20 16:18:10 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 79
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Gen.G.GA vs T1.EA - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: DN Freecs.Ch vs Dplus KIA.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: DRX vs DN Freecs - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: LGD Gaming vs ThunderTalk Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Deep Cross Gaming vs Frank Esports - LOL - PCS Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Gen.G vs Nongshim RedForce - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: FunPlus Phoenix vs Anyone's Legend - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: DRX.Ch vs KT Rolster.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Nongshim.EA vs Hanwha Life Esports.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: KT Rolster vs Hanwha Life Esports - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Ultra Prime vs Edward Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: OKSavingsBank BRION vs BNK FearX - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: JD Gaming vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Besiktas Esports vs The Forbidden Five - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: BoostGate Esports vs ULF Esports - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Los Ratones vs Rich Gang - LOL - NLC Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Galions vs Joblife - LOL - LFL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Los Heretics vs UCAM Esports - LOL - Superliga Summer Split Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Dark Passage vs Papara SuperMassive - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: A One Man Army vs Myth Esports - LOL - ROL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Partizan Sangal vs Lenovo Legion Honved - LOL - EBL Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Bushido Wildcats vs Misa Esports - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Senshi eSports vs Aurora - LOL - ROL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Keypulse Esports vs The Otter Side - LOL - LPLOL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Karmine Corp Blue vs Vitality.Bee - LOL - LFL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: BK ROG Esports vs Ici Japon Corp. Esport - LOL - LFL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: DarkZero vs Winthrop University - LOL - NACL Split 2 Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Odivelas Sports Club vs Diver - LOL - LPLOL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: T1.EA vs BNK FearX.Y - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Dplus KIA.Ch vs OKSavingsBank BRION.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Nongshim RedForce vs T1 - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Invictus Gaming vs FunPlus Phoenix - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: PSG Talon vs DetonatioN FocusMe - LOL - LCP Season Finals
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Dplus KIA vs DRX - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Edward Gaming vs LGD Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: CTBC Flying Oyster vs GAM Esports - LOL - LCP Season Finals
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Misa Esports vs The Forbidden Five - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Bushido Wildcats vs Dark Passage - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Ici Japon Corp. Esport vs Team BDS.A - LOL - LFL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Papara SuperMassive vs BoostGate Esports - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: ULF Esports vs Besiktas Esports - LOL - TCL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Gentle Mates vs BK ROG Esports - LOL - LFL Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Blue Otter vs Conviction - LOL - NACL Split 2 Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Dorado Gaming vs Luminosity Gaming - LOL - NACL Split 2 Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Hanwha Life Esports vs Gen.G - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: LNG Esports vs ThunderTalk Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: OKSavingsBank BRION vs DN Freecs - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Team WE vs Top Esports - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Chiefs Esports Club vs Fukuoka SB Hawks gaming - LOL - LCP Season Finals
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Weibo Gaming vs Invictus Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Tan'i eSports CZ vs Team UNiTY - LOL - Hitpoint Masters Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: MGN Vikings Esports vs Team Secret Whales - LOL - LCP Season Finals
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: G2 Hel vs Solary Academy - LOL - Equal Esports Cup Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: eSuba vs EXILE esports - LOL - Hitpoint Masters Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: LOUD vs Fluxo W7M - LOL - LTA South Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Disguised vs Dignitas - LOL - LTA North Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: BNK FearX vs Dplus KIA - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: KT Rolster vs T1 - LOL - LCK
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Edward Gaming vs LNG Esports - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Anyone's Legend vs JD Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: BIG vs TeamOrangeGaming - LOL - Prime League Season Finals
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Isurus vs Leviatan - LOL - LTA South Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: LYON vs 100 Thieves - LOL - LTA North Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: LGD Gaming vs Ultra Prime - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: FunPlus Phoenix vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: SK Gaming vs G2 Esports - LOL - LEC Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Team BDS vs Team Heretics - LOL - LEC Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: KaBuM! IDL vs Corinthians Esports - LOL - CD Split 2 Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Team WE vs Invictus Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Top Esports vs FunPlus Phoenix - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Team Vitality vs Movistar KOI - LOL - LEC Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Natus Vincere vs GIANTX - LOL - LEC Summer
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: e-Champ Gaming vs Flamengo MDL - LOL - CD Split 2 Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Weibo Gaming vs JD Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Team WE vs Anyone's Legend - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Colossal Gaming vs GMBLERS ESPORTS - LOL - LIT Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Invictus Gaming vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: Zena Esports vs aNc Legends - LOL - LIT Summer Playoffs
+2025-08-20 16:18:10 | INFO     | save_events          | ✅ Novo evento: DFM Academy vs QT DIG - LOL - LJL Finals
+2025-08-20 16:18:11 | INFO     | save_events          | 📝 Eventos processados - Novos: 79, Existentes: 0, Times criados: 79
+2025-08-20 16:18:11 | INFO     | run_update           | ✅ Fase 1 concluída - 79 novos eventos adicionados
+2025-08-20 16:18:11 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-20 16:18:11 | ERROR    | run_update           | ❌ Erro durante atualização: unrecognized token: "#"
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\bet365\lol_api\scripts\db_odds_updater.py", line 711, in run_update
+    odds_collected = await self.fetch_and_save_odds(hours_old_threshold=2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\envs\bet365\lol_api\scripts\db_odds_updater.py", line 353, in fetch_and_save_odds
+    cursor = conn.execute("""
+             ^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unrecognized token: "#"
+2025-08-20 16:18:11 | INFO     | close                | 🔌 Conexões fechadas

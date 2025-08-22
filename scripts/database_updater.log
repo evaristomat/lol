@@ -1,0 +1,855 @@
+2025-08-21 18:29:22,266 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:29:22,267 - INFO - ============================================================
+2025-08-21 18:29:22,317 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:29:22,317 - INFO - ============================================================
+2025-08-21 18:29:22,318 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/30)
+2025-08-21 18:29:22,318 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 18:29:23,460 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250821&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:23,463 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 18:29:23,463 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 18:29:23,463 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 18:29:23,466 - INFO -    📥 Buscando detalhes para atualizar evento 179606652...
+2025-08-21 18:29:23,857 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606652&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:23,875 - INFO -    💾 Evento 179606652 atualizado com sucesso no banco de dados
+2025-08-21 18:29:23,876 - INFO -    🔄 EVENTO ATUALIZADO: 179606652
+2025-08-21 18:29:23,876 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 18:29:23,878 - INFO -    📥 Buscando detalhes para atualizar evento 179606653...
+2025-08-21 18:29:24,262 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606653&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:24,278 - INFO -    💾 Evento 179606653 atualizado com sucesso no banco de dados
+2025-08-21 18:29:24,278 - INFO -    🔄 EVENTO ATUALIZADO: 179606653
+2025-08-21 18:29:24,279 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 18:29:24,280 - INFO -    ⏭️  EVENTO PULADO: 179715705 (já finalizado)
+2025-08-21 18:29:24,281 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 18:29:24,283 - INFO -    ⏭️  EVENTO PULADO: 179540934 (já finalizado)
+2025-08-21 18:29:24,283 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs BNK FearX (LOL - LCK) - ID: 179715707
+2025-08-21 18:29:24,285 - INFO -    ⏭️  EVENTO PULADO: 179715707 (já finalizado)
+2025-08-21 18:29:24,285 - INFO -    ⚔️  Processando: JD Gaming vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179540936
+2025-08-21 18:29:24,286 - INFO -    ⏭️  EVENTO PULADO: 179540936 (já finalizado)
+2025-08-21 18:29:24,287 - INFO -    ⚔️  Processando: Besiktas Esports vs The Forbidden Five (LOL - TCL Summer) - ID: 179606988
+2025-08-21 18:29:24,289 - INFO -    ⏭️  EVENTO PULADO: 179606988 (já finalizado)
+2025-08-21 18:29:24,289 - INFO -    ⚔️  Processando: BoostGate Esports vs ULF Esports (LOL - TCL Summer) - ID: 179606989
+2025-08-21 18:29:24,290 - INFO -    ⏭️  EVENTO PULADO: 179606989 (já finalizado)
+2025-08-21 18:29:24,290 - INFO -    ⚔️  Processando: Los Ratones vs Rich Gang (LOL - NLC Summer Playoffs) - ID: 179267735
+2025-08-21 18:29:24,292 - INFO -    ⏭️  EVENTO PULADO: 179267735 (já finalizado)
+2025-08-21 18:29:24,292 - INFO -    ⚔️  Processando: Galions vs Joblife (LOL - LFL Summer) - ID: 179693608
+2025-08-21 18:29:24,293 - INFO -    ⏭️  EVENTO PULADO: 179693608 (já finalizado)
+2025-08-21 18:29:24,293 - INFO -    ⚔️  Processando: Los Heretics vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179893600
+2025-08-21 18:29:24,295 - INFO -    ⏭️  EVENTO PULADO: 179893600 (já finalizado)
+2025-08-21 18:29:24,295 - INFO -    ⚔️  Processando: Dark Passage vs Papara SuperMassive (LOL - TCL Summer) - ID: 179606990
+2025-08-21 18:29:24,296 - INFO -    ⏭️  EVENTO PULADO: 179606990 (já finalizado)
+2025-08-21 18:29:24,296 - INFO -    ⚔️  Processando: A One Man Army vs Myth Esports (LOL - ROL Summer) - ID: 179555586
+2025-08-21 18:29:24,297 - INFO -    ⏭️  EVENTO PULADO: 179555586 (já finalizado)
+2025-08-21 18:29:24,297 - INFO -    ⚔️  Processando: Partizan Sangal vs Lenovo Legion Honved (LOL - EBL Summer Playoffs) - ID: 179623170
+2025-08-21 18:29:24,299 - INFO -    ⏭️  EVENTO PULADO: 179623170 (já finalizado)
+2025-08-21 18:29:24,299 - INFO -    ⚔️  Processando: Bushido Wildcats vs Misa Esports (LOL - TCL Summer) - ID: 179606991
+2025-08-21 18:29:24,301 - INFO -    ⏭️  EVENTO PULADO: 179606991 (já finalizado)
+2025-08-21 18:29:24,301 - INFO -    ⚔️  Processando: Senshi eSports vs Aurora (LOL - ROL Summer) - ID: 179555588
+2025-08-21 18:29:24,302 - INFO -    ⏭️  EVENTO PULADO: 179555588 (já finalizado)
+2025-08-21 18:29:24,303 - INFO -    ⚔️  Processando: Keypulse Esports vs The Otter Side (LOL - LPLOL Summer) - ID: 179857554
+2025-08-21 18:29:24,304 - INFO -    ⏭️  EVENTO PULADO: 179857554 (já finalizado)
+2025-08-21 18:29:24,304 - INFO -    📊 RESUMO DO DIA 2025-08-21:
+2025-08-21 18:29:24,304 - INFO -       ➕ Novos: 0
+2025-08-21 18:29:24,304 - INFO -       🔄 Atualizados: 2
+2025-08-21 18:29:24,305 - INFO -       ⏭️  Pulados: 15
+2025-08-21 18:29:24,305 - INFO -       ❌ Erros: 0
+2025-08-21 18:29:24,305 - INFO -       📋 Total processado: 17
+2025-08-21 18:29:25,313 - INFO - 📅 PROCESSANDO DIA: 2025-08-20 (2/30)
+2025-08-21 18:29:25,313 - INFO -    🔍 Buscando eventos para o dia 20250820...
+2025-08-21 18:29:25,880 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250820&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:25,884 - INFO -    ✅ 50 eventos encontrados para o dia 20250820
+2025-08-21 18:29:25,884 - INFO -    🎯 7 jogos de LoL encontrados
+2025-08-21 18:29:25,884 - INFO -    ⚔️  Processando: Gen.G.GA vs T1.EA (LOL - LCK CL Rounds 3-5) - ID: 179606650
+2025-08-21 18:29:25,886 - INFO -    📥 Buscando detalhes para atualizar evento 179606650...
+2025-08-21 18:29:26,327 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606650&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:26,342 - INFO -    💾 Evento 179606650 atualizado com sucesso no banco de dados
+2025-08-21 18:29:26,343 - INFO -    🔄 EVENTO ATUALIZADO: 179606650
+2025-08-21 18:29:26,343 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Dplus KIA.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606651
+2025-08-21 18:29:26,345 - INFO -    📥 Buscando detalhes para atualizar evento 179606651...
+2025-08-21 18:29:26,754 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606651&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:26,768 - INFO -    💾 Evento 179606651 atualizado com sucesso no banco de dados
+2025-08-21 18:29:26,768 - INFO -    🔄 EVENTO ATUALIZADO: 179606651
+2025-08-21 18:29:26,770 - INFO -    ⚔️  Processando: DRX vs DN Freecs (LOL - LCK) - ID: 179715703
+2025-08-21 18:29:26,771 - INFO -    ⏭️  EVENTO PULADO: 179715703 (já finalizado)
+2025-08-21 18:29:26,771 - INFO -    ⚔️  Processando: LGD Gaming vs ThunderTalk Gaming (LOL - LPL Split 3) - ID: 179540932
+2025-08-21 18:29:26,773 - INFO -    ⏭️  EVENTO PULADO: 179540932 (já finalizado)
+2025-08-21 18:29:26,773 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Frank Esports (LOL - PCS Split 3) - ID: 179764529
+2025-08-21 18:29:26,774 - INFO -    📥 Buscando detalhes para atualizar evento 179764529...
+2025-08-21 18:29:27,166 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179764529&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:27,987 - INFO -    💾 Evento 179764529 atualizado com sucesso no banco de dados
+2025-08-21 18:29:27,987 - INFO -    🔄 EVENTO ATUALIZADO: 179764529
+2025-08-21 18:29:27,987 - INFO -    ⚔️  Processando: Gen.G vs Nongshim RedForce (LOL - LCK) - ID: 179715704
+2025-08-21 18:29:27,989 - INFO -    ⏭️  EVENTO PULADO: 179715704 (já finalizado)
+2025-08-21 18:29:27,990 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Anyone's Legend (LOL - LPL Split 3) - ID: 179540933
+2025-08-21 18:29:27,991 - INFO -    ⏭️  EVENTO PULADO: 179540933 (já finalizado)
+2025-08-21 18:29:27,991 - INFO -    📊 RESUMO DO DIA 2025-08-20:
+2025-08-21 18:29:27,992 - INFO -       ➕ Novos: 0
+2025-08-21 18:29:27,992 - INFO -       🔄 Atualizados: 3
+2025-08-21 18:29:27,992 - INFO -       ⏭️  Pulados: 4
+2025-08-21 18:29:27,992 - INFO -       ❌ Erros: 0
+2025-08-21 18:29:27,992 - INFO -       📋 Total processado: 7
+2025-08-21 18:29:29,002 - INFO - 📅 PROCESSANDO DIA: 2025-08-19 (3/30)
+2025-08-21 18:29:29,002 - INFO -    🔍 Buscando eventos para o dia 20250819...
+2025-08-21 18:29:29,429 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250819&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:29,434 - INFO -    ✅ 50 eventos encontrados para o dia 20250819
+2025-08-21 18:29:29,434 - INFO -    🎯 12 jogos de LoL encontrados
+2025-08-21 18:29:29,434 - INFO -    ⚔️  Processando: KT Rolster.Ch vs BNK FearX.Y (LOL - LCK CL Rounds 3-5) - ID: 179606648
+2025-08-21 18:29:29,436 - INFO -    ⏭️  EVENTO PULADO: 179606648 (já finalizado)
+2025-08-21 18:29:29,436 - INFO -    ⚔️  Processando: Ninjas in Pyjamas vs LNG Esports (LOL - LPL Split 3) - ID: 179540930
+2025-08-21 18:29:29,438 - INFO -    ⏭️  EVENTO PULADO: 179540930 (já finalizado)
+2025-08-21 18:29:29,438 - INFO -    ⚔️  Processando: West Point Esports vs CFO Academy (LOL - PCS Split 3) - ID: 179764528
+2025-08-21 18:29:29,440 - INFO -    📥 Buscando detalhes para atualizar evento 179764528...
+2025-08-21 18:29:29,837 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179764528&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:29,852 - INFO -    💾 Evento 179764528 atualizado com sucesso no banco de dados
+2025-08-21 18:29:29,852 - INFO -    🔄 EVENTO ATUALIZADO: 179764528
+2025-08-21 18:29:29,852 - INFO -    ⚔️  Processando: OKSavingsBank BRION.Ch vs Nongshim.EA (LOL - LCK CL Rounds 3-5) - ID: 179606649
+2025-08-21 18:29:29,854 - INFO -    ⏭️  EVENTO PULADO: 179606649 (já finalizado)
+2025-08-21 18:29:29,854 - INFO -    ⚔️  Processando: Anyone's Legend vs Top Esports (LOL - LPL Split 3) - ID: 179540931
+2025-08-21 18:29:29,855 - INFO -    ⏭️  EVENTO PULADO: 179540931 (já finalizado)
+2025-08-21 18:29:29,855 - INFO -    ⚔️  Processando: Entropiq vs Nightbirds (LOL - Hitpoint Masters Summer Playoffs) - ID: 179761098
+2025-08-21 18:29:29,857 - INFO -    ⏭️  EVENTO PULADO: 179761098 (já finalizado)
+2025-08-21 18:29:29,858 - INFO -    ⚔️  Processando: Movistar KOI Fenix vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179541081
+2025-08-21 18:29:29,859 - INFO -    ⏭️  EVENTO PULADO: 179541081 (já finalizado)
+2025-08-21 18:29:29,859 - INFO -    ⚔️  Processando: TeamOrangeGaming vs ROSSMANN Centaurs (LOL - Prime League Season Finals) - ID: 179669718
+2025-08-21 18:29:29,861 - INFO -    ⏭️  EVENTO PULADO: 179669718 (já finalizado)
+2025-08-21 18:29:29,862 - INFO -    ⚔️  Processando: Geekay Esports vs GNG Amazigh (LOL - Arabian League Summer Playoffs) - ID: 179784702
+2025-08-21 18:29:29,863 - INFO -    📥 Buscando detalhes para atualizar evento 179784702...
+2025-08-21 18:29:30,240 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179784702&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:30,255 - INFO -    💾 Evento 179784702 atualizado com sucesso no banco de dados
+2025-08-21 18:29:30,256 - INFO -    🔄 EVENTO ATUALIZADO: 179784702
+2025-08-21 18:29:30,256 - INFO -    ⚔️  Processando: mCon esports vs Jormungang (LOL - ROL Summer) - ID: 179555583
+2025-08-21 18:29:30,258 - INFO -    ⏭️  EVENTO PULADO: 179555583 (já finalizado)
+2025-08-21 18:29:30,258 - INFO -    ⚔️  Processando: Zero Tenacity vs Forsaken (LOL - Rift Legends Summer) - ID: 179555500
+2025-08-21 18:29:30,259 - INFO -    ⏭️  EVENTO PULADO: 179555500 (já finalizado)
+2025-08-21 18:29:30,259 - INFO -    ⚔️  Processando: ZennIT vs Once Upon A Team (LOL - ROL Summer) - ID: 179555585
+2025-08-21 18:29:30,260 - INFO -    ⏭️  EVENTO PULADO: 179555585 (já finalizado)
+2025-08-21 18:29:30,261 - INFO -    📊 RESUMO DO DIA 2025-08-19:
+2025-08-21 18:29:30,261 - INFO -       ➕ Novos: 0
+2025-08-21 18:29:30,261 - INFO -       🔄 Atualizados: 2
+2025-08-21 18:29:30,261 - INFO -       ⏭️  Pulados: 10
+2025-08-21 18:29:30,262 - INFO -       ❌ Erros: 0
+2025-08-21 18:29:30,262 - INFO -       📋 Total processado: 12
+2025-08-21 18:29:31,264 - INFO - 📅 PROCESSANDO DIA: 2025-08-18 (4/30)
+2025-08-21 18:29:31,264 - INFO -    🔍 Buscando eventos para o dia 20250818...
+2025-08-21 18:29:31,699 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250818&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:31,704 - INFO -    ✅ 45 eventos encontrados para o dia 20250818
+2025-08-21 18:29:31,704 - INFO -    🎯 10 jogos de LoL encontrados
+2025-08-21 18:29:31,704 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606646
+2025-08-21 18:29:31,706 - INFO -    ⏭️  EVENTO PULADO: 179606646 (já finalizado)
+2025-08-21 18:29:31,707 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Weibo Gaming (LOL - LPL Split 3) - ID: 179540928
+2025-08-21 18:29:31,708 - INFO -    ⏭️  EVENTO PULADO: 179540928 (já finalizado)
+2025-08-21 18:29:31,708 - INFO -    ⚔️  Processando: HELL PIGS vs PSG Talon.A (LOL - PCS Split 3) - ID: 179764527
+2025-08-21 18:29:31,710 - INFO -    📥 Buscando detalhes para atualizar evento 179764527...
+2025-08-21 18:29:32,135 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179764527&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:32,150 - INFO -    💾 Evento 179764527 atualizado com sucesso no banco de dados
+2025-08-21 18:29:32,151 - INFO -    🔄 EVENTO ATUALIZADO: 179764527
+2025-08-21 18:29:32,151 - INFO -    ⚔️  Processando: Gen.G.GA vs DRX.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606647
+2025-08-21 18:29:32,153 - INFO -    ⏭️  EVENTO PULADO: 179606647 (já finalizado)
+2025-08-21 18:29:32,153 - INFO -    ⚔️  Processando: Bilibili Gaming vs Invictus Gaming (LOL - LPL Split 3) - ID: 179540929
+2025-08-21 18:29:32,155 - INFO -    ⏭️  EVENTO PULADO: 179540929 (já finalizado)
+2025-08-21 18:29:32,155 - INFO -    ⚔️  Processando: Karmine Corp vs Team Vitality (LOL - LEC Summer) - ID: 179331771
+2025-08-21 18:29:32,157 - INFO -    ⏭️  EVENTO PULADO: 179331771 (já finalizado)
+2025-08-21 18:29:32,157 - INFO -    ⚔️  Processando: Anubis Gaming vs FN Esports (LOL - Arabian League Summer Playoffs) - ID: 179784701
+2025-08-21 18:29:32,158 - INFO -    📥 Buscando detalhes para atualizar evento 179784701...
+2025-08-21 18:29:32,569 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179784701&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:32,586 - INFO -    💾 Evento 179784701 atualizado com sucesso no banco de dados
+2025-08-21 18:29:32,586 - INFO -    🔄 EVENTO ATUALIZADO: 179784701
+2025-08-21 18:29:32,586 - INFO -    ⚔️  Processando: G2 Esports vs Team BDS (LOL - LEC Summer) - ID: 179331773
+2025-08-21 18:29:32,589 - INFO -    ⏭️  EVENTO PULADO: 179331773 (já finalizado)
+2025-08-21 18:29:32,589 - INFO -    ⚔️  Processando: RED Canids.A vs KaBuM! IDL (LOL - CD Split 2 Playoffs) - ID: 179544627
+2025-08-21 18:29:32,590 - INFO -    📥 Buscando detalhes para atualizar evento 179544627...
+2025-08-21 18:29:32,970 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179544627&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:32,984 - INFO -    💾 Evento 179544627 atualizado com sucesso no banco de dados
+2025-08-21 18:29:32,985 - INFO -    🔄 EVENTO ATUALIZADO: 179544627
+2025-08-21 18:29:32,985 - INFO -    ⚔️  Processando: Corinthians Esports vs Alpha7 Esports (LOL - CD Split 2 Playoffs) - ID: 179544628
+2025-08-21 18:29:32,987 - INFO -    📥 Buscando detalhes para atualizar evento 179544628...
+2025-08-21 18:29:33,384 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179544628&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:33,399 - INFO -    💾 Evento 179544628 atualizado com sucesso no banco de dados
+2025-08-21 18:29:33,400 - INFO -    🔄 EVENTO ATUALIZADO: 179544628
+2025-08-21 18:29:33,400 - INFO -    📊 RESUMO DO DIA 2025-08-18:
+2025-08-21 18:29:33,400 - INFO -       ➕ Novos: 0
+2025-08-21 18:29:33,400 - INFO -       🔄 Atualizados: 4
+2025-08-21 18:29:33,400 - INFO -       ⏭️  Pulados: 6
+2025-08-21 18:29:33,400 - INFO -       ❌ Erros: 0
+2025-08-21 18:29:33,400 - INFO -       📋 Total processado: 10
+2025-08-21 18:29:34,402 - INFO - 📅 PROCESSANDO DIA: 2025-08-17 (5/30)
+2025-08-21 18:29:34,402 - INFO -    🔍 Buscando eventos para o dia 20250817...
+2025-08-21 18:29:34,812 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250817&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:34,817 - INFO -    ✅ 50 eventos encontrados para o dia 20250817
+2025-08-21 18:29:34,817 - INFO -    🎯 12 jogos de LoL encontrados
+2025-08-21 18:29:34,817 - INFO -    ⚔️  Processando: Hanwha Life Esports vs Gen.G (LOL - LCK) - ID: 179328861
+2025-08-21 18:29:34,819 - INFO -    ⏭️  EVENTO PULADO: 179328861 (já finalizado)
+2025-08-21 18:29:34,820 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs Dplus KIA (LOL - LCK) - ID: 179328862
+2025-08-21 18:29:34,821 - INFO -    ⏭️  EVENTO PULADO: 179328862 (já finalizado)
+2025-08-21 18:29:34,821 - INFO -    ⚔️  Processando: Weibo Gaming vs Anyone's Legend (LOL - LPL Split 3) - ID: 179328682
+2025-08-21 18:29:34,823 - INFO -    ⏭️  EVENTO PULADO: 179328682 (já finalizado)
+2025-08-21 18:29:34,823 - INFO -    ⚔️  Processando: Nightbirds vs Tan'i eSports CZ (LOL - Hitpoint Masters Summer Playoffs) - ID: 179503965
+2025-08-21 18:29:34,824 - INFO -    📥 Buscando detalhes para atualizar evento 179503965...
+2025-08-21 18:29:35,197 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179503965&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:29:35,211 - INFO -    💾 Evento 179503965 atualizado com sucesso no banco de dados
+2025-08-21 18:29:35,212 - INFO -    🔄 EVENTO ATUALIZADO: 179503965
+2025-08-21 18:29:35,212 - INFO -    ⚔️  Processando: PSG Talon vs Chiefs Esports Club (LOL - LCP Season Finals) - ID: 179657895
+2025-08-21 18:29:35,214 - INFO -    ⏭️  EVENTO PULADO: 179657895 (já finalizado)
+2025-08-21 18:29:35,214 - INFO -    ⚔️  Processando: Top Esports vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179328683
+2025-08-21 18:29:35,215 - INFO -    ⏭️  EVENTO PULADO: 179328683 (já finalizado)
+2025-08-21 18:29:35,215 - INFO -    ⚔️  Processando: Fukuoka SB Hawks gaming vs DetonatioN FocusMe (LOL - LCP Season Finals) - ID: 179657896
+2025-08-21 18:29:35,217 - INFO -    ⏭️  EVENTO PULADO: 179657896 (já finalizado)
+2025-08-21 18:29:35,217 - INFO -    ⚔️  Processando: Team Vitality vs Natus Vincere (LOL - LEC Summer) - ID: 179331767
+2025-08-21 18:29:35,218 - INFO -    ⏭️  EVENTO PULADO: 179331767 (já finalizado)
+2025-08-21 18:29:35,218 - INFO -    ⚔️  Processando: GNG Amazigh vs Anubis Gaming (LOL - Arabian League Summer Playoffs) - ID: 178588918
+2025-08-21 18:29:35,220 - INFO -    📥 Buscando detalhes para atualizar evento 178588918...
+2025-08-21 18:29:35,359 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-08-21 18:30:23,298 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:30:23,298 - INFO - ============================================================
+2025-08-21 18:30:23,316 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:30:23,316 - INFO - ============================================================
+2025-08-21 18:30:23,316 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/30)
+2025-08-21 18:30:23,316 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 18:30:25,314 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250821&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:25,314 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 18:30:25,314 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 18:30:25,314 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 18:30:25,316 - INFO -    📥 Buscando detalhes para atualizar evento 179606652...
+2025-08-21 18:30:25,739 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606652&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:25,751 - INFO -    💾 Evento 179606652 atualizado com sucesso no banco de dados
+2025-08-21 18:30:25,752 - INFO -    🔄 EVENTO ATUALIZADO: 179606652
+2025-08-21 18:30:25,752 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 18:30:25,754 - INFO -    📥 Buscando detalhes para atualizar evento 179606653...
+2025-08-21 18:30:26,423 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606653&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:26,436 - INFO -    💾 Evento 179606653 atualizado com sucesso no banco de dados
+2025-08-21 18:30:26,436 - INFO -    🔄 EVENTO ATUALIZADO: 179606653
+2025-08-21 18:30:26,436 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 18:30:26,439 - INFO -    ⏭️  EVENTO PULADO: 179715705 (já finalizado)
+2025-08-21 18:30:26,439 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 18:30:26,441 - INFO -    ⏭️  EVENTO PULADO: 179540934 (já finalizado)
+2025-08-21 18:30:26,441 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs BNK FearX (LOL - LCK) - ID: 179715707
+2025-08-21 18:30:26,442 - INFO -    ⏭️  EVENTO PULADO: 179715707 (já finalizado)
+2025-08-21 18:30:26,442 - INFO -    ⚔️  Processando: JD Gaming vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179540936
+2025-08-21 18:30:26,444 - INFO -    ⏭️  EVENTO PULADO: 179540936 (já finalizado)
+2025-08-21 18:30:26,444 - INFO -    ⚔️  Processando: Besiktas Esports vs The Forbidden Five (LOL - TCL Summer) - ID: 179606988
+2025-08-21 18:30:26,446 - INFO -    ⏭️  EVENTO PULADO: 179606988 (já finalizado)
+2025-08-21 18:30:26,446 - INFO -    ⚔️  Processando: BoostGate Esports vs ULF Esports (LOL - TCL Summer) - ID: 179606989
+2025-08-21 18:30:26,448 - INFO -    ⏭️  EVENTO PULADO: 179606989 (já finalizado)
+2025-08-21 18:30:26,448 - INFO -    ⚔️  Processando: Los Ratones vs Rich Gang (LOL - NLC Summer Playoffs) - ID: 179267735
+2025-08-21 18:30:26,449 - INFO -    ⏭️  EVENTO PULADO: 179267735 (já finalizado)
+2025-08-21 18:30:26,449 - INFO -    ⚔️  Processando: Galions vs Joblife (LOL - LFL Summer) - ID: 179693608
+2025-08-21 18:30:26,451 - INFO -    ⏭️  EVENTO PULADO: 179693608 (já finalizado)
+2025-08-21 18:30:26,451 - INFO -    ⚔️  Processando: Los Heretics vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179893600
+2025-08-21 18:30:26,453 - INFO -    ⏭️  EVENTO PULADO: 179893600 (já finalizado)
+2025-08-21 18:30:26,453 - INFO -    ⚔️  Processando: Dark Passage vs Papara SuperMassive (LOL - TCL Summer) - ID: 179606990
+2025-08-21 18:30:26,455 - INFO -    ⏭️  EVENTO PULADO: 179606990 (já finalizado)
+2025-08-21 18:30:26,455 - INFO -    ⚔️  Processando: A One Man Army vs Myth Esports (LOL - ROL Summer) - ID: 179555586
+2025-08-21 18:30:26,457 - INFO -    ⏭️  EVENTO PULADO: 179555586 (já finalizado)
+2025-08-21 18:30:26,457 - INFO -    ⚔️  Processando: Partizan Sangal vs Lenovo Legion Honved (LOL - EBL Summer Playoffs) - ID: 179623170
+2025-08-21 18:30:26,459 - INFO -    ⏭️  EVENTO PULADO: 179623170 (já finalizado)
+2025-08-21 18:30:26,459 - INFO -    ⚔️  Processando: Bushido Wildcats vs Misa Esports (LOL - TCL Summer) - ID: 179606991
+2025-08-21 18:30:26,460 - INFO -    ⏭️  EVENTO PULADO: 179606991 (já finalizado)
+2025-08-21 18:30:26,460 - INFO -    ⚔️  Processando: Senshi eSports vs Aurora (LOL - ROL Summer) - ID: 179555588
+2025-08-21 18:30:26,462 - INFO -    ⏭️  EVENTO PULADO: 179555588 (já finalizado)
+2025-08-21 18:30:26,462 - INFO -    ⚔️  Processando: Keypulse Esports vs The Otter Side (LOL - LPLOL Summer) - ID: 179857554
+2025-08-21 18:30:26,465 - INFO -    ⏭️  EVENTO PULADO: 179857554 (já finalizado)
+2025-08-21 18:30:26,465 - INFO -    📊 RESUMO DO DIA 2025-08-21:
+2025-08-21 18:30:26,465 - INFO -       ➕ Novos: 0
+2025-08-21 18:30:26,465 - INFO -       🔄 Atualizados: 2
+2025-08-21 18:30:26,465 - INFO -       ⏭️  Pulados: 15
+2025-08-21 18:30:26,465 - INFO -       ❌ Erros: 0
+2025-08-21 18:30:26,466 - INFO -       📋 Total processado: 17
+2025-08-21 18:30:27,481 - INFO - 📅 PROCESSANDO DIA: 2025-08-20 (2/30)
+2025-08-21 18:30:27,481 - INFO -    🔍 Buscando eventos para o dia 20250820...
+2025-08-21 18:30:27,954 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250820&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:27,960 - INFO -    ✅ 50 eventos encontrados para o dia 20250820
+2025-08-21 18:30:27,960 - INFO -    🎯 7 jogos de LoL encontrados
+2025-08-21 18:30:27,960 - INFO -    ⚔️  Processando: Gen.G.GA vs T1.EA (LOL - LCK CL Rounds 3-5) - ID: 179606650
+2025-08-21 18:30:27,964 - INFO -    📥 Buscando detalhes para atualizar evento 179606650...
+2025-08-21 18:30:28,540 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606650&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:28,553 - INFO -    💾 Evento 179606650 atualizado com sucesso no banco de dados
+2025-08-21 18:30:28,554 - INFO -    🔄 EVENTO ATUALIZADO: 179606650
+2025-08-21 18:30:28,554 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Dplus KIA.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606651
+2025-08-21 18:30:28,556 - INFO -    📥 Buscando detalhes para atualizar evento 179606651...
+2025-08-21 18:30:28,987 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606651&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:29,000 - INFO -    💾 Evento 179606651 atualizado com sucesso no banco de dados
+2025-08-21 18:30:29,000 - INFO -    🔄 EVENTO ATUALIZADO: 179606651
+2025-08-21 18:30:29,000 - INFO -    ⚔️  Processando: DRX vs DN Freecs (LOL - LCK) - ID: 179715703
+2025-08-21 18:30:29,002 - INFO -    ⏭️  EVENTO PULADO: 179715703 (já finalizado)
+2025-08-21 18:30:29,002 - INFO -    ⚔️  Processando: LGD Gaming vs ThunderTalk Gaming (LOL - LPL Split 3) - ID: 179540932
+2025-08-21 18:30:29,004 - INFO -    ⏭️  EVENTO PULADO: 179540932 (já finalizado)
+2025-08-21 18:30:29,004 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Frank Esports (LOL - PCS Split 3) - ID: 179764529
+2025-08-21 18:30:29,006 - INFO -    📥 Buscando detalhes para atualizar evento 179764529...
+2025-08-21 18:30:29,776 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179764529&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:29,790 - INFO -    💾 Evento 179764529 atualizado com sucesso no banco de dados
+2025-08-21 18:30:29,790 - INFO -    🔄 EVENTO ATUALIZADO: 179764529
+2025-08-21 18:30:29,790 - INFO -    ⚔️  Processando: Gen.G vs Nongshim RedForce (LOL - LCK) - ID: 179715704
+2025-08-21 18:30:29,792 - INFO -    ⏭️  EVENTO PULADO: 179715704 (já finalizado)
+2025-08-21 18:30:29,792 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Anyone's Legend (LOL - LPL Split 3) - ID: 179540933
+2025-08-21 18:30:29,794 - INFO -    ⏭️  EVENTO PULADO: 179540933 (já finalizado)
+2025-08-21 18:30:29,794 - INFO -    📊 RESUMO DO DIA 2025-08-20:
+2025-08-21 18:30:29,795 - INFO -       ➕ Novos: 0
+2025-08-21 18:30:29,795 - INFO -       🔄 Atualizados: 3
+2025-08-21 18:30:29,795 - INFO -       ⏭️  Pulados: 4
+2025-08-21 18:30:29,795 - INFO -       ❌ Erros: 0
+2025-08-21 18:30:29,795 - INFO -       📋 Total processado: 7
+2025-08-21 18:30:30,810 - INFO - 📅 PROCESSANDO DIA: 2025-08-19 (3/30)
+2025-08-21 18:30:30,810 - INFO -    🔍 Buscando eventos para o dia 20250819...
+2025-08-21 18:30:31,876 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250819&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:31,881 - INFO -    ✅ 50 eventos encontrados para o dia 20250819
+2025-08-21 18:30:31,881 - INFO -    🎯 12 jogos de LoL encontrados
+2025-08-21 18:30:31,881 - INFO -    ⚔️  Processando: KT Rolster.Ch vs BNK FearX.Y (LOL - LCK CL Rounds 3-5) - ID: 179606648
+2025-08-21 18:30:31,884 - INFO -    ⏭️  EVENTO PULADO: 179606648 (já finalizado)
+2025-08-21 18:30:31,884 - INFO -    ⚔️  Processando: Ninjas in Pyjamas vs LNG Esports (LOL - LPL Split 3) - ID: 179540930
+2025-08-21 18:30:31,885 - INFO -    ⏭️  EVENTO PULADO: 179540930 (já finalizado)
+2025-08-21 18:30:31,885 - INFO -    ⚔️  Processando: West Point Esports vs CFO Academy (LOL - PCS Split 3) - ID: 179764528
+2025-08-21 18:30:31,887 - INFO -    📥 Buscando detalhes para atualizar evento 179764528...
+2025-08-21 18:30:32,297 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179764528&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:32,311 - INFO -    💾 Evento 179764528 atualizado com sucesso no banco de dados
+2025-08-21 18:30:32,311 - INFO -    🔄 EVENTO ATUALIZADO: 179764528
+2025-08-21 18:30:32,311 - INFO -    ⚔️  Processando: OKSavingsBank BRION.Ch vs Nongshim.EA (LOL - LCK CL Rounds 3-5) - ID: 179606649
+2025-08-21 18:30:32,313 - INFO -    ⏭️  EVENTO PULADO: 179606649 (já finalizado)
+2025-08-21 18:30:32,313 - INFO -    ⚔️  Processando: Anyone's Legend vs Top Esports (LOL - LPL Split 3) - ID: 179540931
+2025-08-21 18:30:32,315 - INFO -    ⏭️  EVENTO PULADO: 179540931 (já finalizado)
+2025-08-21 18:30:32,315 - INFO -    ⚔️  Processando: Entropiq vs Nightbirds (LOL - Hitpoint Masters Summer Playoffs) - ID: 179761098
+2025-08-21 18:30:32,317 - INFO -    ⏭️  EVENTO PULADO: 179761098 (já finalizado)
+2025-08-21 18:30:32,317 - INFO -    ⚔️  Processando: Movistar KOI Fenix vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179541081
+2025-08-21 18:30:32,318 - INFO -    ⏭️  EVENTO PULADO: 179541081 (já finalizado)
+2025-08-21 18:30:32,318 - INFO -    ⚔️  Processando: TeamOrangeGaming vs ROSSMANN Centaurs (LOL - Prime League Season Finals) - ID: 179669718
+2025-08-21 18:30:32,320 - INFO -    ⏭️  EVENTO PULADO: 179669718 (já finalizado)
+2025-08-21 18:30:32,321 - INFO -    ⚔️  Processando: Geekay Esports vs GNG Amazigh (LOL - Arabian League Summer Playoffs) - ID: 179784702
+2025-08-21 18:30:32,322 - INFO -    📥 Buscando detalhes para atualizar evento 179784702...
+2025-08-21 18:30:32,768 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179784702&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:30:32,781 - INFO -    💾 Evento 179784702 atualizado com sucesso no banco de dados
+2025-08-21 18:30:32,782 - INFO -    🔄 EVENTO ATUALIZADO: 179784702
+2025-08-21 18:30:32,782 - INFO -    ⚔️  Processando: mCon esports vs Jormungang (LOL - ROL Summer) - ID: 179555583
+2025-08-21 18:30:32,783 - INFO -    ⏭️  EVENTO PULADO: 179555583 (já finalizado)
+2025-08-21 18:30:32,784 - INFO -    ⚔️  Processando: Zero Tenacity vs Forsaken (LOL - Rift Legends Summer) - ID: 179555500
+2025-08-21 18:30:32,786 - INFO -    ⏭️  EVENTO PULADO: 179555500 (já finalizado)
+2025-08-21 18:30:32,786 - INFO -    ⚔️  Processando: ZennIT vs Once Upon A Team (LOL - ROL Summer) - ID: 179555585
+2025-08-21 18:30:32,788 - INFO -    ⏭️  EVENTO PULADO: 179555585 (já finalizado)
+2025-08-21 18:30:32,788 - INFO -    📊 RESUMO DO DIA 2025-08-19:
+2025-08-21 18:30:32,788 - INFO -       ➕ Novos: 0
+2025-08-21 18:30:32,788 - INFO -       🔄 Atualizados: 2
+2025-08-21 18:30:32,788 - INFO -       ⏭️  Pulados: 10
+2025-08-21 18:30:32,788 - INFO -       ❌ Erros: 0
+2025-08-21 18:30:32,788 - INFO -       📋 Total processado: 12
+2025-08-21 18:30:32,816 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-08-21 18:37:57,496 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:37:57,496 - INFO - ============================================================
+2025-08-21 18:37:57,512 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:37:57,512 - INFO - ============================================================
+2025-08-21 18:37:57,512 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/30)
+2025-08-21 18:37:57,512 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 18:37:58,715 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250821&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:37:58,717 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 18:37:58,717 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 18:37:58,717 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 18:37:58,720 - WARNING -    ⚠️  Erro ao analisar data de atualização: unconverted data remains: .430067
+2025-08-21 18:37:58,720 - INFO -    📥 Buscando detalhes para atualizar evento 179606652...
+2025-08-21 18:37:59,105 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606652&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:37:59,130 - INFO -    💾 Evento 179606652 atualizado com sucesso no banco de dados
+2025-08-21 18:37:59,130 - INFO -    🔄 EVENTO ATUALIZADO: 179606652
+2025-08-21 18:37:59,130 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 18:37:59,132 - WARNING -    ⚠️  Erro ao analisar data de atualização: unconverted data remains: .829989
+2025-08-21 18:37:59,133 - INFO -    📥 Buscando detalhes para atualizar evento 179606653...
+2025-08-21 18:37:59,516 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179606653&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:37:59,529 - INFO -    💾 Evento 179606653 atualizado com sucesso no banco de dados
+2025-08-21 18:37:59,529 - INFO -    🔄 EVENTO ATUALIZADO: 179606653
+2025-08-21 18:37:59,529 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 18:37:59,531 - INFO -    📥 Buscando detalhes para atualizar evento 179715705...
+2025-08-21 18:37:59,945 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/result?event_id=179715705&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:37:59,950 - INFO -    📊 Estatísticas salvas: 3 mapas, 18 estatísticas
+2025-08-21 18:37:59,961 - INFO -    💾 Evento 179715705 atualizado com sucesso no banco de dados
+2025-08-21 18:37:59,962 - INFO -    🔄 EVENTO ATUALIZADO: 179715705
+2025-08-21 18:37:59,962 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 18:37:59,963 - INFO -    📥 Buscando detalhes para atualizar evento 179540934...
+2025-08-21 18:38:00,060 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-08-21 18:44:32,714 - DEBUG - Using proactor: IocpProactor
+2025-08-21 18:44:32,717 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:44:32,717 - INFO - ============================================================
+2025-08-21 18:44:32,719 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-08-21 18:44:32,741 - DEBUG - load_verify_locations cafile='C:\\ProgramData\\anaconda3\\envs\\bet365\\Library\\ssl\\cacert.pem'
+2025-08-21 18:44:32,764 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-08-21 18:44:32,764 - INFO - ============================================================
+2025-08-21 18:44:32,764 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/30)
+2025-08-21 18:44:32,764 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 18:44:32,770 - DEBUG - connect_tcp.started host='api.b365api.com' port=443 local_address=None timeout=30 socket_options=None
+2025-08-21 18:44:33,042 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002490D55FD40>
+2025-08-21 18:44:33,042 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002490E1E23D0> server_hostname='api.b365api.com' timeout=30
+2025-08-21 18:44:33,266 - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002490B87F800>
+2025-08-21 18:44:33,266 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-08-21 18:44:33,267 - DEBUG - send_request_headers.complete
+2025-08-21 18:44:33,267 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-08-21 18:44:33,267 - DEBUG - send_request_body.complete
+2025-08-21 18:44:33,267 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-08-21 18:44:33,560 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 21 Aug 2025 22:44:33 GMT'), (b'Content-Type', b'application/json;charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Server', b'cloudflare'), (b'X-Powered-By', b'BetsAPI'), (b'X-Ratelimit-Limit', b'1800'), (b'X-Ratelimit-Remaining', b'1246'), (b'X-Ratelimit-Reset', b'1755817200'), (b'Content-Encoding', b'gzip'), (b'Cf-Cache-Status', b'DYNAMIC'), (b'Vary', b'accept-encoding'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=VvwFk40QwxydqxAbTmtHjTYeBGjoi4NCLlUwiT3ulT1yMWVsdH2M%2B7IQfvP2d1J3xoqJwenHXZONoX%2F5TonmaLDXyqZE4yAVxLxb%2BVEIsQ%3D%3D"}]}'), (b'CF-RAY', b'972da7dcecf6230b-ORD'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-21 18:44:33,562 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250821&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:44:33,562 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-08-21 18:44:33,564 - DEBUG - receive_response_body.complete
+2025-08-21 18:44:33,564 - DEBUG - response_closed.started
+2025-08-21 18:44:33,564 - DEBUG - response_closed.complete
+2025-08-21 18:44:33,564 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 18:44:33,564 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 18:44:33,565 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 18:44:33,566 - DEBUG -    🔍 Evento 179606652 existe no banco
+2025-08-21 18:44:33,566 - DEBUG -    🔍 Evento 179606652: time_status=2, retrieved_at=2025-08-21 18:38:58.368907
+2025-08-21 18:44:33,570 - DEBUG -    ⏰ Evento 179606652 atualizado há 335 segundos
+2025-08-21 18:44:33,570 - INFO -    ⏭️  Evento 179606652 atualizado recentemente, não precisa atualizar
+2025-08-21 18:44:33,570 - DEBUG -    ⏭️  Evento 179606652 não precisa de atualização
+2025-08-21 18:44:33,570 - INFO -    ⏭️  EVENTO PULADO: 179606652
+2025-08-21 18:44:33,570 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 18:44:33,571 - DEBUG -    🔍 Evento 179606653 existe no banco
+2025-08-21 18:44:33,572 - DEBUG -    🔍 Evento 179606653: time_status=2, retrieved_at=2025-08-21 18:38:58.623981
+2025-08-21 18:44:33,572 - DEBUG -    ⏰ Evento 179606653 atualizado há 335 segundos
+2025-08-21 18:44:33,572 - INFO -    ⏭️  Evento 179606653 atualizado recentemente, não precisa atualizar
+2025-08-21 18:44:33,572 - DEBUG -    ⏭️  Evento 179606653 não precisa de atualização
+2025-08-21 18:44:33,572 - INFO -    ⏭️  EVENTO PULADO: 179606653
+2025-08-21 18:44:33,573 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 18:44:33,573 - DEBUG -    🔍 Evento 179715705 existe no banco
+2025-08-21 18:44:33,574 - DEBUG -    🔍 Evento 179715705: time_status=3, retrieved_at=2025-08-21 18:37:59.949432
+2025-08-21 18:44:33,574 - INFO -    ⏭️  Evento 179715705 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,574 - DEBUG -    ⏭️  Evento 179715705 não precisa de atualização
+2025-08-21 18:44:33,574 - INFO -    ⏭️  EVENTO PULADO: 179715705
+2025-08-21 18:44:33,574 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 18:44:33,575 - DEBUG -    🔍 Evento 179540934 existe no banco
+2025-08-21 18:44:33,575 - DEBUG -    🔍 Evento 179540934: time_status=3, retrieved_at=2025-08-21 11:13:53.390092
+2025-08-21 18:44:33,575 - INFO -    ⏭️  Evento 179540934 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,575 - DEBUG -    ⏭️  Evento 179540934 não precisa de atualização
+2025-08-21 18:44:33,575 - INFO -    ⏭️  EVENTO PULADO: 179540934
+2025-08-21 18:44:33,576 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs BNK FearX (LOL - LCK) - ID: 179715707
+2025-08-21 18:44:33,576 - DEBUG -    🔍 Evento 179715707 existe no banco
+2025-08-21 18:44:33,577 - DEBUG -    🔍 Evento 179715707: time_status=3, retrieved_at=2025-08-21 11:13:53.782235
+2025-08-21 18:44:33,577 - INFO -    ⏭️  Evento 179715707 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,577 - DEBUG -    ⏭️  Evento 179715707 não precisa de atualização
+2025-08-21 18:44:33,577 - INFO -    ⏭️  EVENTO PULADO: 179715707
+2025-08-21 18:44:33,577 - INFO -    ⚔️  Processando: JD Gaming vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179540936
+2025-08-21 18:44:33,578 - DEBUG -    🔍 Evento 179540936 existe no banco
+2025-08-21 18:44:33,579 - DEBUG -    🔍 Evento 179540936: time_status=3, retrieved_at=2025-08-21 11:13:54.248058
+2025-08-21 18:44:33,579 - INFO -    ⏭️  Evento 179540936 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,579 - DEBUG -    ⏭️  Evento 179540936 não precisa de atualização
+2025-08-21 18:44:33,579 - INFO -    ⏭️  EVENTO PULADO: 179540936
+2025-08-21 18:44:33,579 - INFO -    ⚔️  Processando: Besiktas Esports vs The Forbidden Five (LOL - TCL Summer) - ID: 179606988
+2025-08-21 18:44:33,580 - DEBUG -    🔍 Evento 179606988 existe no banco
+2025-08-21 18:44:33,581 - DEBUG -    🔍 Evento 179606988: time_status=3, retrieved_at=2025-08-21 11:13:54.805865
+2025-08-21 18:44:33,581 - INFO -    ⏭️  Evento 179606988 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,581 - DEBUG -    ⏭️  Evento 179606988 não precisa de atualização
+2025-08-21 18:44:33,581 - INFO -    ⏭️  EVENTO PULADO: 179606988
+2025-08-21 18:44:33,581 - INFO -    ⚔️  Processando: BoostGate Esports vs ULF Esports (LOL - TCL Summer) - ID: 179606989
+2025-08-21 18:44:33,582 - DEBUG -    🔍 Evento 179606989 existe no banco
+2025-08-21 18:44:33,583 - DEBUG -    🔍 Evento 179606989: time_status=3, retrieved_at=2025-08-21 14:30:58.751105
+2025-08-21 18:44:33,583 - INFO -    ⏭️  Evento 179606989 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,583 - DEBUG -    ⏭️  Evento 179606989 não precisa de atualização
+2025-08-21 18:44:33,583 - INFO -    ⏭️  EVENTO PULADO: 179606989
+2025-08-21 18:44:33,583 - INFO -    ⚔️  Processando: Los Ratones vs Rich Gang (LOL - NLC Summer Playoffs) - ID: 179267735
+2025-08-21 18:44:33,584 - DEBUG -    🔍 Evento 179267735 existe no banco
+2025-08-21 18:44:33,584 - DEBUG -    🔍 Evento 179267735: time_status=3, retrieved_at=2025-08-21 14:30:59.067485
+2025-08-21 18:44:33,585 - INFO -    ⏭️  Evento 179267735 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,585 - DEBUG -    ⏭️  Evento 179267735 não precisa de atualização
+2025-08-21 18:44:33,585 - INFO -    ⏭️  EVENTO PULADO: 179267735
+2025-08-21 18:44:33,585 - INFO -    ⚔️  Processando: Galions vs Joblife (LOL - LFL Summer) - ID: 179693608
+2025-08-21 18:44:33,585 - DEBUG -    🔍 Evento 179693608 existe no banco
+2025-08-21 18:44:33,586 - DEBUG -    🔍 Evento 179693608: time_status=3, retrieved_at=2025-08-21 17:06:20.701364
+2025-08-21 18:44:33,586 - INFO -    ⏭️  Evento 179693608 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,586 - DEBUG -    ⏭️  Evento 179693608 não precisa de atualização
+2025-08-21 18:44:33,586 - INFO -    ⏭️  EVENTO PULADO: 179693608
+2025-08-21 18:44:33,586 - INFO -    ⚔️  Processando: Los Heretics vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179893600
+2025-08-21 18:44:33,587 - DEBUG -    🔍 Evento 179893600 existe no banco
+2025-08-21 18:44:33,587 - DEBUG -    🔍 Evento 179893600: time_status=3, retrieved_at=2025-08-21 17:06:21.229345
+2025-08-21 18:44:33,588 - INFO -    ⏭️  Evento 179893600 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,588 - DEBUG -    ⏭️  Evento 179893600 não precisa de atualização
+2025-08-21 18:44:33,588 - INFO -    ⏭️  EVENTO PULADO: 179893600
+2025-08-21 18:44:33,588 - INFO -    ⚔️  Processando: Dark Passage vs Papara SuperMassive (LOL - TCL Summer) - ID: 179606990
+2025-08-21 18:44:33,589 - DEBUG -    🔍 Evento 179606990 existe no banco
+2025-08-21 18:44:33,589 - DEBUG -    🔍 Evento 179606990: time_status=3, retrieved_at=2025-08-21 14:31:00.030269
+2025-08-21 18:44:33,589 - INFO -    ⏭️  Evento 179606990 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,589 - DEBUG -    ⏭️  Evento 179606990 não precisa de atualização
+2025-08-21 18:44:33,589 - INFO -    ⏭️  EVENTO PULADO: 179606990
+2025-08-21 18:44:33,590 - INFO -    ⚔️  Processando: A One Man Army vs Myth Esports (LOL - ROL Summer) - ID: 179555586
+2025-08-21 18:44:33,590 - DEBUG -    🔍 Evento 179555586 existe no banco
+2025-08-21 18:44:33,591 - DEBUG -    🔍 Evento 179555586: time_status=3, retrieved_at=2025-08-21 14:47:48.742772
+2025-08-21 18:44:33,591 - INFO -    ⏭️  Evento 179555586 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,591 - DEBUG -    ⏭️  Evento 179555586 não precisa de atualização
+2025-08-21 18:44:33,591 - INFO -    ⏭️  EVENTO PULADO: 179555586
+2025-08-21 18:44:33,591 - INFO -    ⚔️  Processando: Partizan Sangal vs Lenovo Legion Honved (LOL - EBL Summer Playoffs) - ID: 179623170
+2025-08-21 18:44:33,592 - DEBUG -    🔍 Evento 179623170 existe no banco
+2025-08-21 18:44:33,593 - DEBUG -    🔍 Evento 179623170: time_status=3, retrieved_at=2025-08-21 17:06:21.730126
+2025-08-21 18:44:33,593 - INFO -    ⏭️  Evento 179623170 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,593 - DEBUG -    ⏭️  Evento 179623170 não precisa de atualização
+2025-08-21 18:44:33,593 - INFO -    ⏭️  EVENTO PULADO: 179623170
+2025-08-21 18:44:33,593 - INFO -    ⚔️  Processando: Bushido Wildcats vs Misa Esports (LOL - TCL Summer) - ID: 179606991
+2025-08-21 18:44:33,593 - DEBUG -    🔍 Evento 179606991 existe no banco
+2025-08-21 18:44:33,593 - DEBUG -    🔍 Evento 179606991: time_status=3, retrieved_at=2025-08-21 14:31:01.152914
+2025-08-21 18:44:33,595 - INFO -    ⏭️  Evento 179606991 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,595 - DEBUG -    ⏭️  Evento 179606991 não precisa de atualização
+2025-08-21 18:44:33,595 - INFO -    ⏭️  EVENTO PULADO: 179606991
+2025-08-21 18:44:33,595 - INFO -    ⚔️  Processando: Senshi eSports vs Aurora (LOL - ROL Summer) - ID: 179555588
+2025-08-21 18:44:33,596 - DEBUG -    🔍 Evento 179555588 existe no banco
+2025-08-21 18:44:33,596 - DEBUG -    🔍 Evento 179555588: time_status=3, retrieved_at=2025-08-21 17:06:22.193667
+2025-08-21 18:44:33,596 - INFO -    ⏭️  Evento 179555588 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,596 - DEBUG -    ⏭️  Evento 179555588 não precisa de atualização
+2025-08-21 18:44:33,596 - INFO -    ⏭️  EVENTO PULADO: 179555588
+2025-08-21 18:44:33,597 - INFO -    ⚔️  Processando: Keypulse Esports vs The Otter Side (LOL - LPLOL Summer) - ID: 179857554
+2025-08-21 18:44:33,597 - DEBUG -    🔍 Evento 179857554 existe no banco
+2025-08-21 18:44:33,598 - DEBUG -    🔍 Evento 179857554: time_status=3, retrieved_at=2025-08-21 17:06:22.699881
+2025-08-21 18:44:33,598 - INFO -    ⏭️  Evento 179857554 está finalizado, não precisa atualizar
+2025-08-21 18:44:33,598 - DEBUG -    ⏭️  Evento 179857554 não precisa de atualização
+2025-08-21 18:44:33,598 - INFO -    ⏭️  EVENTO PULADO: 179857554
+2025-08-21 18:44:33,598 - INFO -    📊 RESUMO DO DIA 2025-08-21:
+2025-08-21 18:44:33,599 - INFO -       ➕ Novos: 0
+2025-08-21 18:44:33,599 - INFO -       🔄 Atualizados: 0
+2025-08-21 18:44:33,599 - INFO -       ⏭️  Pulados: 17
+2025-08-21 18:44:33,599 - INFO -       ❌ Erros: 0
+2025-08-21 18:44:33,599 - INFO -       📋 Total processado: 17
+2025-08-21 18:44:34,603 - INFO - 📅 PROCESSANDO DIA: 2025-08-20 (2/30)
+2025-08-21 18:44:34,603 - INFO -    🔍 Buscando eventos para o dia 20250820...
+2025-08-21 18:44:34,604 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-08-21 18:44:34,604 - DEBUG - send_request_headers.complete
+2025-08-21 18:44:34,604 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-08-21 18:44:34,604 - DEBUG - send_request_body.complete
+2025-08-21 18:44:34,604 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-08-21 18:44:34,905 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 21 Aug 2025 22:44:34 GMT'), (b'Content-Type', b'application/json;charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Server', b'cloudflare'), (b'X-Powered-By', b'BetsAPI'), (b'X-Ratelimit-Limit', b'1800'), (b'X-Ratelimit-Remaining', b'1245'), (b'X-Ratelimit-Reset', b'1755817200'), (b'Content-Encoding', b'gzip'), (b'Cf-Cache-Status', b'DYNAMIC'), (b'Vary', b'accept-encoding'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ZuVn8PA3xTmufTy7%2FtME6gCocoK0dg0P5%2BX7H8eXLd4FI7pR%2F0scUrI3KVEUKf9Sr1z4cGnoi9XqW0Pt9beoh0KTr5uYokpYBwghFAfZCg%3D%3D"}]}'), (b'CF-RAY', b'972da7e53bc7230b-ORD'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-21 18:44:34,905 - INFO - HTTP Request: GET https://api.b365api.com/v1/bet365/upcoming?sport_id=151&day=20250820&token=148381-MKvIM2221vISOJ "HTTP/1.1 200 OK"
+2025-08-21 18:44:34,905 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-08-21 18:44:34,908 - DEBUG - receive_response_body.complete
+2025-08-21 18:44:34,908 - DEBUG - response_closed.started
+2025-08-21 18:44:34,908 - DEBUG - response_closed.complete
+2025-08-21 18:44:34,909 - INFO -    ✅ 50 eventos encontrados para o dia 20250820
+2025-08-21 18:44:34,909 - INFO -    🎯 7 jogos de LoL encontrados
+2025-08-21 18:44:34,909 - INFO -    ⚔️  Processando: Gen.G.GA vs T1.EA (LOL - LCK CL Rounds 3-5) - ID: 179606650
+2025-08-21 18:44:34,910 - DEBUG -    🔍 Evento 179606650 existe no banco
+2025-08-21 18:44:34,910 - DEBUG -    🔍 Evento 179606650: time_status=2, retrieved_at=2025-08-21 18:39:00.180528
+2025-08-21 18:44:34,910 - DEBUG -    ⏰ Evento 179606650 atualizado há 335 segundos
+2025-08-21 18:44:34,910 - INFO -    ⏭️  Evento 179606650 atualizado recentemente, não precisa atualizar
+2025-08-21 18:44:34,911 - DEBUG -    ⏭️  Evento 179606650 não precisa de atualização
+2025-08-21 18:44:34,911 - INFO -    ⏭️  EVENTO PULADO: 179606650
+2025-08-21 18:44:34,911 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Dplus KIA.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606651
+2025-08-21 18:44:34,912 - DEBUG -    🔍 Evento 179606651 existe no banco
+2025-08-21 18:44:34,912 - DEBUG -    🔍 Evento 179606651: time_status=2, retrieved_at=2025-08-21 18:39:00.434751
+2025-08-21 18:44:34,913 - DEBUG -    ⏰ Evento 179606651 atualizado há 334 segundos
+2025-08-21 18:44:34,913 - INFO -    ⏭️  Evento 179606651 atualizado recentemente, não precisa atualizar
+2025-08-21 18:44:34,913 - DEBUG -    ⏭️  Evento 179606651 não precisa de atualização
+2025-08-21 18:44:34,913 - INFO -    ⏭️  EVENTO PULADO: 179606651
+2025-08-21 18:44:34,913 - INFO -    ⚔️  Processando: DRX vs DN Freecs (LOL - LCK) - ID: 179715703
+2025-08-21 18:44:34,913 - DEBUG -    🔍 Evento 179715703 existe no banco
+2025-08-21 18:44:34,914 - DEBUG -    🔍 Evento 179715703: time_status=3, retrieved_at=2025-08-20 08:20:34.069692
+2025-08-21 18:44:34,914 - INFO -    ⏭️  Evento 179715703 está finalizado, não precisa atualizar
+2025-08-21 18:44:34,914 - DEBUG -    ⏭️  Evento 179715703 não precisa de atualização
+2025-08-21 18:44:34,914 - INFO -    ⏭️  EVENTO PULADO: 179715703
+2025-08-21 18:44:34,914 - INFO -    ⚔️  Processando: LGD Gaming vs ThunderTalk Gaming (LOL - LPL Split 3) - ID: 179540932
+2025-08-21 18:44:34,915 - DEBUG -    🔍 Evento 179540932 existe no banco
+2025-08-21 18:44:34,915 - DEBUG -    🔍 Evento 179540932: time_status=3, retrieved_at=2025-08-20 08:20:34.344340
+2025-08-21 18:44:34,915 - INFO -    ⏭️  Evento 179540932 está finalizado, não precisa atualizar
+2025-08-21 18:44:34,915 - DEBUG -    ⏭️  Evento 179540932 não precisa de atualização
+2025-08-21 18:44:34,915 - INFO -    ⏭️  EVENTO PULADO: 179540932
+2025-08-21 18:44:34,915 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Frank Esports (LOL - PCS Split 3) - ID: 179764529
+2025-08-21 18:44:34,916 - DEBUG -    🔍 Evento 179764529 existe no banco
+2025-08-21 18:44:34,917 - DEBUG -    🔍 Evento 179764529: time_status=2, retrieved_at=2025-08-21 18:39:00.715645
+2025-08-21 18:44:34,917 - DEBUG -    ⏰ Evento 179764529 atualizado há 334 segundos
+2025-08-21 18:44:34,917 - INFO -    ⏭️  Evento 179764529 atualizado recentemente, não precisa atualizar
+2025-08-21 18:44:34,917 - DEBUG -    ⏭️  Evento 179764529 não precisa de atualização
+2025-08-21 18:44:34,917 - INFO -    ⏭️  EVENTO PULADO: 179764529
+2025-08-21 18:44:34,917 - INFO -    ⚔️  Processando: Gen.G vs Nongshim RedForce (LOL - LCK) - ID: 179715704
+2025-08-21 18:44:34,918 - DEBUG -    🔍 Evento 179715704 existe no banco
+2025-08-21 18:44:34,918 - DEBUG -    🔍 Evento 179715704: time_status=3, retrieved_at=2025-08-20 08:20:34.952746
+2025-08-21 18:44:34,918 - INFO -    ⏭️  Evento 179715704 está finalizado, não precisa atualizar
+2025-08-21 18:44:34,918 - DEBUG -    ⏭️  Evento 179715704 não precisa de atualização
+2025-08-21 18:44:34,918 - INFO -    ⏭️  EVENTO PULADO: 179715704
+2025-08-21 18:44:34,918 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Anyone's Legend (LOL - LPL Split 3) - ID: 179540933
+2025-08-21 18:44:34,920 - DEBUG -    🔍 Evento 179540933 existe no banco
+2025-08-21 18:44:34,920 - DEBUG -    🔍 Evento 179540933: time_status=3, retrieved_at=2025-08-20 11:28:21.250758
+2025-08-21 18:44:34,920 - INFO -    ⏭️  Evento 179540933 está finalizado, não precisa atualizar
+2025-08-21 18:44:34,920 - DEBUG -    ⏭️  Evento 179540933 não precisa de atualização
+2025-08-21 18:44:34,921 - INFO -    ⏭️  EVENTO PULADO: 179540933
+2025-08-21 18:44:34,921 - INFO -    📊 RESUMO DO DIA 2025-08-20:
+2025-08-21 18:44:34,921 - INFO -       ➕ Novos: 0
+2025-08-21 18:44:34,921 - INFO -       🔄 Atualizados: 0
+2025-08-21 18:44:34,921 - INFO -       ⏭️  Pulados: 7
+2025-08-21 18:44:34,921 - INFO -       ❌ Erros: 0
+2025-08-21 18:44:34,921 - INFO -       📋 Total processado: 7
+2025-08-21 18:44:35,920 - DEBUG - close.started
+2025-08-21 18:44:35,921 - DEBUG - close.complete
+2025-08-21 18:44:35,921 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-08-21 19:00:33,262 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-08-21 19:00:33,262 - INFO - ============================================================
+2025-08-21 19:00:33,278 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-08-21 19:00:33,278 - INFO - ============================================================
+2025-08-21 19:00:33,279 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/30)
+2025-08-21 19:00:33,279 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 19:00:37,527 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 19:00:37,527 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 19:00:37,527 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 19:00:37,534 - INFO -    ⏭️  Evento 179606652 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:37,534 - INFO -    ⏭️  EVENTO PULADO: 179606652
+2025-08-21 19:00:37,534 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 19:00:37,535 - INFO -    ⏭️  Evento 179606653 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:37,535 - INFO -    ⏭️  EVENTO PULADO: 179606653
+2025-08-21 19:00:37,537 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 19:00:37,538 - INFO -    ⏭️  Evento 179715705 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,538 - INFO -    ⏭️  EVENTO PULADO: 179715705
+2025-08-21 19:00:37,538 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 19:00:37,540 - INFO -    ⏭️  Evento 179540934 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,540 - INFO -    ⏭️  EVENTO PULADO: 179540934
+2025-08-21 19:00:37,540 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs BNK FearX (LOL - LCK) - ID: 179715707
+2025-08-21 19:00:37,542 - INFO -    ⏭️  Evento 179715707 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,542 - INFO -    ⏭️  EVENTO PULADO: 179715707
+2025-08-21 19:00:37,542 - INFO -    ⚔️  Processando: JD Gaming vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179540936
+2025-08-21 19:00:37,543 - INFO -    ⏭️  Evento 179540936 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,543 - INFO -    ⏭️  EVENTO PULADO: 179540936
+2025-08-21 19:00:37,544 - INFO -    ⚔️  Processando: Besiktas Esports vs The Forbidden Five (LOL - TCL Summer) - ID: 179606988
+2025-08-21 19:00:37,545 - INFO -    ⏭️  Evento 179606988 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,546 - INFO -    ⏭️  EVENTO PULADO: 179606988
+2025-08-21 19:00:37,546 - INFO -    ⚔️  Processando: BoostGate Esports vs ULF Esports (LOL - TCL Summer) - ID: 179606989
+2025-08-21 19:00:37,547 - INFO -    ⏭️  Evento 179606989 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,547 - INFO -    ⏭️  EVENTO PULADO: 179606989
+2025-08-21 19:00:37,547 - INFO -    ⚔️  Processando: Los Ratones vs Rich Gang (LOL - NLC Summer Playoffs) - ID: 179267735
+2025-08-21 19:00:37,548 - INFO -    ⏭️  Evento 179267735 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,549 - INFO -    ⏭️  EVENTO PULADO: 179267735
+2025-08-21 19:00:37,549 - INFO -    ⚔️  Processando: Galions vs Joblife (LOL - LFL Summer) - ID: 179693608
+2025-08-21 19:00:37,551 - INFO -    ⏭️  Evento 179693608 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,551 - INFO -    ⏭️  EVENTO PULADO: 179693608
+2025-08-21 19:00:37,551 - INFO -    ⚔️  Processando: Los Heretics vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179893600
+2025-08-21 19:00:37,553 - INFO -    ⏭️  Evento 179893600 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,554 - INFO -    ⏭️  EVENTO PULADO: 179893600
+2025-08-21 19:00:37,554 - INFO -    ⚔️  Processando: Dark Passage vs Papara SuperMassive (LOL - TCL Summer) - ID: 179606990
+2025-08-21 19:00:37,555 - INFO -    ⏭️  Evento 179606990 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,555 - INFO -    ⏭️  EVENTO PULADO: 179606990
+2025-08-21 19:00:37,557 - INFO -    ⚔️  Processando: A One Man Army vs Myth Esports (LOL - ROL Summer) - ID: 179555586
+2025-08-21 19:00:37,558 - INFO -    ⏭️  Evento 179555586 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,559 - INFO -    ⏭️  EVENTO PULADO: 179555586
+2025-08-21 19:00:37,559 - INFO -    ⚔️  Processando: Partizan Sangal vs Lenovo Legion Honved (LOL - EBL Summer Playoffs) - ID: 179623170
+2025-08-21 19:00:37,560 - INFO -    ⏭️  Evento 179623170 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,560 - INFO -    ⏭️  EVENTO PULADO: 179623170
+2025-08-21 19:00:37,561 - INFO -    ⚔️  Processando: Bushido Wildcats vs Misa Esports (LOL - TCL Summer) - ID: 179606991
+2025-08-21 19:00:37,562 - INFO -    ⏭️  Evento 179606991 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,563 - INFO -    ⏭️  EVENTO PULADO: 179606991
+2025-08-21 19:00:37,563 - INFO -    ⚔️  Processando: Senshi eSports vs Aurora (LOL - ROL Summer) - ID: 179555588
+2025-08-21 19:00:37,565 - INFO -    ⏭️  Evento 179555588 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,565 - INFO -    ⏭️  EVENTO PULADO: 179555588
+2025-08-21 19:00:37,565 - INFO -    ⚔️  Processando: Keypulse Esports vs The Otter Side (LOL - LPLOL Summer) - ID: 179857554
+2025-08-21 19:00:37,568 - INFO -    ⏭️  Evento 179857554 está finalizado, não precisa atualizar
+2025-08-21 19:00:37,568 - INFO -    ⏭️  EVENTO PULADO: 179857554
+2025-08-21 19:00:37,568 - INFO -    📊 RESUMO DO DIA 2025-08-21:
+2025-08-21 19:00:37,568 - INFO -       ➕ Novos: 0
+2025-08-21 19:00:37,568 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:00:37,568 - INFO -       ⏭️  Pulados: 17
+2025-08-21 19:00:37,568 - INFO -       ❌ Erros: 0
+2025-08-21 19:00:37,568 - INFO -       📋 Total processado: 17
+2025-08-21 19:00:38,579 - INFO - 📅 PROCESSANDO DIA: 2025-08-20 (2/30)
+2025-08-21 19:00:38,579 - INFO -    🔍 Buscando eventos para o dia 20250820...
+2025-08-21 19:00:40,860 - INFO -    ✅ 50 eventos encontrados para o dia 20250820
+2025-08-21 19:00:40,861 - INFO -    🎯 7 jogos de LoL encontrados
+2025-08-21 19:00:40,861 - INFO -    ⚔️  Processando: Gen.G.GA vs T1.EA (LOL - LCK CL Rounds 3-5) - ID: 179606650
+2025-08-21 19:00:40,863 - INFO -    ⏭️  Evento 179606650 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:40,864 - INFO -    ⏭️  EVENTO PULADO: 179606650
+2025-08-21 19:00:40,864 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Dplus KIA.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606651
+2025-08-21 19:00:40,865 - INFO -    ⏭️  Evento 179606651 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:40,865 - INFO -    ⏭️  EVENTO PULADO: 179606651
+2025-08-21 19:00:40,865 - INFO -    ⚔️  Processando: DRX vs DN Freecs (LOL - LCK) - ID: 179715703
+2025-08-21 19:00:40,868 - INFO -    ⏭️  Evento 179715703 está finalizado, não precisa atualizar
+2025-08-21 19:00:40,868 - INFO -    ⏭️  EVENTO PULADO: 179715703
+2025-08-21 19:00:40,868 - INFO -    ⚔️  Processando: LGD Gaming vs ThunderTalk Gaming (LOL - LPL Split 3) - ID: 179540932
+2025-08-21 19:00:40,870 - INFO -    ⏭️  Evento 179540932 está finalizado, não precisa atualizar
+2025-08-21 19:00:40,870 - INFO -    ⏭️  EVENTO PULADO: 179540932
+2025-08-21 19:00:40,870 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Frank Esports (LOL - PCS Split 3) - ID: 179764529
+2025-08-21 19:00:40,871 - INFO -    ⏭️  Evento 179764529 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:40,872 - INFO -    ⏭️  EVENTO PULADO: 179764529
+2025-08-21 19:00:40,872 - INFO -    ⚔️  Processando: Gen.G vs Nongshim RedForce (LOL - LCK) - ID: 179715704
+2025-08-21 19:00:40,875 - INFO -    ⏭️  Evento 179715704 está finalizado, não precisa atualizar
+2025-08-21 19:00:40,875 - INFO -    ⏭️  EVENTO PULADO: 179715704
+2025-08-21 19:00:40,875 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Anyone's Legend (LOL - LPL Split 3) - ID: 179540933
+2025-08-21 19:00:40,876 - INFO -    ⏭️  Evento 179540933 está finalizado, não precisa atualizar
+2025-08-21 19:00:40,876 - INFO -    ⏭️  EVENTO PULADO: 179540933
+2025-08-21 19:00:40,877 - INFO -    📊 RESUMO DO DIA 2025-08-20:
+2025-08-21 19:00:40,877 - INFO -       ➕ Novos: 0
+2025-08-21 19:00:40,877 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:00:40,877 - INFO -       ⏭️  Pulados: 7
+2025-08-21 19:00:40,877 - INFO -       ❌ Erros: 0
+2025-08-21 19:00:40,877 - INFO -       📋 Total processado: 7
+2025-08-21 19:00:41,883 - INFO - 📅 PROCESSANDO DIA: 2025-08-19 (3/30)
+2025-08-21 19:00:41,883 - INFO -    🔍 Buscando eventos para o dia 20250819...
+2025-08-21 19:00:42,507 - INFO -    ✅ 50 eventos encontrados para o dia 20250819
+2025-08-21 19:00:42,508 - INFO -    🎯 12 jogos de LoL encontrados
+2025-08-21 19:00:42,508 - INFO -    ⚔️  Processando: KT Rolster.Ch vs BNK FearX.Y (LOL - LCK CL Rounds 3-5) - ID: 179606648
+2025-08-21 19:00:42,510 - INFO -    ⏭️  Evento 179606648 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,510 - INFO -    ⏭️  EVENTO PULADO: 179606648
+2025-08-21 19:00:42,510 - INFO -    ⚔️  Processando: Ninjas in Pyjamas vs LNG Esports (LOL - LPL Split 3) - ID: 179540930
+2025-08-21 19:00:42,511 - INFO -    ⏭️  Evento 179540930 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,511 - INFO -    ⏭️  EVENTO PULADO: 179540930
+2025-08-21 19:00:42,512 - INFO -    ⚔️  Processando: West Point Esports vs CFO Academy (LOL - PCS Split 3) - ID: 179764528
+2025-08-21 19:00:42,513 - INFO -    ⏭️  Evento 179764528 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:42,513 - INFO -    ⏭️  EVENTO PULADO: 179764528
+2025-08-21 19:00:42,513 - INFO -    ⚔️  Processando: OKSavingsBank BRION.Ch vs Nongshim.EA (LOL - LCK CL Rounds 3-5) - ID: 179606649
+2025-08-21 19:00:42,516 - INFO -    ⏭️  Evento 179606649 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,516 - INFO -    ⏭️  EVENTO PULADO: 179606649
+2025-08-21 19:00:42,516 - INFO -    ⚔️  Processando: Anyone's Legend vs Top Esports (LOL - LPL Split 3) - ID: 179540931
+2025-08-21 19:00:42,517 - INFO -    ⏭️  Evento 179540931 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,517 - INFO -    ⏭️  EVENTO PULADO: 179540931
+2025-08-21 19:00:42,517 - INFO -    ⚔️  Processando: Entropiq vs Nightbirds (LOL - Hitpoint Masters Summer Playoffs) - ID: 179761098
+2025-08-21 19:00:42,519 - INFO -    ⏭️  Evento 179761098 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,519 - INFO -    ⏭️  EVENTO PULADO: 179761098
+2025-08-21 19:00:42,519 - INFO -    ⚔️  Processando: Movistar KOI Fenix vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179541081
+2025-08-21 19:00:42,521 - INFO -    ⏭️  Evento 179541081 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,521 - INFO -    ⏭️  EVENTO PULADO: 179541081
+2025-08-21 19:00:42,521 - INFO -    ⚔️  Processando: TeamOrangeGaming vs ROSSMANN Centaurs (LOL - Prime League Season Finals) - ID: 179669718
+2025-08-21 19:00:42,523 - INFO -    ⏭️  Evento 179669718 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,523 - INFO -    ⏭️  EVENTO PULADO: 179669718
+2025-08-21 19:00:42,523 - INFO -    ⚔️  Processando: Geekay Esports vs GNG Amazigh (LOL - Arabian League Summer Playoffs) - ID: 179784702
+2025-08-21 19:00:42,525 - INFO -    ⏭️  Evento 179784702 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:42,525 - INFO -    ⏭️  EVENTO PULADO: 179784702
+2025-08-21 19:00:42,525 - INFO -    ⚔️  Processando: mCon esports vs Jormungang (LOL - ROL Summer) - ID: 179555583
+2025-08-21 19:00:42,528 - INFO -    ⏭️  Evento 179555583 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,528 - INFO -    ⏭️  EVENTO PULADO: 179555583
+2025-08-21 19:00:42,528 - INFO -    ⚔️  Processando: Zero Tenacity vs Forsaken (LOL - Rift Legends Summer) - ID: 179555500
+2025-08-21 19:00:42,530 - INFO -    ⏭️  Evento 179555500 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,530 - INFO -    ⏭️  EVENTO PULADO: 179555500
+2025-08-21 19:00:42,530 - INFO -    ⚔️  Processando: ZennIT vs Once Upon A Team (LOL - ROL Summer) - ID: 179555585
+2025-08-21 19:00:42,532 - INFO -    ⏭️  Evento 179555585 está finalizado, não precisa atualizar
+2025-08-21 19:00:42,532 - INFO -    ⏭️  EVENTO PULADO: 179555585
+2025-08-21 19:00:42,532 - INFO -    📊 RESUMO DO DIA 2025-08-19:
+2025-08-21 19:00:42,532 - INFO -       ➕ Novos: 0
+2025-08-21 19:00:42,532 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:00:42,532 - INFO -       ⏭️  Pulados: 12
+2025-08-21 19:00:42,533 - INFO -       ❌ Erros: 0
+2025-08-21 19:00:42,533 - INFO -       📋 Total processado: 12
+2025-08-21 19:00:43,534 - INFO - 📅 PROCESSANDO DIA: 2025-08-18 (4/30)
+2025-08-21 19:00:43,534 - INFO -    🔍 Buscando eventos para o dia 20250818...
+2025-08-21 19:00:44,073 - INFO -    ✅ 45 eventos encontrados para o dia 20250818
+2025-08-21 19:00:44,073 - INFO -    🎯 10 jogos de LoL encontrados
+2025-08-21 19:00:44,073 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606646
+2025-08-21 19:00:44,075 - INFO -    ⏭️  Evento 179606646 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,075 - INFO -    ⏭️  EVENTO PULADO: 179606646
+2025-08-21 19:00:44,075 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Weibo Gaming (LOL - LPL Split 3) - ID: 179540928
+2025-08-21 19:00:44,076 - INFO -    ⏭️  Evento 179540928 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,076 - INFO -    ⏭️  EVENTO PULADO: 179540928
+2025-08-21 19:00:44,076 - INFO -    ⚔️  Processando: HELL PIGS vs PSG Talon.A (LOL - PCS Split 3) - ID: 179764527
+2025-08-21 19:00:44,078 - INFO -    ⏭️  Evento 179764527 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:44,078 - INFO -    ⏭️  EVENTO PULADO: 179764527
+2025-08-21 19:00:44,078 - INFO -    ⚔️  Processando: Gen.G.GA vs DRX.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606647
+2025-08-21 19:00:44,080 - INFO -    ⏭️  Evento 179606647 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,080 - INFO -    ⏭️  EVENTO PULADO: 179606647
+2025-08-21 19:00:44,080 - INFO -    ⚔️  Processando: Bilibili Gaming vs Invictus Gaming (LOL - LPL Split 3) - ID: 179540929
+2025-08-21 19:00:44,081 - INFO -    ⏭️  Evento 179540929 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,082 - INFO -    ⏭️  EVENTO PULADO: 179540929
+2025-08-21 19:00:44,082 - INFO -    ⚔️  Processando: Karmine Corp vs Team Vitality (LOL - LEC Summer) - ID: 179331771
+2025-08-21 19:00:44,082 - INFO -    ⏭️  Evento 179331771 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,082 - INFO -    ⏭️  EVENTO PULADO: 179331771
+2025-08-21 19:00:44,082 - INFO -    ⚔️  Processando: Anubis Gaming vs FN Esports (LOL - Arabian League Summer Playoffs) - ID: 179784701
+2025-08-21 19:00:44,085 - INFO -    ⏭️  Evento 179784701 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:44,085 - INFO -    ⏭️  EVENTO PULADO: 179784701
+2025-08-21 19:00:44,085 - INFO -    ⚔️  Processando: G2 Esports vs Team BDS (LOL - LEC Summer) - ID: 179331773
+2025-08-21 19:00:44,087 - INFO -    ⏭️  Evento 179331773 está finalizado, não precisa atualizar
+2025-08-21 19:00:44,087 - INFO -    ⏭️  EVENTO PULADO: 179331773
+2025-08-21 19:00:44,087 - INFO -    ⚔️  Processando: RED Canids.A vs KaBuM! IDL (LOL - CD Split 2 Playoffs) - ID: 179544627
+2025-08-21 19:00:44,088 - INFO -    ⏭️  Evento 179544627 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:44,089 - INFO -    ⏭️  EVENTO PULADO: 179544627
+2025-08-21 19:00:44,089 - INFO -    ⚔️  Processando: Corinthians Esports vs Alpha7 Esports (LOL - CD Split 2 Playoffs) - ID: 179544628
+2025-08-21 19:00:44,090 - INFO -    ⏭️  Evento 179544628 atualizado recentemente, não precisa atualizar
+2025-08-21 19:00:44,090 - INFO -    ⏭️  EVENTO PULADO: 179544628
+2025-08-21 19:00:44,091 - INFO -    📊 RESUMO DO DIA 2025-08-18:
+2025-08-21 19:00:44,091 - INFO -       ➕ Novos: 0
+2025-08-21 19:00:44,091 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:00:44,091 - INFO -       ⏭️  Pulados: 10
+2025-08-21 19:00:44,091 - INFO -       ❌ Erros: 0
+2025-08-21 19:00:44,091 - INFO -       📋 Total processado: 10
+2025-08-21 19:00:45,099 - INFO - 📅 PROCESSANDO DIA: 2025-08-17 (5/30)
+2025-08-21 19:00:45,200 - INFO -    🔍 Buscando eventos para o dia 20250817...
+2025-08-21 19:00:45,593 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-08-21 19:08:14,737 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 2 DIAS
+2025-08-21 19:08:14,738 - INFO - ============================================================
+2025-08-21 19:08:14,738 - INFO - 📅 PROCESSANDO DIA: 2025-08-21 (1/2)
+2025-08-21 19:08:14,738 - INFO -    🔍 Buscando eventos para o dia 20250821...
+2025-08-21 19:08:18,604 - INFO -    ✅ 50 eventos encontrados para o dia 20250821
+2025-08-21 19:08:18,604 - INFO -    🎯 17 jogos de LoL encontrados
+2025-08-21 19:08:18,604 - INFO -    ⚔️  Processando: DRX.Ch vs KT Rolster.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606652
+2025-08-21 19:08:18,612 - INFO -    ⏭️  Evento 179606652 atualizado recentemente, não precisa atualizar
+2025-08-21 19:08:18,612 - INFO -    ⏭️  EVENTO PULADO: 179606652
+2025-08-21 19:08:18,612 - INFO -    ⚔️  Processando: Nongshim.EA vs Hanwha Life Esports.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606653
+2025-08-21 19:08:18,613 - INFO -    ⏭️  Evento 179606653 atualizado recentemente, não precisa atualizar
+2025-08-21 19:08:18,614 - INFO -    ⏭️  EVENTO PULADO: 179606653
+2025-08-21 19:08:18,614 - INFO -    ⚔️  Processando: KT Rolster vs Hanwha Life Esports (LOL - LCK) - ID: 179715705
+2025-08-21 19:08:18,615 - INFO -    ⏭️  Evento 179715705 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,616 - INFO -    ⏭️  EVENTO PULADO: 179715705
+2025-08-21 19:08:18,616 - INFO -    ⚔️  Processando: Ultra Prime vs Edward Gaming (LOL - LPL Split 3) - ID: 179540934
+2025-08-21 19:08:18,617 - INFO -    ⏭️  Evento 179540934 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,617 - INFO -    ⏭️  EVENTO PULADO: 179540934
+2025-08-21 19:08:18,617 - INFO -    ⚔️  Processando: OKSavingsBank BRION vs BNK FearX (LOL - LCK) - ID: 179715707
+2025-08-21 19:08:18,620 - INFO -    ⏭️  Evento 179715707 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,620 - INFO -    ⏭️  EVENTO PULADO: 179715707
+2025-08-21 19:08:18,620 - INFO -    ⚔️  Processando: JD Gaming vs Bilibili Gaming (LOL - LPL Split 3) - ID: 179540936
+2025-08-21 19:08:18,621 - INFO -    ⏭️  Evento 179540936 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,621 - INFO -    ⏭️  EVENTO PULADO: 179540936
+2025-08-21 19:08:18,621 - INFO -    ⚔️  Processando: Besiktas Esports vs The Forbidden Five (LOL - TCL Summer) - ID: 179606988
+2025-08-21 19:08:18,623 - INFO -    ⏭️  Evento 179606988 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,623 - INFO -    ⏭️  EVENTO PULADO: 179606988
+2025-08-21 19:08:18,623 - INFO -    ⚔️  Processando: BoostGate Esports vs ULF Esports (LOL - TCL Summer) - ID: 179606989
+2025-08-21 19:08:18,625 - INFO -    ⏭️  Evento 179606989 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,625 - INFO -    ⏭️  EVENTO PULADO: 179606989
+2025-08-21 19:08:18,626 - INFO -    ⚔️  Processando: Los Ratones vs Rich Gang (LOL - NLC Summer Playoffs) - ID: 179267735
+2025-08-21 19:08:18,627 - INFO -    ⏭️  Evento 179267735 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,627 - INFO -    ⏭️  EVENTO PULADO: 179267735
+2025-08-21 19:08:18,627 - INFO -    ⚔️  Processando: Galions vs Joblife (LOL - LFL Summer) - ID: 179693608
+2025-08-21 19:08:18,629 - INFO -    ⏭️  Evento 179693608 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,629 - INFO -    ⏭️  EVENTO PULADO: 179693608
+2025-08-21 19:08:18,629 - INFO -    ⚔️  Processando: Los Heretics vs UCAM Esports (LOL - Superliga Summer Split Playoffs) - ID: 179893600
+2025-08-21 19:08:18,632 - INFO -    ⏭️  Evento 179893600 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,632 - INFO -    ⏭️  EVENTO PULADO: 179893600
+2025-08-21 19:08:18,632 - INFO -    ⚔️  Processando: Dark Passage vs Papara SuperMassive (LOL - TCL Summer) - ID: 179606990
+2025-08-21 19:08:18,634 - INFO -    ⏭️  Evento 179606990 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,634 - INFO -    ⏭️  EVENTO PULADO: 179606990
+2025-08-21 19:08:18,634 - INFO -    ⚔️  Processando: A One Man Army vs Myth Esports (LOL - ROL Summer) - ID: 179555586
+2025-08-21 19:08:18,636 - INFO -    ⏭️  Evento 179555586 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,636 - INFO -    ⏭️  EVENTO PULADO: 179555586
+2025-08-21 19:08:18,637 - INFO -    ⚔️  Processando: Partizan Sangal vs Lenovo Legion Honved (LOL - EBL Summer Playoffs) - ID: 179623170
+2025-08-21 19:08:18,638 - INFO -    ⏭️  Evento 179623170 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,638 - INFO -    ⏭️  EVENTO PULADO: 179623170
+2025-08-21 19:08:18,638 - INFO -    ⚔️  Processando: Bushido Wildcats vs Misa Esports (LOL - TCL Summer) - ID: 179606991
+2025-08-21 19:08:18,639 - INFO -    ⏭️  Evento 179606991 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,640 - INFO -    ⏭️  EVENTO PULADO: 179606991
+2025-08-21 19:08:18,640 - INFO -    ⚔️  Processando: Senshi eSports vs Aurora (LOL - ROL Summer) - ID: 179555588
+2025-08-21 19:08:18,642 - INFO -    ⏭️  Evento 179555588 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,642 - INFO -    ⏭️  EVENTO PULADO: 179555588
+2025-08-21 19:08:18,642 - INFO -    ⚔️  Processando: Keypulse Esports vs The Otter Side (LOL - LPLOL Summer) - ID: 179857554
+2025-08-21 19:08:18,644 - INFO -    ⏭️  Evento 179857554 está finalizado, não precisa atualizar
+2025-08-21 19:08:18,644 - INFO -    ⏭️  EVENTO PULADO: 179857554
+2025-08-21 19:08:18,644 - INFO -    📊 RESUMO DO DIA 2025-08-21:
+2025-08-21 19:08:18,645 - INFO -       ➕ Novos: 0
+2025-08-21 19:08:18,645 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:08:18,645 - INFO -       ⏭️  Pulados: 17
+2025-08-21 19:08:18,645 - INFO -       ❌ Erros: 0
+2025-08-21 19:08:18,645 - INFO -       📋 Total processado: 17
+2025-08-21 19:08:19,647 - INFO - 📅 PROCESSANDO DIA: 2025-08-20 (2/2)
+2025-08-21 19:08:19,647 - INFO -    🔍 Buscando eventos para o dia 20250820...
+2025-08-21 19:08:20,574 - INFO -    ✅ 50 eventos encontrados para o dia 20250820
+2025-08-21 19:08:20,574 - INFO -    🎯 7 jogos de LoL encontrados
+2025-08-21 19:08:20,574 - INFO -    ⚔️  Processando: Gen.G.GA vs T1.EA (LOL - LCK CL Rounds 3-5) - ID: 179606650
+2025-08-21 19:08:20,576 - INFO -    ⏭️  Evento 179606650 atualizado recentemente, não precisa atualizar
+2025-08-21 19:08:20,576 - INFO -    ⏭️  EVENTO PULADO: 179606650
+2025-08-21 19:08:20,576 - INFO -    ⚔️  Processando: DN Freecs.Ch vs Dplus KIA.Ch (LOL - LCK CL Rounds 3-5) - ID: 179606651
+2025-08-21 19:08:20,578 - INFO -    ⏭️  Evento 179606651 atualizado recentemente, não precisa atualizar
+2025-08-21 19:08:20,578 - INFO -    ⏭️  EVENTO PULADO: 179606651
+2025-08-21 19:08:20,578 - INFO -    ⚔️  Processando: DRX vs DN Freecs (LOL - LCK) - ID: 179715703
+2025-08-21 19:08:20,580 - INFO -    ⏭️  Evento 179715703 está finalizado, não precisa atualizar
+2025-08-21 19:08:20,580 - INFO -    ⏭️  EVENTO PULADO: 179715703
+2025-08-21 19:08:20,580 - INFO -    ⚔️  Processando: LGD Gaming vs ThunderTalk Gaming (LOL - LPL Split 3) - ID: 179540932
+2025-08-21 19:08:20,582 - INFO -    ⏭️  Evento 179540932 está finalizado, não precisa atualizar
+2025-08-21 19:08:20,582 - INFO -    ⏭️  EVENTO PULADO: 179540932
+2025-08-21 19:08:20,582 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Frank Esports (LOL - PCS Split 3) - ID: 179764529
+2025-08-21 19:08:20,583 - INFO -    ⏭️  Evento 179764529 atualizado recentemente, não precisa atualizar
+2025-08-21 19:08:20,584 - INFO -    ⏭️  EVENTO PULADO: 179764529
+2025-08-21 19:08:20,584 - INFO -    ⚔️  Processando: Gen.G vs Nongshim RedForce (LOL - LCK) - ID: 179715704
+2025-08-21 19:08:20,585 - INFO -    ⏭️  Evento 179715704 está finalizado, não precisa atualizar
+2025-08-21 19:08:20,586 - INFO -    ⏭️  EVENTO PULADO: 179715704
+2025-08-21 19:08:20,586 - INFO -    ⚔️  Processando: FunPlus Phoenix vs Anyone's Legend (LOL - LPL Split 3) - ID: 179540933
+2025-08-21 19:08:20,587 - INFO -    ⏭️  Evento 179540933 está finalizado, não precisa atualizar
+2025-08-21 19:08:20,588 - INFO -    ⏭️  EVENTO PULADO: 179540933
+2025-08-21 19:08:20,588 - INFO -    📊 RESUMO DO DIA 2025-08-20:
+2025-08-21 19:08:20,588 - INFO -       ➕ Novos: 0
+2025-08-21 19:08:20,588 - INFO -       🔄 Atualizados: 0
+2025-08-21 19:08:20,588 - INFO -       ⏭️  Pulados: 7
+2025-08-21 19:08:20,588 - INFO -       ❌ Erros: 0
+2025-08-21 19:08:20,588 - INFO -       📋 Total processado: 7
+2025-08-21 19:08:21,595 - INFO - ============================================================
+2025-08-21 19:08:21,595 - INFO - 🎉 ATUALIZAÇÃO CONCLUÍDA!
+2025-08-21 19:08:21,595 - INFO - 📊 RELATÓRIO FINAL:
+2025-08-21 19:08:21,595 - INFO -    📅 Período: 2 dias
+2025-08-21 19:08:21,595 - INFO -    📋 Total de eventos processados: 24
+2025-08-21 19:08:21,596 - INFO -    ➕ Novos eventos: 0
+2025-08-21 19:08:21,596 - INFO -    🔄 Eventos atualizados: 0
+2025-08-21 19:08:21,596 - INFO -    ⏭️  Eventos pulados: 24
+2025-08-21 19:08:21,596 - INFO -    ❌ Erros: 0
+2025-08-21 19:08:21,596 - INFO - ============================================================

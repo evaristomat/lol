@@ -1,0 +1,789 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:40.033233",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179669718",
+    "sport_id": "151",
+    "time": "1755619200",
+    "time_status": "3",
+    "league": {
+      "id": "10086436",
+      "name": "LOL - Prime League Season Finals"
+    },
+    "home": {
+      "id": "11071645",
+      "name": "TeamOrangeGaming"
+    },
+    "away": {
+      "id": "11203434",
+      "name": "ROSSMANN Centaurs"
+    },
+    "ss": "2-2",
+    "our_event_id": "10491369",
+    "r_id": "179669718C151A",
+    "updated_at": "1755633252",
+    "odds_updated_at": "1755633250"
+  },
+  "result_info": {
+    "id": "10491369",
+    "sport_id": "151",
+    "time": "1755619200",
+    "time_status": "3",
+    "league": {
+      "id": "41248",
+      "name": "LOL - Prime League Season Finals",
+      "cc": null
+    },
+    "home": {
+      "id": "265931",
+      "name": "Orange",
+      "image_id": "843440",
+      "cc": null
+    },
+    "o_home": {
+      "id": "832744",
+      "name": "TeamOrangeGaming",
+      "image_id": "843440",
+      "cc": null
+    },
+    "away": {
+      "id": "1056844",
+      "name": "ROSSMANN Centaurs",
+      "image_id": "1197873",
+      "cc": null
+    },
+    "ss": "2-2",
+    "events": [
+      {
+        "id": "257792052",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257792803",
+        "text": "Map  - 00:03:55 - 1st Blood - TeamOrangeGaming"
+      },
+      {
+        "id": "257794231",
+        "text": "Map 1 - 00:12:09 - 1st Dragon (8) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257794232",
+        "text": "Map 1 - 00:12:09 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257794470",
+        "text": "Map 1 - 00:14:21 - 1st Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257794740",
+        "text": "Map 1 - 00:17:16 - 1st Rift Herald Slain - TeamOrangeGaming"
+      },
+      {
+        "id": "257794759",
+        "text": "Map 1 - 00:17:26 - 2nd Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257794819",
+        "text": "Map 1 - 00:17:51 - 2nd Dragon (3) - TeamOrangeGaming"
+      },
+      {
+        "id": "257794820",
+        "text": "Map 1 - 00:17:51 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257794826",
+        "text": "Map 1 - 00:17:56 - 3rd Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257794906",
+        "text": "Map 1 - 00:18:37 - 4th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257795004",
+        "text": "Map 1 - 00:19:22 - Race to 5 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257795229",
+        "text": "Map 1 - 00:21:47 - 5th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257795241",
+        "text": "Map 1 - 00:22:01 - Race to 10 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257795282",
+        "text": "Map 1 - 00:22:22 - 6th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257795287",
+        "text": "Map 1 - 00:22:24 - 7th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257795412",
+        "text": "Map 1 - 00:23:25 - 3rd Dragon (4) - TeamOrangeGaming"
+      },
+      {
+        "id": "257795413",
+        "text": "Map 1 - 00:23:25 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257795444",
+        "text": "Map 1 - 00:23:42 - 8th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257795575",
+        "text": "Map 1 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257796121",
+        "text": "Map 1 - 00:27:44 - 1st Baron - TeamOrangeGaming"
+      },
+      {
+        "id": "257796280",
+        "text": "Map 1 - 00:28:36 - 4th Dragon (4) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257796281",
+        "text": "Map 1 - 00:28:36 - 5th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257796463",
+        "text": "Map 1 - 00:29:41 - 9th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257796534",
+        "text": "Map 1 - 00:30:14 - Race to 15 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257796700",
+        "text": "Map 1 - 00:31:10 - 10th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257796705",
+        "text": "Map 1 - 00:31:12 - 11th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257796719",
+        "text": "Map 1 - 00:31:16 - 1st Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257796730",
+        "text": "Map 1 - 00:31:20 - 2nd Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257797085",
+        "text": "Map 1 - 00:33:15 - Race to 20 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257797148",
+        "text": "Map 1 - 00:33:34 - 12th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257797173",
+        "text": "Map 1 - 00:33:43 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257797271",
+        "text": "Map 1 - 00:34:26 - 5th Dragon (4) - TeamOrangeGaming"
+      },
+      {
+        "id": "257797277",
+        "text": "Map 1 - 00:34:26 - 6th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257797377",
+        "text": "Map 1 - 00:35:00 - 2nd Baron - TeamOrangeGaming"
+      },
+      {
+        "id": "257797607",
+        "text": "Map 1 - 00:36:19 - 1st Inhibitor Spawned - TeamOrangeGaming"
+      },
+      {
+        "id": "257797612",
+        "text": "Map 1 - 00:36:20 - 3rd Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257797616",
+        "text": "Map 1 - 00:36:20 - 2nd Inhibitor Spawned - TeamOrangeGaming"
+      },
+      {
+        "id": "257797649",
+        "text": "Map 1 - 00:36:34 - Race to 25 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257797687",
+        "text": "Map 1 - 00:36:42 - Quadra Kill - Yunara"
+      },
+      {
+        "id": "257797697",
+        "text": "Map 1 - 00:36:45 - 13th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257797714",
+        "text": "Map 1 - 00:36:49 - 4th Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257797716",
+        "text": "Map 1 - 00:36:49 - 14th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257797720",
+        "text": "Map 1 - Winner - TeamOrangeGaming"
+      },
+      {
+        "id": "257800287",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257801243",
+        "text": "Map 2 - 00:06:02 - 1st Dragon (6) - TeamOrangeGaming"
+      },
+      {
+        "id": "257801244",
+        "text": "Map 2 - 00:06:02 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257801691",
+        "text": "Map  - 00:08:41 - 1st Blood - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257802213",
+        "text": "Map 2 - 00:11:26 - 2nd Dragon (5) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257802219",
+        "text": "Map 2 - 00:11:26 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257802853",
+        "text": "Map 2 - 00:15:25 - 1st Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257802928",
+        "text": "Map 2 - 00:15:54 - 2nd Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257803012",
+        "text": "Map 2 - 00:16:29 - 1st Rift Herald Slain - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257803115",
+        "text": "Map 2 - 00:17:08 - 3rd Dragon (8) - TeamOrangeGaming"
+      },
+      {
+        "id": "257803119",
+        "text": "Map 2 - 00:17:08 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257803172",
+        "text": "Map 2 - 00:17:34 - 3rd Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257803287",
+        "text": "Map 2 - 00:18:22 - 4th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257803674",
+        "text": "Map 2 - 00:21:28 - Race to 5 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257803713",
+        "text": "Map 2 - 00:21:49 - 5th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257803957",
+        "text": "Map 2 - 00:23:42 - Race to 10 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257804028",
+        "text": "Map 2 - 00:24:10 - 4th Dragon (8) - TeamOrangeGaming"
+      },
+      {
+        "id": "257804029",
+        "text": "Map 2 - 00:24:10 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257804143",
+        "text": "Map 2 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257804268",
+        "text": "Map 2 - 00:26:04 - 1st Baron - TeamOrangeGaming"
+      },
+      {
+        "id": "257804373",
+        "text": "Map 2 - 00:26:46 - 6th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257804470",
+        "text": "Map 2 - 00:27:37 - 7th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257804724",
+        "text": "Map 2 - 00:29:28 - 5th Dragon (8) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257804725",
+        "text": "Map 2 - 00:29:28 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257805065",
+        "text": "Map 2 - 00:32:02 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257805110",
+        "text": "Map 2 - 00:32:17 - 2nd Baron - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257805121",
+        "text": "Map 2 - 00:32:19 - Race to 15 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257805123",
+        "text": "Map 2 - 00:32:19 - 8th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257805233",
+        "text": "Map 2 - 00:32:55 - 9th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257805319",
+        "text": "Map 2 - 00:33:14 - 10th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257805584",
+        "text": "Map 2 - 00:34:27 - Race to 20 Kills - TeamOrangeGaming"
+      },
+      {
+        "id": "257805593",
+        "text": "Map 2 - 00:34:31 - 11th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257805624",
+        "text": "Map 2 - 00:34:40 - 1st Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257805663",
+        "text": "Map 2 - 00:34:54 - 2nd Inhibitor - TeamOrangeGaming"
+      },
+      {
+        "id": "257805685",
+        "text": "Map 2 - 00:35:02 - 12th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257805688",
+        "text": "Map 2 - 00:35:03 - 13th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257805705",
+        "text": "Map 2 - Winner - TeamOrangeGaming"
+      },
+      {
+        "id": "257809010",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257809464",
+        "text": "Map  - 00:04:18 - 1st Blood - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257809928",
+        "text": "Map 3 - 00:06:56 - 1st Dragon (4) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257809929",
+        "text": "Map 3 - 00:06:56 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257810263",
+        "text": "Map 3 - 00:08:55 - Race to 5 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257810844",
+        "text": "Map 3 - 00:12:25 - 2nd Dragon (3) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257810851",
+        "text": "Map 3 - 00:12:25 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257811400",
+        "text": "Map 3 - 00:15:28 - 1st Rift Herald Slain - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257811703",
+        "text": "Map 3 - 00:17:10 - 1st Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257811776",
+        "text": "Map 3 - 00:17:38 - 2nd Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257811884",
+        "text": "Map 3 - 00:18:27 - 3rd Dragon (6) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257811885",
+        "text": "Map 3 - 00:18:27 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257812033",
+        "text": "Map 3 - 00:19:34 - 3rd Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257812256",
+        "text": "Map 3 - 00:21:25 - Race to 10 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257812525",
+        "text": "Map 3 - 00:23:42 - 4th Dragon (6) - TeamOrangeGaming"
+      },
+      {
+        "id": "257812526",
+        "text": "Map 3 - 00:23:42 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257812537",
+        "text": "Map 3 - 00:23:49 - 4th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257812603",
+        "text": "Map 3 - 00:24:22 - 5th Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257812682",
+        "text": "Map 3 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257812949",
+        "text": "Map 3 - 00:27:02 - Race to 15 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813011",
+        "text": "Map 3 - 00:27:27 - 1st Baron - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813184",
+        "text": "Map 3 - 00:28:43 - Race to 20 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813215",
+        "text": "Map 3 - 00:28:56 - 6th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813234",
+        "text": "Map 3 - 00:29:02 - 7th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813245",
+        "text": "Map 3 - 00:29:04 - 1st Inhibitor - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813264",
+        "text": "Map 3 - 00:29:10 - 8th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813277",
+        "text": "Map 3 - 00:29:14 - 9th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257813284",
+        "text": "Map 3 - Winner - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257816305",
+        "text": "Map 4 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257817245",
+        "text": "Map 4 - 00:06:37 - 1st Dragon (4) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257817246",
+        "text": "Map 4 - 00:06:37 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257817509",
+        "text": "Map  - 00:08:44 - 1st Blood - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257817866",
+        "text": "Map 4 - 00:12:11 - 2nd Dragon (3) - TeamOrangeGaming"
+      },
+      {
+        "id": "257817867",
+        "text": "Map 4 - 00:12:11 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257817908",
+        "text": "Map 4 - 00:12:34 - Race to 5 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257818275",
+        "text": "Map 4 - 00:16:09 - 1st Rift Herald Slain - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257818363",
+        "text": "Map 4 - 00:16:36 - Race to 10 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257818526",
+        "text": "Map 4 - 00:17:49 - 3rd Dragon (6) - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257818528",
+        "text": "Map 4 - 00:17:49 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257818645",
+        "text": "Map 4 - 00:18:30 - 1st Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257819203",
+        "text": "Map 4 - 00:21:44 - 2nd Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257819261",
+        "text": "Map 4 - 00:22:12 - Race to 15 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257819677",
+        "text": "Map 4 - 00:24:52 - 4th Dragon (6) - TeamOrangeGaming"
+      },
+      {
+        "id": "257819682",
+        "text": "Map 4 - 00:24:52 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257819703",
+        "text": "Map 4 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257820035",
+        "text": "Map 4 - 00:26:29 - Race to 20 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820157",
+        "text": "Map 4 - 00:27:09 - 1st Baron - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820165",
+        "text": "Map 4 - 00:27:14 - 3rd Tower - TeamOrangeGaming"
+      },
+      {
+        "id": "257820212",
+        "text": "Map 4 - 00:27:34 - 4th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820234",
+        "text": "Map 4 - 00:27:44 - 5th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820287",
+        "text": "Map 4 - 00:28:13 - 6th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820347",
+        "text": "Map 4 - 00:28:34 - Race to 25 Kills - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820386",
+        "text": "Map 4 - 00:28:44 - 7th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820402",
+        "text": "Map 4 - 00:28:55 - 8th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820415",
+        "text": "Map 4 - 00:29:00 - 1st Inhibitor - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820441",
+        "text": "Map 4 - 00:29:08 - 9th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820460",
+        "text": "Map 4 - 00:29:12 - 10th Tower - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257820464",
+        "text": "Map 4 - Winner - ROSSMANN Centaurs"
+      },
+      {
+        "id": "257822681",
+        "text": "Map 5 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "2",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "79.7k",
+          "67.8k"
+        ],
+        "inhibitors": [
+          "3",
+          "0"
+        ],
+        "kills": [
+          "28",
+          "16"
+        ],
+        "towers": [
+          "9",
+          "3"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "1"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "66k",
+          "60.7k"
+        ],
+        "inhibitors": [
+          "0",
+          "0"
+        ],
+        "kills": [
+          "19",
+          "13"
+        ],
+        "towers": [
+          "7",
+          "3"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "3"
+        ],
+        "gold": [
+          "48.4k",
+          "58.5k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "8",
+          "21"
+        ],
+        "towers": [
+          "1",
+          "7"
+        ]
+      },
+      "4": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "2",
+          "2"
+        ],
+        "gold": [
+          "51.2k",
+          "54.5k"
+        ],
+        "inhibitors": [
+          "0",
+          "0"
+        ],
+        "kills": [
+          "20",
+          "23"
+        ],
+        "towers": [
+          "3",
+          "3"
+        ]
+      },
+      "5": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "0",
+          "0"
+        ],
+        "gold": [
+          "2.5k",
+          "2.5k"
+        ],
+        "inhibitors": [
+          "0",
+          "0"
+        ],
+        "kills": [
+          "0",
+          "0"
+        ],
+        "towers": [
+          "0",
+          "0"
+        ]
+      }
+    },
+    "inplay_created_at": "1755618906",
+    "inplay_updated_at": "1755633194",
+    "bet365_id": "179669718",
+    "event_data": {
+      "id": "179669718",
+      "sport_id": "151",
+      "time": "1755619200",
+      "time_status": "3",
+      "league": {
+        "id": "10086436",
+        "name": "LOL - Prime League Season Finals"
+      },
+      "home": {
+        "id": "11071645",
+        "name": "TeamOrangeGaming"
+      },
+      "away": {
+        "id": "11203434",
+        "name": "ROSSMANN Centaurs"
+      },
+      "ss": "2-2",
+      "our_event_id": "10491369",
+      "r_id": "179669718C151A",
+      "updated_at": "1755633252",
+      "odds_updated_at": "1755633250"
+    }
+  },
+  "summary": {
+    "home_team": "TeamOrangeGaming",
+    "away_team": "ROSSMANN Centaurs",
+    "final_score": "2-2",
+    "league": "LOL - Prime League Season Finals",
+    "match_date": "2025-08-19T12:00:00",
+    "maps_played": 5,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,44 @@
+2025-08-20 16:12:53 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-20 16:12:53 | INFO     | run_update           | ============================================================
+2025-08-20 16:12:53 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-20 16:12:53 | INFO     | run_update           | ============================================================
+2025-08-20 16:12:53 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-20 16:12:53 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 10 dias
+2025-08-20 16:12:53 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-20
+2025-08-20 16:12:54 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:12:54 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-20 16:12:58 | INFO     | fetch_upcoming_events |    ✅ 21 jogos de LoL encontrados
+2025-08-20 16:12:58 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-20 16:12:58 | INFO     | fetch_upcoming_events |    ✅ 15 jogos de LoL encontrados
+2025-08-20 16:12:58 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events |    ✅ 13 jogos de LoL encontrados
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-25
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:12:59 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-26
+2025-08-20 16:13:00 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:13:00 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-27
+2025-08-20 16:13:00 | INFO     | fetch_upcoming_events |    ✅ 3 jogos de LoL encontrados
+2025-08-20 16:13:00 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-28
+2025-08-20 16:13:01 | INFO     | fetch_upcoming_events |    ✅ 2 jogos de LoL encontrados
+2025-08-20 16:13:01 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-29
+2025-08-20 16:13:01 | INFO     | fetch_upcoming_events |    ℹ️  Nenhum jogo de LoL encontrado
+2025-08-20 16:13:01 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-30
+2025-08-20 16:13:02 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-20 16:13:02 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 79
+2025-08-20 16:13:02 | INFO     | save_events          | 📝 Eventos processados - Novos: 0, Existentes: 79, Times criados: 0
+2025-08-20 16:13:02 | INFO     | run_update           | ✅ Fase 1 concluída - 0 novos eventos adicionados
+2025-08-20 16:13:02 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-20 16:13:02 | ERROR    | run_update           | ❌ Erro durante atualização: no such column: e.home_team_id
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\bet365\lol_api\scripts\db_odds_updater.py", line 722, in run_update
+    odds_collected = await self.fetch_and_save_odds(hours_old_threshold=2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\envs\bet365\lol_api\scripts\db_odds_updater.py", line 361, in fetch_and_save_odds
+    cursor = conn.execute(
+             ^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: e.home_team_id
+2025-08-20 16:13:02 | INFO     | close                | 🔌 Conexões fechadas

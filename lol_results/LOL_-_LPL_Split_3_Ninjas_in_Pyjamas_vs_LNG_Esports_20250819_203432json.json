@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:32.697133",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179540930",
+    "sport_id": "151",
+    "time": "1755594000",
+    "time_status": "3",
+    "league": {
+      "id": "10086145",
+      "name": "LOL - LPL Split 3"
+    },
+    "home": {
+      "id": "10361255",
+      "name": "Ninjas in Pyjamas"
+    },
+    "away": {
+      "id": "10447063",
+      "name": "LNG Esports"
+    },
+    "ss": "2-0",
+    "our_event_id": "10332940",
+    "r_id": "179540930C151A",
+    "updated_at": "1755600432",
+    "odds_updated_at": "1755600248"
+  },
+  "result_info": {
+    "id": "10332940",
+    "sport_id": "151",
+    "time": "1755594000",
+    "time_status": "3",
+    "league": {
+      "id": "40961",
+      "name": "LOL - LPL Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "8674",
+      "name": "Ninjas in Pyjamas",
+      "image_id": "1018605",
+      "cc": "se"
+    },
+    "away": {
+      "id": "281197",
+      "name": "LNG Esports",
+      "image_id": "277851",
+      "cc": null
+    },
+    "ss": "2-0",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "0"
+      }
+    },
+    "events": [
+      {
+        "id": "257739620",
+        "text": "Map 1 - 00:01:09 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257740492",
+        "text": "Map 1 - 00:09:14 - 1st Dragon (9) - LNG Esports"
+      },
+      {
+        "id": "257740498",
+        "text": "Map 1 - 00:09:18 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257740645",
+        "text": "Map  - 00:11:01 - 1st Blood - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257740938",
+        "text": "Map 1 - 00:14:38 - 2nd Dragon (5) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257740945",
+        "text": "Map 1 - 00:14:41 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257741146",
+        "text": "Map 1 - 00:17:16 - 1st Rift Herald Slain - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257741233",
+        "text": "Map 1 - 00:18:12 - 1st Tower - LNG Esports"
+      },
+      {
+        "id": "257741378",
+        "text": "Map 1 - 00:19:17 - 2nd Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257741380",
+        "text": "Map 1 - 00:19:18 - 3rd Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257741600",
+        "text": "Map 1 - 00:20:55 - 3rd Dragon (6) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257741604",
+        "text": "Map 1 - 00:21:00 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257741643",
+        "text": "Map 1 - 00:21:20 - Race to 5 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742100",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257742257",
+        "text": "Map 1 - 00:26:05 - 4th Dragon (6) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742259",
+        "text": "Map 1 - 00:26:07 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257742609",
+        "text": "Map 1 - 00:28:50 - Race to 10 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742774",
+        "text": "Map 1 - 00:29:58 - 1st Baron - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742976",
+        "text": "Map 1 - 00:31:13 - Race to 15 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742989",
+        "text": "Map 1 - 00:31:18 - 4th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257742994",
+        "text": "Map 1 - 00:31:19 - 5th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257743022",
+        "text": "Map 1 - 00:31:36 - 6th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257743047",
+        "text": "Map 1 - 00:31:49 - 1st Inhibitor - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257743048",
+        "text": "Map 1 - 00:31:50 - 7th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257743049",
+        "text": "Map 1 - 00:31:51 - 8th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257743327",
+        "text": "Map 1 - Winner - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257745812",
+        "text": "Map 2 - 00:00:47 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257746350",
+        "text": "Map  - 00:04:03 - 1st Blood - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257746720",
+        "text": "Map 2 - 00:06:23 - 1st Dragon (9) - LNG Esports"
+      },
+      {
+        "id": "257746732",
+        "text": "Map 2 - 00:06:26 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257747663",
+        "text": "Map 2 - 00:12:32 - Race to 5 Kills - LNG Esports"
+      },
+      {
+        "id": "257748049",
+        "text": "Map 2 - 00:15:02 - 2nd Dragon (5) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257748083",
+        "text": "Map 2 - 00:15:17 - 1st Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257748094",
+        "text": "Map 2 - 00:15:21 - 2nd Tower - LNG Esports"
+      },
+      {
+        "id": "257748187",
+        "text": "Map 2 - 00:16:07 - 1st Rift Herald Slain - LNG Esports"
+      },
+      {
+        "id": "257748268",
+        "text": "Map 2 - 00:16:51 - 3rd Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257748286",
+        "text": "Map 2 - 00:16:58 - 4th Tower - LNG Esports"
+      },
+      {
+        "id": "257748924",
+        "text": "Map 2 - 00:21:54 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257748925",
+        "text": "Map 2 - 00:21:56 - 3rd Dragon (6) - LNG Esports"
+      },
+      {
+        "id": "257748937",
+        "text": "Map 2 - 00:22:06 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257749314",
+        "text": "Map 2 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257749373",
+        "text": "Map 2 - 00:25:26 - Race to 10 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257749522",
+        "text": "Map 2 - 00:26:19 - 5th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257749667",
+        "text": "Map 2 - 00:27:25 - 4th Dragon (6) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257749671",
+        "text": "Map 2 - 00:27:27 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257750035",
+        "text": "Map 2 - 00:30:02 - Race to 15 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750078",
+        "text": "Map 2 - 00:30:28 - 1st Baron - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750258",
+        "text": "Map 2 - 00:31:46 - 6th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750260",
+        "text": "Map 2 - 00:31:48 - 7th Tower - LNG Esports"
+      },
+      {
+        "id": "257750288",
+        "text": "Map 2 - 00:32:03 - 8th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750408",
+        "text": "Map 2 - 00:32:57 - 5th Dragon (6) - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750419",
+        "text": "Map 2 - 00:32:59 - 6th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257750587",
+        "text": "Map 2 - 00:34:04 - 9th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750655",
+        "text": "Map 2 - 00:34:35 - 10th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750666",
+        "text": "Map 2 - 00:34:40 - 1st Inhibitor - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750681",
+        "text": "Map 2 - 00:34:44 - 11th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750696",
+        "text": "Map 2 - 00:34:53 - 2nd Inhibitor - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750750",
+        "text": "Map 2 - 00:35:17 - 12th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750824",
+        "text": "Map 2 - 00:35:53 - Race to 20 Kills - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257750985",
+        "text": "Map 2 - 00:36:17 - 13th Tower - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257751166",
+        "text": "Map 2 - Winner - Ninjas in Pyjamas"
+      },
+      {
+        "id": "257751167",
+        "text": "Map 2 - 00:36:17 - 2nd Baron Spawned"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "1"
+        ],
+        "gold": [
+          "60k",
+          "49k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "19",
+          "4"
+        ],
+        "towers": [
+          "7",
+          "1"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "40.5k",
+          "30.6k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "22",
+          "10"
+        ],
+        "towers": [
+          "10",
+          "3"
+        ]
+      }
+    },
+    "inplay_created_at": "1755593495",
+    "inplay_updated_at": "1755600432",
+    "confirmed_at": "1755645784",
+    "bet365_id": "179540930",
+    "event_data": {
+      "id": "179540930",
+      "sport_id": "151",
+      "time": "1755594000",
+      "time_status": "3",
+      "league": {
+        "id": "10086145",
+        "name": "LOL - LPL Split 3"
+      },
+      "home": {
+        "id": "10361255",
+        "name": "Ninjas in Pyjamas"
+      },
+      "away": {
+        "id": "10447063",
+        "name": "LNG Esports"
+      },
+      "ss": "2-0",
+      "our_event_id": "10332940",
+      "r_id": "179540930C151A",
+      "updated_at": "1755600432",
+      "odds_updated_at": "1755600248"
+    }
+  },
+  "summary": {
+    "home_team": "Ninjas in Pyjamas",
+    "away_team": "LNG Esports",
+    "final_score": "2-0",
+    "league": "LOL - LPL Split 3",
+    "match_date": "2025-08-19T05:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

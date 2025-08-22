@@ -1,0 +1,477 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:09.899274",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179328683",
+    "sport_id": "151",
+    "time": "1755428400",
+    "time_status": "3",
+    "league": {
+      "id": "10086145",
+      "name": "LOL - LPL Split 3"
+    },
+    "home": {
+      "id": "10409854",
+      "name": "Top Esports"
+    },
+    "away": {
+      "id": "10400858",
+      "name": "Bilibili Gaming"
+    },
+    "ss": "2-0",
+    "our_event_id": "10325832",
+    "r_id": "179328683C151A",
+    "updated_at": "1755434873",
+    "odds_updated_at": "1755434868"
+  },
+  "result_info": {
+    "id": "10325832",
+    "sport_id": "151",
+    "time": "1755428100",
+    "time_status": "3",
+    "league": {
+      "id": "40961",
+      "name": "LOL - LPL Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "283141",
+      "name": "Top Esports",
+      "image_id": "402899",
+      "cc": null
+    },
+    "away": {
+      "id": "193777",
+      "name": "Bilibili Gaming",
+      "image_id": "402893",
+      "cc": null
+    },
+    "ss": "2-0",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "0"
+      }
+    },
+    "events": [
+      {
+        "id": "257465442",
+        "text": "Map 1 - 00:01:14 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257466004",
+        "text": "Map 1 - 00:05:31 - 1st Dragon (3) - Top Esports"
+      },
+      {
+        "id": "257466016",
+        "text": "Map 1 - 00:05:36 - 2nd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257466048",
+        "text": "Map  - 00:05:52 - 1st Blood - Top Esports"
+      },
+      {
+        "id": "257466740",
+        "text": "Map 1 - 00:10:38 - Race to 5 Kills - Top Esports"
+      },
+      {
+        "id": "257467055",
+        "text": "Map 1 - 00:12:59 - 2nd Dragon (4) - Top Esports"
+      },
+      {
+        "id": "257467061",
+        "text": "Map 1 - 00:13:02 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257467171",
+        "text": "Map 1 - 00:14:09 - 1st Tower - Top Esports"
+      },
+      {
+        "id": "257467205",
+        "text": "Map 1 - 00:14:29 - 2nd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257467333",
+        "text": "Map 1 - 00:15:30 - 1st Rift Herald Slain - Top Esports"
+      },
+      {
+        "id": "257467430",
+        "text": "Map 1 - 00:16:14 - 3rd Tower - Top Esports"
+      },
+      {
+        "id": "257467483",
+        "text": "Map 1 - 00:16:44 - 4th Tower - Top Esports"
+      },
+      {
+        "id": "257467635",
+        "text": "Map 1 - 00:18:16 - 5th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257467658",
+        "text": "Map 1 - 00:18:32 - 3rd Dragon (6) - Top Esports"
+      },
+      {
+        "id": "257467662",
+        "text": "Map 1 - 00:18:35 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257467796",
+        "text": "Map 1 - 00:19:53 - Race to 10 Kills - Top Esports"
+      },
+      {
+        "id": "257468275",
+        "text": "Map 1 - 00:24:09 - 4th Dragon (6) - Top Esports"
+      },
+      {
+        "id": "257468303",
+        "text": "Map 1 - 00:24:19 - Race to 15 Kills - Top Esports"
+      },
+      {
+        "id": "257468417",
+        "text": "Map 1 - 00:25:03 - 1st Baron Spawned"
+      },
+      {
+        "id": "257468685",
+        "text": "Map 1 - 00:26:37 - 1st Baron - Top Esports"
+      },
+      {
+        "id": "257468903",
+        "text": "Map 1 - 00:28:00 - 6th Tower - Top Esports"
+      },
+      {
+        "id": "257468972",
+        "text": "Map 1 - 00:28:27 - 7th Tower - Top Esports"
+      },
+      {
+        "id": "257468974",
+        "text": "Map 1 - 00:28:30 - Race to 20 Kills - Top Esports"
+      },
+      {
+        "id": "257468979",
+        "text": "Map 1 - 00:28:32 - 1st Inhibitor - Top Esports"
+      },
+      {
+        "id": "257468986",
+        "text": "Map 1 - 00:28:34 - 8th Tower - Top Esports"
+      },
+      {
+        "id": "257469034",
+        "text": "Map 1 - 00:28:56 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257469040",
+        "text": "Map 1 - 00:28:59 - 9th Tower - Top Esports"
+      },
+      {
+        "id": "257469097",
+        "text": "Map 1 - Winner - Top Esports"
+      },
+      {
+        "id": "257472215",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257472435",
+        "text": "Map  - 00:02:44 - 1st Blood - Bilibili Gaming"
+      },
+      {
+        "id": "257473048",
+        "text": "Map 2 - 00:05:49 - 1st Dragon (5) - Bilibili Gaming"
+      },
+      {
+        "id": "257473058",
+        "text": "Map 2 - 00:05:52 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257473256",
+        "text": "Map 2 - 00:07:06 - Race to 5 Kills - Top Esports"
+      },
+      {
+        "id": "257474304",
+        "text": "Map 2 - 00:12:27 - 2nd Dragon (9) - Top Esports"
+      },
+      {
+        "id": "257474322",
+        "text": "Map 2 - 00:12:31 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257474583",
+        "text": "Map 2 - 00:14:04 - 1st Tower - Top Esports"
+      },
+      {
+        "id": "257474607",
+        "text": "Map 2 - 00:14:14 - 2nd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257474863",
+        "text": "Map 2 - 00:15:37 - 1st Rift Herald Slain - Bilibili Gaming"
+      },
+      {
+        "id": "257474921",
+        "text": "Map 2 - 00:15:57 - 3rd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257474964",
+        "text": "Map 2 - 00:16:09 - Race to 10 Kills - Top Esports"
+      },
+      {
+        "id": "257475030",
+        "text": "Map 2 - 00:16:34 - 4th Tower - Top Esports"
+      },
+      {
+        "id": "257475068",
+        "text": "Map 2 - 00:16:52 - 5th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257475426",
+        "text": "Map 2 - 00:19:07 - 6th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257475599",
+        "text": "Map 2 - 00:20:35 - 3rd Dragon (3) - Top Esports"
+      },
+      {
+        "id": "257475602",
+        "text": "Map 2 - 00:20:37 - 4th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257475616",
+        "text": "Map 2 - 00:20:43 - Race to 15 Kills - Top Esports"
+      },
+      {
+        "id": "257475975",
+        "text": "Map 2 - 00:23:59 - 7th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257476106",
+        "text": "Map 2 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257476349",
+        "text": "Map 2 - 00:27:04 - 8th Tower - Top Esports"
+      },
+      {
+        "id": "257476373",
+        "text": "Map 2 - 00:27:22 - 4th Dragon (3) - Top Esports"
+      },
+      {
+        "id": "257476388",
+        "text": "Map 2 - 00:27:24 - 5th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257476734",
+        "text": "Map 2 - 00:30:04 - 1st Baron - Bilibili Gaming"
+      },
+      {
+        "id": "257476858",
+        "text": "Map 2 - 00:31:04 - 9th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257476878",
+        "text": "Map 2 - 00:31:08 - 1st Inhibitor - Bilibili Gaming"
+      },
+      {
+        "id": "257477083",
+        "text": "Map 2 - 00:32:51 - 5th Dragon (3) - Bilibili Gaming"
+      },
+      {
+        "id": "257477105",
+        "text": "Map 2 - 00:33:01 - Race to 20 Kills - Top Esports"
+      },
+      {
+        "id": "257477199",
+        "text": "Map 2 - 00:33:33 - 10th Tower - Top Esports"
+      },
+      {
+        "id": "257477666",
+        "text": "Map 2 - 00:35:59 - 6th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257477682",
+        "text": "Map 2 - 00:36:03 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257477697",
+        "text": "Map 2 - 00:36:08 - 1st Inhibitor Spawned - Top Esports"
+      },
+      {
+        "id": "257477945",
+        "text": "Map 2 - 00:37:41 - 2nd Baron - Top Esports"
+      },
+      {
+        "id": "257478017",
+        "text": "Map 2 - 00:38:01 - 6th Dragon (3) - Top Esports"
+      },
+      {
+        "id": "257478229",
+        "text": "Map 2 - 00:39:05 - 7th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257478235",
+        "text": "Map 2 - 00:39:07 - 11th Tower - Top Esports"
+      },
+      {
+        "id": "257478452",
+        "text": "Map 2 - 00:40:12 - 12th Tower - Top Esports"
+      },
+      {
+        "id": "257478533",
+        "text": "Map 2 - 00:40:38 - 13th Tower - Top Esports"
+      },
+      {
+        "id": "257478548",
+        "text": "Map 2 - 00:40:44 - Race to 25 Kills - Top Esports"
+      },
+      {
+        "id": "257478890",
+        "text": "Map 2 - 00:42:44 - 2nd Inhibitor - Bilibili Gaming"
+      },
+      {
+        "id": "257479062",
+        "text": "Map 2 - 00:43:41 - 3rd Baron Spawned"
+      },
+      {
+        "id": "257479266",
+        "text": "Map 2 - 00:45:01 - 7th Dragon (7) - Top Esports"
+      },
+      {
+        "id": "257479350",
+        "text": "Map 2 - 00:45:36 - 8th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257479358",
+        "text": "Map 2 - 00:45:37 - 3rd Baron - Top Esports"
+      },
+      {
+        "id": "257479473",
+        "text": "Map 2 - 00:46:32 - 3rd Inhibitor - Top Esports"
+      },
+      {
+        "id": "257479514",
+        "text": "Map 2 - 00:46:48 - 14th Tower - Top Esports"
+      },
+      {
+        "id": "257479519",
+        "text": "Map 2 - 00:46:49 - 15th Tower - Top Esports"
+      },
+      {
+        "id": "257479522",
+        "text": "Map 2 - 00:46:51 - Race to 30 Kills - Top Esports"
+      },
+      {
+        "id": "257479539",
+        "text": "Map 2 - 00:47:02 - 4th Inhibitor - Top Esports"
+      },
+      {
+        "id": "257479557",
+        "text": "Map 2 - 00:47:05 - 16th Tower - Top Esports"
+      },
+      {
+        "id": "257479580",
+        "text": "Map 2 - Winner - Top Esports"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "55.1k",
+          "46.4k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "20",
+          "7"
+        ],
+        "towers": [
+          "6",
+          "2"
+        ]
+      },
+      "2": {
+        "barons": [
+          "2",
+          "1"
+        ],
+        "dragons": [
+          "5",
+          "2"
+        ],
+        "gold": [
+          "52.4k",
+          "44.6k"
+        ],
+        "inhibitors": [
+          "2",
+          "2"
+        ],
+        "kills": [
+          "31",
+          "19"
+        ],
+        "towers": [
+          "10",
+          "6"
+        ]
+      }
+    },
+    "inplay_created_at": "1755427084",
+    "inplay_updated_at": "1755434764",
+    "confirmed_at": "1755613521",
+    "bet365_id": "179328683",
+    "event_data": {
+      "id": "179328683",
+      "sport_id": "151",
+      "time": "1755428400",
+      "time_status": "3",
+      "league": {
+        "id": "10086145",
+        "name": "LOL - LPL Split 3"
+      },
+      "home": {
+        "id": "10409854",
+        "name": "Top Esports"
+      },
+      "away": {
+        "id": "10400858",
+        "name": "Bilibili Gaming"
+      },
+      "ss": "2-0",
+      "our_event_id": "10325832",
+      "r_id": "179328683C151A",
+      "updated_at": "1755434873",
+      "odds_updated_at": "1755434868"
+    }
+  },
+  "summary": {
+    "home_team": "Top Esports",
+    "away_team": "Bilibili Gaming",
+    "final_score": "2-0",
+    "league": "LOL - LPL Split 3",
+    "match_date": "2025-08-17T06:55:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

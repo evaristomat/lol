@@ -1,0 +1,421 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:48.001905",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179540928",
+    "sport_id": "151",
+    "time": "1755507600",
+    "time_status": "3",
+    "league": {
+      "id": "10086145",
+      "name": "LOL - LPL Split 3"
+    },
+    "home": {
+      "id": "10361334",
+      "name": "FunPlus Phoenix"
+    },
+    "away": {
+      "id": "10529791",
+      "name": "Weibo Gaming"
+    },
+    "ss": "0-2",
+    "our_event_id": "10325831",
+    "r_id": "179540928C151A",
+    "updated_at": "1755514177",
+    "odds_updated_at": "1755514169"
+  },
+  "result_info": {
+    "id": "10325831",
+    "sport_id": "151",
+    "time": "1755507600",
+    "time_status": "3",
+    "league": {
+      "id": "40961",
+      "name": "LOL - LPL Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "193775",
+      "name": "FunPlus Phoenix",
+      "image_id": "402895",
+      "cc": null
+    },
+    "away": {
+      "id": "384566",
+      "name": "Weibo Gaming",
+      "image_id": "1261433",
+      "cc": null
+    },
+    "ss": "0-2",
+    "scores": {
+      "1": {
+        "home": "0",
+        "away": "1"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "0",
+        "away": "2"
+      }
+    },
+    "events": [
+      {
+        "id": "257598151",
+        "text": "Map 1 - 00:01:15 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257598938",
+        "text": "Map  - 00:08:34 - 1st Blood - Weibo Gaming"
+      },
+      {
+        "id": "257599358",
+        "text": "Map 1 - 00:13:12 - 1st Dragon (4) - Weibo Gaming"
+      },
+      {
+        "id": "257599366",
+        "text": "Map 1 - 00:13:19 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257599610",
+        "text": "Map 1 - 00:16:13 - 1st Rift Herald Slain - FunPlus Phoenix"
+      },
+      {
+        "id": "257599683",
+        "text": "Map 1 - 00:17:13 - 1st Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257599711",
+        "text": "Map 1 - 00:17:34 - 2nd Tower - Weibo Gaming"
+      },
+      {
+        "id": "257599862",
+        "text": "Map 1 - 00:18:59 - Race to 5 Kills - Weibo Gaming"
+      },
+      {
+        "id": "257599935",
+        "text": "Map 1 - 00:19:29 - 3rd Tower - Weibo Gaming"
+      },
+      {
+        "id": "257599951",
+        "text": "Map 1 - 00:19:36 - 2nd Dragon (9) - Weibo Gaming"
+      },
+      {
+        "id": "257600324",
+        "text": "Map 1 - 00:22:13 - 4th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257600469",
+        "text": "Map 1 - 00:23:16 - 3rd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257600713",
+        "text": "Map 1 - 00:24:54 - 3rd Dragon (3) - Weibo Gaming"
+      },
+      {
+        "id": "257600719",
+        "text": "Map 1 - 00:24:56 - 4th Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257600739",
+        "text": "Map 1 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257600876",
+        "text": "Map 1 - 00:25:54 - Race to 10 Kills - Weibo Gaming"
+      },
+      {
+        "id": "257601560",
+        "text": "Map 1 - 00:29:05 - 1st Baron - Weibo Gaming"
+      },
+      {
+        "id": "257601563",
+        "text": "Map 1 - 00:29:05 - 5th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257601571",
+        "text": "Map 1 - 00:29:05 - 6th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257601572",
+        "text": "Map 1 - 00:29:05 - 1st Inhibitor - Weibo Gaming"
+      },
+      {
+        "id": "257601573",
+        "text": "Map 1 - 00:29:05 - 7th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257601576",
+        "text": "Map 1 - 00:29:05 - 8th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257601656",
+        "text": "Map 1 - 00:29:05 - Race to 15 Kills - Weibo Gaming"
+      },
+      {
+        "id": "257601889",
+        "text": "Map 1 - Winner - Weibo Gaming"
+      },
+      {
+        "id": "257605293",
+        "text": "Map  - 00:08:45 - 1st Blood - FunPlus Phoenix"
+      },
+      {
+        "id": "257606329",
+        "text": "Map 2 - 00:16:41 - 1st Rift Herald Slain - FunPlus Phoenix"
+      },
+      {
+        "id": "257606402",
+        "text": "Map 2 - 00:17:19 - 1st Tower - Weibo Gaming"
+      },
+      {
+        "id": "257606403",
+        "text": "Map 2 - 00:17:20 - 2nd Tower - Weibo Gaming"
+      },
+      {
+        "id": "257606426",
+        "text": "Map 2 - 00:17:29 - 3rd Tower - Weibo Gaming"
+      },
+      {
+        "id": "257606461",
+        "text": "Map 2 - 00:17:47 - Race to 5 Kills - FunPlus Phoenix"
+      },
+      {
+        "id": "257606514",
+        "text": "Map 2 - 00:18:07 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257606611",
+        "text": "Map 2 - 00:19:28 - 1st Dragon (6) - Weibo Gaming"
+      },
+      {
+        "id": "257606765",
+        "text": "Map 2 - 00:21:12 - 2nd Dragon (5) - Weibo Gaming"
+      },
+      {
+        "id": "257606771",
+        "text": "Map 2 - 00:21:16 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257606938",
+        "text": "Map 2 - 00:23:07 - 4th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257606948",
+        "text": "Map 2 - 00:23:13 - 5th Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257606973",
+        "text": "Map 2 - 00:23:25 - 6th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257606992",
+        "text": "Map 2 - 00:23:34 - 7th Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257607000",
+        "text": "Map 2 - 00:23:43 - 3rd Dragon (8) - Weibo Gaming"
+      },
+      {
+        "id": "257607003",
+        "text": "Map 2 - 00:23:45 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257607133",
+        "text": "Map 2 - 00:25:04 - 1st Baron Spawned"
+      },
+      {
+        "id": "257607264",
+        "text": "Map 2 - 00:25:49 - 1st Baron - FunPlus Phoenix"
+      },
+      {
+        "id": "257607550",
+        "text": "Map 2 - 00:27:15 - 8th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257607642",
+        "text": "Map 2 - 00:27:40 - 9th Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257607718",
+        "text": "Map 2 - 00:28:04 - 10th Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257607768",
+        "text": "Map 2 - 00:28:28 - Race to 10 Kills - FunPlus Phoenix"
+      },
+      {
+        "id": "257607981",
+        "text": "Map 2 - 00:29:38 - 4th Dragon (8) - Weibo Gaming"
+      },
+      {
+        "id": "257608324",
+        "text": "Map 2 - 00:31:50 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257608612",
+        "text": "Map 2 - 00:33:38 - 2nd Baron - FunPlus Phoenix"
+      },
+      {
+        "id": "257608829",
+        "text": "Map 2 - 00:35:03 - 11th Tower - FunPlus Phoenix"
+      },
+      {
+        "id": "257608842",
+        "text": "Map 2 - 00:35:07 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257608962",
+        "text": "Map 2 - 00:35:53 - 5th Dragon (7) - Weibo Gaming"
+      },
+      {
+        "id": "257609041",
+        "text": "Map 2 - 00:36:21 - 1st Inhibitor - Weibo Gaming"
+      },
+      {
+        "id": "257609048",
+        "text": "Map 2 - 00:36:23 - 12th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257609051",
+        "text": "Map 2 - 00:36:26 - 2nd Inhibitor - Weibo Gaming"
+      },
+      {
+        "id": "257609153",
+        "text": "Map 2 - 00:37:01 - 6th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257609262",
+        "text": "Map 2 - 00:37:45 - 13th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257609291",
+        "text": "Map 2 - 00:37:54 - 14th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257609299",
+        "text": "Map 2 - 00:37:56 - 3rd Inhibitor - Weibo Gaming"
+      },
+      {
+        "id": "257609398",
+        "text": "Map 2 - 00:38:37 - 3rd Baron Spawned"
+      },
+      {
+        "id": "257609417",
+        "text": "Map 2 - 00:38:44 - 3rd Baron - Weibo Gaming"
+      },
+      {
+        "id": "257609597",
+        "text": "Map 2 - 00:40:01 - Race to 15 Kills - Weibo Gaming"
+      },
+      {
+        "id": "257609742",
+        "text": "Map 2 - 00:40:22 - 15th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257609745",
+        "text": "Map 2 - 00:40:22 - 16th Tower - Weibo Gaming"
+      },
+      {
+        "id": "257609911",
+        "text": "Map 2 - Winner - Weibo Gaming"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "0",
+          "3"
+        ],
+        "gold": [
+          "43.3k",
+          "55.7k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "1",
+          "19"
+        ],
+        "towers": [
+          "1",
+          "7"
+        ]
+      },
+      "2": {
+        "barons": [
+          "2",
+          "1"
+        ],
+        "dragons": [
+          "0",
+          "5"
+        ],
+        "gold": [
+          "39k",
+          "41k"
+        ],
+        "inhibitors": [
+          "0",
+          "3"
+        ],
+        "kills": [
+          "14",
+          "17"
+        ],
+        "towers": [
+          "5",
+          "11"
+        ]
+      }
+    },
+    "inplay_created_at": "1755507336",
+    "inplay_updated_at": "1755514146",
+    "confirmed_at": "1755648270",
+    "bet365_id": "179540928",
+    "event_data": {
+      "id": "179540928",
+      "sport_id": "151",
+      "time": "1755507600",
+      "time_status": "3",
+      "league": {
+        "id": "10086145",
+        "name": "LOL - LPL Split 3"
+      },
+      "home": {
+        "id": "10361334",
+        "name": "FunPlus Phoenix"
+      },
+      "away": {
+        "id": "10529791",
+        "name": "Weibo Gaming"
+      },
+      "ss": "0-2",
+      "our_event_id": "10325831",
+      "r_id": "179540928C151A",
+      "updated_at": "1755514177",
+      "odds_updated_at": "1755514169"
+    }
+  },
+  "summary": {
+    "home_team": "FunPlus Phoenix",
+    "away_team": "Weibo Gaming",
+    "final_score": "0-2",
+    "league": "LOL - LPL Split 3",
+    "match_date": "2025-08-18T05:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:02.672110",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179328862",
+    "sport_id": "151",
+    "time": "1755417600",
+    "time_status": "3",
+    "league": {
+      "id": "10085162",
+      "name": "LOL - LCK"
+    },
+    "home": {
+      "id": "11012800",
+      "name": "OKSavingsBank BRION"
+    },
+    "away": {
+      "id": "10963772",
+      "name": "Dplus KIA"
+    },
+    "ss": "2-0",
+    "our_event_id": "10371119",
+    "r_id": "179328862C151A",
+    "updated_at": "1755427156",
+    "odds_updated_at": "1755426736"
+  },
+  "result_info": {
+    "id": "10371119",
+    "sport_id": "151",
+    "time": "1755417600",
+    "time_status": "3",
+    "league": {
+      "id": "40000",
+      "name": "LOL - LCK",
+      "cc": null
+    },
+    "home": {
+      "id": "863304",
+      "name": "OKSavingsBank BRION",
+      "image_id": "526987",
+      "cc": null
+    },
+    "away": {
+      "id": "812913",
+      "name": "Dplus KIA",
+      "image_id": "340968",
+      "cc": null
+    },
+    "ss": "2-0",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "99": {
+        "home": "2",
+        "away": "0"
+      }
+    },
+    "events": [
+      {
+        "id": "257449522",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257450355",
+        "text": "Map 1 - 00:06:01 - 1st Dragon (3) - Dplus KIA"
+      },
+      {
+        "id": "257450356",
+        "text": "Map 1 - 00:06:01 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257451058",
+        "text": "Map 1 - 00:11:50 - 2nd Dragon (9) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257451059",
+        "text": "Map 1 - 00:11:50 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257451406",
+        "text": "Map  - 00:14:50 - 1st Blood - Dplus KIA"
+      },
+      {
+        "id": "257451714",
+        "text": "Map 1 - 00:17:46 - 1st Tower - Dplus KIA"
+      },
+      {
+        "id": "257451769",
+        "text": "Map 1 - 00:18:14 - 1st Rift Herald Slain - Dplus KIA"
+      },
+      {
+        "id": "257451776",
+        "text": "Map 1 - 00:18:17 - 3rd Dragon (6) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257451777",
+        "text": "Map 1 - 00:18:17 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257451869",
+        "text": "Map 1 - 00:19:09 - 2nd Tower - Dplus KIA"
+      },
+      {
+        "id": "257451885",
+        "text": "Map 1 - 00:19:18 - 3rd Tower - Dplus KIA"
+      },
+      {
+        "id": "257451892",
+        "text": "Map 1 - 00:19:21 - 4th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257452347",
+        "text": "Map 1 - 00:22:21 - 5th Tower - Dplus KIA"
+      },
+      {
+        "id": "257452630",
+        "text": "Map 1 - 00:24:23 - 4th Dragon (6) - Dplus KIA"
+      },
+      {
+        "id": "257452631",
+        "text": "Map 1 - 00:24:23 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257452717",
+        "text": "Map 1 - 00:24:57 - Race to 5 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257452735",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257453435",
+        "text": "Map 1 - 00:30:00 - 5th Dragon (6) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257453436",
+        "text": "Map 1 - 00:30:00 - 6th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257453948",
+        "text": "Map 1 - 00:33:28 - 1st Baron - OKSavingsBank BRION"
+      },
+      {
+        "id": "257453968",
+        "text": "Map 1 - 00:33:37 - Race to 10 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454037",
+        "text": "Map 1 - 00:34:03 - 6th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454057",
+        "text": "Map 1 - 00:34:11 - 7th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454241",
+        "text": "Map 1 - 00:35:25 - 6th Dragon (6) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454243",
+        "text": "Map 1 - 00:35:25 - 6th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257454315",
+        "text": "Map 1 - 00:35:50 - 8th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454316",
+        "text": "Map 1 - 00:35:53 - 1st Inhibitor - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454340",
+        "text": "Map 1 - 00:36:03 - Race to 15 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454352",
+        "text": "Map 1 - 00:36:07 - 9th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454366",
+        "text": "Map 1 - 00:36:11 - 10th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257454384",
+        "text": "Map 1 - Winner - OKSavingsBank BRION"
+      },
+      {
+        "id": "257457230",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257457719",
+        "text": "Map  - 00:02:51 - 1st Blood - OKSavingsBank BRION"
+      },
+      {
+        "id": "257458592",
+        "text": "Map 2 - 00:09:11 - 1st Dragon (8) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257458593",
+        "text": "Map 2 - 00:09:11 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257459132",
+        "text": "Map 2 - 00:13:23 - 1st Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257459441",
+        "text": "Map 2 - 00:15:36 - 2nd Dragon (9) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257459448",
+        "text": "Map 2 - 00:15:36 - 3rd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257459493",
+        "text": "Map 2 - 00:15:55 - 1st Rift Herald Slain - Dplus KIA"
+      },
+      {
+        "id": "257459660",
+        "text": "Map 2 - 00:17:12 - 2nd Tower - Dplus KIA"
+      },
+      {
+        "id": "257459696",
+        "text": "Map 2 - 00:17:28 - Race to 5 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460090",
+        "text": "Map 2 - 00:20:54 - 3rd Dragon (5) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460091",
+        "text": "Map 2 - 00:20:54 - 4th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257460238",
+        "text": "Map 2 - 00:21:43 - 3rd Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460400",
+        "text": "Map 2 - 00:22:37 - 4th Tower - Dplus KIA"
+      },
+      {
+        "id": "257460805",
+        "text": "Map 2 - 00:24:49 - Race to 10 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460840",
+        "text": "Map 2 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257460871",
+        "text": "Map 2 - 00:25:17 - 5th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460891",
+        "text": "Map 2 - 00:25:26 - 1st Baron - OKSavingsBank BRION"
+      },
+      {
+        "id": "257460949",
+        "text": "Map 2 - 00:25:50 - 6th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461149",
+        "text": "Map 2 - 00:26:18 - 4th Dragon (5) - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461151",
+        "text": "Map 2 - 00:26:18 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257461224",
+        "text": "Map 2 - 00:26:38 - 7th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461281",
+        "text": "Map 2 - 00:27:01 - 8th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461312",
+        "text": "Map 2 - 00:27:08 - 9th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461315",
+        "text": "Map 2 - 00:27:10 - 1st Inhibitor - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461338",
+        "text": "Map 2 - 00:27:18 - 2nd Inhibitor - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461400",
+        "text": "Map 2 - 00:27:36 - Race to 15 Kills - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461408",
+        "text": "Map 2 - 00:27:37 - 10th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461422",
+        "text": "Map 2 - 00:27:41 - 11th Tower - OKSavingsBank BRION"
+      },
+      {
+        "id": "257461438",
+        "text": "Map 2 - Winner - OKSavingsBank BRION"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "61.2k",
+          "58.5k"
+        ],
+        "inhibitors": [
+          "0",
+          "0"
+        ],
+        "kills": [
+          "11",
+          "7"
+        ],
+        "towers": [
+          "3",
+          "4"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "57.3k",
+          "44.9k"
+        ],
+        "inhibitors": [
+          "2",
+          "0"
+        ],
+        "kills": [
+          "16",
+          "6"
+        ],
+        "towers": [
+          "9",
+          "2"
+        ]
+      }
+    },
+    "inplay_created_at": "1755420633",
+    "inplay_updated_at": "1755427156",
+    "confirmed_at": "1755649998",
+    "bet365_id": "179328862",
+    "event_data": {
+      "id": "179328862",
+      "sport_id": "151",
+      "time": "1755417600",
+      "time_status": "3",
+      "league": {
+        "id": "10085162",
+        "name": "LOL - LCK"
+      },
+      "home": {
+        "id": "11012800",
+        "name": "OKSavingsBank BRION"
+      },
+      "away": {
+        "id": "10963772",
+        "name": "Dplus KIA"
+      },
+      "ss": "2-0",
+      "our_event_id": "10371119",
+      "r_id": "179328862C151A",
+      "updated_at": "1755427156",
+      "odds_updated_at": "1755426736"
+    }
+  },
+  "summary": {
+    "home_team": "OKSavingsBank BRION",
+    "away_team": "Dplus KIA",
+    "final_score": "2-0",
+    "league": "LOL - LCK",
+    "match_date": "2025-08-17T04:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

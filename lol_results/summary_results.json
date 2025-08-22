@@ -1,0 +1,244 @@
+{
+  "exported_at": "2025-08-19T20:35:18.443392",
+  "total_games": 25,
+  "leagues": {
+    "LOL - LCK CL Rounds 3-5": 4,
+    "LOL - LPL Split 3": 6,
+    "LOL - Hitpoint Masters Summer Playoffs": 1,
+    "LOL - Superliga Summer Split Playoffs": 1,
+    "LOL - Prime League Season Finals": 1,
+    "LOL - ROL Summer": 2,
+    "LOL - Rift Legends Summer": 1,
+    "LOL - LEC Summer": 4,
+    "LOL - LCK": 2,
+    "LOL - LCP Season Finals": 2,
+    "LOL - LTA South Split 3": 1
+  },
+  "games": [
+    {
+      "league": "LOL - LCK CL Rounds 3-5",
+      "home_team": "KT Rolster.Ch",
+      "away_team": "BNK FearX.Y",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755590400",
+      "match_date": "2025-08-19T04:00:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "Ninjas in Pyjamas",
+      "away_team": "LNG Esports",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755594000",
+      "match_date": "2025-08-19T05:00:00"
+    },
+    {
+      "league": "LOL - LCK CL Rounds 3-5",
+      "home_team": "OKSavingsBank BRION.Ch",
+      "away_team": "Nongshim.EA",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755597600",
+      "match_date": "2025-08-19T06:00:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "Anyone's Legend",
+      "away_team": "Top Esports",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755601200",
+      "match_date": "2025-08-19T07:00:00"
+    },
+    {
+      "league": "LOL - Hitpoint Masters Summer Playoffs",
+      "home_team": "Entropiq",
+      "away_team": "Nightbirds",
+      "score": "3-0",
+      "maps": 3,
+      "timestamp": "1755612000",
+      "match_date": "2025-08-19T10:00:00"
+    },
+    {
+      "league": "LOL - Superliga Summer Split Playoffs",
+      "home_team": "Movistar KOI Fenix",
+      "away_team": "UCAM Esports",
+      "score": "0-3",
+      "maps": 3,
+      "timestamp": "1755619200",
+      "match_date": "2025-08-19T12:00:00"
+    },
+    {
+      "league": "LOL - Prime League Season Finals",
+      "home_team": "TeamOrangeGaming",
+      "away_team": "ROSSMANN Centaurs",
+      "score": "2-2",
+      "maps": 5,
+      "timestamp": "1755619200",
+      "match_date": "2025-08-19T12:00:00"
+    },
+    {
+      "league": "LOL - ROL Summer",
+      "home_team": "mCon esports",
+      "away_team": "Jormungang",
+      "score": "2-1",
+      "maps": 3,
+      "timestamp": "1755622800",
+      "match_date": "2025-08-19T13:00:00"
+    },
+    {
+      "league": "LOL - Rift Legends Summer",
+      "home_team": "Zero Tenacity",
+      "away_team": "Forsaken",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755626400",
+      "match_date": "2025-08-19T14:00:00"
+    },
+    {
+      "league": "LOL - ROL Summer",
+      "home_team": "ZennIT",
+      "away_team": "Once Upon A Team",
+      "score": "2-1",
+      "maps": 2,
+      "timestamp": "1755626400",
+      "match_date": "2025-08-19T14:00:00"
+    },
+    {
+      "league": "LOL - LCK CL Rounds 3-5",
+      "home_team": "DN Freecs.Ch",
+      "away_team": "Hanwha Life Esports.Ch",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755504000",
+      "match_date": "2025-08-18T04:00:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "FunPlus Phoenix",
+      "away_team": "Weibo Gaming",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755507600",
+      "match_date": "2025-08-18T05:00:00"
+    },
+    {
+      "league": "LOL - LCK CL Rounds 3-5",
+      "home_team": "Gen.G.GA",
+      "away_team": "DRX.Ch",
+      "score": "1-2",
+      "maps": 3,
+      "timestamp": "1755511200",
+      "match_date": "2025-08-18T06:00:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "Bilibili Gaming",
+      "away_team": "Invictus Gaming",
+      "score": "1-2",
+      "maps": 3,
+      "timestamp": "1755514800",
+      "match_date": "2025-08-18T07:00:00"
+    },
+    {
+      "league": "LOL - LEC Summer",
+      "home_team": "Karmine Corp",
+      "away_team": "Team Vitality",
+      "score": "1-2",
+      "maps": 3,
+      "timestamp": "1755529200",
+      "match_date": "2025-08-18T11:00:00"
+    },
+    {
+      "league": "LOL - LEC Summer",
+      "home_team": "G2 Esports",
+      "away_team": "Team BDS",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755536400",
+      "match_date": "2025-08-18T13:00:00"
+    },
+    {
+      "league": "LOL - LCK",
+      "home_team": "Hanwha Life Esports",
+      "away_team": "Gen.G",
+      "score": "1-2",
+      "maps": 3,
+      "timestamp": "1755410400",
+      "match_date": "2025-08-17T02:00:00"
+    },
+    {
+      "league": "LOL - LCK",
+      "home_team": "OKSavingsBank BRION",
+      "away_team": "Dplus KIA",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755417600",
+      "match_date": "2025-08-17T04:00:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "Weibo Gaming",
+      "away_team": "Anyone's Legend",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755421200",
+      "match_date": "2025-08-17T05:00:00"
+    },
+    {
+      "league": "LOL - LCP Season Finals",
+      "home_team": "PSG Talon",
+      "away_team": "Chiefs Esports Club",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755423000",
+      "match_date": "2025-08-17T05:30:00"
+    },
+    {
+      "league": "LOL - LPL Split 3",
+      "home_team": "Top Esports",
+      "away_team": "Bilibili Gaming",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755428100",
+      "match_date": "2025-08-17T06:55:00"
+    },
+    {
+      "league": "LOL - LCP Season Finals",
+      "home_team": "Fukuoka SB Hawks gaming",
+      "away_team": "DetonatioN FocusMe",
+      "score": "1-2",
+      "maps": 3,
+      "timestamp": "1755432000",
+      "match_date": "2025-08-17T08:00:00"
+    },
+    {
+      "league": "LOL - LEC Summer",
+      "home_team": "Team Vitality",
+      "away_team": "Natus Vincere",
+      "score": "2-0",
+      "maps": 2,
+      "timestamp": "1755442800",
+      "match_date": "2025-08-17T11:00:00"
+    },
+    {
+      "league": "LOL - LTA South Split 3",
+      "home_team": "RED Canids",
+      "away_team": "paiN Gaming",
+      "score": "1-3",
+      "maps": 4,
+      "timestamp": "1755446400",
+      "match_date": "2025-08-17T12:00:00"
+    },
+    {
+      "league": "LOL - LEC Summer",
+      "home_team": "Fnatic",
+      "away_team": "G2 Esports",
+      "score": "0-2",
+      "maps": 2,
+      "timestamp": "1755449100",
+      "match_date": "2025-08-17T12:45:00"
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:11.116724",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179657896",
+    "sport_id": "151",
+    "time": "1755432000",
+    "time_status": "3",
+    "league": {
+      "id": "10086283",
+      "name": "LOL - LCP Season Finals"
+    },
+    "home": {
+      "id": "10483433",
+      "name": "Fukuoka SB Hawks gaming"
+    },
+    "away": {
+      "id": "10455196",
+      "name": "DetonatioN FocusMe"
+    },
+    "ss": "1-2",
+    "our_event_id": "10490222",
+    "r_id": "179657896C151A",
+    "updated_at": "1755438805",
+    "odds_updated_at": "1755438773"
+  },
+  "result_info": {
+    "id": "10490222",
+    "sport_id": "151",
+    "time": "1755432000",
+    "time_status": "3",
+    "league": {
+      "id": "41097",
+      "name": "LOL - LCP Season Finals",
+      "cc": null
+    },
+    "home": {
+      "id": "321980",
+      "name": "Fukuoka SoftBank Hawks gaming",
+      "image_id": "669875",
+      "cc": null
+    },
+    "o_home": {
+      "id": "345331",
+      "name": "Fukuoka SB Hawks gaming",
+      "image_id": "669875",
+      "cc": null
+    },
+    "away": {
+      "id": "78687",
+      "name": "DetonatioN FocusMe",
+      "image_id": "313769",
+      "cc": null
+    },
+    "ss": "1-2",
+    "events": [
+      {
+        "id": "257471726",
+        "text": "Map  - 00:08:35 - 1st Blood - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257472141",
+        "text": "Map 1 - 00:12:05 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257472148",
+        "text": "Map 1 - 00:12:06 - 1st Dragon (9) - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257472241",
+        "text": "Map 1 - 00:13:00 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257472456",
+        "text": "Map 1 - 00:14:49 - Race to 5 Kills - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257473398",
+        "text": "Map 1 - 00:19:52 - 1st Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257473419",
+        "text": "Map 1 - 00:19:58 - 2nd Dragon (6) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257473429",
+        "text": "Map 1 - 00:20:00 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257474257",
+        "text": "Map 1 - 00:24:15 - Race to 10 Kills - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257474317",
+        "text": "Map 1 - 00:24:30 - 2nd Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257474329",
+        "text": "Map 1 - 00:24:32 - 3rd Dragon (8) - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257474331",
+        "text": "Map 1 - 00:24:33 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257474339",
+        "text": "Map 1 - 00:24:37 - 3rd Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257474406",
+        "text": "Map 1 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257475130",
+        "text": "Map 1 - 00:29:10 - 1st Baron - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475221",
+        "text": "Map 1 - 00:29:10 - 4th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257475260",
+        "text": "Map 1 - 00:29:10 - 5th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475280",
+        "text": "Map 1 - 00:29:10 - 6th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475295",
+        "text": "Map 1 - 00:29:10 - 1st Inhibitor - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475323",
+        "text": "Map 1 - 00:29:10 - 7th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257475375",
+        "text": "Map 1 - 00:29:10 - Race to 20 Kills - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475446",
+        "text": "Map 1 - 00:29:10 - 8th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475448",
+        "text": "Map 1 - 00:29:10 - 9th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257475496",
+        "text": "Map 1 - Winner - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257479671",
+        "text": "Map  - 00:10:52 - 1st Blood - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257479688",
+        "text": "Map 2 - 00:11:04 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257479689",
+        "text": "Map 2 - 00:11:04 - 1st Dragon (3) - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257479706",
+        "text": "Map 2 - 00:11:11 - 2nd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257480299",
+        "text": "Map 2 - 00:16:15 - Race to 5 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257480600",
+        "text": "Map 2 - 00:18:24 - 1st Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257480735",
+        "text": "Map 2 - 00:19:33 - 2nd Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257480751",
+        "text": "Map 2 - 00:19:46 - 2nd Dragon (4) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257480760",
+        "text": "Map 2 - 00:19:49 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257480801",
+        "text": "Map 2 - 00:20:11 - 3rd Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257481189",
+        "text": "Map 2 - 00:23:17 - 4th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257481190",
+        "text": "Map 2 - 00:23:17 - 5th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481311",
+        "text": "Map 2 - 00:24:39 - Race to 10 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481344",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257481345",
+        "text": "Map 2 - 00:25:00 - 3rd Dragon (6) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481482",
+        "text": "Map 2 - 00:26:13 - Race to 15 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481509",
+        "text": "Map 2 - 00:26:23 - 1st Baron - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481942",
+        "text": "Map 2 - 00:28:58 - 6th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481949",
+        "text": "Map 2 - 00:29:00 - 7th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481951",
+        "text": "Map 2 - 00:29:01 - 1st Inhibitor - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481952",
+        "text": "Map 2 - 00:29:01 - 8th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481954",
+        "text": "Map 2 - 00:29:01 - 9th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481964",
+        "text": "Map 2 - 00:29:04 - 10th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481972",
+        "text": "Map 2 - 00:29:06 - 11th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481973",
+        "text": "Map 2 - 00:29:07 - 12th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257481987",
+        "text": "Map 2 - 00:29:13 - 2nd Inhibitor - DetonatioN FocusMe"
+      },
+      {
+        "id": "257482002",
+        "text": "Map 2 - 00:29:17 - Race to 20 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257482016",
+        "text": "Map 2 - 00:29:20 - 13th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257482058",
+        "text": "Map 2 - Winner - DetonatioN FocusMe"
+      },
+      {
+        "id": "257485567",
+        "text": "Map  - 00:08:03 - 1st Blood - DetonatioN FocusMe"
+      },
+      {
+        "id": "257485811",
+        "text": "Map 3 - 00:09:26 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257485829",
+        "text": "Map 3 - 00:09:32 - 1st Dragon (5) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257485836",
+        "text": "Map 3 - 00:09:34 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257486456",
+        "text": "Map 3 - 00:13:37 - Race to 5 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257486620",
+        "text": "Map 3 - 00:14:31 - 2nd Dragon (6) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257486627",
+        "text": "Map 3 - 00:14:34 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257486912",
+        "text": "Map 3 - 00:16:18 - 1st Rift Herald Slain - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487642",
+        "text": "Map 3 - 00:20:30 - Race to 10 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487841",
+        "text": "Map 3 - 00:21:38 - 1st Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487842",
+        "text": "Map 3 - 00:21:39 - 2nd Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487843",
+        "text": "Map 3 - 00:21:39 - 3rd Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487972",
+        "text": "Map 3 - 00:22:21 - 3rd Dragon (8) - DetonatioN FocusMe"
+      },
+      {
+        "id": "257487980",
+        "text": "Map 3 - 00:22:23 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257488059",
+        "text": "Map 3 - 00:22:46 - Race to 15 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488345",
+        "text": "Map 3 - 00:24:26 - 4th Tower - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257488355",
+        "text": "Map 3 - 00:24:30 - 5th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488449",
+        "text": "Map 3 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257488522",
+        "text": "Map 3 - 00:25:26 - 1st Baron - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488548",
+        "text": "Map 3 - 00:25:33 - 4th Dragon (8) - Fukuoka SB Hawks gaming"
+      },
+      {
+        "id": "257488568",
+        "text": "Map 3 - 00:25:40 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257488715",
+        "text": "Map 3 - 00:26:29 - 6th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488716",
+        "text": "Map 3 - 00:26:30 - 7th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488921",
+        "text": "Map 3 - 00:27:36 - Race to 20 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488941",
+        "text": "Map 3 - 00:27:40 - 8th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257488942",
+        "text": "Map 3 - 00:27:41 - 1st Inhibitor - DetonatioN FocusMe"
+      },
+      {
+        "id": "257489032",
+        "text": "Map 3 - 00:28:10 - 9th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257489038",
+        "text": "Map 3 - 00:28:14 - 10th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257489041",
+        "text": "Map 3 - 00:28:15 - 11th Tower - DetonatioN FocusMe"
+      },
+      {
+        "id": "257489068",
+        "text": "Map 3 - 00:28:29 - Race to 25 Kills - DetonatioN FocusMe"
+      },
+      {
+        "id": "257489113",
+        "text": "Map 3 - Winner - DetonatioN FocusMe"
+      }
+    ],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "1"
+        ],
+        "gold": [
+          "53.4k",
+          "46.7k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "20",
+          "10"
+        ],
+        "towers": [
+          "7",
+          "2"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "2"
+        ],
+        "gold": [
+          "45.6k",
+          "54.8k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "5",
+          "20"
+        ],
+        "towers": [
+          "3",
+          "10"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "3"
+        ],
+        "gold": [
+          "44.8k",
+          "55.9k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "7",
+          "25"
+        ],
+        "towers": [
+          "1",
+          "10"
+        ]
+      }
+    },
+    "inplay_created_at": "1755430459",
+    "inplay_updated_at": "1755438805",
+    "bet365_id": "179657896",
+    "event_data": {
+      "id": "179657896",
+      "sport_id": "151",
+      "time": "1755432000",
+      "time_status": "3",
+      "league": {
+        "id": "10086283",
+        "name": "LOL - LCP Season Finals"
+      },
+      "home": {
+        "id": "10483433",
+        "name": "Fukuoka SB Hawks gaming"
+      },
+      "away": {
+        "id": "10455196",
+        "name": "DetonatioN FocusMe"
+      },
+      "ss": "1-2",
+      "our_event_id": "10490222",
+      "r_id": "179657896C151A",
+      "updated_at": "1755438805",
+      "odds_updated_at": "1755438773"
+    }
+  },
+  "summary": {
+    "home_team": "Fukuoka SB Hawks gaming",
+    "away_team": "DetonatioN FocusMe",
+    "final_score": "1-2",
+    "league": "LOL - LCP Season Finals",
+    "match_date": "2025-08-17T08:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "success": 1,
+  "results": [
+    {
+      "FI": "179606993",
+      "event_id": "10491467",
+      "main": {
+        "updated_at": "1755650054",
+        "key": "#AC#B151#C21077424#D19#E23471983#F19#",
+        "sp": {
+          "match_lines": {
+            "id": "1510001",
+            "name": "Match Lines",
+            "odds": [
+              {
+                "id": "1399122248",
+                "odds": "1.04",
+                "header": "1",
+                "name": "To Win",
+                "handicap": ""
+              },
+              {
+                "id": "1399122251",
+                "odds": "9.00",
+                "header": "2",
+                "name": "To Win",
+                "handicap": ""
+              }
+            ]
+          }
+        }
+      },
+      "schedule": {
+        "updated_at": "1755650211",
+        "key": "#AC#B151#C21077424#D48#E1510001#F10#",
+        "sp": {
+          "main": [
+            {
+              "id": "1399122248",
+              "odds": "1.04",
+              "name": "To Win"
+            },
+            {
+              "id": "1399122251",
+              "odds": "9.00",
+              "name": "To Win"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+2025-08-21 14:38:23 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-21 14:38:23 | INFO     | run_update           | ============================================================
+2025-08-21 14:38:23 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-21 14:38:23 | INFO     | run_update           | ============================================================
+2025-08-21 14:38:23 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-21 14:38:23 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 10 dias
+2025-08-21 14:38:23 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-21 14:38:24 | INFO     | fetch_upcoming_events |    ✅ 17 jogos de LoL encontrados
+2025-08-21 14:38:24 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-21 14:38:24 | INFO     | fetch_upcoming_events |    ✅ 18 jogos de LoL encontrados
+2025-08-21 14:38:24 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events |    ✅ 14 jogos de LoL encontrados
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events |    ✅ 8 jogos de LoL encontrados
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-25
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events |    ✅ 6 jogos de LoL encontrados
+2025-08-21 14:38:25 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-26
+2025-08-21 14:38:26 | INFO     | fetch_upcoming_events |    ✅ 6 jogos de LoL encontrados
+2025-08-21 14:38:26 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-27
+2025-08-21 14:38:27 | INFO     | fetch_upcoming_events |    ✅ 3 jogos de LoL encontrados
+2025-08-21 14:38:27 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-28
+2025-08-21 14:38:27 | INFO     | fetch_upcoming_events |    ✅ 2 jogos de LoL encontrados
+2025-08-21 14:38:27 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-29
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events |    ℹ️  Nenhum jogo de LoL encontrado
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-30
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-31
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-21 14:38:28 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 76
+2025-08-21 14:38:28 | INFO     | save_events          | 📝 Eventos processados - Novos: 0, Existentes: 76, Times criados: 0
+2025-08-21 14:38:28 | INFO     | run_update           | ✅ Fase 1 concluída - 0 novos eventos adicionados
+2025-08-21 14:38:28 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-21 14:38:28 | INFO     | fetch_and_save_odds  | ✅ Todos os eventos têm odds atualizadas
+2025-08-21 14:38:28 | INFO     | run_update           | ✅ Fase 2 concluída - 0 eventos com odds atualizadas
+2025-08-21 14:38:29 | INFO     | run_update           | 💾 Dashboard salvo em: C:\ProgramData\anaconda3\envs\bet365\lol_api\reports\dashboard_20250821_143829.txt
+2025-08-21 14:38:29 | INFO     | run_update           | 
+✅ ATUALIZAÇÃO COMPLETA EM 5.3 SEGUNDOS
+2025-08-21 14:38:29 | INFO     | close                | 🔌 Conexões fechadas

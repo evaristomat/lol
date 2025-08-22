@@ -1,0 +1,278 @@
+2025-08-20 16:13:08 | INFO     | __init__             | 📀 Database inicializado: C:\ProgramData\anaconda3\envs\bet365\lol_api\data\lol_odds.db
+2025-08-20 16:13:08 | INFO     | run_update           | ============================================================
+2025-08-20 16:13:08 | INFO     | run_update           | 🚀 INICIANDO ATUALIZAÇÃO DO BANCO DE ODDS LOL
+2025-08-20 16:13:08 | INFO     | run_update           | ============================================================
+2025-08-20 16:13:08 | INFO     | run_update           | 
+📅 FASE 1: Buscando eventos...
+2025-08-20 16:13:08 | INFO     | fetch_upcoming_events | 🔍 Buscando eventos para os próximos 10 dias
+2025-08-20 16:13:08 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-20
+2025-08-20 16:13:09 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:13:09 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-21
+2025-08-20 16:13:10 | INFO     | fetch_upcoming_events |    ✅ 21 jogos de LoL encontrados
+2025-08-20 16:13:10 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-22
+2025-08-20 16:13:10 | INFO     | fetch_upcoming_events |    ✅ 15 jogos de LoL encontrados
+2025-08-20 16:13:10 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-23
+2025-08-20 16:13:11 | INFO     | fetch_upcoming_events |    ✅ 13 jogos de LoL encontrados
+2025-08-20 16:13:11 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-24
+2025-08-20 16:13:14 | INFO     | fetch_upcoming_events |    ✅ 7 jogos de LoL encontrados
+2025-08-20 16:13:14 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-25
+2025-08-20 16:13:15 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:13:15 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-26
+2025-08-20 16:13:15 | INFO     | fetch_upcoming_events |    ✅ 5 jogos de LoL encontrados
+2025-08-20 16:13:15 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-27
+2025-08-20 16:13:16 | INFO     | fetch_upcoming_events |    ✅ 3 jogos de LoL encontrados
+2025-08-20 16:13:16 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-28
+2025-08-20 16:13:16 | INFO     | fetch_upcoming_events |    ✅ 2 jogos de LoL encontrados
+2025-08-20 16:13:16 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-29
+2025-08-20 16:13:20 | INFO     | fetch_upcoming_events |    ℹ️  Nenhum jogo de LoL encontrado
+2025-08-20 16:13:20 | INFO     | fetch_upcoming_events | 📅 Buscando eventos para 2025-08-30
+2025-08-20 16:13:20 | INFO     | fetch_upcoming_events |    ✅ 1 jogos de LoL encontrados
+2025-08-20 16:13:20 | INFO     | fetch_upcoming_events | 📊 Total de eventos encontrados: 79
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Gen.G.GA vs T1.EA - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: DN Freecs.Ch vs Dplus KIA.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: DRX vs DN Freecs - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: LGD Gaming vs ThunderTalk Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Deep Cross Gaming vs Frank Esports - LOL - PCS Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Gen.G vs Nongshim RedForce - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: FunPlus Phoenix vs Anyone's Legend - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: DRX.Ch vs KT Rolster.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Nongshim.EA vs Hanwha Life Esports.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: KT Rolster vs Hanwha Life Esports - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Ultra Prime vs Edward Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: OKSavingsBank BRION vs BNK FearX - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: JD Gaming vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Besiktas Esports vs The Forbidden Five - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: BoostGate Esports vs ULF Esports - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Los Ratones vs Rich Gang - LOL - NLC Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Galions vs Joblife - LOL - LFL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Los Heretics vs UCAM Esports - LOL - Superliga Summer Split Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Dark Passage vs Papara SuperMassive - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: A One Man Army vs Myth Esports - LOL - ROL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Partizan Sangal vs Lenovo Legion Honved - LOL - EBL Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Bushido Wildcats vs Misa Esports - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Senshi eSports vs Aurora - LOL - ROL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Keypulse Esports vs The Otter Side - LOL - LPLOL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Karmine Corp Blue vs Vitality.Bee - LOL - LFL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: BK ROG Esports vs Ici Japon Corp. Esport - LOL - LFL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: DarkZero vs Winthrop University - LOL - NACL Split 2 Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Odivelas Sports Club vs Diver - LOL - LPLOL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: T1.EA vs BNK FearX.Y - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Dplus KIA.Ch vs OKSavingsBank BRION.Ch - LOL - LCK CL Rounds 3-5
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Nongshim RedForce vs T1 - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Invictus Gaming vs FunPlus Phoenix - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: PSG Talon vs DetonatioN FocusMe - LOL - LCP Season Finals
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Dplus KIA vs DRX - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Edward Gaming vs LGD Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: CTBC Flying Oyster vs GAM Esports - LOL - LCP Season Finals
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Misa Esports vs The Forbidden Five - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Bushido Wildcats vs Dark Passage - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Ici Japon Corp. Esport vs Team BDS.A - LOL - LFL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Papara SuperMassive vs BoostGate Esports - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: ULF Esports vs Besiktas Esports - LOL - TCL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Gentle Mates vs BK ROG Esports - LOL - LFL Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Blue Otter vs Conviction - LOL - NACL Split 2 Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Dorado Gaming vs Luminosity Gaming - LOL - NACL Split 2 Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Hanwha Life Esports vs Gen.G - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: LNG Esports vs ThunderTalk Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: OKSavingsBank BRION vs DN Freecs - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Team WE vs Top Esports - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Chiefs Esports Club vs Fukuoka SB Hawks gaming - LOL - LCP Season Finals
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Weibo Gaming vs Invictus Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Tan'i eSports CZ vs Team UNiTY - LOL - Hitpoint Masters Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: MGN Vikings Esports vs Team Secret Whales - LOL - LCP Season Finals
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: G2 Hel vs Solary Academy - LOL - Equal Esports Cup Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: eSuba vs EXILE esports - LOL - Hitpoint Masters Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: LOUD vs Fluxo W7M - LOL - LTA South Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Disguised vs Dignitas - LOL - LTA North Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: BNK FearX vs Dplus KIA - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: KT Rolster vs T1 - LOL - LCK
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Edward Gaming vs LNG Esports - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Anyone's Legend vs JD Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: BIG vs TeamOrangeGaming - LOL - Prime League Season Finals
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Isurus vs Leviatan - LOL - LTA South Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: LYON vs 100 Thieves - LOL - LTA North Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: LGD Gaming vs Ultra Prime - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: FunPlus Phoenix vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: SK Gaming vs G2 Esports - LOL - LEC Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Team BDS vs Team Heretics - LOL - LEC Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: KaBuM! IDL vs Corinthians Esports - LOL - CD Split 2 Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Team WE vs Invictus Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Top Esports vs FunPlus Phoenix - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Team Vitality vs Movistar KOI - LOL - LEC Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Natus Vincere vs GIANTX - LOL - LEC Summer
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: e-Champ Gaming vs Flamengo MDL - LOL - CD Split 2 Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Weibo Gaming vs JD Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Team WE vs Anyone's Legend - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Colossal Gaming vs GMBLERS ESPORTS - LOL - LIT Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Invictus Gaming vs Bilibili Gaming - LOL - LPL Split 3
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: Zena Esports vs aNc Legends - LOL - LIT Summer Playoffs
+2025-08-20 16:13:20 | INFO     | save_events          | ✅ Novo evento: DFM Academy vs QT DIG - LOL - LJL Finals
+2025-08-20 16:13:20 | INFO     | save_events          | 📝 Eventos processados - Novos: 79, Existentes: 0, Times criados: 79
+2025-08-20 16:13:20 | INFO     | run_update           | ✅ Fase 1 concluída - 79 novos eventos adicionados
+2025-08-20 16:13:20 | INFO     | run_update           | 
+💰 FASE 2: Atualizando odds...
+2025-08-20 16:13:20 | INFO     | fetch_and_save_odds  | 💰 Coletando odds para 79 eventos
+2025-08-20 16:13:20 | INFO     | fetch_and_save_odds  |    [1/79] Gen.G.GA vs T1.EA
+2025-08-20 16:13:21 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:21 | INFO     | fetch_and_save_odds  |    [2/79] DN Freecs.Ch vs Dplus KIA.Ch
+2025-08-20 16:13:21 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:22 | INFO     | fetch_and_save_odds  |    [3/79] DRX vs DN Freecs
+2025-08-20 16:13:22 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:22 | INFO     | fetch_and_save_odds  |    [4/79] LGD Gaming vs ThunderTalk Gaming
+2025-08-20 16:13:23 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:23 | INFO     | fetch_and_save_odds  |    [5/79] Deep Cross Gaming vs Frank Esports
+2025-08-20 16:13:24 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:24 | INFO     | fetch_and_save_odds  |    [6/79] Gen.G vs Nongshim RedForce
+2025-08-20 16:13:24 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:25 | INFO     | fetch_and_save_odds  |    [7/79] FunPlus Phoenix vs Anyone's Legend
+2025-08-20 16:13:25 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:25 | INFO     | fetch_and_save_odds  |    [8/79] DRX.Ch vs KT Rolster.Ch
+2025-08-20 16:13:26 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:26 | INFO     | fetch_and_save_odds  |    [9/79] Nongshim.EA vs Hanwha Life Esports.Ch
+2025-08-20 16:13:27 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:27 | INFO     | fetch_and_save_odds  |    [10/79] KT Rolster vs Hanwha Life Esports
+2025-08-20 16:13:27 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:28 | INFO     | fetch_and_save_odds  |    [11/79] Ultra Prime vs Edward Gaming
+2025-08-20 16:13:28 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:29 | INFO     | fetch_and_save_odds  |    [12/79] OKSavingsBank BRION vs BNK FearX
+2025-08-20 16:13:29 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:29 | INFO     | fetch_and_save_odds  |    [13/79] JD Gaming vs Bilibili Gaming
+2025-08-20 16:13:30 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:30 | INFO     | fetch_and_save_odds  |    [14/79] Besiktas Esports vs The Forbidden Five
+2025-08-20 16:13:30 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:31 | INFO     | fetch_and_save_odds  |    [15/79] BoostGate Esports vs ULF Esports
+2025-08-20 16:13:31 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:31 | INFO     | fetch_and_save_odds  |    [16/79] Los Ratones vs Rich Gang
+2025-08-20 16:13:32 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:32 | INFO     | fetch_and_save_odds  |    [17/79] Galions vs Joblife
+2025-08-20 16:13:33 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:33 | INFO     | fetch_and_save_odds  |    [18/79] Los Heretics vs UCAM Esports
+2025-08-20 16:13:33 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:34 | INFO     | fetch_and_save_odds  |    [19/79] Dark Passage vs Papara SuperMassive
+2025-08-20 16:13:34 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:34 | INFO     | fetch_and_save_odds  |    [20/79] A One Man Army vs Myth Esports
+2025-08-20 16:13:35 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:35 | INFO     | fetch_and_save_odds  |    [21/79] Partizan Sangal vs Lenovo Legion Honved
+2025-08-20 16:13:36 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:36 | INFO     | fetch_and_save_odds  |    [22/79] Bushido Wildcats vs Misa Esports
+2025-08-20 16:13:36 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:37 | INFO     | fetch_and_save_odds  |    [23/79] Senshi eSports vs Aurora
+2025-08-20 16:13:37 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:37 | INFO     | fetch_and_save_odds  |    [24/79] Keypulse Esports vs The Otter Side
+2025-08-20 16:13:38 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:38 | INFO     | fetch_and_save_odds  |    [25/79] Karmine Corp Blue vs Vitality.Bee
+2025-08-20 16:13:39 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:39 | INFO     | fetch_and_save_odds  |    [26/79] BK ROG Esports vs Ici Japon Corp. Esport
+2025-08-20 16:13:39 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:40 | INFO     | fetch_and_save_odds  |    [27/79] DarkZero vs Winthrop University
+2025-08-20 16:13:40 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:40 | INFO     | fetch_and_save_odds  |    [28/79] Odivelas Sports Club vs Diver
+2025-08-20 16:13:41 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:41 | INFO     | fetch_and_save_odds  |    [29/79] T1.EA vs BNK FearX.Y
+2025-08-20 16:13:47 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:48 | INFO     | fetch_and_save_odds  |    [30/79] Dplus KIA.Ch vs OKSavingsBank BRION.Ch
+2025-08-20 16:13:48 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:49 | INFO     | fetch_and_save_odds  |    [31/79] Nongshim RedForce vs T1
+2025-08-20 16:13:49 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:49 | INFO     | fetch_and_save_odds  |    [32/79] Invictus Gaming vs FunPlus Phoenix
+2025-08-20 16:13:50 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:50 | INFO     | fetch_and_save_odds  |    [33/79] PSG Talon vs DetonatioN FocusMe
+2025-08-20 16:13:50 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:51 | INFO     | fetch_and_save_odds  |    [34/79] Dplus KIA vs DRX
+2025-08-20 16:13:51 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:51 | INFO     | fetch_and_save_odds  |    [35/79] Edward Gaming vs LGD Gaming
+2025-08-20 16:13:52 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:52 | INFO     | fetch_and_save_odds  |    [36/79] CTBC Flying Oyster vs GAM Esports
+2025-08-20 16:13:53 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:53 | INFO     | fetch_and_save_odds  |    [37/79] Misa Esports vs The Forbidden Five
+2025-08-20 16:13:54 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:54 | INFO     | fetch_and_save_odds  |    [38/79] Bushido Wildcats vs Dark Passage
+2025-08-20 16:13:54 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:55 | INFO     | fetch_and_save_odds  |    [39/79] Ici Japon Corp. Esport vs Team BDS.A
+2025-08-20 16:13:55 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:55 | INFO     | fetch_and_save_odds  |    [40/79] Papara SuperMassive vs BoostGate Esports
+2025-08-20 16:13:56 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:56 | INFO     | fetch_and_save_odds  |    [41/79] ULF Esports vs Besiktas Esports
+2025-08-20 16:13:56 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:57 | INFO     | fetch_and_save_odds  |    [42/79] Gentle Mates vs BK ROG Esports
+2025-08-20 16:13:58 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:59 | INFO     | fetch_and_save_odds  |    [43/79] Blue Otter vs Conviction
+2025-08-20 16:13:59 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:13:59 | INFO     | fetch_and_save_odds  |    [44/79] Dorado Gaming vs Luminosity Gaming
+2025-08-20 16:14:00 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:00 | INFO     | fetch_and_save_odds  |    [45/79] Hanwha Life Esports vs Gen.G
+2025-08-20 16:14:01 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:01 | INFO     | fetch_and_save_odds  |    [46/79] LNG Esports vs ThunderTalk Gaming
+2025-08-20 16:14:02 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:02 | INFO     | fetch_and_save_odds  |    [47/79] OKSavingsBank BRION vs DN Freecs
+2025-08-20 16:14:02 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:03 | INFO     | fetch_and_save_odds  |    [48/79] Team WE vs Top Esports
+2025-08-20 16:14:03 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:03 | INFO     | fetch_and_save_odds  |    [49/79] Chiefs Esports Club vs Fukuoka SB Hawks gaming
+2025-08-20 16:14:04 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:04 | INFO     | fetch_and_save_odds  |    [50/79] Weibo Gaming vs Invictus Gaming
+2025-08-20 16:14:05 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:05 | INFO     | fetch_and_save_odds  |    [51/79] Tan'i eSports CZ vs Team UNiTY
+2025-08-20 16:14:05 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:06 | INFO     | fetch_and_save_odds  |    [52/79] MGN Vikings Esports vs Team Secret Whales
+2025-08-20 16:14:06 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:07 | INFO     | fetch_and_save_odds  |    [53/79] G2 Hel vs Solary Academy
+2025-08-20 16:14:07 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:08 | INFO     | fetch_and_save_odds  |    [54/79] eSuba vs EXILE esports
+2025-08-20 16:14:08 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:08 | INFO     | fetch_and_save_odds  |    [55/79] LOUD vs Fluxo W7M
+2025-08-20 16:14:09 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:09 | INFO     | fetch_and_save_odds  |    [56/79] Disguised vs Dignitas
+2025-08-20 16:14:10 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:10 | INFO     | fetch_and_save_odds  |    [57/79] BNK FearX vs Dplus KIA
+2025-08-20 16:14:10 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:11 | INFO     | fetch_and_save_odds  |    [58/79] KT Rolster vs T1
+2025-08-20 16:14:11 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:12 | INFO     | fetch_and_save_odds  |    [59/79] Edward Gaming vs LNG Esports
+2025-08-20 16:14:12 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:12 | INFO     | fetch_and_save_odds  |    [60/79] Anyone's Legend vs JD Gaming
+2025-08-20 16:14:13 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:13 | INFO     | fetch_and_save_odds  |    [61/79] BIG vs TeamOrangeGaming
+2025-08-20 16:14:14 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:14 | INFO     | fetch_and_save_odds  |    [62/79] Isurus vs Leviatan
+2025-08-20 16:14:14 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:15 | INFO     | fetch_and_save_odds  |    [63/79] LYON vs 100 Thieves
+2025-08-20 16:14:15 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:15 | INFO     | fetch_and_save_odds  |    [64/79] LGD Gaming vs Ultra Prime
+2025-08-20 16:14:16 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:16 | INFO     | fetch_and_save_odds  |    [65/79] FunPlus Phoenix vs Bilibili Gaming
+2025-08-20 16:14:17 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:17 | INFO     | fetch_and_save_odds  |    [66/79] SK Gaming vs G2 Esports
+2025-08-20 16:14:18 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:18 | INFO     | fetch_and_save_odds  |    [67/79] Team BDS vs Team Heretics
+2025-08-20 16:14:19 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:19 | INFO     | fetch_and_save_odds  |    [68/79] KaBuM! IDL vs Corinthians Esports
+2025-08-20 16:14:19 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:20 | INFO     | fetch_and_save_odds  |    [69/79] Team WE vs Invictus Gaming
+2025-08-20 16:14:20 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:20 | INFO     | fetch_and_save_odds  |    [70/79] Top Esports vs FunPlus Phoenix
+2025-08-20 16:14:21 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:21 | INFO     | fetch_and_save_odds  |    [71/79] Team Vitality vs Movistar KOI
+2025-08-20 16:14:22 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:22 | INFO     | fetch_and_save_odds  |    [72/79] Natus Vincere vs GIANTX
+2025-08-20 16:14:22 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:23 | INFO     | fetch_and_save_odds  |    [73/79] e-Champ Gaming vs Flamengo MDL
+2025-08-20 16:14:23 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:23 | INFO     | fetch_and_save_odds  |    [74/79] Weibo Gaming vs JD Gaming
+2025-08-20 16:14:24 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:24 | INFO     | fetch_and_save_odds  |    [75/79] Team WE vs Anyone's Legend
+2025-08-20 16:14:25 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:25 | INFO     | fetch_and_save_odds  |    [76/79] Colossal Gaming vs GMBLERS ESPORTS
+2025-08-20 16:14:25 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:26 | INFO     | fetch_and_save_odds  |    [77/79] Invictus Gaming vs Bilibili Gaming
+2025-08-20 16:14:26 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:26 | INFO     | fetch_and_save_odds  |    [78/79] Zena Esports vs aNc Legends
+2025-08-20 16:14:27 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:27 | INFO     | fetch_and_save_odds  |    [79/79] DFM Academy vs QT DIG
+2025-08-20 16:14:28 | INFO     | fetch_and_save_odds  |       ✅ Odds salvas com sucesso
+2025-08-20 16:14:28 | INFO     | fetch_and_save_odds  | 📊 Coleta finalizada: 79/79 eventos com odds
+2025-08-20 16:14:28 | INFO     | run_update           | ✅ Fase 2 concluída - 79 eventos com odds atualizadas
+2025-08-20 16:14:28 | INFO     | run_update           | 💾 Dashboard salvo em: C:\ProgramData\anaconda3\envs\bet365\lol_api\reports\dashboard_20250820_161428.txt
+2025-08-20 16:14:28 | INFO     | run_update           | 
+✅ ATUALIZAÇÃO COMPLETA EM 79.8 SEGUNDOS
+2025-08-20 16:14:28 | INFO     | close                | 🔌 Conexões fechadas

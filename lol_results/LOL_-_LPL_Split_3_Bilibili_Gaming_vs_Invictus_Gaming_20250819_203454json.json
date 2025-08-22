@@ -1,0 +1,635 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:54.085877",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179540929",
+    "sport_id": "151",
+    "time": "1755514800",
+    "time_status": "3",
+    "league": {
+      "id": "10086145",
+      "name": "LOL - LPL Split 3"
+    },
+    "home": {
+      "id": "10400858",
+      "name": "Bilibili Gaming"
+    },
+    "away": {
+      "id": "10361241",
+      "name": "Invictus Gaming"
+    },
+    "ss": "1-2",
+    "our_event_id": "10339104",
+    "r_id": "179540929C151A",
+    "updated_at": "1755526085",
+    "odds_updated_at": "1755526048"
+  },
+  "result_info": {
+    "id": "10339104",
+    "sport_id": "151",
+    "time": "1755514800",
+    "time_status": "3",
+    "league": {
+      "id": "40961",
+      "name": "LOL - LPL Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "193777",
+      "name": "Bilibili Gaming",
+      "image_id": "402893",
+      "cc": null
+    },
+    "away": {
+      "id": "8118",
+      "name": "Invictus Gaming",
+      "image_id": "245595",
+      "cc": "cn"
+    },
+    "ss": "1-2",
+    "scores": {
+      "1": {
+        "home": "0",
+        "away": "1"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "3": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "1",
+        "away": "2"
+      }
+    },
+    "events": [
+      {
+        "id": "257614128",
+        "text": "Map 1 - 00:00:53 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257614587",
+        "text": "Map  - 00:04:39 - 1st Blood - Invictus Gaming"
+      },
+      {
+        "id": "257614974",
+        "text": "Map 1 - 00:07:59 - 1st Dragon (8) - Invictus Gaming"
+      },
+      {
+        "id": "257614977",
+        "text": "Map 1 - 00:08:01 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257615305",
+        "text": "Map 1 - 00:10:57 - Race to 5 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257615767",
+        "text": "Map 1 - 00:13:39 - 2nd Dragon (3) - Bilibili Gaming"
+      },
+      {
+        "id": "257616272",
+        "text": "Map 1 - 00:16:40 - 1st Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257616518",
+        "text": "Map 1 - 00:18:18 - 2nd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257616678",
+        "text": "Map 1 - 00:19:20 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257616686",
+        "text": "Map 1 - 00:19:22 - 3rd Dragon (6) - Bilibili Gaming"
+      },
+      {
+        "id": "257616698",
+        "text": "Map 1 - 00:19:28 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257617069",
+        "text": "Map 1 - 00:21:46 - 3rd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257617097",
+        "text": "Map 1 - 00:21:53 - Race to 10 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257617245",
+        "text": "Map 1 - 00:22:52 - 4th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257617533",
+        "text": "Map 1 - 00:24:43 - 4th Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257617584",
+        "text": "Map 1 - 00:24:59 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257617590",
+        "text": "Map 1 - 00:25:04 - 1st Baron Spawned"
+      },
+      {
+        "id": "257618245",
+        "text": "Map 1 - 00:30:11 - 5th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257618346",
+        "text": "Map 1 - 00:31:00 - 5th Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257618353",
+        "text": "Map 1 - 00:31:04 - 1st Baron - Bilibili Gaming"
+      },
+      {
+        "id": "257618909",
+        "text": "Map 1 - 00:36:04 - Race to 15 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257618929",
+        "text": "Map 1 - 00:36:15 - 6th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257618950",
+        "text": "Map 1 - 00:36:23 - 7th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257618951",
+        "text": "Map 1 - 00:36:24 - 1st Inhibitor - Bilibili Gaming"
+      },
+      {
+        "id": "257618961",
+        "text": "Map 1 - 00:36:32 - 2nd Inhibitor - Bilibili Gaming"
+      },
+      {
+        "id": "257619008",
+        "text": "Map 1 - 00:36:57 - 6th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257619009",
+        "text": "Map 1 - 00:36:59 - 6th Dragon (6) - Bilibili Gaming"
+      },
+      {
+        "id": "257619027",
+        "text": "Map 1 - 00:37:02 - 7th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257619028",
+        "text": "Map 1 - 00:37:02 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257619173",
+        "text": "Map 1 - 00:38:30 - 2nd Baron - Invictus Gaming"
+      },
+      {
+        "id": "257619251",
+        "text": "Map 1 - 00:39:08 - 8th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257619539",
+        "text": "Map 1 - 00:41:25 - 1st Inhibitor Spawned - Bilibili Gaming"
+      },
+      {
+        "id": "257619555",
+        "text": "Map 1 - 00:41:34 - 2nd Inhibitor Spawned - Bilibili Gaming"
+      },
+      {
+        "id": "257619681",
+        "text": "Map 1 - 00:42:21 - 7th Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257619689",
+        "text": "Map 1 - 00:42:23 - 8th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257619744",
+        "text": "Map 1 - 00:42:38 - 9th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257619811",
+        "text": "Map 1 - 00:43:03 - 10th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257619848",
+        "text": "Map 1 - 00:43:15 - 11th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257619888",
+        "text": "Map 1 - 00:43:30 - 12th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257619912",
+        "text": "Map 1 - 00:43:36 - 3rd Inhibitor - Invictus Gaming"
+      },
+      {
+        "id": "257620052",
+        "text": "Map 1 - 00:44:29 - 3rd Baron Spawned"
+      },
+      {
+        "id": "257620077",
+        "text": "Map 1 - 00:44:42 - 3rd Baron - Bilibili Gaming"
+      },
+      {
+        "id": "257620165",
+        "text": "Map 1 - 00:45:11 - Race to 20 Kills - Invictus Gaming"
+      },
+      {
+        "id": "257620234",
+        "text": "Map 1 - 00:45:34 - 13th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257620240",
+        "text": "Map 1 - 00:45:36 - 14th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257620377",
+        "text": "Map 1 - 00:45:54 - 15th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257620404",
+        "text": "Map 1 - 00:45:54 - 16th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257620618",
+        "text": "Map 1 - Winner - Invictus Gaming"
+      },
+      {
+        "id": "257624097",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257624404",
+        "text": "Map  - 00:02:50 - 1st Blood - Invictus Gaming"
+      },
+      {
+        "id": "257625898",
+        "text": "Map 2 - 00:12:45 - 1st Dragon (5) - Bilibili Gaming"
+      },
+      {
+        "id": "257625908",
+        "text": "Map 2 - 00:12:51 - 2nd Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257626072",
+        "text": "Map 2 - 00:14:13 - Race to 5 Kills - Invictus Gaming"
+      },
+      {
+        "id": "257626147",
+        "text": "Map 2 - 00:14:58 - 1st Tower - Invictus Gaming"
+      },
+      {
+        "id": "257626250",
+        "text": "Map 2 - 00:15:40 - 2nd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257626268",
+        "text": "Map 2 - 00:15:46 - 1st Rift Herald Slain - Bilibili Gaming"
+      },
+      {
+        "id": "257626290",
+        "text": "Map 2 - 00:15:51 - 3rd Tower - Invictus Gaming"
+      },
+      {
+        "id": "257626576",
+        "text": "Map 2 - 00:18:28 - 2nd Dragon (3) - Invictus Gaming"
+      },
+      {
+        "id": "257626603",
+        "text": "Map 2 - 00:18:43 - Race to 10 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257626677",
+        "text": "Map 2 - 00:19:16 - 4th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257627102",
+        "text": "Map 2 - 00:22:41 - 5th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257627256",
+        "text": "Map 2 - 00:24:13 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257627260",
+        "text": "Map 2 - 00:24:14 - 3rd Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257627270",
+        "text": "Map 2 - 00:24:16 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257627354",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257627563",
+        "text": "Map 2 - 00:26:37 - 6th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257627658",
+        "text": "Map 2 - 00:27:18 - 7th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257627913",
+        "text": "Map 2 - 00:29:33 - 4th Dragon (6) - Bilibili Gaming"
+      },
+      {
+        "id": "257627917",
+        "text": "Map 2 - 00:29:35 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257628087",
+        "text": "Map 2 - 00:30:32 - Race to 15 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257628151",
+        "text": "Map 2 - 00:30:59 - 1st Baron - Bilibili Gaming"
+      },
+      {
+        "id": "257628449",
+        "text": "Map 2 - 00:33:01 - 8th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257628452",
+        "text": "Map 2 - 00:33:03 - 9th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257628541",
+        "text": "Map 2 - 00:33:34 - Race to 20 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257628612",
+        "text": "Map 2 - 00:34:00 - 10th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257628633",
+        "text": "Map 2 - 00:34:07 - 11th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257628724",
+        "text": "Map 2 - 00:34:26 - 12th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257628727",
+        "text": "Map 2 - 00:34:26 - 1st Inhibitor - Bilibili Gaming"
+      },
+      {
+        "id": "257628911",
+        "text": "Map 2 - Winner - Bilibili Gaming"
+      },
+      {
+        "id": "257631656",
+        "text": "Map 3 - 00:00:53 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257632752",
+        "text": "Map 3 - 00:08:05 - 1st Dragon (9) - Bilibili Gaming"
+      },
+      {
+        "id": "257632766",
+        "text": "Map 3 - 00:08:08 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257632825",
+        "text": "Map  - 00:08:30 - 1st Blood - Bilibili Gaming"
+      },
+      {
+        "id": "257633600",
+        "text": "Map 3 - 00:14:25 - 2nd Dragon (5) - Bilibili Gaming"
+      },
+      {
+        "id": "257633604",
+        "text": "Map 3 - 00:14:28 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257633788",
+        "text": "Map 3 - 00:16:16 - Race to 5 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257633841",
+        "text": "Map 3 - 00:16:38 - 1st Rift Herald Slain - Invictus Gaming"
+      },
+      {
+        "id": "257633845",
+        "text": "Map 3 - 00:16:41 - 1st Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257633852",
+        "text": "Map 3 - 00:16:45 - 2nd Tower - Invictus Gaming"
+      },
+      {
+        "id": "257633869",
+        "text": "Map 3 - 00:16:51 - 3rd Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257634010",
+        "text": "Map 3 - 00:18:09 - 4th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257634028",
+        "text": "Map 3 - 00:18:22 - 5th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257634044",
+        "text": "Map 3 - 00:18:32 - 6th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257634045",
+        "text": "Map 3 - 00:18:33 - 7th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257634176",
+        "text": "Map 3 - 00:19:44 - 3rd Dragon (6) - Bilibili Gaming"
+      },
+      {
+        "id": "257634177",
+        "text": "Map 3 - 00:19:46 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257634276",
+        "text": "Map 3 - 00:20:39 - 8th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257634662",
+        "text": "Map 3 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257634664",
+        "text": "Map 3 - 00:25:03 - 4th Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257634671",
+        "text": "Map 3 - 00:25:05 - 5th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257634741",
+        "text": "Map 3 - 00:25:47 - Race to 10 Kills - Bilibili Gaming"
+      },
+      {
+        "id": "257634841",
+        "text": "Map 3 - 00:26:41 - 1st Baron - Bilibili Gaming"
+      },
+      {
+        "id": "257634927",
+        "text": "Map 3 - 00:27:59 - 9th Tower - Bilibili Gaming"
+      },
+      {
+        "id": "257635230",
+        "text": "Map 3 - 00:30:36 - 5th Dragon (6) - Invictus Gaming"
+      },
+      {
+        "id": "257635314",
+        "text": "Map 3 - 00:31:10 - 10th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257635317",
+        "text": "Map 3 - 00:31:11 - 11th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257635343",
+        "text": "Map 3 - 00:31:17 - 12th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257635345",
+        "text": "Map 3 - 00:31:20 - 1st Inhibitor - Invictus Gaming"
+      },
+      {
+        "id": "257635354",
+        "text": "Map 3 - 00:31:23 - 13th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257635357",
+        "text": "Map 3 - 00:31:25 - 14th Tower - Invictus Gaming"
+      },
+      {
+        "id": "257635929",
+        "text": "Map 3 - Winner - Invictus Gaming"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "2",
+          "1"
+        ],
+        "dragons": [
+          "3",
+          "4"
+        ],
+        "gold": [
+          "80.9k",
+          "82.6k"
+        ],
+        "inhibitors": [
+          "2",
+          "1"
+        ],
+        "kills": [
+          "16",
+          "23"
+        ],
+        "towers": [
+          "8",
+          "8"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "2"
+        ],
+        "gold": [
+          "65.7k",
+          "55.3k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "21",
+          "9"
+        ],
+        "towers": [
+          "10",
+          "2"
+        ]
+      },
+      "3": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "56.3k",
+          "53.3k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "13",
+          "9"
+        ],
+        "towers": [
+          "6",
+          "8"
+        ]
+      }
+    },
+    "inplay_created_at": "1755514979",
+    "inplay_updated_at": "1755526085",
+    "confirmed_at": "1755648533",
+    "bet365_id": "179540929",
+    "event_data": {
+      "id": "179540929",
+      "sport_id": "151",
+      "time": "1755514800",
+      "time_status": "3",
+      "league": {
+        "id": "10086145",
+        "name": "LOL - LPL Split 3"
+      },
+      "home": {
+        "id": "10400858",
+        "name": "Bilibili Gaming"
+      },
+      "away": {
+        "id": "10361241",
+        "name": "Invictus Gaming"
+      },
+      "ss": "1-2",
+      "our_event_id": "10339104",
+      "r_id": "179540929C151A",
+      "updated_at": "1755526085",
+      "odds_updated_at": "1755526048"
+    }
+  },
+  "summary": {
+    "home_team": "Bilibili Gaming",
+    "away_team": "Invictus Gaming",
+    "final_score": "1-2",
+    "league": "LOL - LPL Split 3",
+    "match_date": "2025-08-18T07:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

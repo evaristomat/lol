@@ -1,0 +1,393 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:36.465831",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179540931",
+    "sport_id": "151",
+    "time": "1755601200",
+    "time_status": "3",
+    "league": {
+      "id": "10086145",
+      "name": "LOL - LPL Split 3"
+    },
+    "home": {
+      "id": "10791535",
+      "name": "Anyone's Legend"
+    },
+    "away": {
+      "id": "10409854",
+      "name": "Top Esports"
+    },
+    "ss": "0-2",
+    "our_event_id": "10325830",
+    "r_id": "179540931C151A",
+    "updated_at": "1755607745",
+    "odds_updated_at": "1755607512"
+  },
+  "result_info": {
+    "id": "10325830",
+    "sport_id": "151",
+    "time": "1755601200",
+    "time_status": "3",
+    "league": {
+      "id": "40961",
+      "name": "LOL - LPL Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "641479",
+      "name": "Anyone's Legend",
+      "image_id": "402897",
+      "cc": null
+    },
+    "away": {
+      "id": "283141",
+      "name": "Top Esports",
+      "image_id": "402899",
+      "cc": null
+    },
+    "ss": "0-2",
+    "scores": {
+      "1": {
+        "home": "0",
+        "away": "1"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "0",
+        "away": "2"
+      }
+    },
+    "events": [
+      {
+        "id": "257755625",
+        "text": "Map 1 - 00:00:50 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257756328",
+        "text": "Map 1 - 00:06:35 - 1st Dragon (6) - Anyone's Legend"
+      },
+      {
+        "id": "257756337",
+        "text": "Map 1 - 00:06:38 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257756381",
+        "text": "Map  - 00:07:05 - 1st Blood - Top Esports"
+      },
+      {
+        "id": "257756808",
+        "text": "Map 1 - 00:12:07 - 2nd Dragon (9) - Top Esports"
+      },
+      {
+        "id": "257756812",
+        "text": "Map 1 - 00:12:13 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257756938",
+        "text": "Map 1 - 00:13:19 - 1st Tower - Top Esports"
+      },
+      {
+        "id": "257757056",
+        "text": "Map 1 - 00:14:08 - Race to 5 Kills - Top Esports"
+      },
+      {
+        "id": "257757393",
+        "text": "Map 1 - 00:16:23 - 2nd Tower - Top Esports"
+      },
+      {
+        "id": "257757591",
+        "text": "Map 1 - 00:17:50 - 3rd Dragon (4) - Top Esports"
+      },
+      {
+        "id": "257757598",
+        "text": "Map 1 - 00:17:53 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257757682",
+        "text": "Map 1 - 00:18:22 - 3rd Tower - Top Esports"
+      },
+      {
+        "id": "257758095",
+        "text": "Map 1 - 00:21:33 - 4th Tower - Anyone's Legend"
+      },
+      {
+        "id": "257758297",
+        "text": "Map 1 - 00:23:00 - 4th Dragon (4) - Top Esports"
+      },
+      {
+        "id": "257758306",
+        "text": "Map 1 - 00:23:02 - 5th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257758355",
+        "text": "Map 1 - 00:23:26 - Race to 10 Kills - Top Esports"
+      },
+      {
+        "id": "257758443",
+        "text": "Map 1 - 00:23:44 - 5th Tower - Anyone's Legend"
+      },
+      {
+        "id": "257758622",
+        "text": "Map 1 - 00:25:03 - 1st Baron Spawned"
+      },
+      {
+        "id": "257758958",
+        "text": "Map 1 - 00:27:37 - 1st Baron - Top Esports"
+      },
+      {
+        "id": "257759147",
+        "text": "Map 1 - 00:28:56 - Race to 15 Kills - Top Esports"
+      },
+      {
+        "id": "257759185",
+        "text": "Map 1 - 00:29:20 - 6th Tower - Top Esports"
+      },
+      {
+        "id": "257759186",
+        "text": "Map 1 - 00:29:21 - 7th Tower - Top Esports"
+      },
+      {
+        "id": "257759194",
+        "text": "Map 1 - 00:29:23 - 1st Inhibitor - Top Esports"
+      },
+      {
+        "id": "257759353",
+        "text": "Map 1 - 00:29:45 - 8th Tower - Anyone's Legend"
+      },
+      {
+        "id": "257759381",
+        "text": "Map 1 - 00:29:45 - 9th Tower - Top Esports"
+      },
+      {
+        "id": "257759386",
+        "text": "Map 1 - 00:29:45 - 10th Tower - Top Esports"
+      },
+      {
+        "id": "257759615",
+        "text": "Map 1 - Winner - Top Esports"
+      },
+      {
+        "id": "257763057",
+        "text": "Map 2 - 00:00:45 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257763207",
+        "text": "Map  - 00:02:02 - 1st Blood - Anyone's Legend"
+      },
+      {
+        "id": "257763647",
+        "text": "Map 2 - 00:06:20 - Race to 5 Kills - Top Esports"
+      },
+      {
+        "id": "257763655",
+        "text": "Map 2 - 00:06:23 - 1st Dragon (3) - Top Esports"
+      },
+      {
+        "id": "257763659",
+        "text": "Map 2 - 00:06:26 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257764217",
+        "text": "Map 2 - 00:12:01 - 2nd Dragon (6) - Top Esports"
+      },
+      {
+        "id": "257764226",
+        "text": "Map 2 - 00:12:04 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257764404",
+        "text": "Map 2 - 00:13:39 - Race to 10 Kills - Top Esports"
+      },
+      {
+        "id": "257764937",
+        "text": "Map 2 - 00:17:21 - 1st Rift Herald Slain - Top Esports"
+      },
+      {
+        "id": "257764946",
+        "text": "Map 2 - 00:17:26 - 1st Tower - Top Esports"
+      },
+      {
+        "id": "257764981",
+        "text": "Map 2 - 00:17:38 - 2nd Tower - Anyone's Legend"
+      },
+      {
+        "id": "257765008",
+        "text": "Map 2 - 00:17:50 - 3rd Tower - Top Esports"
+      },
+      {
+        "id": "257765060",
+        "text": "Map 2 - 00:18:14 - 3rd Dragon (4) - Top Esports"
+      },
+      {
+        "id": "257765067",
+        "text": "Map 2 - 00:18:16 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257765111",
+        "text": "Map 2 - 00:18:35 - 4th Tower - Anyone's Legend"
+      },
+      {
+        "id": "257765633",
+        "text": "Map 2 - 00:21:21 - Race to 15 Kills - Top Esports"
+      },
+      {
+        "id": "257765855",
+        "text": "Map 2 - 00:22:37 - 5th Tower - Top Esports"
+      },
+      {
+        "id": "257765974",
+        "text": "Map 2 - 00:23:36 - Race to 20 Kills - Top Esports"
+      },
+      {
+        "id": "257766102",
+        "text": "Map 2 - 00:24:23 - 4th Dragon (4) - Top Esports"
+      },
+      {
+        "id": "257766107",
+        "text": "Map 2 - 00:24:26 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257766195",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257766335",
+        "text": "Map 2 - 00:25:56 - Race to 25 Kills - Top Esports"
+      },
+      {
+        "id": "257766414",
+        "text": "Map 2 - 00:26:22 - 1st Baron - Top Esports"
+      },
+      {
+        "id": "257766645",
+        "text": "Map 2 - 00:27:44 - 6th Tower - Top Esports"
+      },
+      {
+        "id": "257766715",
+        "text": "Map 2 - 00:28:18 - Race to 30 Kills - Top Esports"
+      },
+      {
+        "id": "257766742",
+        "text": "Map 2 - 00:28:28 - 7th Tower - Top Esports"
+      },
+      {
+        "id": "257766747",
+        "text": "Map 2 - 00:28:30 - 1st Inhibitor - Top Esports"
+      },
+      {
+        "id": "257766768",
+        "text": "Map 2 - 00:28:38 - 8th Tower - Top Esports"
+      },
+      {
+        "id": "257766778",
+        "text": "Map 2 - 00:28:41 - 9th Tower - Top Esports"
+      },
+      {
+        "id": "257766975",
+        "text": "Map 2 - 00:28:58 - 10th Tower - Top Esports"
+      },
+      {
+        "id": "257767106",
+        "text": "Map 2 - Winner - Top Esports"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "3"
+        ],
+        "gold": [
+          "48.9k",
+          "56.8k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "9",
+          "18"
+        ],
+        "towers": [
+          "3",
+          "7"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "0",
+          "4"
+        ],
+        "gold": [
+          "28k",
+          "39k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "15",
+          "30"
+        ],
+        "towers": [
+          "2",
+          "8"
+        ]
+      }
+    },
+    "inplay_created_at": "1755601174",
+    "inplay_updated_at": "1755607745",
+    "confirmed_at": "1755648338",
+    "bet365_id": "179540931",
+    "event_data": {
+      "id": "179540931",
+      "sport_id": "151",
+      "time": "1755601200",
+      "time_status": "3",
+      "league": {
+        "id": "10086145",
+        "name": "LOL - LPL Split 3"
+      },
+      "home": {
+        "id": "10791535",
+        "name": "Anyone's Legend"
+      },
+      "away": {
+        "id": "10409854",
+        "name": "Top Esports"
+      },
+      "ss": "0-2",
+      "our_event_id": "10325830",
+      "r_id": "179540931C151A",
+      "updated_at": "1755607745",
+      "odds_updated_at": "1755607512"
+    }
+  },
+  "summary": {
+    "home_team": "Anyone's Legend",
+    "away_team": "Top Esports",
+    "final_score": "0-2",
+    "league": "LOL - LPL Split 3",
+    "match_date": "2025-08-19T07:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

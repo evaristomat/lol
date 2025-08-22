@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:31.548523",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179606648",
+    "sport_id": "151",
+    "time": "1755590400",
+    "time_status": "3",
+    "league": {
+      "id": "10086210",
+      "name": "LOL - LCK CL Rounds 3-5"
+    },
+    "home": {
+      "id": "10868541",
+      "name": "KT Rolster.Ch"
+    },
+    "away": {
+      "id": "11240855",
+      "name": "BNK FearX.Y"
+    },
+    "ss": "2-0",
+    "our_event_id": "10489648",
+    "r_id": "179606648C151A",
+    "updated_at": "1755595955",
+    "odds_updated_at": "1755595953"
+  },
+  "result_info": {
+    "id": "10489648",
+    "sport_id": "151",
+    "time": "1755590400",
+    "time_status": "3",
+    "league": {
+      "id": "41028",
+      "name": "LOL - LCK CL Rounds 3-5",
+      "cc": null
+    },
+    "home": {
+      "id": "376808",
+      "name": "KT Rolster Challengers",
+      "image_id": "770450",
+      "cc": null
+    },
+    "o_home": {
+      "id": "717931",
+      "name": "KT Rolster.Ch",
+      "image_id": "770450",
+      "cc": null
+    },
+    "away": {
+      "id": "1095106",
+      "name": "BNK FearX.Y",
+      "image_id": "1096569",
+      "cc": null
+    },
+    "ss": "2-0",
+    "events": [],
+    "period_stats": {
+      "1": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "49.8k",
+          "45.8k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "23",
+          "10"
+        ],
+        "towers": [
+          "9",
+          "3"
+        ]
+      },
+      "2": {
+        "barons": [
+          "1",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "26.9k",
+          "21.2k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "24",
+          "11"
+        ],
+        "towers": [
+          "8",
+          "2"
+        ]
+      }
+    },
+    "inplay_created_at": "1755590169",
+    "inplay_updated_at": "1755595950",
+    "bet365_id": "179606648",
+    "event_data": {
+      "id": "179606648",
+      "sport_id": "151",
+      "time": "1755590400",
+      "time_status": "3",
+      "league": {
+        "id": "10086210",
+        "name": "LOL - LCK CL Rounds 3-5"
+      },
+      "home": {
+        "id": "10868541",
+        "name": "KT Rolster.Ch"
+      },
+      "away": {
+        "id": "11240855",
+        "name": "BNK FearX.Y"
+      },
+      "ss": "2-0",
+      "our_event_id": "10489648",
+      "r_id": "179606648C151A",
+      "updated_at": "1755595955",
+      "odds_updated_at": "1755595953"
+    }
+  },
+  "summary": {
+    "home_team": "KT Rolster.Ch",
+    "away_team": "BNK FearX.Y",
+    "final_score": "2-0",
+    "league": "LOL - LCK CL Rounds 3-5",
+    "match_date": "2025-08-19T04:00:00",
+    "maps_played": 2,
+    "status": "completed"
+  }
+}

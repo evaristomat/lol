@@ -1,0 +1,595 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:34:55.322476",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179331771",
+    "sport_id": "151",
+    "time": "1755529200",
+    "time_status": "3",
+    "league": {
+      "id": "10049229",
+      "name": "LOL - LEC Summer"
+    },
+    "home": {
+      "id": "10520389",
+      "name": "Karmine Corp"
+    },
+    "away": {
+      "id": "10361254",
+      "name": "Team Vitality"
+    },
+    "ss": "1-2",
+    "our_event_id": "10419469",
+    "r_id": "179331771C151A",
+    "updated_at": "1755538249",
+    "odds_updated_at": "1755538033"
+  },
+  "result_info": {
+    "id": "10419469",
+    "sport_id": "151",
+    "time": "1755529200",
+    "time_status": "3",
+    "league": {
+      "id": "16416",
+      "name": "LOL - LEC Summer",
+      "cc": null
+    },
+    "home": {
+      "id": "376449",
+      "name": "Karmine Corp",
+      "image_id": "767832",
+      "cc": null
+    },
+    "away": {
+      "id": "72939",
+      "name": "Team Vitality",
+      "image_id": "544273",
+      "cc": "fr"
+    },
+    "ss": "1-2",
+    "scores": {
+      "1": {
+        "home": "1",
+        "away": "0"
+      },
+      "2": {
+        "home": "0",
+        "away": "1"
+      },
+      "3": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "1",
+        "away": "2"
+      }
+    },
+    "events": [
+      {
+        "id": "257644396",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257645179",
+        "text": "Map  - 00:05:24 - 1st Blood - Karmine Corp"
+      },
+      {
+        "id": "257645660",
+        "text": "Map 1 - 00:09:02 - 1st Dragon (9) - Team Vitality"
+      },
+      {
+        "id": "257645665",
+        "text": "Map 1 - 00:09:02 - 2nd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257646092",
+        "text": "Map 1 - 00:12:56 - Race to 5 Kills - Karmine Corp"
+      },
+      {
+        "id": "257646097",
+        "text": "Map 1 - 00:12:58 - 1st Tower - Karmine Corp"
+      },
+      {
+        "id": "257646186",
+        "text": "Map 1 - 00:14:03 - 2nd Tower - Karmine Corp"
+      },
+      {
+        "id": "257646234",
+        "text": "Map 1 - 00:14:39 - 2nd Dragon (4) - Karmine Corp"
+      },
+      {
+        "id": "257646235",
+        "text": "Map 1 - 00:14:39 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257646371",
+        "text": "Map 1 - 00:16:02 - 1st Rift Herald Slain - Karmine Corp"
+      },
+      {
+        "id": "257646558",
+        "text": "Map 1 - 00:17:59 - 3rd Tower - Karmine Corp"
+      },
+      {
+        "id": "257646743",
+        "text": "Map 1 - 00:19:55 - 3rd Dragon (6) - Karmine Corp"
+      },
+      {
+        "id": "257646744",
+        "text": "Map 1 - 00:19:55 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257646881",
+        "text": "Map 1 - 00:20:46 - Race to 10 Kills - Karmine Corp"
+      },
+      {
+        "id": "257646925",
+        "text": "Map 1 - 00:21:10 - 4th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647122",
+        "text": "Map 1 - 00:22:30 - 5th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647236",
+        "text": "Map 1 - 00:23:25 - 6th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647253",
+        "text": "Map 1 - 00:23:32 - Race to 15 Kills - Karmine Corp"
+      },
+      {
+        "id": "257647272",
+        "text": "Map 1 - 00:23:38 - 7th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647299",
+        "text": "Map 1 - 00:23:47 - 8th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647473",
+        "text": "Map 1 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257647558",
+        "text": "Map 1 - 00:25:30 - 1st Inhibitor - Karmine Corp"
+      },
+      {
+        "id": "257647575",
+        "text": "Map 1 - 00:25:37 - 9th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647612",
+        "text": "Map 1 - 00:25:49 - 10th Tower - Karmine Corp"
+      },
+      {
+        "id": "257647617",
+        "text": "Map 1 - 00:25:51 - Race to 20 Kills - Karmine Corp"
+      },
+      {
+        "id": "257647621",
+        "text": "Map 1 - 00:25:53 - 2nd Inhibitor - Karmine Corp"
+      },
+      {
+        "id": "257647630",
+        "text": "Map 1 - Winner - Karmine Corp"
+      },
+      {
+        "id": "257649825",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257650115",
+        "text": "Map  - 00:03:07 - 1st Blood - Karmine Corp"
+      },
+      {
+        "id": "257650673",
+        "text": "Map 2 - 00:06:52 - 1st Dragon (9) - Team Vitality"
+      },
+      {
+        "id": "257650674",
+        "text": "Map 2 - 00:06:52 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257651535",
+        "text": "Map 2 - 00:12:13 - 2nd Dragon (8) - Team Vitality"
+      },
+      {
+        "id": "257651536",
+        "text": "Map 2 - 00:12:13 - 3rd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257652065",
+        "text": "Map 2 - 00:15:46 - Race to 5 Kills - Team Vitality"
+      },
+      {
+        "id": "257652126",
+        "text": "Map 2 - 00:16:05 - 1st Rift Herald Slain - Team Vitality"
+      },
+      {
+        "id": "257652331",
+        "text": "Map 2 - 00:17:21 - 1st Tower - Team Vitality"
+      },
+      {
+        "id": "257652365",
+        "text": "Map 2 - 00:17:36 - 3rd Dragon (6) - Karmine Corp"
+      },
+      {
+        "id": "257652366",
+        "text": "Map 2 - 00:17:36 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257652378",
+        "text": "Map 2 - 00:17:42 - 2nd Tower - Team Vitality"
+      },
+      {
+        "id": "257652455",
+        "text": "Map 2 - 00:18:14 - 3rd Tower - Team Vitality"
+      },
+      {
+        "id": "257653021",
+        "text": "Map 2 - 00:22:54 - Race to 10 Kills - Team Vitality"
+      },
+      {
+        "id": "257653067",
+        "text": "Map 2 - 00:23:17 - 4th Tower - Team Vitality"
+      },
+      {
+        "id": "257653098",
+        "text": "Map 2 - 00:23:33 - 4th Dragon (6) - Team Vitality"
+      },
+      {
+        "id": "257653099",
+        "text": "Map 2 - 00:23:33 - 4th Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257653244",
+        "text": "Map 2 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257653395",
+        "text": "Map 2 - 00:26:48 - 5th Tower - Karmine Corp"
+      },
+      {
+        "id": "257653405",
+        "text": "Map 2 - 00:26:55 - 6th Tower - Team Vitality"
+      },
+      {
+        "id": "257653421",
+        "text": "Map 2 - 00:27:08 - 7th Tower - Karmine Corp"
+      },
+      {
+        "id": "257653486",
+        "text": "Map 2 - 00:28:05 - 1st Baron - Team Vitality"
+      },
+      {
+        "id": "257653515",
+        "text": "Map 2 - 00:28:39 - 8th Tower - Team Vitality"
+      },
+      {
+        "id": "257653554",
+        "text": "Map 2 - 00:29:08 - 5th Dragon (6) - Team Vitality"
+      },
+      {
+        "id": "257653556",
+        "text": "Map 2 - 00:29:08 - 6th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257653557",
+        "text": "Map 2 - 00:29:08 - 9th Tower - Team Vitality"
+      },
+      {
+        "id": "257653578",
+        "text": "Map 2 - 00:29:25 - 1st Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257653594",
+        "text": "Map 2 - 00:29:43 - 10th Tower - Team Vitality"
+      },
+      {
+        "id": "257653611",
+        "text": "Map 2 - 00:29:53 - 11th Tower - Team Vitality"
+      },
+      {
+        "id": "257653625",
+        "text": "Map 2 - 00:30:02 - 2nd Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257653752",
+        "text": "Map 2 - 00:31:59 - 12th Tower - Team Vitality"
+      },
+      {
+        "id": "257653753",
+        "text": "Map 2 - 00:32:00 - Race to 15 Kills - Team Vitality"
+      },
+      {
+        "id": "257653789",
+        "text": "Map 2 - 00:32:28 - 13th Tower - Team Vitality"
+      },
+      {
+        "id": "257653798",
+        "text": "Map 2 - Winner - Team Vitality"
+      },
+      {
+        "id": "257656891",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257657353",
+        "text": "Map  - 00:02:57 - 1st Blood - Team Vitality"
+      },
+      {
+        "id": "257658379",
+        "text": "Map 3 - 00:11:07 - 1st Dragon (6) - Karmine Corp"
+      },
+      {
+        "id": "257658380",
+        "text": "Map 3 - 00:11:07 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257658981",
+        "text": "Map 3 - 00:15:30 - 1st Rift Herald Slain - Karmine Corp"
+      },
+      {
+        "id": "257659201",
+        "text": "Map 3 - 00:16:54 - 2nd Dragon (4) - Team Vitality"
+      },
+      {
+        "id": "257659203",
+        "text": "Map 3 - 00:16:54 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257659690",
+        "text": "Map 3 - 00:19:46 - 1st Tower - Team Vitality"
+      },
+      {
+        "id": "257659703",
+        "text": "Map 3 - 00:19:51 - 2nd Tower - Karmine Corp"
+      },
+      {
+        "id": "257659755",
+        "text": "Map 3 - 00:20:05 - 3rd Tower - Team Vitality"
+      },
+      {
+        "id": "257659770",
+        "text": "Map 3 - 00:20:11 - 4th Tower - Karmine Corp"
+      },
+      {
+        "id": "257660098",
+        "text": "Map 3 - 00:22:06 - Race to 5 Kills - Karmine Corp"
+      },
+      {
+        "id": "257660186",
+        "text": "Map 3 - 00:22:41 - 3rd Dragon (8) - Karmine Corp"
+      },
+      {
+        "id": "257660187",
+        "text": "Map 3 - 00:22:41 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257660475",
+        "text": "Map 3 - 00:23:37 - 5th Tower - Karmine Corp"
+      },
+      {
+        "id": "257660733",
+        "text": "Map 3 - 00:25:01 - 1st Baron Spawned"
+      },
+      {
+        "id": "257660997",
+        "text": "Map 3 - 00:26:36 - Race to 10 Kills - Team Vitality"
+      },
+      {
+        "id": "257661022",
+        "text": "Map 3 - 00:26:45 - 6th Tower - Karmine Corp"
+      },
+      {
+        "id": "257661090",
+        "text": "Map 3 - 00:27:04 - 1st Baron - Team Vitality"
+      },
+      {
+        "id": "257661404",
+        "text": "Map 3 - 00:29:03 - 4th Dragon (8) - Team Vitality"
+      },
+      {
+        "id": "257661406",
+        "text": "Map 3 - 00:29:03 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257661450",
+        "text": "Map 3 - 00:29:13 - 7th Tower - Team Vitality"
+      },
+      {
+        "id": "257661680",
+        "text": "Map 3 - 00:30:47 - 8th Tower - Team Vitality"
+      },
+      {
+        "id": "257661695",
+        "text": "Map 3 - 00:30:57 - 9th Tower - Karmine Corp"
+      },
+      {
+        "id": "257661761",
+        "text": "Map 3 - 00:31:20 - 10th Tower - Team Vitality"
+      },
+      {
+        "id": "257661848",
+        "text": "Map 3 - 00:32:00 - 1st Inhibitor - Karmine Corp"
+      },
+      {
+        "id": "257661880",
+        "text": "Map 3 - 00:32:21 - 11th Tower - Karmine Corp"
+      },
+      {
+        "id": "257661952",
+        "text": "Map 3 - 00:33:03 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257662126",
+        "text": "Map 3 - 00:34:19 - 5th Dragon (8) - Karmine Corp"
+      },
+      {
+        "id": "257662127",
+        "text": "Map 3 - 00:34:19 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257662138",
+        "text": "Map 3 - 00:34:23 - 2nd Baron - Team Vitality"
+      },
+      {
+        "id": "257662376",
+        "text": "Map 3 - 00:36:18 - 12th Tower - Team Vitality"
+      },
+      {
+        "id": "257662447",
+        "text": "Map 3 - 00:37:00 - 1st Inhibitor Spawned - Karmine Corp"
+      },
+      {
+        "id": "257662555",
+        "text": "Map 3 - 00:38:01 - Race to 15 Kills - Team Vitality"
+      },
+      {
+        "id": "257662724",
+        "text": "Map 3 - 00:39:07 - 13th Tower - Team Vitality"
+      },
+      {
+        "id": "257662730",
+        "text": "Map 3 - 00:39:10 - 2nd Inhibitor - Team Vitality"
+      },
+      {
+        "id": "257662767",
+        "text": "Map 3 - 00:39:23 - Race to 20 Kills - Team Vitality"
+      },
+      {
+        "id": "257662776",
+        "text": "Map 3 - 00:39:26 - 14th Tower - Team Vitality"
+      },
+      {
+        "id": "257662777",
+        "text": "Map 3 - 00:39:27 - 15th Tower - Team Vitality"
+      },
+      {
+        "id": "257662783",
+        "text": "Map 3 - Winner - Team Vitality"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "2",
+          "1"
+        ],
+        "gold": [
+          "54.6k",
+          "38.4k"
+        ],
+        "inhibitors": [
+          "1",
+          "0"
+        ],
+        "kills": [
+          "19",
+          "1"
+        ],
+        "towers": [
+          "9",
+          "0"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "4"
+        ],
+        "gold": [
+          "54.3k",
+          "64.3k"
+        ],
+        "inhibitors": [
+          "0",
+          "2"
+        ],
+        "kills": [
+          "5",
+          "18"
+        ],
+        "towers": [
+          "2",
+          "11"
+        ]
+      },
+      "3": {
+        "barons": [
+          "0",
+          "2"
+        ],
+        "dragons": [
+          "3",
+          "2"
+        ],
+        "gold": [
+          "67.9k",
+          "77.3k"
+        ],
+        "inhibitors": [
+          "1",
+          "1"
+        ],
+        "kills": [
+          "10",
+          "20"
+        ],
+        "towers": [
+          "6",
+          "9"
+        ]
+      }
+    },
+    "inplay_created_at": "1755528656",
+    "inplay_updated_at": "1755538249",
+    "confirmed_at": "1755647926",
+    "bet365_id": "179331771",
+    "event_data": {
+      "id": "179331771",
+      "sport_id": "151",
+      "time": "1755529200",
+      "time_status": "3",
+      "league": {
+        "id": "10049229",
+        "name": "LOL - LEC Summer"
+      },
+      "home": {
+        "id": "10520389",
+        "name": "Karmine Corp"
+      },
+      "away": {
+        "id": "10361254",
+        "name": "Team Vitality"
+      },
+      "ss": "1-2",
+      "our_event_id": "10419469",
+      "r_id": "179331771C151A",
+      "updated_at": "1755538249",
+      "odds_updated_at": "1755538033"
+    }
+  },
+  "summary": {
+    "home_team": "Karmine Corp",
+    "away_team": "Team Vitality",
+    "final_score": "1-2",
+    "league": "LOL - LEC Summer",
+    "match_date": "2025-08-18T11:00:00",
+    "maps_played": 3,
+    "status": "completed"
+  }
+}

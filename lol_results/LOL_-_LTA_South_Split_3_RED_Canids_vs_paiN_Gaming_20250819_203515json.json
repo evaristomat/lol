@@ -1,0 +1,725 @@
+{
+  "metadata": {
+    "exported_at": "2025-08-19T20:35:15.400796",
+    "source": "Bet365 API",
+    "version": "1.0"
+  },
+  "event_info": {
+    "id": "179390028",
+    "sport_id": "151",
+    "time": "1755446400",
+    "time_status": "3",
+    "league": {
+      "id": "10086159",
+      "name": "LOL - LTA South Split 3"
+    },
+    "home": {
+      "id": "10423976",
+      "name": "RED Canids"
+    },
+    "away": {
+      "id": "10421577",
+      "name": "paiN Gaming"
+    },
+    "ss": "1-3",
+    "our_event_id": "10458749",
+    "r_id": "179390028C151A",
+    "updated_at": "1755458374",
+    "odds_updated_at": "1755457815"
+  },
+  "result_info": {
+    "id": "10458749",
+    "sport_id": "151",
+    "time": "1755446400",
+    "time_status": "3",
+    "league": {
+      "id": "40975",
+      "name": "LOL - LTA South Split 3",
+      "cc": null
+    },
+    "home": {
+      "id": "78946",
+      "name": "RED Canids",
+      "image_id": "284689",
+      "cc": "br"
+    },
+    "away": {
+      "id": "67681",
+      "name": "paiN Gaming",
+      "image_id": "325451",
+      "cc": "br"
+    },
+    "ss": "1-3",
+    "scores": {
+      "1": {
+        "home": "0",
+        "away": "1"
+      },
+      "2": {
+        "home": "1",
+        "away": "0"
+      },
+      "3": {
+        "home": "0",
+        "away": "1"
+      },
+      "99": {
+        "home": "1",
+        "away": "3"
+      }
+    },
+    "events": [
+      {
+        "id": "257511903",
+        "text": "Map 1 - 00:00:00 - 1st Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257512968",
+        "text": "Map 1 - 00:06:29 - 1st Dragon (9) - RED Canids"
+      },
+      {
+        "id": "257512969",
+        "text": "Map 1 - 00:06:29 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257513058",
+        "text": "Map  - 00:06:57 - 1st Blood - RED Canids"
+      },
+      {
+        "id": "257513844",
+        "text": "Map 1 - 00:12:33 - 2nd Dragon (3) - paiN Gaming"
+      },
+      {
+        "id": "257513845",
+        "text": "Map 1 - 00:12:33 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257514105",
+        "text": "Map 1 - 00:14:22 - Race to 5 Kills - paiN Gaming"
+      },
+      {
+        "id": "257514335",
+        "text": "Map 1 - 00:15:25 - 1st Tower - paiN Gaming"
+      },
+      {
+        "id": "257514349",
+        "text": "Map 1 - 00:15:28 - 1st Rift Herald Slain - RED Canids"
+      },
+      {
+        "id": "257514416",
+        "text": "Map 1 - 00:15:50 - 2nd Tower - RED Canids"
+      },
+      {
+        "id": "257515052",
+        "text": "Map 1 - 00:19:13 - 3rd Dragon (8) - paiN Gaming"
+      },
+      {
+        "id": "257515053",
+        "text": "Map 1 - 00:19:13 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257515074",
+        "text": "Map 1 - 00:19:16 - 3rd Tower - paiN Gaming"
+      },
+      {
+        "id": "257515118",
+        "text": "Map 1 - 00:19:26 - 4th Tower - paiN Gaming"
+      },
+      {
+        "id": "257515546",
+        "text": "Map 1 - 00:21:25 - Race to 10 Kills - paiN Gaming"
+      },
+      {
+        "id": "257516205",
+        "text": "Map 1 - 00:24:37 - 4th Dragon (8) - paiN Gaming"
+      },
+      {
+        "id": "257516211",
+        "text": "Map 1 - 00:24:37 - 5th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257516312",
+        "text": "Map 1 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257516464",
+        "text": "Map 1 - 00:25:44 - Race to 15 Kills - paiN Gaming"
+      },
+      {
+        "id": "257516523",
+        "text": "Map 1 - 00:26:03 - 5th Tower - RED Canids"
+      },
+      {
+        "id": "257516531",
+        "text": "Map 1 - 00:26:08 - 1st Baron - paiN Gaming"
+      },
+      {
+        "id": "257516766",
+        "text": "Map 1 - 00:27:24 - 6th Tower - paiN Gaming"
+      },
+      {
+        "id": "257516850",
+        "text": "Map 1 - 00:27:56 - 7th Tower - paiN Gaming"
+      },
+      {
+        "id": "257516888",
+        "text": "Map 1 - 00:28:02 - 1st Inhibitor - paiN Gaming"
+      },
+      {
+        "id": "257517155",
+        "text": "Map 1 - 00:29:23 - Race to 20 Kills - paiN Gaming"
+      },
+      {
+        "id": "257517205",
+        "text": "Map 1 - 00:29:36 - 8th Tower - paiN Gaming"
+      },
+      {
+        "id": "257517225",
+        "text": "Map 1 - 00:29:43 - 9th Tower - paiN Gaming"
+      },
+      {
+        "id": "257517232",
+        "text": "Map 1 - 00:29:47 - 2nd Inhibitor - paiN Gaming"
+      },
+      {
+        "id": "257517244",
+        "text": "Map 1 - 00:29:53 - 10th Tower - paiN Gaming"
+      },
+      {
+        "id": "257517263",
+        "text": "Map 1 - 00:30:01 - 11th Tower - paiN Gaming"
+      },
+      {
+        "id": "257517289",
+        "text": "Map 1 - Winner - paiN Gaming"
+      },
+      {
+        "id": "257519912",
+        "text": "Map 2 - 00:00:00 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257520686",
+        "text": "Map  - 00:03:34 - 1st Blood - RED Canids"
+      },
+      {
+        "id": "257521382",
+        "text": "Map 2 - 00:07:29 - Race to 5 Kills - RED Canids"
+      },
+      {
+        "id": "257521455",
+        "text": "Map 2 - 00:07:44 - 1st Dragon (4) - RED Canids"
+      },
+      {
+        "id": "257521457",
+        "text": "Map 2 - 00:07:44 - 2nd Dragon Spawned (Ocean)"
+      },
+      {
+        "id": "257522318",
+        "text": "Map 2 - 00:13:20 - 2nd Dragon (6) - RED Canids"
+      },
+      {
+        "id": "257522319",
+        "text": "Map 2 - 00:13:20 - 3rd Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257522465",
+        "text": "Map 2 - 00:14:23 - 1st Tower - RED Canids"
+      },
+      {
+        "id": "257522541",
+        "text": "Map 2 - 00:14:58 - 2nd Tower - RED Canids"
+      },
+      {
+        "id": "257522586",
+        "text": "Map 2 - 00:15:24 - 1st Rift Herald Slain - RED Canids"
+      },
+      {
+        "id": "257522769",
+        "text": "Map 2 - 00:16:47 - 3rd Tower - RED Canids"
+      },
+      {
+        "id": "257522974",
+        "text": "Map 2 - 00:18:45 - 3rd Dragon (8) - RED Canids"
+      },
+      {
+        "id": "257522975",
+        "text": "Map 2 - 00:18:45 - 4th Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257523377",
+        "text": "Map 2 - 00:22:08 - Race to 10 Kills - RED Canids"
+      },
+      {
+        "id": "257523465",
+        "text": "Map 2 - 00:22:45 - 4th Tower - paiN Gaming"
+      },
+      {
+        "id": "257523628",
+        "text": "Map 2 - 00:24:02 - 4th Dragon (8) - RED Canids"
+      },
+      {
+        "id": "257523631",
+        "text": "Map 2 - 00:24:02 - 5th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257523656",
+        "text": "Map 2 - 00:24:14 - Race to 15 Kills - RED Canids"
+      },
+      {
+        "id": "257523666",
+        "text": "Map 2 - 00:24:24 - 5th Tower - RED Canids"
+      },
+      {
+        "id": "257523683",
+        "text": "Map 2 - 00:24:32 - 6th Tower - RED Canids"
+      },
+      {
+        "id": "257523693",
+        "text": "Map 2 - 00:24:37 - 1st Inhibitor - RED Canids"
+      },
+      {
+        "id": "257523717",
+        "text": "Map 2 - 00:24:47 - 7th Tower - RED Canids"
+      },
+      {
+        "id": "257523732",
+        "text": "Map 2 - 00:24:51 - 8th Tower - RED Canids"
+      },
+      {
+        "id": "257523757",
+        "text": "Map 2 - Winner - RED Canids"
+      },
+      {
+        "id": "257527037",
+        "text": "Map 3 - 00:00:00 - 1st Dragon Spawned (Infernal)"
+      },
+      {
+        "id": "257527635",
+        "text": "Map  - 00:03:53 - 1st Blood - paiN Gaming"
+      },
+      {
+        "id": "257527952",
+        "text": "Map 3 - 00:06:31 - 1st Dragon (3) - RED Canids"
+      },
+      {
+        "id": "257527953",
+        "text": "Map 3 - 00:06:31 - 2nd Dragon Spawned (HexTech)"
+      },
+      {
+        "id": "257528062",
+        "text": "Map 3 - 00:07:25 - Race to 5 Kills - paiN Gaming"
+      },
+      {
+        "id": "257528660",
+        "text": "Map 3 - 00:11:54 - 2nd Dragon (9) - paiN Gaming"
+      },
+      {
+        "id": "257528661",
+        "text": "Map 3 - 00:11:54 - 3rd Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257529109",
+        "text": "Map 3 - 00:15:12 - 1st Tower - paiN Gaming"
+      },
+      {
+        "id": "257529121",
+        "text": "Map 3 - 00:15:17 - 1st Rift Herald Slain - RED Canids"
+      },
+      {
+        "id": "257529212",
+        "text": "Map 3 - 00:15:58 - 2nd Tower - paiN Gaming"
+      },
+      {
+        "id": "257529244",
+        "text": "Map 3 - 00:16:06 - 3rd Tower - RED Canids"
+      },
+      {
+        "id": "257529456",
+        "text": "Map 3 - 00:17:25 - 4th Tower - RED Canids"
+      },
+      {
+        "id": "257529493",
+        "text": "Map 3 - 00:17:34 - 3rd Dragon (4) - paiN Gaming"
+      },
+      {
+        "id": "257529494",
+        "text": "Map 3 - 00:17:34 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257529660",
+        "text": "Map 3 - 00:18:46 - 5th Tower - RED Canids"
+      },
+      {
+        "id": "257529673",
+        "text": "Map 3 - 00:18:53 - 6th Tower - paiN Gaming"
+      },
+      {
+        "id": "257530006",
+        "text": "Map 3 - 00:20:55 - Race to 10 Kills - paiN Gaming"
+      },
+      {
+        "id": "257530352",
+        "text": "Map 3 - 00:23:12 - 4th Dragon (4) - paiN Gaming"
+      },
+      {
+        "id": "257530353",
+        "text": "Map 3 - 00:23:12 - 4th Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257530428",
+        "text": "Map 3 - 00:23:34 - 7th Tower - RED Canids"
+      },
+      {
+        "id": "257530625",
+        "text": "Map 3 - 00:25:02 - 1st Baron Spawned"
+      },
+      {
+        "id": "257530886",
+        "text": "Map 3 - 00:27:00 - 1st Baron - RED Canids"
+      },
+      {
+        "id": "257530946",
+        "text": "Map 3 - 00:27:23 - Race to 15 Kills - paiN Gaming"
+      },
+      {
+        "id": "257531053",
+        "text": "Map 3 - 00:28:20 - 5th Dragon (4) - paiN Gaming"
+      },
+      {
+        "id": "257531056",
+        "text": "Map 3 - 00:28:20 - 6th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257531200",
+        "text": "Map 3 - 00:29:19 - 8th Tower - RED Canids"
+      },
+      {
+        "id": "257531247",
+        "text": "Map 3 - 00:29:40 - 9th Tower - RED Canids"
+      },
+      {
+        "id": "257531280",
+        "text": "Map 3 - 00:29:51 - 1st Inhibitor - RED Canids"
+      },
+      {
+        "id": "257531699",
+        "text": "Map 3 - 00:33:00 - 2nd Baron Spawned"
+      },
+      {
+        "id": "257531773",
+        "text": "Map 3 - 00:33:23 - Race to 20 Kills - paiN Gaming"
+      },
+      {
+        "id": "257531780",
+        "text": "Map 3 - 00:33:27 - 10th Tower - RED Canids"
+      },
+      {
+        "id": "257531801",
+        "text": "Map 3 - 00:33:42 - 2nd Baron - paiN Gaming"
+      },
+      {
+        "id": "257531902",
+        "text": "Map 3 - 00:34:29 - 6th Dragon (7) - paiN Gaming"
+      },
+      {
+        "id": "257531906",
+        "text": "Map 3 - 00:34:29 - 7th Dragon Spawned (Elder)"
+      },
+      {
+        "id": "257531959",
+        "text": "Map 3 - 00:34:54 - 1st Inhibitor Spawned - RED Canids"
+      },
+      {
+        "id": "257531963",
+        "text": "Map 3 - 00:34:57 - 11th Tower - paiN Gaming"
+      },
+      {
+        "id": "257531986",
+        "text": "Map 3 - 00:35:08 - 12th Tower - paiN Gaming"
+      },
+      {
+        "id": "257531995",
+        "text": "Map 3 - 00:35:15 - 2nd Inhibitor - paiN Gaming"
+      },
+      {
+        "id": "257532012",
+        "text": "Map 3 - 00:35:28 - 13th Tower - paiN Gaming"
+      },
+      {
+        "id": "257532030",
+        "text": "Map 3 - 00:35:34 - 14th Tower - paiN Gaming"
+      },
+      {
+        "id": "257532034",
+        "text": "Map 3 - 00:35:39 - Race to 25 Kills - paiN Gaming"
+      },
+      {
+        "id": "257532039",
+        "text": "Map 3 - Winner - paiN Gaming"
+      },
+      {
+        "id": "257534739",
+        "text": "Map 4 - 00:00:00 - 1st Dragon Spawned (ChemTech)"
+      },
+      {
+        "id": "257535581",
+        "text": "Map 4 - 00:06:15 - 1st Dragon (8) - RED Canids"
+      },
+      {
+        "id": "257535582",
+        "text": "Map 4 - 00:06:15 - 1st Dragon Spawned (Mountain)"
+      },
+      {
+        "id": "257536180",
+        "text": "Map 4 - 00:12:36 - 2nd Dragon (4) - paiN Gaming"
+      },
+      {
+        "id": "257536181",
+        "text": "Map 4 - 00:12:36 - 2nd Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257536223",
+        "text": "Map  - 00:13:05 - 1st Blood - paiN Gaming"
+      },
+      {
+        "id": "257536813",
+        "text": "Map 4 - 00:17:38 - 1st Rift Herald Slain - paiN Gaming"
+      },
+      {
+        "id": "257536835",
+        "text": "Map 4 - 00:17:54 - 3rd Dragon (5) - RED Canids"
+      },
+      {
+        "id": "257536836",
+        "text": "Map 4 - 00:17:54 - 4th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257536859",
+        "text": "Map 4 - 00:18:05 - 1st Tower - paiN Gaming"
+      },
+      {
+        "id": "257536867",
+        "text": "Map 4 - 00:18:08 - Race to 5 Kills - paiN Gaming"
+      },
+      {
+        "id": "257536994",
+        "text": "Map 4 - 00:18:59 - 2nd Tower - paiN Gaming"
+      },
+      {
+        "id": "257537104",
+        "text": "Map 4 - 00:19:50 - 3rd Tower - RED Canids"
+      },
+      {
+        "id": "257537636",
+        "text": "Map 4 - 00:23:23 - 4th Tower - RED Canids"
+      },
+      {
+        "id": "257537664",
+        "text": "Map 4 - 00:23:31 - 4th Dragon (5) - paiN Gaming"
+      },
+      {
+        "id": "257537665",
+        "text": "Map 4 - 00:23:31 - 5th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257537852",
+        "text": "Map 4 - 00:25:00 - 1st Baron Spawned"
+      },
+      {
+        "id": "257538140",
+        "text": "Map 4 - 00:27:14 - 5th Tower - paiN Gaming"
+      },
+      {
+        "id": "257538243",
+        "text": "Map 4 - 00:28:00 - Race to 10 Kills - paiN Gaming"
+      },
+      {
+        "id": "257538305",
+        "text": "Map 4 - 00:28:33 - 1st Baron - paiN Gaming"
+      },
+      {
+        "id": "257538370",
+        "text": "Map 4 - 00:28:59 - 5th Dragon (5) - paiN Gaming"
+      },
+      {
+        "id": "257538371",
+        "text": "Map 4 - 00:28:59 - 5th Dragon Spawned (Cloud)"
+      },
+      {
+        "id": "257538550",
+        "text": "Map 4 - 00:30:54 - 6th Tower - paiN Gaming"
+      },
+      {
+        "id": "257538638",
+        "text": "Map 4 - 00:31:41 - Race to 15 Kills - paiN Gaming"
+      },
+      {
+        "id": "257538656",
+        "text": "Map 4 - 00:31:51 - 7th Tower - paiN Gaming"
+      },
+      {
+        "id": "257538666",
+        "text": "Map 4 - 00:31:56 - 1st Inhibitor - paiN Gaming"
+      },
+      {
+        "id": "257538688",
+        "text": "Map 4 - 00:32:08 - 8th Tower - paiN Gaming"
+      },
+      {
+        "id": "257538690",
+        "text": "Map 4 - 00:32:08 - 9th Tower - paiN Gaming"
+      },
+      {
+        "id": "257538702",
+        "text": "Map 4 - Winner - paiN Gaming"
+      },
+      {
+        "id": "257538703",
+        "text": "Map 4 - 00:32:19 - 2nd Baron Spawned"
+      }
+    ],
+    "has_lineup": 0,
+    "period_stats": {
+      "1": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "3"
+        ],
+        "gold": [
+          "49.8k",
+          "57.4k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "8",
+          "21"
+        ],
+        "towers": [
+          "2",
+          "6"
+        ]
+      },
+      "2": {
+        "barons": [
+          "0",
+          "0"
+        ],
+        "dragons": [
+          "4",
+          "0"
+        ],
+        "gold": [
+          "46.2k",
+          "40.9k"
+        ],
+        "inhibitors": [
+          "0",
+          "0"
+        ],
+        "kills": [
+          "15",
+          "8"
+        ],
+        "towers": [
+          "3",
+          "1"
+        ]
+      },
+      "3": {
+        "barons": [
+          "1",
+          "1"
+        ],
+        "dragons": [
+          "1",
+          "5"
+        ],
+        "gold": [
+          "65.5k",
+          "71.4k"
+        ],
+        "inhibitors": [
+          "1",
+          "1"
+        ],
+        "kills": [
+          "14",
+          "23"
+        ],
+        "towers": [
+          "7",
+          "5"
+        ]
+      },
+      "4": {
+        "barons": [
+          "0",
+          "1"
+        ],
+        "dragons": [
+          "2",
+          "3"
+        ],
+        "gold": [
+          "52.1k",
+          "61k"
+        ],
+        "inhibitors": [
+          "0",
+          "1"
+        ],
+        "kills": [
+          "7",
+          "17"
+        ],
+        "towers": [
+          "2",
+          "7"
+        ]
+      }
+    },
+    "inplay_created_at": "1755446468",
+    "inplay_updated_at": "1755458374",
+    "confirmed_at": "1755633999",
+    "bet365_id": "179390028",
+    "event_data": {
+      "id": "179390028",
+      "sport_id": "151",
+      "time": "1755446400",
+      "time_status": "3",
+      "league": {
+        "id": "10086159",
+        "name": "LOL - LTA South Split 3"
+      },
+      "home": {
+        "id": "10423976",
+        "name": "RED Canids"
+      },
+      "away": {
+        "id": "10421577",
+        "name": "paiN Gaming"
+      },
+      "ss": "1-3",
+      "our_event_id": "10458749",
+      "r_id": "179390028C151A",
+      "updated_at": "1755458374",
+      "odds_updated_at": "1755457815"
+    }
+  },
+  "summary": {
+    "home_team": "RED Canids",
+    "away_team": "paiN Gaming",
+    "final_score": "1-3",
+    "league": "LOL - LTA South Split 3",
+    "match_date": "2025-08-17T12:00:00",
+    "maps_played": 4,
+    "status": "completed"
+  }
+}
