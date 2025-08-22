@@ -9,7 +9,3 @@
 # Logs
 logs/
 *.log
-
-# Banco de dados (opcional - veja abaixo)
-*.db
-*.sqlite
