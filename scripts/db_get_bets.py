@@ -3,6 +3,15 @@ import pandas as pd
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime
 from get_roi_bets import ROIAnalyzer
+import sys
+from dotenv import load_dotenv
+import os
+
+# Carrega variáveis de ambiente do arquivo .env
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.services.telegram_notifier import TelegramNotifier
 
 
 class BetScanner:
@@ -10,6 +19,7 @@ class BetScanner:
         self.odds_db_path = odds_db_path
         self.bets_db_path = bets_db_path
         self.analyzer = ROIAnalyzer(odds_db_path)
+        self.telegram_notifier = TelegramNotifier()
         self.setup_database()
 
     def setup_database(self):
@@ -119,6 +129,63 @@ class BetScanner:
         conn.commit()
         conn.close()
 
+    def _notify_new_bet(self, bet: Dict, stake: float = 1.0):
+        """Notifica sobre uma nova aposta via Telegram"""
+        try:
+            # Buscar informações do evento para obter nomes dos times
+            event_info = self.analyzer.get_event_info(bet["event_id"])
+
+            if event_info:
+                home_team = event_info.get("home_team", "Unknown")
+                away_team = event_info.get("away_team", "Unknown")
+                league_name = event_info.get("league_name", "Unknown")
+                match_date = event_info.get("match_date", "Unknown")
+            else:
+                home_team = "Unknown"
+                away_team = "Unknown"
+                league_name = "Unknown"
+                match_date = "Unknown"
+
+            # Formatar data se disponível
+            if match_date != "Unknown":
+                try:
+                    dt = datetime.strptime(match_date, "%Y-%m-%d %H:%M:%S")
+                    formatted_date = dt.strftime("%d/%m/%Y às %H:%M")
+                except:
+                    formatted_date = match_date
+            else:
+                formatted_date = "Data não disponível"
+
+            # Calcular ganho potencial
+            potential_win = (bet["house_odds"] - 1) * stake
+
+            # Formatar mensagem
+            message = (
+                f"🎯 *Nova Aposta Encontrada!*\n\n"
+                f"🏆 *Liga:* {league_name}\n"
+                f"⚔️ *Partida:* {home_team} vs {away_team}\n"
+                f"📅 *Data:* {formatted_date}\n"
+                f"🗺️ *Mercado:* {bet['market_name']}\n"
+                f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
+                f"💰 *Odds da Casa:* {bet['house_odds']}\n"
+                f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
+                f"⚖️ *Odd Justa:* {bet['fair_odds']:.2f}\n"
+                f"💵 *Stake:* {stake} unidade(s)\n"
+                f"🎰 *Ganho Potencial:* {potential_win:.2f} unidades\n\n"
+                f"#LoL #Bet365 #Aposta #EV+"
+            )
+
+            # Enviar notificação
+            success = self.telegram_notifier.send_message(message, parse_mode="Markdown")
+
+            if success:
+                print(f"📤 Notificação enviada para Telegram: {bet['selection_line']}")
+            else:
+                print(f"⚠️ Falha ao enviar notificação para Telegram")
+
+        except Exception as e:
+            print(f"❌ Erro ao enviar notificação: {str(e)}")
+
     def update_bet_result(self, bet_id: int, bet_status: str, actual_win: float = 0):
         """Atualiza o resultado de uma aposta"""
         conn = sqlite3.connect(self.bets_db_path)
@@ -159,7 +226,7 @@ class BetScanner:
 
         # Busca todas as apostas para este evento
         cursor.execute(
-            "SELECT id, market_name, selection_line, handicap, house_odds, stake FROM bets WHERE event_id = ?",  # Adicionado market_name
+            "SELECT id, market_name, selection_line, handicap, house_odds, stake FROM bets WHERE event_id = ? AND bet_status = 'pending'",
             (event_id,),
         )
         bets = cursor.fetchall()
@@ -167,12 +234,10 @@ class BetScanner:
         total_profit_loss = 0
 
         for bet_id, market_name, selection_line, handicap, house_odds, stake in bets:
-            # Passe market_name para a função de determinação de resultado
+            # Determina se a aposta foi vencedora
             bet_won = self._determine_bet_result(
                 selection_line, handicap, home_score, away_score, winner, market_name
             )
-
-        # Resto do código permanece igual...
 
             if bet_won:
                 actual_win = (house_odds - 1) * stake
@@ -187,6 +252,9 @@ class BetScanner:
                 """,
                     (event_id, bet_id, "win", "win", "correct", actual_win),
                 )
+                
+                # Notificar resultado vencedor
+                self._notify_bet_result(bet_id, "won", actual_win)
             else:
                 actual_win = -stake
                 self.update_bet_result(bet_id, "lost", actual_win)
@@ -200,6 +268,9 @@ class BetScanner:
                 """,
                     (event_id, bet_id, "win", "loss", "incorrect", actual_win),
                 )
+                
+                # Notificar resultado perdedor
+                self._notify_bet_result(bet_id, "lost", actual_win)
 
         conn.commit()
         conn.close()
@@ -340,7 +411,7 @@ class BetScanner:
         return good_bets
 
     def save_bets(self, bets: List[Dict], stake: float = 1.0):
-        """Salva apostas no banco com stake padrão"""
+        """Salva apostas no banco com stake padrão e notifica novas apostas"""
         if not bets:
             return
 
@@ -348,17 +419,36 @@ class BetScanner:
         cursor = conn.cursor()
 
         for bet in bets:
+            # Verificar se a aposta já existe para evitar duplicatas
+            cursor.execute(
+                """
+                SELECT id FROM bets 
+                WHERE event_id = ? AND market_name = ? AND selection_line = ? AND handicap = ?
+                """,
+                (
+                    bet["event_id"],
+                    bet["market_name"],
+                    bet["selection_line"],
+                    bet["handicap"],
+                ),
+            )
+            existing_bet = cursor.fetchone()
+
+            if existing_bet:
+                print(f"⏭️ Aposta já existe: {bet['selection_line']} {bet['handicap']}")
+                continue
+
             potential_win = (bet["house_odds"] - 1) * stake
 
             cursor.execute(
                 """
-            INSERT OR REPLACE INTO bets 
-            (event_id, market_name, selection_line, handicap, house_odds, roi_average, fair_odds, stake, potential_win)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
+                INSERT INTO bets 
+                (event_id, market_name, selection_line, handicap, house_odds, roi_average, fair_odds, stake, potential_win)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
                 (
                     bet["event_id"],
-                    bet["market_name"],  # Novo campo
+                    bet["market_name"],
                     bet["selection_line"],
                     bet["handicap"],
                     bet["house_odds"],
@@ -368,6 +458,9 @@ class BetScanner:
                     potential_win,
                 ),
             )
+
+            # Notificar sobre a nova aposta apenas se for nova
+            self._notify_new_bet(bet, stake)
 
         conn.commit()
         conn.close()
@@ -478,20 +571,30 @@ class BetScanner:
 
         if not df.empty:
             print(f"\n🏆 TOP {len(df)} APOSTAS:")
-            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print(
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            )
 
             for _, row in df.iterrows():
                 status_icon = (
-                    "✅" if row["bet_status"] == "won"
-                    else "❌" if row["bet_status"] == "lost"
+                    "✅"
+                    if row["bet_status"] == "won"
+                    else "❌"
+                    if row["bet_status"] == "lost"
                     else "⏳"
                 )
-                print(f"{status_icon} {row['match_date']} | {row['league_name']} | {row['status']}")
+                print(
+                    f"{status_icon} {row['match_date']} | {row['league_name']} | {row['status']}"
+                )
                 print(f"🥊 {row['home_team']} vs {row['away_team']}")
                 print(f"🗺️  {row['market_name']}")  # Nova linha para mostrar o mapa
-                print(f"🎯 {row['selection_line']} {row['handicap']} | ROI: {row['roi_average']:.1f}% | Odds: {row['house_odds']} → {row['fair_odds']:.2f}")
+                print(
+                    f"🎯 {row['selection_line']} {row['handicap']} | ROI: {row['roi_average']:.1f}% | Odds: {row['house_odds']} → {row['fair_odds']:.2f}"
+                )
                 if row["bet_status"] != "pending":
-                    print(f"💰 Resultado: {row['bet_status']} | Lucro: {row['actual_win']:.2f}")
+                    print(
+                        f"💰 Resultado: {row['bet_status']} | Lucro: {row['actual_win']:.2f}"
+                    )
                 print()
 
     def get_stats(self) -> Dict:

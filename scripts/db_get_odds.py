@@ -7,6 +7,7 @@ import aiohttp
 import logging
 import time
 from datetime import datetime, timedelta
+
 from typing import Dict, List, Optional, Tuple, Set
 from pathlib import Path
 
@@ -14,7 +15,7 @@ from pathlib import Path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.core.bet365_client import Bet365Client
-
+from src.services.telegram_notifier import TelegramNotifier
 
 # Códigos de cores ANSI
 class Colors:
@@ -134,6 +135,7 @@ class LoLOddsDatabase:
 
         self.db_path = str(db_path)
         self.client = Bet365Client()
+        self.telegram_notifier = TelegramNotifier()
         self.lol_sport_id = 151
         self.rate_limiter = RateLimiter(max_requests=3500, time_window=3600)
         self.semaphore = asyncio.Semaphore(
@@ -325,8 +327,14 @@ class LoLOddsDatabase:
         return events
 
     def save_events(self, events: List[Dict]) -> Dict[str, int]:
-        """Salva eventos no banco, incluindo informações dos times"""
-        stats = {"new": 0, "existing": 0, "teams_created": 0}
+        """Salva eventos no banco, incluindo informações dos times e notificações do Telegram"""
+        stats = {
+            "new": 0,
+            "existing": 0,
+            "teams_created": 0,
+            "notifications_sent": 0,
+            "notification_errors": 0,
+        }
 
         with sqlite3.connect(self.db_path) as conn:
             for event in events:
@@ -350,13 +358,9 @@ class LoLOddsDatabase:
                 home_team_name = home_team_info.get("name", "Unknown")
                 away_team_name = away_team_info.get("name", "Unknown")
 
-                # Obter ou criar times (agora retorna os team_id da API)
-                home_api_id = self._get_or_create_team(
-                    conn, home_team_id, home_team_name
-                )
-                away_api_id = self._get_or_create_team(
-                    conn, away_team_id, away_team_name
-                )
+                # Obter ou criar times
+                home_api_id = self._get_or_create_team(conn, home_team_id, home_team_name)
+                away_api_id = self._get_or_create_team(conn, away_team_id, away_team_name)
 
                 if home_api_id and away_api_id:
                     stats["teams_created"] += 1
@@ -383,8 +387,8 @@ class LoLOddsDatabase:
                 """,
                     (
                         event_id,
-                        home_api_id,  # Agora é o team_id da API
-                        away_api_id,  # Agora é o team_id da API
+                        home_api_id,
+                        away_api_id,
                         league_name,
                         match_date,
                         match_timestamp,
@@ -396,10 +400,49 @@ class LoLOddsDatabase:
                     f"✅ Novo evento: {home_team_name} vs {away_team_name} - {league_name}"
                 )
 
+                # Enviar notificação para o Telegram
+                try:
+                    # Formatar a data para exibição amigável
+                    display_date = "Data não definida"
+                    if match_date:
+                        try:
+                            dt = datetime.strptime(match_date, "%Y-%m-%d %H:%M:%S")
+                            display_date = dt.strftime("%d/%m/%Y às %H:%M")
+                        except:
+                            display_date = match_date
+
+                    # Enviar notificação
+                    success = self.telegram_notifier.notify_new_event(
+                        home_team=home_team_name,
+                        away_team=away_team_name,
+                        league_name=league_name,
+                        match_date=display_date,
+                    )
+
+                    if success:
+                        stats["notifications_sent"] += 1
+                        logger.info(
+                            f"📤 Notificação enviada para Telegram: {home_team_name} vs {away_team_name}"
+                        )
+                    else:
+                        stats["notification_errors"] += 1
+                        logger.warning(
+                            f"⚠️ Falha ao enviar notificação para Telegram: {home_team_name} vs {away_team_name}"
+                        )
+
+                except Exception as e:
+                    stats["notification_errors"] += 1
+                    logger.error(f"❌ Erro ao enviar notificação para Telegram: {str(e)}")
+
             conn.commit()
 
         logger.info(
-            f"📝 Eventos processados - Novos: {stats['new']}, Existentes: {stats['existing']}, Times criados: {stats['teams_created']}"
+            f"📝 Eventos processados - "
+            f"Novos: {stats['new']}, "
+            f"Existentes: {stats['existing']}, "
+            f"Times criados: {stats['teams_created']}, "
+            f"Notificações enviadas: {stats['notifications_sent']}, "
+            f"Erros de notificação: {stats['notification_errors']}"
         )
         return stats
 
