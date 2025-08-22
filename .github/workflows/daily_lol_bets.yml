@@ -2,7 +2,9 @@ name: Daily LOL Bets Automation
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Executa todo dia às 12:00 UTC (09:00 horário de Brasília)
+    - cron: '0 9 * * *'   # 6:00 AM Brasília
+    - cron: '0 15 * * *'  # 12:00 PM Brasília  
+    - cron: '0 21 * * *'  # 6:00 PM Brasília
   workflow_dispatch:       # Permite execução manual
 
 jobs:
