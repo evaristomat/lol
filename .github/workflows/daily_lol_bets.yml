@@ -91,25 +91,61 @@ jobs:
         fi
 
     # Passo 10: Fazer commit e push dos bancos de dados atualizados
-            
     - name: Commit and push updated databases
       if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
+        # Configurar Git
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Fazer pull com rebase para integrar mudanças remotas
+        # IMPORTANTE: Adicionar os arquivos ANTES de fazer pull
+        echo "📦 Adding database files to staging..."
+        git add data/*.db
+        
+        # Fazer stash das mudanças staged para preservá-las
+        echo "💾 Stashing changes..."
+        git stash
+        
+        # Fazer pull das mudanças remotas
+        echo "⬇️ Pulling latest changes from remote..."
         git pull --rebase origin main
         
-        # Adicionar apenas os bancos de dados modificados
+        # Aplicar o stash de volta
+        echo "📋 Applying stashed changes..."
+        git stash pop || true  # || true para não falhar se não houver conflitos menores
+        
+        # Adicionar novamente os arquivos (caso necessário após o stash pop)
         git add data/*.db
         
         # Fazer commit
-        git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
+        echo "💬 Creating commit..."
+        git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')" || {
+          echo "⚠️ No changes to commit after merge"
+          exit 0
+        }
         
-        # Fazer push
-        git push origin main
-        echo "✅ Updated databases pushed to repository"
+        # Fazer push com retry em caso de falha
+        echo "⬆️ Pushing to remote..."
+        max_attempts=3
+        attempt=1
+        
+        while [ $attempt -le $max_attempts ]; do
+          if git push origin main; then
+            echo "✅ Updated databases pushed to repository"
+            break
+          else
+            echo "⚠️ Push failed (attempt $attempt/$max_attempts)"
+            if [ $attempt -lt $max_attempts ]; then
+              echo "🔄 Pulling latest changes and retrying..."
+              git pull --rebase origin main
+              attempt=$((attempt + 1))
+              sleep 2
+            else
+              echo "❌ Failed to push after $max_attempts attempts"
+              exit 1
+            fi
+          fi
+        done
 
     # Passo 11: Resumo da execução
     - name: Execution Summary
@@ -117,7 +153,12 @@ jobs:
       run: |
         echo "🎯 === EXECUTION SUMMARY ==="
         echo "📅 Date: $(date +'%Y-%m-%d %H:%M UTC')"
-        echo "🔄 Workflow completed successfully"
+        echo "🔄 Workflow status: ${{ job.status }}"
         echo "💾 Database files updated:"
         ls -la data/*.db 2>/dev/null || echo "No database files found"
         echo "📊 Check repository for updated database files"
+        
+        # Mostrar últimos commits para verificação
+        echo ""
+        echo "📜 Last 3 commits:"
+        git log --oneline -3
