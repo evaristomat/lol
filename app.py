@@ -292,13 +292,14 @@ def show_pending_bets(bets_with_events):
     )
     sorted_bets["Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
 
-    # Exibir tabela
+    # Exibir tabela com coluna Linha (handicap)
     display_cols = [
         "match_date",
         "Partida",
         "league_name",
         "market_name",
         "selection_line",
+        "handicap",
         "house_odds",
         "fair_odds",
         "roi_average",
@@ -313,6 +314,7 @@ def show_pending_bets(bets_with_events):
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
+            "handicap": "Linha",
             "house_odds": st.column_config.NumberColumn("Odds Casa", format="%.2f"),
             "fair_odds": st.column_config.NumberColumn("Odds Justas", format="%.2f"),
             "roi_average": st.column_config.NumberColumn("ROI (%)", format="%.1f%%"),
@@ -336,7 +338,7 @@ def show_pending_bets(bets_with_events):
             y="roi_average",
             color="league_name",
             size="stake",
-            hover_data=["Partida", "market_name", "selection_line"],
+            hover_data=["Partida", "market_name", "selection_line", "handicap"],
             title="ROI vs Odds por Liga (tamanho = stake)",
         )
         st.plotly_chart(fig, use_container_width=True)
@@ -382,6 +384,7 @@ def show_all_bets(bets_df, events_df):
                 "league_name",
                 "market_name",
                 "selection_line",
+                "handicap",
                 "house_odds",
                 "bet_status",
                 "stake",
@@ -392,6 +395,7 @@ def show_all_bets(bets_df, events_df):
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
+            "handicap": "Linha",
             "house_odds": "Odds",
             "bet_status": "Status",
             "stake": "Stake",
@@ -448,7 +452,7 @@ def show_results(resolved_bets, events_df):
         roi_color = "🟢" if roi >= 0 else "🔴"
         st.metric(f"{roi_color} ROI Total", f"{roi:.1f}%")
 
-    # Tabela de resultados (sem coluna "Ganho")
+    # Tabela de resultados com coluna Linha
     results_with_events["match_date"] = pd.to_datetime(
         results_with_events["match_date"]
     ).dt.strftime("%d/%m %H:%M")
@@ -464,6 +468,7 @@ def show_results(resolved_bets, events_df):
                 "league_name",
                 "market_name",
                 "selection_line",
+                "handicap",
                 "house_odds",
                 "bet_status",
                 "stake",
@@ -475,6 +480,7 @@ def show_results(resolved_bets, events_df):
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
+            "handicap": "Linha",
             "house_odds": "Odds",
             "bet_status": "Status",
             "stake": "Stake",
