@@ -218,7 +218,7 @@ class DatabaseUpdater:
                 time_since_update = datetime.now() - last_update
 
                 # Atualizar apenas se passou mais de 1 hora da última atualização
-                if time_since_update.total_seconds() < 3600:
+                if time_since_update.total_seconds() < 10:
                     logger.info(
                         f"   ⏭️  Evento {event_id} atualizado recentemente, não precisa atualizar"
                     )

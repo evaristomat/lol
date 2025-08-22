@@ -7,7 +7,7 @@ async def check_result():
     client = Bet365Client()
 
     try:
-        event_id = "178588919"
+        event_id = "179764529"
         print(f"🔍 Verificando resultado para event_id: {event_id}")
 
         # Buscar resultado
