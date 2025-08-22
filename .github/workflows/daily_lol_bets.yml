@@ -1,0 +1,103 @@
+name: Daily LOL Bets Automation
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Executa todo dia às 12:00 UTC (09:00 horário de Brasília)
+  workflow_dispatch:       # Permite execução manual
+
+jobs:
+  run-daily-bets:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Passo 1: Fazer checkout do código
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Passo 2: Configurar Python
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    # Passo 3: Instalar dependências
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # Passo 4: Criar arquivo .env com variáveis (apenas API_KEY é secreta)
+    - name: Create environment file
+      env:
+        BETSAPI_API_KEY: ${{ secrets.BETSAPI_API_KEY }}
+      run: |
+        echo "BETSAPI_API_KEY=$BETSAPI_API_KEY" > .env
+        echo "CACHE_TTL=300" >> .env
+        echo "BASE_URL=https://api.betsapi.com/v1" >> .env
+        echo "REQUEST_TIMEOUT=30" >> .env
+        echo "✅ Environment file created"
+
+    # Passo 5: Executar script para obter odds dos próximos 10 dias
+    - name: Get upcoming odds (10 days)
+      run: |
+        echo "📊 Fetching upcoming odds..."
+        python scripts/db_get_odds.py
+        echo "✅ Odds retrieved and stored in database"
+
+    # Passo 6: Executar script para atualizar resultados dos últimos 2 dias
+    - name: Get recent match results (2 days)
+      run: |
+        echo "🏆 Fetching recent match results..."
+        python scripts/db_get_matches.py
+        echo "✅ Match results retrieved and stored in database"
+
+    # Passo 7: Executar script para atualizar resultados de apostas
+    - name: Update bet results
+      run: |
+        echo "💰 Updating bet results..."
+        python scripts/db_get_bet_results.py
+        echo "✅ Bet results updated in database"
+
+    # Passo 8: Executar script para verificar novas apostas de valor
+    - name: Find value bets
+      run: |
+        echo "🔍 Analyzing value bets..."
+        python scripts/db_get_bets.py
+        echo "✅ Value bets analysis completed and stored in database"
+
+    # Passo 9: Verificar se há mudanças nos bancos de dados
+    - name: Check for database changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain data/*.db 2>/dev/null)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "📝 Database changes detected"
+          git status --porcelain data/*.db
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "📝 No database changes detected"
+        fi
+
+    # Passo 10: Fazer commit e push dos bancos de dados atualizados
+    - name: Commit and push updated databases
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Adicionar apenas os bancos de dados modificados
+        git add data/*.db
+        
+        git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
+        git push
+        echo "✅ Updated databases pushed to repository"
+
+    # Passo 11: Resumo da execução
+    - name: Execution Summary
+      if: always()
+      run: |
+        echo "🎯 === EXECUTION SUMMARY ==="
+        echo "📅 Date: $(date +'%Y-%m-%d %H:%M UTC')"
+        echo "🔄 Workflow completed successfully"
+        echo "💾 Database files updated:"
+        ls -la data/*.db 2>/dev/null || echo "No database files found"
+        echo "📊 Check repository for updated database files"
