@@ -1,0 +1,60 @@
+# === CORE DEPENDENCIES ===
+# HTTP requests para APIs
+requests>=2.31.0
+
+# Carregamento de variáveis de ambiente
+python-dotenv>=1.0.0
+
+# === DATABASE ===
+# SQLite3 já vem com Python, mas algumas extensões podem ser úteis
+# (sqlite3 é built-in, não precisa instalar)
+
+# === DATA PROCESSING ===
+# Manipulação de dados e timestamps
+pandas>=2.0.0
+
+# Trabalhar com JSON de forma avançada
+jsonschema>=4.19.0
+
+# === DATE/TIME ===
+# Timezone handling melhorado
+pytz>=2023.3
+
+# Parsing de datas mais robusto
+python-dateutil>=2.8.2
+
+# === LOGGING ===
+# Logging avançado (opcional, mas recomendado)
+colorlog>=6.7.0
+
+# === HTTP CLIENT MELHORADO ===
+# Cliente HTTP mais robusto (alternativa ao requests)
+httpx>=0.25.0
+
+# === RATE LIMITING ===
+# Para evitar rate limiting da API
+ratelimit>=2.2.1
+
+# === RETRY MECHANISM ===
+# Retry automático para APIs instáveis
+tenacity>=8.2.3
+
+# === ENVIRONMENT SPECIFIC ===
+# Para desenvolvimento local (opcional)
+python-decouple>=3.8
+
+# === TESTING (opcional) ===
+# pytest>=7.4.0
+# requests-mock>=1.11.0
+
+# === SECURITY ===
+# Para validação de URLs e dados
+validators>=0.22.0
+
+# === PERFORMANCE ===
+# Cache em memória
+cachetools>=5.3.0
+
+# === API MONITORING ===
+# Para monitorar performance das APIs
+psutil>=5.9.0
