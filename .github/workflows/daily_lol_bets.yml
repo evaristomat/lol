@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        ref: main
 
     # Passo 2: Configurar Python
     - name: Set up Python
@@ -100,6 +101,7 @@ jobs:
         git add data/*.db
         
         git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
+        git pull origin main --strategy-option ours --no-edit
         git push
         echo "✅ Updated databases pushed to repository"
 
