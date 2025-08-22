@@ -36,32 +36,40 @@ jobs:
         echo "REQUEST_TIMEOUT=30" >> .env
         echo "✅ Environment file created"
 
+    # Passo 4.5: Criar diretórios necessários
+    - name: Create required directories
+      run: |
+        mkdir -p data
+        mkdir -p logs
+        mkdir -p reports
+        echo "✅ Directories created"
+
     # Passo 5: Executar script para obter odds dos próximos 10 dias
     - name: Get upcoming odds (10 days)
       run: |
         echo "📊 Fetching upcoming odds..."
-        python scripts/db_get_odds.py
+        cd scripts && python db_get_odds.py
         echo "✅ Odds retrieved and stored in database"
 
     # Passo 6: Executar script para atualizar resultados dos últimos 2 dias
     - name: Get recent match results (2 days)
       run: |
         echo "🏆 Fetching recent match results..."
-        python scripts/db_get_matches.py
+        cd scripts && python db_get_matches.py
         echo "✅ Match results retrieved and stored in database"
 
     # Passo 7: Executar script para atualizar resultados de apostas
     - name: Update bet results
       run: |
         echo "💰 Updating bet results..."
-        python scripts/db_get_bet_results.py
+        cd scripts && python db_get_bet_results.py
         echo "✅ Bet results updated in database"
 
     # Passo 8: Executar script para verificar novas apostas de valor
     - name: Find value bets
       run: |
         echo "🔍 Analyzing value bets..."
-        python scripts/db_get_bets.py
+        cd scripts && python db_get_bets.py
         echo "✅ Value bets analysis completed and stored in database"
 
     # Passo 9: Verificar se há mudanças nos bancos de dados
