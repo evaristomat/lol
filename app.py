@@ -12,7 +12,7 @@ st.set_page_config(
     page_title="Bet365 Analytics Dashboard",
     page_icon="🎯",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
 # CSS personalizado
@@ -25,27 +25,48 @@ st.markdown(
         text-align: center;
         margin-bottom: 1rem;
     }
-    .metric-card {
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border-radius: 10px;
-        border-left: 4px solid #1E88E5;
-    }
-    .positive-value {
-        color: #28a745;
-        font-weight: bold;
-    }
-    .negative-value {
-        color: #dc3545;
-        font-weight: bold;
-    }
     .stButton>button {
         width: 100%;
         border-radius: 5px;
+        border: none;
+        background-color: #1E88E5;
+        color: white;
+        padding: 0.5rem;
+        font-weight: bold;
     }
-    .today-btn {
-        background-color: #1E88E5 !important;
-        color: white !important;
+    .stButton>button:hover {
+        background-color: #0D47A1;
+        color: white;
+    }
+    .dataframe {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        background-color: #f0f2f6;
+        border-radius: 8px 8px 0 0;
+        padding: 10px 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #1E88E5;
+        color: white;
+    }
+    /* Estilizar métricas diretamente */
+    div[data-testid="metric-container"] {
+        background-color: #f0f2f6;
+        padding: 1rem;
+        border-radius: 10px;
+        border-left: 4px solid #1E88E5;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* Remover padding extra */
+    .block-container {
+        padding-top: 2rem !important;
     }
 </style>
 """,
@@ -102,7 +123,6 @@ def main():
         '<h1 class="main-header">🎯 Bet365 Analytics Dashboard</h1>',
         unsafe_allow_html=True,
     )
-    st.markdown("---")
 
     # Carregar dados
     events_df = load_events()
@@ -116,65 +136,26 @@ def main():
             {"won": "win", "lost": "loss"}
         )
 
-    # Sidebar com filtros
-    st.sidebar.header("📅 Filtros de Data")
+    # Filtros na parte superior
+    st.subheader("📅 Filtros de Data")
 
     # Botões de período rápido
-    col1, col2, col3 = st.sidebar.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        today_btn = st.button("Hoje", key="today")
+        today_btn = st.button("Hoje", key="today", use_container_width=True)
     with col2:
-        tomorrow_btn = st.button("Amanhã", key="tomorrow")
+        tomorrow_btn = st.button("Amanhã", key="tomorrow", use_container_width=True)
     with col3:
-        week_btn = st.button("Esta Semana", key="week")
-
-    st.sidebar.markdown("---")
-    st.sidebar.header("🎯 Filtros de Apostas")
-
-    # Filtro de ROI
-    min_roi = st.sidebar.slider(
-        "ROI Mínimo (%)", min_value=0.0, max_value=50.0, value=5.0, step=0.5
-    )
-
-    # Filtro de odds
-    min_odds = st.sidebar.slider(
-        "Odds Mínimas", min_value=1.0, max_value=10.0, value=1.5, step=0.1
-    )
-
-    # Layout principal - Métricas
-    col1, col2, col3, col4 = st.columns(4)
-
-    with col1:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        st.metric("📊 Total Apostas", len(bets_df))
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    with col2:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        st.metric("⏳ Pendentes", len(pending_bets_df))
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    with col3:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        st.metric("✅ Resolvidas", len(resolved_bets_df))
-        st.markdown("</div>", unsafe_allow_html=True)
-
+        week_btn = st.button("Esta Semana", key="week", use_container_width=True)
     with col4:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        if not resolved_bets_df.empty:
-            win_bets = resolved_bets_df[resolved_bets_df["bet_status"] == "win"]
-            win_rate = (
-                len(win_bets) / len(resolved_bets_df) * 100
-                if len(resolved_bets_df) > 0
-                else 0
-            )
-            st.metric("🎯 Taxa de Acerto", f"{win_rate:.1f}%")
-        else:
-            st.metric("🎯 Taxa de Acerto", "0.0%")
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    st.markdown("---")
+        min_roi = st.slider(
+            "ROI Mínimo (%)", min_value=0.0, max_value=50.0, value=5.0, step=0.5
+        )
+    with col5:
+        min_odds = st.slider(
+            "Odds Mínimas", min_value=1.0, max_value=10.0, value=1.5, step=0.1
+        )
 
     # Aplicar filtros de data
     today = datetime.now().date()
@@ -220,6 +201,30 @@ def main():
         on="event_id",
         how="left",
     )
+
+    # Layout principal - Métricas
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric("📊 Total Apostas", len(bets_df))
+
+    with col2:
+        st.metric("⏳ Pendentes", len(pending_bets_df))
+
+    with col3:
+        st.metric("✅ Resolvidas", len(resolved_bets_df))
+
+    with col4:
+        if not resolved_bets_df.empty:
+            win_bets = resolved_bets_df[resolved_bets_df["bet_status"] == "win"]
+            win_rate = (
+                len(win_bets) / len(resolved_bets_df) * 100
+                if len(resolved_bets_df) > 0
+                else 0
+            )
+            st.metric("🎯 Taxa de Acerto", f"{win_rate:.1f}%")
+        else:
+            st.metric("🎯 Taxa de Acerto", "0.0%")
 
     # Abas principais
     tab1, tab2, tab3, tab4 = st.tabs(
@@ -278,13 +283,12 @@ def show_pending_bets(bets_with_events):
         total_potential = bets_with_events["potential_win"].sum()
         st.metric("🚀 Ganho Potencial", f"${total_potential:.2f}")
 
-    # Ordenar por ROI (prioridade) e odds
-    sorted_bets = bets_with_events.sort_values(
-        ["roi_average", "house_odds"], ascending=[False, False]
-    )
+    # Ordenar por data (mais antigo primeiro - ordem crescente)
+    bets_with_events["match_date"] = pd.to_datetime(bets_with_events["match_date"])
+    sorted_bets = bets_with_events.sort_values("match_date", ascending=True)
 
     # Formatar para exibição
-    sorted_bets["match_date"] = pd.to_datetime(sorted_bets["match_date"]).dt.strftime(
+    sorted_bets["match_date_display"] = sorted_bets["match_date"].dt.strftime(
         "%d/%m %H:%M"
     )
     sorted_bets["Partida"] = (
@@ -292,14 +296,13 @@ def show_pending_bets(bets_with_events):
     )
     sorted_bets["Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
 
-    # Exibir tabela com coluna Linha (handicap)
+    # Exibir tabela
     display_cols = [
-        "match_date",
+        "match_date_display",
         "Partida",
         "league_name",
         "market_name",
         "selection_line",
-        "handicap",
         "house_odds",
         "fair_odds",
         "roi_average",
@@ -310,11 +313,10 @@ def show_pending_bets(bets_with_events):
     st.dataframe(
         sorted_bets[display_cols],
         column_config={
-            "match_date": "Data/Hora",
+            "match_date_display": "Data/Hora",
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
-            "handicap": "Linha",
             "house_odds": st.column_config.NumberColumn("Odds Casa", format="%.2f"),
             "fair_odds": st.column_config.NumberColumn("Odds Justas", format="%.2f"),
             "roi_average": st.column_config.NumberColumn("ROI (%)", format="%.1f%%"),
@@ -328,28 +330,32 @@ def show_pending_bets(bets_with_events):
         height=400,
     )
 
-    # Gráficos
+    # Gráficos de distribuição
     col1, col2 = st.columns(2)
 
     with col1:
-        fig = px.scatter(
-            sorted_bets,
-            x="house_odds",
-            y="roi_average",
-            color="league_name",
-            size="stake",
-            hover_data=["Partida", "market_name", "selection_line", "handicap"],
-            title="ROI vs Odds por Liga (tamanho = stake)",
+        # Distribuição de apostas por liga
+        league_distribution = sorted_bets["league_name"].value_counts()
+        fig = px.pie(
+            values=league_distribution.values,
+            names=league_distribution.index,
+            title="Distribuição de Apostas por Liga",
+            hole=0.4,
         )
+        fig.update_traces(textposition="inside", textinfo="percent+label")
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        fig = px.box(
-            sorted_bets,
-            x="league_name",
-            y="roi_average",
-            title="Distribuição de ROI por Liga",
+        # Distribuição de apostas por seleção (top 10)
+        selection_distribution = sorted_bets["selection_line"].value_counts().head(10)
+        fig = px.bar(
+            x=selection_distribution.values,
+            y=selection_distribution.index,
+            orientation="h",
+            title="Top 10 Seleções Mais Apostadas",
+            labels={"x": "Quantidade", "y": "Seleção"},
         )
+        fig.update_layout(yaxis={"categoryorder": "total ascending"})
         st.plotly_chart(fig, use_container_width=True)
 
 
@@ -369,9 +375,17 @@ def show_all_bets(bets_df, events_df):
         {"won": "win", "lost": "loss"}
     )
 
+    # Ordenar por data (mais antigo primeiro - ordem crescente)
     all_bets_with_events["match_date"] = pd.to_datetime(
         all_bets_with_events["match_date"]
-    ).dt.strftime("%d/%m %H:%M")
+    )
+    all_bets_with_events = all_bets_with_events.sort_values(
+        "match_date", ascending=True
+    )
+
+    all_bets_with_events["match_date_display"] = all_bets_with_events[
+        "match_date"
+    ].dt.strftime("%d/%m %H:%M")
     all_bets_with_events["Partida"] = (
         all_bets_with_events["home_team"] + " vs " + all_bets_with_events["away_team"]
     )
@@ -379,23 +393,21 @@ def show_all_bets(bets_df, events_df):
     st.dataframe(
         all_bets_with_events[
             [
-                "match_date",
+                "match_date_display",
                 "Partida",
                 "league_name",
                 "market_name",
                 "selection_line",
-                "handicap",
                 "house_odds",
                 "bet_status",
                 "stake",
             ]
         ],
         column_config={
-            "match_date": "Data/Hora",
+            "match_date_display": "Data/Hora",
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
-            "handicap": "Linha",
             "house_odds": "Odds",
             "bet_status": "Status",
             "stake": "Stake",
@@ -426,6 +438,12 @@ def show_results(resolved_bets, events_df):
         calculate_profit_loss, axis=1
     )
 
+    # Ordenar por data (mais antigo primeiro - ordem crescente)
+    results_with_events["match_date"] = pd.to_datetime(
+        results_with_events["match_date"]
+    )
+    results_with_events = results_with_events.sort_values("match_date", ascending=True)
+
     # Métricas de resultados
     total_stake = results_with_events["stake"].sum()
     total_profit = results_with_events["Lucro_Prejuizo"].sum()
@@ -452,10 +470,10 @@ def show_results(resolved_bets, events_df):
         roi_color = "🟢" if roi >= 0 else "🔴"
         st.metric(f"{roi_color} ROI Total", f"{roi:.1f}%")
 
-    # Tabela de resultados com coluna Linha
-    results_with_events["match_date"] = pd.to_datetime(
-        results_with_events["match_date"]
-    ).dt.strftime("%d/%m %H:%M")
+    # Tabela de resultados
+    results_with_events["match_date_display"] = results_with_events[
+        "match_date"
+    ].dt.strftime("%d/%m %H:%M")
     results_with_events["Partida"] = (
         results_with_events["home_team"] + " vs " + results_with_events["away_team"]
     )
@@ -463,12 +481,11 @@ def show_results(resolved_bets, events_df):
     st.dataframe(
         results_with_events[
             [
-                "match_date",
+                "match_date_display",
                 "Partida",
                 "league_name",
                 "market_name",
                 "selection_line",
-                "handicap",
                 "house_odds",
                 "bet_status",
                 "stake",
@@ -476,11 +493,10 @@ def show_results(resolved_bets, events_df):
             ]
         ],
         column_config={
-            "match_date": "Data/Hora",
+            "match_date_display": "Data/Hora",
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
-            "handicap": "Linha",
             "house_odds": "Odds",
             "bet_status": "Status",
             "stake": "Stake",
