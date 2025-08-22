@@ -17,6 +17,15 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.core.bet365_client import Bet365Client
 from src.services.telegram_notifier import TelegramNotifier
 
+# Verificar se as variáveis do Telegram estão configuradas
+telegram_token = os.getenv("TELEGRAM_BOT_TOKEN")
+telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID")
+
+if not telegram_token or not telegram_chat_id:
+    print("⚠️ Variáveis de ambiente do Telegram não configuradas")
+else:
+    print("✅ Variáveis de ambiente do Telegram configuradas")
+    
 # Códigos de cores ANSI
 class Colors:
     RESET = "\033[0m"

@@ -10,6 +10,10 @@ on:
 jobs:
   run-daily-bets:
     runs-on: ubuntu-latest
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      BETSAPI_API_KEY: ${{ secrets.BETSAPI_API_KEY }}
     
     steps:
     # Passo 1: Fazer checkout do código
@@ -30,17 +34,15 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    # Passo 4: Criar arquivo .env com variáveis (apenas API_KEY é secreta)
+    # Passo 4: Criar arquivo .env com todas as variáveis
     - name: Create environment file
-      env:
-        BETSAPI_API_KEY: ${{ secrets.BETSAPI_API_KEY }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         echo "BETSAPI_API_KEY=$BETSAPI_API_KEY" > .env
         echo "CACHE_TTL=300" >> .env
         echo "BASE_URL=https://api.betsapi.com/v1" >> .env
         echo "REQUEST_TIMEOUT=30" >> .env
+        echo "TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN" >> .env
+        echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID" >> .env
         echo "✅ Environment file created"
 
     # Passo 4.5: Criar diretórios necessários

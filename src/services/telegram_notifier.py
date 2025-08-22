@@ -2,10 +2,6 @@ import requests
 import logging
 import os
 from typing import Optional
-from dotenv import load_dotenv
-
-# Carrega variáveis de ambiente do arquivo .env
-load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 logger = logging.getLogger("telegram_notifier")
 
@@ -20,6 +16,7 @@ class TelegramNotifier:
             print("⚠️ Variáveis de ambiente do Telegram não configuradas")
         else:
             self.base_url = f"https://api.telegram.org/bot{self.token}"
+            print("✅ Variáveis de ambiente do Telegram carregadas com sucesso")
 
     def send_message(self, text: str, parse_mode: Optional[str] = None) -> bool:
         """Envia mensagem para o Telegram"""
