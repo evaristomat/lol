@@ -34,6 +34,8 @@ jobs:
     - name: Create environment file
       env:
         BETSAPI_API_KEY: ${{ secrets.BETSAPI_API_KEY }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         echo "BETSAPI_API_KEY=$BETSAPI_API_KEY" > .env
         echo "CACHE_TTL=300" >> .env

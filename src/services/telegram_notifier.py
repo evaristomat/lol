@@ -2,6 +2,10 @@ import requests
 import logging
 import os
 from typing import Optional
+from dotenv import load_dotenv
+
+# Carrega variáveis de ambiente do arquivo .env
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 logger = logging.getLogger("telegram_notifier")
 
