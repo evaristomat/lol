@@ -91,18 +91,24 @@ jobs:
         fi
 
     # Passo 10: Fazer commit e push dos bancos de dados atualizados
+            
     - name: Commit and push updated databases
       if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # Fazer pull com rebase para integrar mudanças remotas
+        git pull --rebase origin main
+        
         # Adicionar apenas os bancos de dados modificados
         git add data/*.db
         
+        # Fazer commit
         git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
-        git pull origin main --strategy-option ours --no-edit
-        git push
+        
+        # Fazer push
+        git push origin main
         echo "✅ Updated databases pushed to repository"
 
     # Passo 11: Resumo da execução

@@ -444,7 +444,69 @@ def show_results(resolved_bets, events_df):
     )
     results_with_events = results_with_events.sort_values("match_date", ascending=True)
 
-    # Métricas de resultados
+    # TABELA DE RESULTADOS MENSAIS
+    st.subheader("📅 Resultados Mensais")
+
+    # Criar coluna de mês/ano
+    results_with_events["mes_ano"] = results_with_events["match_date"].dt.to_period("M")
+
+    # Agrupar por mês
+    monthly_stats = (
+        results_with_events.groupby("mes_ano")
+        .agg(
+            {
+                "stake": "sum",  # Unidades apostadas
+                "Lucro_Prejuizo": "sum",  # Unidades de lucro
+                "bet_status": lambda x: (x == "win").mean() * 100,  # Taxa acerto
+            }
+        )
+        .reset_index()
+    )
+
+    # Calcular ROI
+    monthly_stats["ROI (%)"] = (
+        monthly_stats["Lucro_Prejuizo"] / monthly_stats["stake"] * 100
+    ).round(2)
+
+    # Renomear colunas e formatar
+    monthly_stats.columns = [
+        "Mês",
+        "Unidades Apostadas",
+        "Unidades de Lucro",
+        "Taxa Acerto (%)",
+        "ROI (%)",
+    ]
+    monthly_stats["Mês"] = monthly_stats["Mês"].astype(str)
+    monthly_stats["Taxa Acerto (%)"] = monthly_stats["Taxa Acerto (%)"].round(1)
+    monthly_stats["Unidades Apostadas"] = monthly_stats["Unidades Apostadas"].round(2)
+    monthly_stats["Unidades de Lucro"] = monthly_stats["Unidades de Lucro"].round(2)
+
+    # Ordenar por mês (mais recente primeiro)
+    monthly_stats = monthly_stats.sort_values("Mês", ascending=False)
+
+    st.dataframe(
+        monthly_stats,
+        column_config={
+            "Mês": "Mês",
+            "Unidades Apostadas": st.column_config.NumberColumn(
+                "Unidades Apostadas", format="%.2f"
+            ),
+            "Unidades de Lucro": st.column_config.NumberColumn(
+                "Unidades de Lucro", format="%.2f"
+            ),
+            "Taxa Acerto (%)": st.column_config.NumberColumn(
+                "Taxa Acerto (%)", format="%.1f%%"
+            ),
+            "ROI (%)": st.column_config.NumberColumn("ROI (%)", format="%.2f%%"),
+        },
+        hide_index=True,
+        use_container_width=True,
+        height=200,
+    )
+
+    st.markdown("---")
+
+    # Métricas de resultados gerais
     total_stake = results_with_events["stake"].sum()
     total_profit = results_with_events["Lucro_Prejuizo"].sum()
     win_rate = (
@@ -457,11 +519,11 @@ def show_results(resolved_bets, events_df):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("💰 Stake Total", f"${total_stake:.2f}")
+        st.metric("📊 Unidades Apostadas", f"{total_stake:.2f}")
 
     with col2:
         profit_color = "🟢" if total_profit >= 0 else "🔴"
-        st.metric(f"{profit_color} Lucro/Prejuízo", f"${total_profit:.2f}")
+        st.metric(f"{profit_color} Lucro/Prejuízo (un)", f"{total_profit:.2f}")
 
     with col3:
         st.metric("🎯 Taxa de Acerto", f"{win_rate:.1f}%")
@@ -470,7 +532,7 @@ def show_results(resolved_bets, events_df):
         roi_color = "🟢" if roi >= 0 else "🔴"
         st.metric(f"{roi_color} ROI Total", f"{roi:.1f}%")
 
-    # Tabela de resultados
+    # Tabela de resultados detalhados
     results_with_events["match_date_display"] = results_with_events[
         "match_date"
     ].dt.strftime("%d/%m %H:%M")
@@ -501,7 +563,7 @@ def show_results(resolved_bets, events_df):
             "bet_status": "Status",
             "stake": "Stake",
             "Lucro_Prejuizo": st.column_config.NumberColumn(
-                "Lucro/Prej", format="$%.2f"
+                "Lucro/Prej (un)", format="%.2f"
             ),
         },
         hide_index=True,
@@ -535,7 +597,7 @@ def show_results(resolved_bets, events_df):
                 league_performance,
                 x="league_name",
                 y="Lucro_Prejuizo",
-                title="Lucro/Prejuízo por Liga ($)",
+                title="Lucro/Prejuízo por Liga (unidades)",
                 color="Lucro_Prejuizo",
                 color_continuous_scale="RdYlGn",
             )
