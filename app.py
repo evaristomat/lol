@@ -149,13 +149,11 @@ def main():
     with col3:
         week_btn = st.button("Esta Semana", key="week", use_container_width=True)
     with col4:
-        min_roi = st.slider(
-            "ROI Mínimo (%)", min_value=0.0, max_value=50.0, value=5.0, step=0.5
-        )
+        # Espaço vazio para manter o layout
+        pass
     with col5:
-        min_odds = st.slider(
-            "Odds Mínimas", min_value=1.0, max_value=10.0, value=1.5, step=0.1
-        )
+        # Espaço vazio para manter o layout
+        pass
 
     # Aplicar filtros de data
     today = datetime.now().date()
@@ -178,11 +176,9 @@ def main():
             )
         ]
 
-    # Filtrar apostas pendentes
+    # Filtrar apostas pendentes apenas por data (removemos os filtros de ROI e odds)
     filtered_pending_bets = pending_bets_df[
         (pending_bets_df["event_id"].isin(filtered_events["event_id"]))
-        & (pending_bets_df["roi_average"] >= min_roi)
-        & (pending_bets_df["house_odds"] >= min_odds)
     ]
 
     # Juntar com informações dos eventos
@@ -226,13 +222,13 @@ def main():
         else:
             st.metric("🎯 Taxa de Acerto", "0.0%")
 
-    # Abas principais
+    # Abas principais - Reordenadas
     tab1, tab2, tab3, tab4 = st.tabs(
         [
             "🎯 Apostas em Aberto",
-            "📊 Todas as Apostas",
             "📈 Resultados",
             "📋 Estatísticas",
+            "📊 Todas as Apostas",  # Movida para o final
         ]
     )
 
@@ -240,13 +236,13 @@ def main():
         show_pending_bets(pending_with_events)
 
     with tab2:
-        show_all_bets(bets_df, events_df)
-
-    with tab3:
         show_results(resolved_bets_df, events_df)
 
-    with tab4:
+    with tab3:
         show_statistics(resolved_bets_df, events_df)
+
+    with tab4:
+        show_all_bets(bets_df, events_df)
 
     # Footer
     st.markdown("---")
