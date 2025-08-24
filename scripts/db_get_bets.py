@@ -160,15 +160,16 @@ class BetScanner:
             else:
                 formatted_date = "Data não disponível"
 
-            # Agrupa mercados similares
+            # Agrupa por tipo de mercado
             market_groups = {}
             for bet in bets:
                 market_name = bet["market_name"]
-                # Simplifica nomes de mercado para agrupamento
-                if "Map 1" in market_name and "Totals" in market_name:
-                    base_market = "Map 1 - Totals"
-                elif "Map 2" in market_name and "Totals" in market_name:
-                    base_market = "Map 2 - Totals"
+                
+                # Identifica o tipo de mercado (removendo informação de mapa)
+                if "Map 1" in market_name:
+                    base_market = market_name.replace("Map 1 - ", "")
+                elif "Map 2" in market_name:
+                    base_market = market_name.replace("Map 2 - ", "")
                 else:
                     base_market = market_name
 
@@ -182,30 +183,43 @@ class BetScanner:
             message += f"📅 *Data:* {formatted_date}\n\n"
 
             for market_name, market_bets in market_groups.items():
-                if len(market_bets) > 1:
-                    # Mensagem agrupada para múltiplos mapas
-                    message += f"🗺️ *Mercado:* {market_name.replace('Map 1 - ', '').replace('Map 2 - ', '')} - Mapa 1 & 2\n"
-                    for bet in market_bets:
-                        potential_win = (bet["house_odds"] - 1) * stake
-                        message += (
-                            f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
-                        )
-                        message += f"💰 *Odds:* {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
-                    message += f"📊 *ROI Médio:* {sum(b['roi_average'] for b in market_bets) / len(market_bets):.1f}%\n"
-                    message += f"⚖️ *Odd Justa Média:* {sum(b['fair_odds'] for b in market_bets) / len(market_bets):.2f}\n"
-                    message += f"💵 *Stake:* {stake} unidade(s) por aposta\n"
-                    message += f"🎰 *Ganho Potencial Total:* {sum((b['house_odds'] - 1) * stake for b in market_bets):.2f} unidades\n\n"
-                else:
-                    # Mensagem individual para mercado único
+                # Verifica se é o mesmo mercado em ambos os mapas
+                if len(market_bets) == 2 and all(b['selection_line'] == market_bets[0]['selection_line'] and 
+                                                b['handicap'] == market_bets[0]['handicap'] and 
+                                                b['house_odds'] == market_bets[0]['house_odds'] 
+                                                for b in market_bets):
+                    # Caso especial: mesma aposta em ambos os mapas
                     bet = market_bets[0]
-                    potential_win = (bet["house_odds"] - 1) * stake
-                    message += f"🗺️ *Mercado:* {market_name}\n"
+                    message += f"🗺️ *Mercado:* {market_name} (Mapa 1 & 2)\n"
                     message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
-                    message += f"💰 *Odds da Casa:* {bet['house_odds']}\n"
+                    message += f"💰 *Odds:* {bet['house_odds']}\n"
                     message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
                     message += f"⚖️ *Odd Justa:* {bet['fair_odds']:.2f}\n"
-                    message += f"💵 *Stake:* {stake} unidade(s)\n"
-                    message += f"🎰 *Ganho Potencial:* {potential_win:.2f} unidades\n\n"
+                    message += f"💵 *Stake:* {stake} unidade(s) por mapa\n\n"
+                else:
+                    # Mercado com apostas diferentes
+                    message += f"📊 *Mercado:* {market_name}\n"
+                    
+                    for bet in market_bets:
+                        # Identifica em qual mapa é a aposta
+                        if "Map 1" in bet["market_name"]:
+                            map_info = "🗺️ Mapa 1:"
+                        elif "Map 2" in bet["market_name"]:
+                            map_info = "🗺️ Mapa 2:"
+                        else:
+                            map_info = "🌐 Geral:"
+                        
+                        message += f"\n{map_info}\n"
+                        message += f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
+                        message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
+                    
+                    # Calcula médias para o mercado
+                    avg_roi = sum(b['roi_average'] for b in market_bets) / len(market_bets)
+                    avg_fair_odds = sum(b['fair_odds'] for b in market_bets) / len(market_bets)
+                    
+                    message += f"\n📈 *ROI Médio:* {avg_roi:.1f}%\n"
+                    message += f"⚖️ *Odd Justa Média:* {avg_fair_odds:.2f}\n"
+                    message += f"💵 *Stake:* {stake} unidade(s) por aposta\n\n"
 
             message += "#LoL #Bet365 #Aposta #EV+"
 
