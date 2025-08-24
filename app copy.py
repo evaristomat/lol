@@ -7,6 +7,28 @@ from datetime import datetime, timedelta
 import numpy as np
 import os
 
+# Verificar se o banco de dados foi modificado
+def check_db_modified():
+    db_path = "data/bets.db"
+    if os.path.exists(db_path):
+        return os.path.getmtime(db_path)
+    return 0
+
+    # Inicializar variáveis de sessão para controle de atualização
+
+
+if "last_db_update" not in st.session_state:
+    st.session_state.last_db_update = check_db_modified()
+
+# Verificar se o banco foi modificado desde a última verificação
+current_db_mtime = check_db_modified()
+if current_db_mtime > st.session_state.last_db_update:
+    # Limpar todos os caches
+    st.cache_data.clear()
+    st.session_state.last_db_update = current_db_mtime
+    st.rerun()
+
+    
 # Configuração da página
 st.set_page_config(
     page_title="Bet365 Analytics Dashboard",
@@ -136,6 +158,10 @@ def main():
             {"won": "win", "lost": "loss"}
         )
 
+    # Inicializar session state para o filtro
+    if "filter_selected" not in st.session_state:
+        st.session_state.filter_selected = "today"  # Filtro padrão: Hoje
+
     # Filtros na parte superior
     st.subheader("📅 Filtros de Data")
 
@@ -143,11 +169,14 @@ def main():
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        today_btn = st.button("Hoje", key="today", use_container_width=True)
+        if st.button("Hoje", key="today", use_container_width=True):
+            st.session_state.filter_selected = "today"
     with col2:
-        tomorrow_btn = st.button("Amanhã", key="tomorrow", use_container_width=True)
+        if st.button("Amanhã", key="tomorrow", use_container_width=True):
+            st.session_state.filter_selected = "tomorrow"
     with col3:
-        week_btn = st.button("Esta Semana", key="week", use_container_width=True)
+        if st.button("Esta Semana", key="week", use_container_width=True):
+            st.session_state.filter_selected = "week"
     with col4:
         # Espaço vazio para manter o layout
         pass
@@ -155,20 +184,20 @@ def main():
         # Espaço vazio para manter o layout
         pass
 
-    # Aplicar filtros de data
+    # Aplicar filtros de data baseado no session state
     today = datetime.now().date()
     filtered_events = events_df.copy()
 
-    if today_btn:
+    if st.session_state.filter_selected == "today":
         filtered_events = filtered_events[
             pd.to_datetime(filtered_events["match_date"]).dt.date == today
         ]
-    elif tomorrow_btn:
+    elif st.session_state.filter_selected == "tomorrow":
         tomorrow = today + timedelta(days=1)
         filtered_events = filtered_events[
             pd.to_datetime(filtered_events["match_date"]).dt.date == tomorrow
         ]
-    elif week_btn:
+    elif st.session_state.filter_selected == "week":
         week_end = today + timedelta(days=7)
         filtered_events = filtered_events[
             pd.to_datetime(filtered_events["match_date"]).dt.date.between(
@@ -176,7 +205,7 @@ def main():
             )
         ]
 
-    # Filtrar apostas pendentes apenas por data (removemos os filtros de ROI e odds)
+    # Filtrar apostas pendentes apenas por data
     filtered_pending_bets = pending_bets_df[
         (pending_bets_df["event_id"].isin(filtered_events["event_id"]))
     ]
@@ -222,13 +251,15 @@ def main():
         else:
             st.metric("🎯 Taxa de Acerto", "0.0%")
 
-    # Abas principais - Reordenadas
-    tab1, tab2, tab3, tab4 = st.tabs(
+    # Abas principais - Reordenadas e renomeadas
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         [
             "🎯 Apostas em Aberto",
-            "📈 Resultados",
+            "🎮 Estratégia V1",
+            "📈 Resultado Geral",
+            f"📅 Resultados {datetime.now().strftime('%B %Y')}",
             "📋 Estatísticas",
-            "📊 Todas as Apostas",  # Movida para o final
+            "📊 Todas as Apostas",
         ]
     )
 
@@ -236,12 +267,18 @@ def main():
         show_pending_bets(pending_with_events)
 
     with tab2:
-        show_results(resolved_bets_df, events_df)
+        show_strategy_v1()
 
     with tab3:
-        show_statistics(resolved_bets_df, events_df)
+        show_general_results(resolved_bets_df, events_df)
 
     with tab4:
+        show_current_month_results(resolved_bets_df, events_df)
+
+    with tab5:
+        show_statistics(resolved_bets_df, events_df)
+
+    with tab6:
         show_all_bets(bets_df, events_df)
 
     # Footer
@@ -260,7 +297,7 @@ def show_pending_bets(bets_with_events):
         st.info("Nenhuma aposta em aberto com os filtros atuais.")
         return
 
-    # Métricas rápidas
+    # Métricas rápidas - Alterado conforme solicitado
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
@@ -273,11 +310,11 @@ def show_pending_bets(bets_with_events):
 
     with col3:
         total_stake = bets_with_events["stake"].sum()
-        st.metric("💰 Stake Total", f"${total_stake:.2f}")
+        st.metric("💰 Unidades em Aberto", f"{total_stake:.0f} un.")  # Alterado
 
     with col4:
         total_potential = bets_with_events["potential_win"].sum()
-        st.metric("🚀 Ganho Potencial", f"${total_potential:.2f}")
+        st.metric("🚀 Ganho Potencial", f"{total_potential:.0f} un.")  # Alterado
 
     # Ordenar por data (mais antigo primeiro - ordem crescente)
     bets_with_events["match_date"] = pd.to_datetime(bets_with_events["match_date"])
@@ -316,9 +353,9 @@ def show_pending_bets(bets_with_events):
             "house_odds": st.column_config.NumberColumn("Odds Casa", format="%.2f"),
             "fair_odds": st.column_config.NumberColumn("Odds Justas", format="%.2f"),
             "roi_average": st.column_config.NumberColumn("ROI (%)", format="%.1f%%"),
-            "stake": st.column_config.NumberColumn("Stake", format="$%.2f"),
+            "stake": st.column_config.NumberColumn("Stake", format="%.0f un."),
             "potential_win": st.column_config.NumberColumn(
-                "Ganho Potencial", format="$%.2f"
+                "Ganho Potencial", format="%.0f un."
             ),
         },
         hide_index=True,
@@ -355,67 +392,30 @@ def show_pending_bets(bets_with_events):
         st.plotly_chart(fig, use_container_width=True)
 
 
-def show_all_bets(bets_df, events_df):
-    st.header("📊 Todas as Apostas")
+def show_strategy_v1():
+    """Nova aba para Estratégia V1"""
+    st.header("🎮 Estratégia V1")
 
-    # Juntar com eventos
-    all_bets_with_events = pd.merge(
-        bets_df,
-        events_df[["event_id", "home_team", "away_team", "match_date", "league_name"]],
-        on="event_id",
-        how="left",
-    )
+    # Placeholder para futura implementação
+    st.info("📌 Esta seção será implementada em breve com estratégias personalizadas.")
 
-    # Corrigir status para consistência
-    all_bets_with_events["bet_status"] = all_bets_with_events["bet_status"].replace(
-        {"won": "win", "lost": "loss"}
-    )
-
-    # Ordenar por data (mais antigo primeiro - ordem crescente)
-    all_bets_with_events["match_date"] = pd.to_datetime(
-        all_bets_with_events["match_date"]
-    )
-    all_bets_with_events = all_bets_with_events.sort_values(
-        "match_date", ascending=True
-    )
-
-    all_bets_with_events["match_date_display"] = all_bets_with_events[
-        "match_date"
-    ].dt.strftime("%d/%m %H:%M")
-    all_bets_with_events["Partida"] = (
-        all_bets_with_events["home_team"] + " vs " + all_bets_with_events["away_team"]
-    )
-
-    st.dataframe(
-        all_bets_with_events[
-            [
-                "match_date_display",
-                "Partida",
-                "league_name",
-                "market_name",
-                "selection_line",
-                "house_odds",
-                "bet_status",
-                "stake",
-            ]
-        ],
-        column_config={
-            "match_date_display": "Data/Hora",
-            "league_name": "Liga",
-            "market_name": "Mercado",
-            "selection_line": "Seleção",
-            "house_odds": "Odds",
-            "bet_status": "Status",
-            "stake": "Stake",
-        },
-        hide_index=True,
-        use_container_width=True,
-        height=500,
-    )
+    # Área de desenvolvimento futuro
+    st.markdown("""
+    ### 🚧 Em Desenvolvimento
+    
+    Esta seção conterá:
+    - Análise de estratégias personalizadas
+    - Backtesting de métodos
+    - Otimização de apostas
+    - Sugestões automatizadas
+    
+    **Aguarde atualizações!**
+    """)
 
 
-def show_results(resolved_bets, events_df):
-    st.header("📈 Resultados das Apostas")
+def show_general_results(resolved_bets, events_df):
+    """Renomeado de show_results para show_general_results"""
+    st.header("📈 Resultado Geral")
 
     if resolved_bets.empty:
         st.info("Nenhuma aposta resolvida ainda.")
@@ -434,14 +434,14 @@ def show_results(resolved_bets, events_df):
         calculate_profit_loss, axis=1
     )
 
-    # Ordenar por data (mais antigo primeiro - ordem crescente)
+    # Ordenar por data
     results_with_events["match_date"] = pd.to_datetime(
         results_with_events["match_date"]
     )
     results_with_events = results_with_events.sort_values("match_date", ascending=True)
 
     # TABELA DE RESULTADOS MENSAIS
-    st.subheader("📅 Resultados Mensais")
+    st.subheader("📅 Resultados por Mês")
 
     # Criar coluna de mês/ano
     results_with_events["mes_ano"] = results_with_events["match_date"].dt.to_period("M")
@@ -528,45 +528,6 @@ def show_results(resolved_bets, events_df):
         roi_color = "🟢" if roi >= 0 else "🔴"
         st.metric(f"{roi_color} ROI Total", f"{roi:.1f}%")
 
-    # Tabela de resultados detalhados
-    results_with_events["match_date_display"] = results_with_events[
-        "match_date"
-    ].dt.strftime("%d/%m %H:%M")
-    results_with_events["Partida"] = (
-        results_with_events["home_team"] + " vs " + results_with_events["away_team"]
-    )
-
-    st.dataframe(
-        results_with_events[
-            [
-                "match_date_display",
-                "Partida",
-                "league_name",
-                "market_name",
-                "selection_line",
-                "house_odds",
-                "bet_status",
-                "stake",
-                "Lucro_Prejuizo",
-            ]
-        ],
-        column_config={
-            "match_date_display": "Data/Hora",
-            "league_name": "Liga",
-            "market_name": "Mercado",
-            "selection_line": "Seleção",
-            "house_odds": "Odds",
-            "bet_status": "Status",
-            "stake": "Stake",
-            "Lucro_Prejuizo": st.column_config.NumberColumn(
-                "Lucro/Prej (un)", format="%.2f"
-            ),
-        },
-        hide_index=True,
-        use_container_width=True,
-        height=400,
-    )
-
     # Gráficos de resultados
     if len(results_with_events) > 1:
         col1, col2 = st.columns(2)
@@ -609,6 +570,214 @@ def show_results(resolved_bets, events_df):
                 color_discrete_map={"win": "#28a745", "loss": "#dc3545"},
             )
             st.plotly_chart(fig, use_container_width=True)
+
+
+def show_current_month_results(resolved_bets, events_df):
+    """Nova função para mostrar resultados do mês atual"""
+    current_month = datetime.now().strftime("%B %Y")
+    st.header(f"📅 Resultados {current_month}")
+
+    if resolved_bets.empty:
+        st.info("Nenhuma aposta resolvida este mês.")
+        return
+
+    # Juntar com eventos
+    results_with_events = pd.merge(
+        resolved_bets,
+        events_df[["event_id", "home_team", "away_team", "match_date", "league_name"]],
+        on="event_id",
+        how="left",
+    )
+
+    # Calcular lucro/prejuízo
+    results_with_events["Lucro_Prejuizo"] = results_with_events.apply(
+        calculate_profit_loss, axis=1
+    )
+
+    # Converter para datetime e filtrar mês atual
+    results_with_events["match_date"] = pd.to_datetime(
+        results_with_events["match_date"]
+    )
+    current_month_start = datetime.now().replace(
+        day=1, hour=0, minute=0, second=0, microsecond=0
+    )
+    current_month_data = results_with_events[
+        results_with_events["match_date"] >= current_month_start
+    ]
+
+    if current_month_data.empty:
+        st.info("Nenhuma aposta resolvida este mês.")
+        return
+
+    # Criar estatísticas diárias
+    current_month_data["dia"] = current_month_data["match_date"].dt.date
+
+    daily_stats = []
+    for dia in sorted(current_month_data["dia"].unique()):
+        dia_data = current_month_data[current_month_data["dia"] == dia]
+
+        unidades_apostadas = dia_data["stake"].sum()
+        lucro = dia_data["Lucro_Prejuizo"].sum()
+        total_apostas = len(dia_data)
+        apostas_ganhas = len(dia_data[dia_data["bet_status"] == "win"])
+        taxa_acerto = (apostas_ganhas / total_apostas * 100) if total_apostas > 0 else 0
+        roi = (lucro / unidades_apostadas * 100) if unidades_apostadas > 0 else 0
+
+        daily_stats.append(
+            {
+                "Dia": dia.strftime("%d/%m/%Y"),
+                "Unidades Apostadas": round(unidades_apostadas, 2),
+                "Lucro": round(lucro, 2),
+                "Taxa Acerto (%)": round(taxa_acerto, 1),
+                "ROI (%)": round(roi, 2),
+            }
+        )
+
+    daily_df = pd.DataFrame(daily_stats)
+
+    # Métricas do mês
+    total_stake_month = current_month_data["stake"].sum()
+    total_profit_month = current_month_data["Lucro_Prejuizo"].sum()
+    win_rate_month = (
+        (
+            len(current_month_data[current_month_data["bet_status"] == "win"])
+            / len(current_month_data)
+            * 100
+        )
+        if len(current_month_data) > 0
+        else 0
+    )
+    roi_month = (
+        (total_profit_month / total_stake_month * 100) if total_stake_month > 0 else 0
+    )
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric("📊 Total Unidades", f"{total_stake_month:.2f}")
+
+    with col2:
+        profit_color = "🟢" if total_profit_month >= 0 else "🔴"
+        st.metric(f"{profit_color} Lucro Total", f"{total_profit_month:.2f}")
+
+    with col3:
+        st.metric("🎯 Taxa de Acerto", f"{win_rate_month:.1f}%")
+
+    with col4:
+        roi_color = "🟢" if roi_month >= 0 else "🔴"
+        st.metric(f"{roi_color} ROI do Mês", f"{roi_month:.1f}%")
+
+    # Tabela diária
+    st.subheader("📊 Resultados Diários")
+
+    st.dataframe(
+        daily_df,
+        column_config={
+            "Dia": "Dia",
+            "Unidades Apostadas": st.column_config.NumberColumn(
+                "Unidades Apostadas", format="%.2f"
+            ),
+            "Lucro": st.column_config.NumberColumn("Lucro", format="%.2f"),
+            "Taxa Acerto (%)": st.column_config.NumberColumn(
+                "Taxa Acerto (%)", format="%.1f%%"
+            ),
+            "ROI (%)": st.column_config.NumberColumn("ROI (%)", format="%.2f%%"),
+        },
+        hide_index=True,
+        use_container_width=True,
+    )
+
+    # Gráfico de evolução do lucro acumulado no mês
+    if len(daily_df) > 1:
+        daily_df["Lucro Acumulado"] = daily_df["Lucro"].cumsum()
+
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(
+                x=daily_df["Dia"],
+                y=daily_df["Lucro Acumulado"],
+                mode="lines+markers",
+                name="Lucro Acumulado",
+                line=dict(
+                    color="green"
+                    if daily_df["Lucro Acumulado"].iloc[-1] >= 0
+                    else "red",
+                    width=2,
+                ),
+                marker=dict(size=8),
+            )
+        )
+
+        fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
+
+        fig.update_layout(
+            title=f"Evolução do Lucro Acumulado - {current_month}",
+            xaxis_title="Dia",
+            yaxis_title="Lucro Acumulado (un.)",
+            hovermode="x unified",
+            height=400,
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+
+def show_all_bets(bets_df, events_df):
+    st.header("📊 Todas as Apostas")
+
+    # Juntar com eventos
+    all_bets_with_events = pd.merge(
+        bets_df,
+        events_df[["event_id", "home_team", "away_team", "match_date", "league_name"]],
+        on="event_id",
+        how="left",
+    )
+
+    # Corrigir status para consistência
+    all_bets_with_events["bet_status"] = all_bets_with_events["bet_status"].replace(
+        {"won": "win", "lost": "loss"}
+    )
+
+    # Ordenar por data (mais antigo primeiro - ordem crescente)
+    all_bets_with_events["match_date"] = pd.to_datetime(
+        all_bets_with_events["match_date"]
+    )
+    all_bets_with_events = all_bets_with_events.sort_values(
+        "match_date", ascending=True
+    )
+
+    all_bets_with_events["match_date_display"] = all_bets_with_events[
+        "match_date"
+    ].dt.strftime("%d/%m %H:%M")
+    all_bets_with_events["Partida"] = (
+        all_bets_with_events["home_team"] + " vs " + all_bets_with_events["away_team"]
+    )
+
+    st.dataframe(
+        all_bets_with_events[
+            [
+                "match_date_display",
+                "Partida",
+                "league_name",
+                "market_name",
+                "selection_line",
+                "house_odds",
+                "bet_status",
+                "stake",
+            ]
+        ],
+        column_config={
+            "match_date_display": "Data/Hora",
+            "league_name": "Liga",
+            "market_name": "Mercado",
+            "selection_line": "Seleção",
+            "house_odds": "Odds",
+            "bet_status": "Status",
+            "stake": "Stake",
+        },
+        hide_index=True,
+        use_container_width=True,
+        height=500,
+    )
 
 
 def show_statistics(resolved_bets, events_df):
