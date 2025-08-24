@@ -218,7 +218,7 @@ class BetScanner:
                     bet = maps_data["Mapa 1"][0]
                     message += f"🗺️ *Mercado:* {market_name} (Mapa 1 & 2)\n"
                     message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
-                    message += f"💰 *Odds:* {bet['house_odds']}\n"
+                    message += f"💰 *Odds:* {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f}\n"
                     message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
                     message += f"💵 *Stake:* {stake} unidade(s) por mapa\n\n"
                 else:
@@ -231,7 +231,7 @@ class BetScanner:
                             bet = map_bets[0]
                             message += f"\n🗺️ *{map_name}:*\n"
                             message += f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
-                            message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
+                            message += f"   💰 Odds: {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f} | ROI: {bet['roi_average']:.1f}%\n"
                         else:
                             # Múltiplas apostas no mesmo mapa
                             message += f"\n🗺️ *{map_name}:*\n"
@@ -239,7 +239,7 @@ class BetScanner:
                                 message += (
                                     f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
                                 )
-                                message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
+                                message += f"   💰 Odds: {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f} | ROI: {bet['roi_average']:.1f}%\n"
 
                     message += f"\n💵 *Stake:* {stake} unidade(s) por aposta\n\n"
 
