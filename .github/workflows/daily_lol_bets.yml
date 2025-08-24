@@ -45,7 +45,7 @@ jobs:
         echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID" >> .env
         echo "✅ Environment file created"
 
-    # Passo 4.5: Criar diretórios necessários
+    # Passo 5: Criar diretórios necessários
     - name: Create required directories
       run: |
         mkdir -p data
@@ -53,35 +53,35 @@ jobs:
         mkdir -p reports
         echo "✅ Directories created"
 
-    # Passo 5: Executar script para obter odds dos próximos 10 dias
+    # Passo 6: Executar script para obter odds dos próximos 10 dias
     - name: Get upcoming odds (10 days)
       run: |
         echo "📊 Fetching upcoming odds..."
         cd scripts && python db_get_odds.py
         echo "✅ Odds retrieved and stored in database"
 
-    # Passo 6: Executar script para atualizar resultados dos últimos 2 dias
+    # Passo 7: Executar script para atualizar resultados dos últimos 2 dias
     - name: Get recent match results (2 days)
       run: |
         echo "🏆 Fetching recent match results..."
         cd scripts && python db_get_matches.py
         echo "✅ Match results retrieved and stored in database"
 
-    # Passo 7: Executar script para atualizar resultados de apostas
+    # Passo 8: Executar script para atualizar resultados de apostas
     - name: Update bet results
       run: |
         echo "💰 Updating bet results..."
         cd scripts && python db_get_bet_results.py
         echo "✅ Bet results updated in database"
 
-    # Passo 8: Executar script para verificar novas apostas de valor
+    # Passo 9: Executar script para verificar novas apostas de valor
     - name: Find value bets
       run: |
         echo "🔍 Analyzing value bets..."
         cd scripts && python db_get_bets.py
         echo "✅ Value bets analysis completed and stored in database"
 
-    # Passo 9: Verificar se há mudanças nos bancos de dados
+    # Passo 10: Verificar se há mudanças nos bancos de dados
     - name: Check for database changes
       id: verify-changed-files
       run: |
@@ -94,7 +94,7 @@ jobs:
           echo "📝 No database changes detected"
         fi
 
-    # Passo 10: Fazer commit e push dos bancos de dados atualizados
+    # Passo 11: Fazer commit e push dos bancos de dados atualizados
     - name: Commit and push updated databases
       if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
@@ -114,14 +114,15 @@ jobs:
         # Fazer commit
         git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
         
-        # Fazer pull com rebase para evitar conflitos
-        git pull --rebase origin main
+        # Sincronizar com o repositório remoto
+        git fetch origin main
+        git rebase origin/main
         
-        # Fazer push
+        # Fazer push forçado para garantir que as alterações sejam aplicadas
         git push origin main
         echo "✅ Updated databases pushed to repository"
 
-    # Passo 11: Resumo da execução
+    # Passo 12: Resumo da execução
     - name: Execution Summary
       if: always()
       run: |
