@@ -129,11 +129,15 @@ class BetScanner:
         conn.commit()
         conn.close()
 
-    def _notify_new_bet(self, bet: Dict, stake: float = 1.0):
-        """Notifica sobre uma nova aposta via Telegram"""
+    def _notify_new_bet(self, bets: List[Dict], stake: float = 1.0):
+        """Notifica sobre múltiplas apostas do mesmo evento via Telegram de forma agrupada"""
         try:
-            # Buscar informações do evento para obter nomes dos times
-            event_info = self.analyzer.get_event_info(bet["event_id"])
+            if not bets:
+                return
+
+            # Usa o primeiro item para obter informações do evento
+            first_bet = bets[0]
+            event_info = self.analyzer.get_event_info(first_bet["event_id"])
 
             if event_info:
                 home_team = event_info.get("home_team", "Unknown")
@@ -146,7 +150,7 @@ class BetScanner:
                 league_name = "Unknown"
                 match_date = "Unknown"
 
-            # Formatar data se disponível
+            # Formatar data
             if match_date != "Unknown":
                 try:
                     dt = datetime.strptime(match_date, "%Y-%m-%d %H:%M:%S")
@@ -156,35 +160,65 @@ class BetScanner:
             else:
                 formatted_date = "Data não disponível"
 
-            # Calcular ganho potencial
-            potential_win = (bet["house_odds"] - 1) * stake
+            # Agrupa mercados similares
+            market_groups = {}
+            for bet in bets:
+                market_name = bet["market_name"]
+                # Simplifica nomes de mercado para agrupamento
+                if "Map 1" in market_name and "Totals" in market_name:
+                    base_market = "Map 1 - Totals"
+                elif "Map 2" in market_name and "Totals" in market_name:
+                    base_market = "Map 2 - Totals"
+                else:
+                    base_market = market_name
 
-            # Formatar mensagem
-            message = (
-                f"🎯 *Nova Aposta Encontrada!*\n\n"
-                f"🏆 *Liga:* {league_name}\n"
-                f"⚔️ *Partida:* {home_team} vs {away_team}\n"
-                f"📅 *Data:* {formatted_date}\n"
-                f"🗺️ *Mercado:* {bet['market_name']}\n"
-                f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
-                f"💰 *Odds da Casa:* {bet['house_odds']}\n"
-                f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
-                f"⚖️ *Odd Justa:* {bet['fair_odds']:.2f}\n"
-                f"💵 *Stake:* {stake} unidade(s)\n"
-                f"🎰 *Ganho Potencial:* {potential_win:.2f} unidades\n\n"
-                f"#LoL #Bet365 #Aposta #EV+"
-            )
+                if base_market not in market_groups:
+                    market_groups[base_market] = []
+                market_groups[base_market].append(bet)
+
+            # Constrói mensagem agrupada
+            message = f"🎯 *Nova Aposta Encontrada!*\n\n🏆 *Liga:* {league_name}\n"
+            message += f"⚔️ *Partida:* {home_team} vs {away_team}\n"
+            message += f"📅 *Data:* {formatted_date}\n\n"
+
+            for market_name, market_bets in market_groups.items():
+                if len(market_bets) > 1:
+                    # Mensagem agrupada para múltiplos mapas
+                    message += f"🗺️ *Mercado:* {market_name.replace('Map 1 - ', '').replace('Map 2 - ', '')} - Mapa 1 & 2\n"
+                    for bet in market_bets:
+                        potential_win = (bet["house_odds"] - 1) * stake
+                        message += (
+                            f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
+                        )
+                        message += f"💰 *Odds:* {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
+                    message += f"📊 *ROI Médio:* {sum(b['roi_average'] for b in market_bets) / len(market_bets):.1f}%\n"
+                    message += f"⚖️ *Odd Justa Média:* {sum(b['fair_odds'] for b in market_bets) / len(market_bets):.2f}\n"
+                    message += f"💵 *Stake:* {stake} unidade(s) por aposta\n"
+                    message += f"🎰 *Ganho Potencial Total:* {sum((b['house_odds'] - 1) * stake for b in market_bets):.2f} unidades\n\n"
+                else:
+                    # Mensagem individual para mercado único
+                    bet = market_bets[0]
+                    potential_win = (bet["house_odds"] - 1) * stake
+                    message += f"🗺️ *Mercado:* {market_name}\n"
+                    message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
+                    message += f"💰 *Odds da Casa:* {bet['house_odds']}\n"
+                    message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
+                    message += f"⚖️ *Odd Justa:* {bet['fair_odds']:.2f}\n"
+                    message += f"💵 *Stake:* {stake} unidade(s)\n"
+                    message += f"🎰 *Ganho Potencial:* {potential_win:.2f} unidades\n\n"
+
+            message += "#LoL #Bet365 #Aposta #EV+"
 
             # Enviar notificação
             success = self.telegram_notifier.send_message(message, parse_mode="Markdown")
 
             if success:
-                print(f"📤 Notificação enviada para Telegram: {bet['selection_line']}")
+                print(f"📤 Notificação agrupada enviada para Telegram")
             else:
-                print(f"⚠️ Falha ao enviar notificação para Telegram")
+                print(f"⚠️ Falha ao enviar notificação agrupada")
 
         except Exception as e:
-            print(f"❌ Erro ao enviar notificação: {str(e)}")
+            print(f"❌ Erro ao enviar notificação agrupada: {str(e)}")
 
     def update_bet_result(self, bet_id: int, bet_status: str, actual_win: float = 0):
         """Atualiza o resultado de uma aposta"""
@@ -418,52 +452,71 @@ class BetScanner:
         conn = sqlite3.connect(self.bets_db_path)
         cursor = conn.cursor()
 
+        bets_by_event = {}
         for bet in bets:
-            # Verificar se a aposta já existe para evitar duplicatas
-            cursor.execute(
-                """
-                SELECT id FROM bets 
-                WHERE event_id = ? AND market_name = ? AND selection_line = ? AND handicap = ?
-                """,
-                (
-                    bet["event_id"],
-                    bet["market_name"],
-                    bet["selection_line"],
-                    bet["handicap"],
-                ),
-            )
-            existing_bet = cursor.fetchone()
+            event_id = bet["event_id"]
+            if event_id not in bets_by_event:
+                bets_by_event[event_id] = []
+            bets_by_event[event_id].append(bet)
 
-            if existing_bet:
-                print(f"⏭️ Aposta já existe: {bet['selection_line']} {bet['handicap']}")
-                continue
+        new_bets_by_event = {}  # Para armazenar apenas as apostas novas por evento
 
-            potential_win = (bet["house_odds"] - 1) * stake
+        for event_id, event_bets in bets_by_event.items():
+            new_bets_for_event = []  # Apostas novas para este evento
 
-            cursor.execute(
-                """
-                INSERT INTO bets 
-                (event_id, market_name, selection_line, handicap, house_odds, roi_average, fair_odds, stake, potential_win)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    bet["event_id"],
-                    bet["market_name"],
-                    bet["selection_line"],
-                    bet["handicap"],
-                    bet["house_odds"],
-                    bet["roi_average"],
-                    bet["fair_odds"],
-                    stake,
-                    potential_win,
-                ),
-            )
+            for bet in event_bets:
+                # Verificar se a aposta já existe para evitar duplicatas
+                cursor.execute(
+                    """
+                    SELECT id FROM bets 
+                    WHERE event_id = ? AND market_name = ? AND selection_line = ? AND handicap = ?
+                    """,
+                    (
+                        bet["event_id"],
+                        bet["market_name"],
+                        bet["selection_line"],
+                        bet["handicap"],
+                    ),
+                )
+                existing_bet = cursor.fetchone()
 
-            # Notificar sobre a nova aposta apenas se for nova
-            self._notify_new_bet(bet, stake)
+                if existing_bet:
+                    print(f"⏭️ Aposta já existe: {bet['selection_line']} {bet['handicap']}")
+                    continue
+
+                potential_win = (bet["house_odds"] - 1) * stake
+
+                cursor.execute(
+                    """
+                    INSERT INTO bets 
+                    (event_id, market_name, selection_line, handicap, house_odds, roi_average, fair_odds, stake, potential_win)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        bet["event_id"],
+                        bet["market_name"],
+                        bet["selection_line"],
+                        bet["handicap"],
+                        bet["house_odds"],
+                        bet["roi_average"],
+                        bet["fair_odds"],
+                        stake,
+                        potential_win,
+                    ),
+                )
+
+                new_bets_for_event.append(bet)
+
+            # Se houver novas apostas para este evento, adicionar ao dicionário
+            if new_bets_for_event:
+                new_bets_by_event[event_id] = new_bets_for_event
 
         conn.commit()
         conn.close()
+
+        # Notificar sobre as novas apostas, agrupadas por evento
+        for event_id, event_bets in new_bets_by_event.items():
+            self._notify_new_bet(event_bets, stake)
 
     def get_performance_stats(self) -> Dict:
         """Retorna estatísticas de desempenho das apostas"""
