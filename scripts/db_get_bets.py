@@ -164,62 +164,84 @@ class BetScanner:
             market_groups = {}
             for bet in bets:
                 market_name = bet["market_name"]
-                
+
                 # Identifica o tipo de mercado (removendo informação de mapa)
                 if "Map 1" in market_name:
                     base_market = market_name.replace("Map 1 - ", "")
+                    map_info = "Mapa 1"
                 elif "Map 2" in market_name:
                     base_market = market_name.replace("Map 2 - ", "")
+                    map_info = "Mapa 2"
                 else:
                     base_market = market_name
+                    map_info = "Geral"
 
                 if base_market not in market_groups:
-                    market_groups[base_market] = []
-                market_groups[base_market].append(bet)
+                    market_groups[base_market] = {}
+
+                if map_info not in market_groups[base_market]:
+                    market_groups[base_market][map_info] = []
+
+                market_groups[base_market][map_info].append(bet)
 
             # Constrói mensagem agrupada
             message = f"🎯 *Nova Aposta Encontrada!*\n\n🏆 *Liga:* {league_name}\n"
             message += f"⚔️ *Partida:* {home_team} vs {away_team}\n"
             message += f"📅 *Data:* {formatted_date}\n\n"
 
-            for market_name, market_bets in market_groups.items():
-                # Verifica se é o mesmo mercado em ambos os mapas
-                if len(market_bets) == 2 and all(b['selection_line'] == market_bets[0]['selection_line'] and 
-                                                b['handicap'] == market_bets[0]['handicap'] and 
-                                                b['house_odds'] == market_bets[0]['house_odds'] 
-                                                for b in market_bets):
-                    # Caso especial: mesma aposta em ambos os mapas
-                    bet = market_bets[0]
+            for market_name, maps_data in market_groups.items():
+                # Verifica se todas as apostas são iguais em ambos os mapas
+                all_same = True
+                if "Mapa 1" in maps_data and "Mapa 2" in maps_data:
+                    map1_bets = maps_data["Mapa 1"]
+                    map2_bets = maps_data["Mapa 2"]
+
+                    if len(map1_bets) == len(map2_bets):
+                        for i in range(len(map1_bets)):
+                            bet1 = map1_bets[i]
+                            bet2 = map2_bets[i]
+
+                            if (
+                                bet1["selection_line"] != bet2["selection_line"]
+                                or bet1["handicap"] != bet2["handicap"]
+                                or bet1["house_odds"] != bet2["house_odds"]
+                            ):
+                                all_same = False
+                                break
+                    else:
+                        all_same = False
+                else:
+                    all_same = False
+
+                if all_same:
+                    # Mesma aposta em ambos os mapas
+                    bet = maps_data["Mapa 1"][0]
                     message += f"🗺️ *Mercado:* {market_name} (Mapa 1 & 2)\n"
                     message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
                     message += f"💰 *Odds:* {bet['house_odds']}\n"
                     message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
-                    message += f"⚖️ *Odd Justa:* {bet['fair_odds']:.2f}\n"
                     message += f"💵 *Stake:* {stake} unidade(s) por mapa\n\n"
                 else:
-                    # Mercado com apostas diferentes
+                    # Apostas diferentes por mapa
                     message += f"📊 *Mercado:* {market_name}\n"
-                    
-                    for bet in market_bets:
-                        # Identifica em qual mapa é a aposta
-                        if "Map 1" in bet["market_name"]:
-                            map_info = "🗺️ Mapa 1:"
-                        elif "Map 2" in bet["market_name"]:
-                            map_info = "🗺️ Mapa 2:"
+
+                    for map_name, map_bets in maps_data.items():
+                        if len(map_bets) == 1:
+                            # Apenas uma aposta neste mapa
+                            bet = map_bets[0]
+                            message += f"\n🗺️ *{map_name}:*\n"
+                            message += f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
+                            message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
                         else:
-                            map_info = "🌐 Geral:"
-                        
-                        message += f"\n{map_info}\n"
-                        message += f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
-                        message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
-                    
-                    # Calcula médias para o mercado
-                    avg_roi = sum(b['roi_average'] for b in market_bets) / len(market_bets)
-                    avg_fair_odds = sum(b['fair_odds'] for b in market_bets) / len(market_bets)
-                    
-                    message += f"\n📈 *ROI Médio:* {avg_roi:.1f}%\n"
-                    message += f"⚖️ *Odd Justa Média:* {avg_fair_odds:.2f}\n"
-                    message += f"💵 *Stake:* {stake} unidade(s) por aposta\n\n"
+                            # Múltiplas apostas no mesmo mapa
+                            message += f"\n🗺️ *{map_name}:*\n"
+                            for bet in map_bets:
+                                message += (
+                                    f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
+                                )
+                                message += f"   💰 Odds: {bet['house_odds']} | ROI: {bet['roi_average']:.1f}%\n"
+
+                    message += f"\n💵 *Stake:* {stake} unidade(s) por aposta\n\n"
 
             message += "#LoL #Bet365 #Aposta #EV+"
 

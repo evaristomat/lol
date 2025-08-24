@@ -45,7 +45,7 @@ jobs:
         echo "TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID" >> .env
         echo "✅ Environment file created"
 
-    # Passo 5: Criar diretórios necessários
+    # Passo 4.5: Criar diretórios necessários
     - name: Create required directories
       run: |
         mkdir -p data
@@ -53,35 +53,35 @@ jobs:
         mkdir -p reports
         echo "✅ Directories created"
 
-    # Passo 6: Executar script para obter odds dos próximos 10 dias
+    # Passo 5: Executar script para obter odds dos próximos 10 dias
     - name: Get upcoming odds (10 days)
       run: |
         echo "📊 Fetching upcoming odds..."
         cd scripts && python db_get_odds.py
         echo "✅ Odds retrieved and stored in database"
 
-    # Passo 7: Executar script para atualizar resultados dos últimos 2 dias
+    # Passo 6: Executar script para atualizar resultados dos últimos 2 dias
     - name: Get recent match results (2 days)
       run: |
         echo "🏆 Fetching recent match results..."
         cd scripts && python db_get_matches.py
         echo "✅ Match results retrieved and stored in database"
 
-    # Passo 8: Executar script para atualizar resultados de apostas
+    # Passo 7: Executar script para atualizar resultados de apostas
     - name: Update bet results
       run: |
         echo "💰 Updating bet results..."
         cd scripts && python db_get_bet_results.py
         echo "✅ Bet results updated in database"
 
-    # Passo 9: Executar script para verificar novas apostas de valor
+    # Passo 8: Executar script para verificar novas apostas de valor
     - name: Find value bets
       run: |
         echo "🔍 Analyzing value bets..."
         cd scripts && python db_get_bets.py
         echo "✅ Value bets analysis completed and stored in database"
 
-    # Passo 10: Verificar se há mudanças nos bancos de dados
+    # Passo 9: Verificar se há mudanças nos bancos de dados
     - name: Check for database changes
       id: verify-changed-files
       run: |
@@ -94,7 +94,7 @@ jobs:
           echo "📝 No database changes detected"
         fi
 
-    # Passo 11: Fazer commit e push dos bancos de dados atualizados
+    # Passo 10: Fazer commit e push dos bancos de dados atualizados
     - name: Commit and push updated databases
       if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
@@ -102,27 +102,56 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Adicionar apenas os arquivos de banco de dados
+        # IMPORTANTE: Adicionar os arquivos ANTES de fazer pull
+        echo "📦 Adding database files to staging..."
         git add data/*.db
         
-        # Verificar se há mudanças para commitar
-        if git diff --staged --quiet; then
-          echo "⚠️ No changes to commit after all"
-          exit 0
-        fi
+        # Fazer stash das mudanças staged para preservá-las
+        echo "💾 Stashing changes..."
+        git stash
+        
+        # Fazer pull das mudanças remotas
+        echo "⬇️ Pulling latest changes from remote..."
+        git pull --rebase origin main
+        
+        # Aplicar o stash de volta
+        echo "📋 Applying stashed changes..."
+        git stash pop || true  # || true para não falhar se não houver conflitos menores
+        
+        # Adicionar novamente os arquivos (caso necessário após o stash pop)
+        git add data/*.db
         
         # Fazer commit
-        git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')"
+        echo "💬 Creating commit..."
+        git commit -m "🤖 Auto-update databases: $(date +'%Y-%m-%d %H:%M UTC')" || {
+          echo "⚠️ No changes to commit after merge"
+          exit 0
+        }
         
-        # Sincronizar com o repositório remoto
-        git fetch origin main
-        git rebase origin/main
+        # Fazer push com retry em caso de falha
+        echo "⬆️ Pushing to remote..."
+        max_attempts=3
+        attempt=1
         
-        # Fazer push forçado para garantir que as alterações sejam aplicadas
-        git push origin main
-        echo "✅ Updated databases pushed to repository"
+        while [ $attempt -le $max_attempts ]; do
+          if git push origin main; then
+            echo "✅ Updated databases pushed to repository"
+            break
+          else
+            echo "⚠️ Push failed (attempt $attempt/$max_attempts)"
+            if [ $attempt -lt $max_attempts ]; then
+              echo "🔄 Pulling latest changes and retrying..."
+              git pull --rebase origin main
+              attempt=$((attempt + 1))
+              sleep 2
+            else
+              echo "❌ Failed to push after $max_attempts attempts"
+              exit 1
+            fi
+          fi
+        done
 
-    # Passo 12: Resumo da execução
+    # Passo 11: Resumo da execução
     - name: Execution Summary
       if: always()
       run: |
