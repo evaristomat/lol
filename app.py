@@ -9,7 +9,6 @@ import os
 import time
 
 
-# Verificar se o banco de dados foi modificado
 def check_db_modified():
     db_path = "data/bets.db"
     if os.path.exists(db_path):
@@ -145,14 +144,6 @@ def main():
         '<h1 class="main-header">🎯 Bet365 Analytics Dashboard</h1>',
         unsafe_allow_html=True,
     )
-
-    # Botão de atualização manual na sidebar
-    with st.sidebar:
-        st.header("Controles")
-        if st.button("🔄 Atualizar Dados do Banco"):
-            st.cache_data.clear()
-            st.session_state.last_db_update = 0
-            st.rerun()
 
     # Carregar dados
     events_df = load_events()
@@ -308,6 +299,7 @@ def main():
             st.cache_data.clear()
             st.session_state.last_db_update = current_db_mtime
             st.rerun()
+
 
 def show_pending_bets(bets_with_events):
     st.header("🎯 Apostas em Aberto")

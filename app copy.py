@@ -6,17 +6,24 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import numpy as np
 import os
+import time
 
-# Verificar se o banco de dados foi modificado
 def check_db_modified():
     db_path = "data/bets.db"
     if os.path.exists(db_path):
         return os.path.getmtime(db_path)
     return 0
 
-    # Inicializar variáveis de sessão para controle de atualização
 
+# Configuração da página
+st.set_page_config(
+    page_title="Bet365 Analytics Dashboard",
+    page_icon="🎯",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
 
+# Inicializar variáveis de sessão para controle de atualização
 if "last_db_update" not in st.session_state:
     st.session_state.last_db_update = check_db_modified()
 
@@ -27,15 +34,6 @@ if current_db_mtime > st.session_state.last_db_update:
     st.cache_data.clear()
     st.session_state.last_db_update = current_db_mtime
     st.rerun()
-
-    
-# Configuração da página
-st.set_page_config(
-    page_title="Bet365 Analytics Dashboard",
-    page_icon="🎯",
-    layout="wide",
-    initial_sidebar_state="collapsed",
-)
 
 # CSS personalizado
 st.markdown(
@@ -251,13 +249,13 @@ def main():
         else:
             st.metric("🎯 Taxa de Acerto", "0.0%")
 
-    # Abas principais - Reordenadas e renomeadas
+    # Abas principais - REORDENADAS: Resultados do Mês antes de Resultado Geral
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         [
             "🎯 Apostas em Aberto",
             "🎮 Estratégia V1",
-            "📈 Resultado Geral",
-            f"📅 Resultados {datetime.now().strftime('%B %Y')}",
+            f"📅 Resultados {datetime.now().strftime('%B %Y')}",  # Movida para antes
+            "📈 Resultado Geral",  # Movida para depois
             "📋 Estatísticas",
             "📊 Todas as Apostas",
         ]
@@ -269,11 +267,11 @@ def main():
     with tab2:
         show_strategy_v1()
 
-    with tab3:
-        show_general_results(resolved_bets_df, events_df)
-
-    with tab4:
+    with tab3:  # Agora é Resultados do Mês
         show_current_month_results(resolved_bets_df, events_df)
+
+    with tab4:  # Agora é Resultado Geral
+        show_general_results(resolved_bets_df, events_df)
 
     with tab5:
         show_statistics(resolved_bets_df, events_df)
@@ -289,6 +287,17 @@ def main():
         f"Banco: data/bets.db ({len(bets_df)} apostas)"
     )
 
+    # Verificar atualizações a cada 30 segundos
+    if "last_update_check" not in st.session_state:
+        st.session_state.last_update_check = time.time()
+
+    if time.time() - st.session_state.last_update_check > 30:
+        st.session_state.last_update_check = time.time()
+        current_db_mtime = check_db_modified()
+        if current_db_mtime > st.session_state.last_db_update:
+            st.cache_data.clear()
+            st.session_state.last_db_update = current_db_mtime
+            st.rerun()
 
 def show_pending_bets(bets_with_events):
     st.header("🎯 Apostas em Aberto")
@@ -297,7 +306,7 @@ def show_pending_bets(bets_with_events):
         st.info("Nenhuma aposta em aberto com os filtros atuais.")
         return
 
-    # Métricas rápidas - Alterado conforme solicitado
+    # Métricas rápidas
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
@@ -310,11 +319,11 @@ def show_pending_bets(bets_with_events):
 
     with col3:
         total_stake = bets_with_events["stake"].sum()
-        st.metric("💰 Unidades em Aberto", f"{total_stake:.0f} un.")  # Alterado
+        st.metric("💰 Unidades em Aberto", f"{total_stake:.0f} un.")
 
     with col4:
         total_potential = bets_with_events["potential_win"].sum()
-        st.metric("🚀 Ganho Potencial", f"{total_potential:.0f} un.")  # Alterado
+        st.metric("🚀 Ganho Potencial", f"{total_potential:.0f} un.")
 
     # Ordenar por data (mais antigo primeiro - ordem crescente)
     bets_with_events["match_date"] = pd.to_datetime(bets_with_events["match_date"])
@@ -329,6 +338,10 @@ def show_pending_bets(bets_with_events):
     )
     sorted_bets["Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
 
+    # Certificar-se de que a coluna handicap existe
+    if "handicap" not in sorted_bets.columns:
+        sorted_bets["handicap"] = None
+
     # Exibir tabela
     display_cols = [
         "match_date_display",
@@ -336,6 +349,7 @@ def show_pending_bets(bets_with_events):
         "league_name",
         "market_name",
         "selection_line",
+        "handicap",
         "house_odds",
         "fair_odds",
         "roi_average",
@@ -350,6 +364,7 @@ def show_pending_bets(bets_with_events):
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
+            "handicap": st.column_config.NumberColumn("Linha", format="%.1f"),
             "house_odds": st.column_config.NumberColumn("Odds Casa", format="%.2f"),
             "fair_odds": st.column_config.NumberColumn("Odds Justas", format="%.2f"),
             "roi_average": st.column_config.NumberColumn("ROI (%)", format="%.1f%%"),
@@ -367,7 +382,6 @@ def show_pending_bets(bets_with_events):
     col1, col2 = st.columns(2)
 
     with col1:
-        # Distribuição de apostas por liga
         league_distribution = sorted_bets["league_name"].value_counts()
         fig = px.pie(
             values=league_distribution.values,
@@ -379,7 +393,6 @@ def show_pending_bets(bets_with_events):
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        # Distribuição de apostas por seleção (top 10)
         selection_distribution = sorted_bets["selection_line"].value_counts().head(10)
         fig = px.bar(
             x=selection_distribution.values,
@@ -752,24 +765,31 @@ def show_all_bets(bets_df, events_df):
         all_bets_with_events["home_team"] + " vs " + all_bets_with_events["away_team"]
     )
 
+    # Certificar-se de que a coluna handicap existe
+    if "handicap" not in all_bets_with_events.columns:
+        all_bets_with_events["handicap"] = None
+
+    # Exibir tabela
+    display_cols = [
+        "match_date_display",
+        "Partida",
+        "league_name",
+        "market_name",
+        "selection_line",
+        "handicap",
+        "house_odds",
+        "bet_status",
+        "stake",
+    ]
+
     st.dataframe(
-        all_bets_with_events[
-            [
-                "match_date_display",
-                "Partida",
-                "league_name",
-                "market_name",
-                "selection_line",
-                "house_odds",
-                "bet_status",
-                "stake",
-            ]
-        ],
+        all_bets_with_events[display_cols],
         column_config={
             "match_date_display": "Data/Hora",
             "league_name": "Liga",
             "market_name": "Mercado",
             "selection_line": "Seleção",
+            "handicap": st.column_config.NumberColumn("Linha", format="%.1f"),
             "house_odds": "Odds",
             "bet_status": "Status",
             "stake": "Stake",
@@ -790,13 +810,118 @@ def show_statistics(resolved_bets, events_df):
     # Juntar com eventos
     stats_data = pd.merge(
         resolved_bets,
-        events_df[["event_id", "league_name", "home_team", "away_team"]],
+        events_df[["event_id", "league_name", "home_team", "away_team", "match_date"]],
         on="event_id",
         how="left",
     )
 
     # Calcular lucro/prejuízo
     stats_data["Lucro_Prejuizo"] = stats_data.apply(calculate_profit_loss, axis=1)
+
+    # Verificar se temos dados suficientes
+    if len(stats_data) > 0:
+        # Converter data para datetime
+        stats_data["match_date"] = pd.to_datetime(stats_data["match_date"])
+
+        # Ordenar por data
+        stats_data = stats_data.sort_values("match_date")
+
+        # Separar dados por tipo de mercado
+        map1_data = stats_data[stats_data["market_name"] == "Map 1 - Totals"].copy()
+        map2_data = stats_data[stats_data["market_name"] == "Map 2 - Totals"].copy()
+
+        # Calcular lucro acumulado para cada tipo
+        evolution_data = []
+
+        # MAP 1
+        if not map1_data.empty:
+            map1_data["Lucro_Acumulado"] = map1_data["Lucro_Prejuizo"].cumsum()
+            map1_evolution = map1_data[["match_date", "Lucro_Acumulado"]].copy()
+            map1_evolution["Tipo"] = "MAP 1"
+            evolution_data.append(map1_evolution)
+
+        # MAP 2
+        if not map2_data.empty:
+            map2_data["Lucro_Acumulado"] = map2_data["Lucro_Prejuizo"].cumsum()
+            map2_evolution = map2_data[["match_date", "Lucro_Acumulado"]].copy()
+            map2_evolution["Tipo"] = "MAP 2"
+            evolution_data.append(map2_evolution)
+
+        # Total Geral (todas as apostas)
+        stats_data["Lucro_Acumulado_Total"] = stats_data["Lucro_Prejuizo"].cumsum()
+        total_evolution = stats_data[["match_date", "Lucro_Acumulado_Total"]].copy()
+        total_evolution.columns = ["match_date", "Lucro_Acumulado"]
+        total_evolution["Tipo"] = "Total Geral"
+        evolution_data.append(total_evolution)
+
+        if evolution_data:
+            evolution_df = pd.concat(evolution_data)
+
+            # Criar gráfico
+            fig = px.line(
+                evolution_df,
+                x="match_date",
+                y="Lucro_Acumulado",
+                color="Tipo",
+                title="Evolução da Banca por Estratégia",
+                labels={
+                    "match_date": "Data",
+                    "Lucro_Acumulado": "Lucro Acumulado (un.)",
+                },
+                color_discrete_map={
+                    "MAP 1": "#1E88E5",
+                    "MAP 2": "#FFA726",
+                    "Total Geral": "#AB47BC",
+                },
+            )
+
+            fig.update_layout(
+                hovermode="x unified",
+                height=400,
+                legend=dict(
+                    orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1
+                ),
+            )
+
+            # Adicionar linha no zero
+            fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
+
+            st.plotly_chart(fig, use_container_width=True)
+
+            # Métricas de performance por estratégia
+            col1, col2, col3, col4 = st.columns(4)
+
+            with col1:
+                if not map1_data.empty:
+                    lucro_map1 = map1_data["Lucro_Prejuizo"].sum()
+                    st.metric(
+                        "MAP 1",
+                        f"{lucro_map1:.2f} un.",
+                        delta=f"{len(map1_data)} apostas",
+                    )
+
+            with col2:
+                if not map2_data.empty:
+                    lucro_map2 = map2_data["Lucro_Prejuizo"].sum()
+                    st.metric(
+                        "MAP 2",
+                        f"{lucro_map2:.2f} un.",
+                        delta=f"{len(map2_data)} apostas",
+                    )
+
+            with col3:
+                lucro_total = stats_data["Lucro_Prejuizo"].sum()
+                st.metric(
+                    "Total Geral",
+                    f"{lucro_total:.2f} un.",
+                    delta=f"{len(stats_data)} apostas",
+                )
+        else:
+            st.info("Dados insuficientes para mostrar a evolução da banca.")
+    else:
+        st.info("Dados insuficientes para mostrar a evolução da banca.")
+
+    st.markdown("---")
 
     # Seção 1: Estatísticas por Mercado e Seleção
     col1, col2 = st.columns(2)
