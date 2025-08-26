@@ -325,7 +325,7 @@ def show_pending_bets(bets_with_events):
 
     with col4:
         total_potential = bets_with_events["potential_win"].sum()
-        st.metric("🚀 Ganho Potencial", f"{total_potential:.0f} un.")
+        st.metric("🚀 Ganho Potencial", f"{total_potential:.2f} un.")
 
     # Ordenar por data (mais antigo primeiro - ordem crescente)
     bets_with_events["match_date"] = pd.to_datetime(bets_with_events["match_date"])
@@ -372,7 +372,7 @@ def show_pending_bets(bets_with_events):
             "roi_average": st.column_config.NumberColumn("ROI (%)", format="%.1f%%"),
             "stake": st.column_config.NumberColumn("Stake", format="%.0f un."),
             "potential_win": st.column_config.NumberColumn(
-                "Ganho Potencial", format="%.0f un."
+                "Ganho Potencial", format="%.2f un."
             ),
         },
         hide_index=True,
