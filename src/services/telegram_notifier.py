@@ -37,3 +37,17 @@ class TelegramNotifier:
             logger.error(f"Erro ao enviar mensagem para o Telegram: {e}")
             print(f"❌ Erro ao enviar mensagem para o Telegram: {e}")
             return False
+
+    def notify_new_event(
+        self, team1: str, team2: str, league: str, competition: str
+    ) -> bool:
+        """Notifica sobre novo evento disponível na Bet365"""
+        message = (
+            f"🎮 **NOVO JOGO DISPONÍVEL**\n\n"
+            f"🆚 **{team1}** vs **{team2}**\n"
+            f"🏆 **Liga:** {league}\n"
+            f"🎯 **Competição:** {competition}\n\n"
+            f"💰 Apostas disponíveis na Bet365!"
+        )
+
+        return self.send_message(message, parse_mode="Markdown")

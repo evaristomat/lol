@@ -9,3 +9,5 @@
 # Logs
 logs/
 *.log
+
+send_telegram_msg.py
