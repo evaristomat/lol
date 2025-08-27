@@ -7,7 +7,7 @@ async def check_result():
     client = Bet365Client()
 
     try:
-        event_id = "179764529"
+        event_id = "180107617"
         print(f"🔍 Verificando resultado para event_id: {event_id}")
 
         # Buscar resultado
@@ -89,7 +89,7 @@ async def check_multiple_results():
     client = Bet365Client()
 
     # Lista de event_ids para verificar (pode vir de um CSV)
-    event_ids = ["178588919"]  # Adicione mais IDs aqui
+    event_ids = ["180107617"]  # Adicione mais IDs aqui
 
     try:
         for event_id in event_ids:

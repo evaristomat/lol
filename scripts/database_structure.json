@@ -1,0 +1,537 @@
+{
+  "database_path": "../data/bets.db",
+  "tables": {
+    "events": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "event_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "league_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "match_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "home_team",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "away_team",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'scheduled'",
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "home_score",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "away_score",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "winner",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "created_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "updated_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        }
+      ],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_events_date",
+          "unique": false
+        },
+        {
+          "seq": 1,
+          "name": "idx_events_status",
+          "unique": false
+        },
+        {
+          "seq": 2,
+          "name": "sqlite_autoindex_events_1",
+          "unique": true
+        }
+      ],
+      "foreign_keys": [],
+      "record_count": 548,
+      "sample_data": {
+        "columns": [
+          "event_id",
+          "league_name",
+          "match_date",
+          "home_team",
+          "away_team",
+          "status",
+          "home_score",
+          "away_score",
+          "winner",
+          "created_at",
+          "updated_at"
+        ],
+        "records": [
+          [
+            "179606990",
+            "LOL - TCL Summer",
+            "2025-08-21 12:30:00",
+            "Dark Passage",
+            "Papara SuperMassive",
+            "finished",
+            0,
+            0,
+            null,
+            "2025-08-21 22:32:22",
+            "2025-08-27 09:21:10"
+          ],
+          [
+            "179606999",
+            "LOL - TCL Summer",
+            "2025-08-22 13:30:00",
+            "ULF Esports",
+            "Besiktas Esports",
+            "finished",
+            0,
+            0,
+            null,
+            "2025-08-21 22:32:22",
+            "2025-08-27 09:21:10"
+          ],
+          [
+            "179555503",
+            "LOL - Rift Legends Summer",
+            "2025-08-23 14:00:00",
+            "DOCISK",
+            "Back2TheGame",
+            "scheduled",
+            0,
+            0,
+            null,
+            "2025-08-21 22:32:22",
+            "2025-08-21 22:32:22"
+          ]
+        ]
+      }
+    },
+    "bets": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "event_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "market_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "selection_line",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "handicap",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "house_odds",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "roi_average",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "fair_odds",
+          "type": "REAL",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "actual_value",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "bet_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'pending'",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "stake",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "potential_win",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "actual_win",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "result_verified",
+          "type": "BOOLEAN",
+          "notnull": false,
+          "default_value": "FALSE",
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "created_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "updated_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        }
+      ],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_bets_event",
+          "unique": false
+        },
+        {
+          "seq": 1,
+          "name": "idx_bets_status",
+          "unique": false
+        },
+        {
+          "seq": 2,
+          "name": "sqlite_autoindex_bets_1",
+          "unique": true
+        }
+      ],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "events",
+          "from": "event_id",
+          "to": "event_id",
+          "on_update": "NO ACTION",
+          "on_delete": "CASCADE",
+          "match": "NONE"
+        }
+      ],
+      "record_count": 2085,
+      "sample_data": {
+        "columns": [
+          "id",
+          "event_id",
+          "market_name",
+          "selection_line",
+          "handicap",
+          "house_odds",
+          "roi_average",
+          "fair_odds",
+          "actual_value",
+          "bet_status",
+          "stake",
+          "potential_win",
+          "actual_win",
+          "result_verified",
+          "created_at",
+          "updated_at"
+        ],
+        "records": [
+          [
+            1,
+            "179606990",
+            "Map 1 - Totals",
+            "Over Total Inhibitors",
+            1.5,
+            1.66,
+            24.499999999999993,
+            1.3333333333333333,
+            3.0,
+            "won",
+            1.0,
+            0.6599999999999999,
+            0.66,
+            1,
+            "2025-08-21 22:32:28",
+            "2025-08-21 22:33:18"
+          ],
+          [
+            2,
+            "179606990",
+            "Map 1 - Totals",
+            "Under Total Dragons",
+            4.5,
+            2.2,
+            48.500000000000014,
+            1.4814814814814814,
+            4.0,
+            "won",
+            1.0,
+            1.2000000000000002,
+            1.2,
+            1,
+            "2025-08-21 22:32:28",
+            "2025-08-21 22:33:18"
+          ],
+          [
+            3,
+            "179606990",
+            "Map 1 - Totals",
+            "Under Total Towers",
+            12.5,
+            2.2,
+            76.00000000000001,
+            1.25,
+            12.0,
+            "won",
+            1.0,
+            1.2000000000000002,
+            1.2,
+            1,
+            "2025-08-21 22:32:28",
+            "2025-08-21 22:33:18"
+          ]
+        ]
+      }
+    },
+    "sqlite_sequence": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "name",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 1,
+          "name": "seq",
+          "type": "",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "record_count": 1,
+      "sample_data": {
+        "columns": [
+          "name",
+          "seq"
+        ],
+        "records": [
+          [
+            "bets",
+            2085
+          ]
+        ]
+      }
+    },
+    "results_verification": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "event_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "bet_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "expected_result",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "actual_result",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "profit_loss",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "verified_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        }
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "table": "bets",
+          "from": "bet_id",
+          "to": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "CASCADE",
+          "match": "NONE"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "table": "events",
+          "from": "event_id",
+          "to": "event_id",
+          "on_update": "NO ACTION",
+          "on_delete": "CASCADE",
+          "match": "NONE"
+        }
+      ],
+      "record_count": 0
+    }
+  }
+}

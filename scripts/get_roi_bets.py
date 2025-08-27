@@ -505,7 +505,7 @@ class ROIAnalyzer:
 # Exemplo de uso
 if __name__ == "__main__":
     DB_PATH = "../data/lol_odds.db"
-    EVENT_ID = "179606652"
+    EVENT_ID = "180107617"
 
     analyzer = ROIAnalyzer(DB_PATH)
 
