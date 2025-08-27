@@ -432,7 +432,7 @@ class BetScanner:
         conn.close()
 
     def analyze_event_for_bets(self, event_id: str, min_roi: float = 10) -> List[Dict]:
-        """Analisa um evento e retorna apostas com ROI > min_roi%"""
+        """Analisa um evento e retorna as DUAS apostas com maior ROI > min_roi%"""
         good_bets = []
 
         # Busca e salva informações do evento
@@ -469,7 +469,7 @@ class BetScanner:
                     good_bets.append(
                         {
                             "event_id": event_id,
-                            "market_name": market,  # Inclui o nome do mercado
+                            "market_name": market,
                             "selection_line": selection,
                             "handicap": handicap,
                             "house_odds": odds,
@@ -478,7 +478,9 @@ class BetScanner:
                         }
                     )
 
-        return good_bets
+        # Ordena por ROI decrescente e mantém apenas as duas melhores
+        good_bets.sort(key=lambda x: x["roi_average"], reverse=True)
+        return good_bets[:2]  # Retorna no máximo duas apostas
 
     def save_bets(self, bets: List[Dict], stake: float = 1.0):
         """Salva apostas no banco com stake padrão e notifica novas apostas"""
