@@ -432,23 +432,24 @@ class BetScanner:
         conn.close()
 
     def analyze_event_for_bets(self, event_id: str, min_roi: float = 10) -> List[Dict]:
-        """Analisa um evento e retorna as DUAS apostas com maior ROI > min_roi%"""
-        good_bets = []
+        """Analisa um evento e retorna as DUAS melhores apostas (maior ROI) de CADA MERCADO (Map 1 e Map 2) com ROI > min_roi%"""
+        all_good_bets = []
 
         # Busca e salva informações do evento
         event_info = self.analyzer.get_event_info(event_id)
         if not event_info:
-            return good_bets
+            return all_good_bets
 
         self.save_event_info(event_id, event_info)
 
         team1 = event_info.get("home_team", "Team A")
         team2 = event_info.get("away_team", "Team B")
 
-        # Analisa ambos os mercados (Map 1 e Map 2)
+        # Mercados a analisar
         markets = ["Map 1 - Totals", "Map 2 - Totals"]
 
         for market in markets:
+            good_bets_in_market = []
             # Busca linhas de aposta para o mercado específico
             betting_lines = self.analyzer.get_betting_lines(event_id, market)
 
@@ -466,7 +467,7 @@ class BetScanner:
 
                 # Filtra ROI > min_roi%
                 if roi_average > min_roi:
-                    good_bets.append(
+                    good_bets_in_market.append(
                         {
                             "event_id": event_id,
                             "market_name": market,
@@ -478,9 +479,11 @@ class BetScanner:
                         }
                     )
 
-        # Ordena por ROI decrescente e mantém apenas as duas melhores
-        good_bets.sort(key=lambda x: x["roi_average"], reverse=True)
-        return good_bets[:2]  # Retorna no máximo duas apostas
+            # Ordena as apostas deste mercado por ROI (decrescente) e pega as duas melhores
+            good_bets_in_market.sort(key=lambda x: x["roi_average"], reverse=True)
+            all_good_bets.extend(good_bets_in_market[:2])
+
+        return all_good_bets
 
     def save_bets(self, bets: List[Dict], stake: float = 1.0):
         """Salva apostas no banco com stake padrão e notifica novas apostas"""
