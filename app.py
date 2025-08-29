@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import numpy as np
 import os
+from contextlib import contextmanager
 import time
 
 
@@ -96,39 +97,40 @@ st.markdown(
 
 
 # Conexão com o banco
-@st.cache_resource
-def init_connection():
+@contextmanager
+def get_connection():
+    """Gerenciador de contexto para conexões SQLite thread-safe"""
     db_path = "data/bets.db"
-    # Verificar se o diretório existe, se não, criar
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
-    return sqlite3.connect(db_path)
-
-
-conn = init_connection()
+    conn = sqlite3.connect(db_path, check_same_thread=False)
+    try:
+        yield conn
+    finally:
+        conn.close()
 
 
 # Carregar dados
 @st.cache_data
 def load_events():
-    return pd.read_sql("SELECT * FROM events", conn)
-
+    with get_connection() as conn:
+        return pd.read_sql("SELECT * FROM events", conn)
 
 @st.cache_data
 def load_bets():
-    return pd.read_sql("SELECT * FROM bets", conn)
-
+    with get_connection() as conn:
+        return pd.read_sql("SELECT * FROM bets", conn)
 
 @st.cache_data
 def load_pending_bets():
-    return pd.read_sql("SELECT * FROM bets WHERE bet_status = 'pending'", conn)
-
+    with get_connection() as conn:
+        return pd.read_sql("SELECT * FROM bets WHERE bet_status = 'pending'", conn)
 
 @st.cache_data
 def load_resolved_bets():
-    return pd.read_sql(
-        "SELECT * FROM bets WHERE bet_status IN ('win', 'loss', 'won', 'lost')", conn
-    )
-
+    with get_connection() as conn:
+        return pd.read_sql(
+            "SELECT * FROM bets WHERE bet_status IN ('win', 'loss', 'won', 'lost')", conn
+        )
 
 # Função para calcular lucro/prejuízo corretamente
 def calculate_profit_loss(row):
@@ -156,62 +158,9 @@ def main():
         resolved_bets_df["bet_status"] = resolved_bets_df["bet_status"].replace(
             {"won": "win", "lost": "loss"}
         )
-
-    # Inicializar session state para o filtro
-    if "filter_selected" not in st.session_state:
-        st.session_state.filter_selected = "today"  # Filtro padrão: Hoje
-
-    # Filtros na parte superior
-    st.subheader("📅 Filtros de Data")
-
-    # Botões de período rápido
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    with col1:
-        if st.button("Hoje", key="today", use_container_width=True):
-            st.session_state.filter_selected = "today"
-    with col2:
-        if st.button("Amanhã", key="tomorrow", use_container_width=True):
-            st.session_state.filter_selected = "tomorrow"
-    with col3:
-        if st.button("Esta Semana", key="week", use_container_width=True):
-            st.session_state.filter_selected = "week"
-    with col4:
-        # Espaço vazio para manter o layout
-        pass
-    with col5:
-        # Espaço vazio para manter o layout
-        pass
-
-    # Aplicar filtros de data baseado no session state
-    today = datetime.now().date()
-    filtered_events = events_df.copy()
-
-    if st.session_state.filter_selected == "today":
-        filtered_events = filtered_events[
-            pd.to_datetime(filtered_events["match_date"]).dt.date == today
-        ]
-    elif st.session_state.filter_selected == "tomorrow":
-        tomorrow = today + timedelta(days=1)
-        filtered_events = filtered_events[
-            pd.to_datetime(filtered_events["match_date"]).dt.date == tomorrow
-        ]
-    elif st.session_state.filter_selected == "week":
-        week_end = today + timedelta(days=7)
-        filtered_events = filtered_events[
-            pd.to_datetime(filtered_events["match_date"]).dt.date.between(
-                today, week_end
-            )
-        ]
-
-    # Filtrar apostas pendentes apenas por data
-    filtered_pending_bets = pending_bets_df[
-        (pending_bets_df["event_id"].isin(filtered_events["event_id"]))
-    ]
-
-    # Juntar com informações dos eventos
+        
     pending_with_events = pd.merge(
-        filtered_pending_bets,
+        pending_bets_df,
         events_df[
             [
                 "event_id",
@@ -240,15 +189,15 @@ def main():
 
     with col4:
         if not resolved_bets_df.empty:
-            win_bets = resolved_bets_df[resolved_bets_df["bet_status"] == "win"]
-            win_rate = (
-                len(win_bets) / len(resolved_bets_df) * 100
-                if len(resolved_bets_df) > 0
-                else 0
-            )
-            st.metric("🎯 Taxa de Acerto", f"{win_rate:.1f}%")
+            # Calcular ROI geral (lucro total / total apostado * 100)
+            resolved_bets_df_copy = resolved_bets_df.copy()
+            resolved_bets_df_copy["Lucro_Prejuizo"] = resolved_bets_df_copy.apply(calculate_profit_loss, axis=1)
+            total_profit = resolved_bets_df_copy["Lucro_Prejuizo"].sum()
+            total_stake_resolved = resolved_bets_df_copy["stake"].sum()
+            roi_geral = (total_profit / total_stake_resolved * 100) if total_stake_resolved > 0 else 0
+            st.metric("📈 ROI Geral", f"{roi_geral:.1f}%")
         else:
-            st.metric("🎯 Taxa de Acerto", "0.0%")
+            st.metric("📈 ROI Geral", "0.0%")
 
     # Abas principais - REORDENADAS: Resultados do Mês antes de Resultado Geral
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
@@ -304,7 +253,51 @@ def main():
 def show_pending_bets(bets_with_events):
     st.header("🎯 Apostas em Aberto")
 
-    if bets_with_events.empty:
+    # Adicionar filtros de data dentro desta aba
+    st.subheader("📅 Filtros de Data")
+
+    # Botões de período rápido
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        if st.button("Hoje", key="pending_today", use_container_width=True):
+            st.session_state.pending_filter_selected = "today"
+    with col2:
+        if st.button("Amanhã", key="pending_tomorrow", use_container_width=True):
+            st.session_state.pending_filter_selected = "tomorrow"
+    with col3:
+        if st.button("Esta Semana", key="pending_week", use_container_width=True):
+            st.session_state.pending_filter_selected = "week"
+    with col4:
+        if st.button("Todos", key="pending_all", use_container_width=True):
+            st.session_state.pending_filter_selected = "all"
+
+    # Inicializar session state para o filtro da aba de pendentes
+    if "pending_filter_selected" not in st.session_state:
+        st.session_state.pending_filter_selected = "today"  # Filtro padrão: Hoje
+
+    # Aplicar filtros de data
+    today = datetime.now().date()
+    if st.session_state.pending_filter_selected == "today":
+        filtered_bets = bets_with_events[
+            pd.to_datetime(bets_with_events["match_date"]).dt.date == today
+        ]
+    elif st.session_state.pending_filter_selected == "tomorrow":
+        tomorrow = today + timedelta(days=1)
+        filtered_bets = bets_with_events[
+            pd.to_datetime(bets_with_events["match_date"]).dt.date == tomorrow
+        ]
+    elif st.session_state.pending_filter_selected == "week":
+        week_end = today + timedelta(days=7)
+        filtered_bets = bets_with_events[
+            pd.to_datetime(bets_with_events["match_date"]).dt.date.between(
+                today, week_end
+            )
+        ]
+    else:  # 'all'
+        filtered_bets = bets_with_events
+
+    if filtered_bets.empty:
         st.info("Nenhuma aposta em aberto com os filtros atuais.")
         return
 
@@ -312,33 +305,35 @@ def show_pending_bets(bets_with_events):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        avg_roi = bets_with_events["roi_average"].mean()
+        avg_roi = filtered_bets["roi_average"].mean()
         st.metric("📈 ROI Médio", f"{avg_roi:.1f}%")
 
     with col2:
-        avg_odds = bets_with_events["house_odds"].mean()
+        avg_odds = filtered_bets["house_odds"].mean()
         st.metric("🎲 Odds Média", f"{avg_odds:.2f}")
 
     with col3:
-        total_stake = bets_with_events["stake"].sum()
+        total_stake = filtered_bets["stake"].sum()
         st.metric("💰 Unidades em Aberto", f"{total_stake:.0f} un.")
 
     with col4:
-        total_potential = bets_with_events["potential_win"].sum()
+        total_potential = filtered_bets["potential_win"].sum()
         st.metric("🚀 Ganho Potencial", f"{total_potential:.2f} un.")
 
     # Ordenar por data (mais antigo primeiro - ordem crescente)
-    bets_with_events["match_date"] = pd.to_datetime(bets_with_events["match_date"])
-    sorted_bets = bets_with_events.sort_values("match_date", ascending=True)
+    filtered_bets["match_date"] = pd.to_datetime(filtered_bets["match_date"])
+    sorted_bets = filtered_bets.sort_values("match_date", ascending=True).copy()
 
     # Formatar para exibição
-    sorted_bets["match_date_display"] = sorted_bets["match_date"].dt.strftime(
+    sorted_bets.loc[:, "match_date_display"] = sorted_bets["match_date"].dt.strftime(
         "%d/%m %H:%M"
     )
-    sorted_bets["Partida"] = (
+    sorted_bets.loc[:, "Partida"] = (
         sorted_bets["home_team"] + " vs " + sorted_bets["away_team"]
     )
-    sorted_bets["Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
+    sorted_bets.loc[:, "Retorno Esperado"] = (
+        sorted_bets["house_odds"] * sorted_bets["stake"]
+    )
 
     # Certificar-se de que a coluna handicap existe
     if "handicap" not in sorted_bets.columns:
@@ -584,9 +579,7 @@ def show_strategy_v1():
         sorted_bets["Partida"] = (
             sorted_bets["home_team"] + " vs " + sorted_bets["away_team"]
         )
-        sorted_bets["Retorno Esperado"] = (
-            sorted_bets["house_odds"] * sorted_bets["stake"]
-        )
+        sorted_bets.loc[:, "Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
 
         # Certificar-se de que a coluna handicap existe
         if "handicap" not in sorted_bets.columns:
@@ -703,9 +696,8 @@ def show_strategy_v1():
 
         if not estrategia_resolved.empty:
             # Calcular lucro/prejuízo corretamente
-            estrategia_resolved["Lucro_Prejuizo"] = estrategia_resolved.apply(
-                calculate_profit_loss, axis=1
-            )
+            estrategia_resolved = estrategia_resolved.copy()
+            estrategia_resolved.loc[:, "Lucro_Prejuizo"] = estrategia_resolved.apply(calculate_profit_loss, axis=1)
 
             # Estatísticas gerais
             total_stake = estrategia_resolved["stake"].sum()
@@ -746,7 +738,7 @@ def show_strategy_v1():
 
             # Agrupar por mês
             monthly_stats = (
-                estrategia_resolved.groupby("mes_ano")
+                estrategia_resolved.groupby("mes_ano", observed=False)
                 .agg(
                     {
                         "stake": "sum",
@@ -1118,12 +1110,10 @@ def show_general_results(resolved_bets, events_df):
         events_df[["event_id", "home_team", "away_team", "match_date", "league_name"]],
         on="event_id",
         how="left",
-    )
+    ).copy()
 
     # Calcular lucro/prejuízo corretamente
-    results_with_events["Lucro_Prejuizo"] = results_with_events.apply(
-        calculate_profit_loss, axis=1
-    )
+    results_with_events.loc[:, "Lucro_Prejuizo"] = results_with_events.apply(calculate_profit_loss, axis=1)
 
     # Ordenar por data
     results_with_events["match_date"] = pd.to_datetime(
@@ -1139,7 +1129,7 @@ def show_general_results(resolved_bets, events_df):
 
     # Agrupar por mês
     monthly_stats = (
-        results_with_events.groupby("mes_ano")
+        results_with_events.groupby("mes_ano", observed=False)
         .agg(
             {
                 "stake": "sum",  # Unidades apostadas
@@ -1607,7 +1597,7 @@ def show_statistics(resolved_bets, events_df):
     with col1:
         st.subheader("📊 Por Mercado")
         market_stats = (
-            stats_data.groupby("market_name")
+            stats_data.groupby("market_name", observed=False)
             .agg(
                 {
                     "bet_status": lambda x: (x == "win").mean() * 100,
@@ -1625,7 +1615,7 @@ def show_statistics(resolved_bets, events_df):
     with col2:
         st.subheader("🎯 Por Seleção (Top 10)")
         selection_stats = (
-            stats_data.groupby("selection_line")
+            stats_data.groupby("selection_line", observed=False)
             .agg(
                 {
                     "bet_status": lambda x: (x == "win").mean() * 100,
