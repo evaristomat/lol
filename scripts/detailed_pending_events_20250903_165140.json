@@ -1,0 +1,1179 @@
+{
+  "generated_at": "2025-09-03T16:51:40.487699",
+  "database_path": "../data/bets.db",
+  "summary": {
+    "total_events": 22,
+    "total_pending_bets": 76,
+    "leagues_count": 10
+  },
+  "events": [
+    {
+      "event_id": "179936755",
+      "league_name": "LOL - LRS Split 2 Playoffs",
+      "match_date": "2025-09-02 19:00:00",
+      "home_team": "Sicar Esports",
+      "away_team": "Farenvehn",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 1926,
+          "event_id": "179936755",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 30.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-23 09:18:58"
+        },
+        {
+          "bet_id": 1927,
+          "event_id": "179936755",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 30.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-23 09:18:59"
+        }
+      ]
+    },
+    {
+      "event_id": "179929765",
+      "league_name": "LOL - CD Split 2 Playoffs",
+      "match_date": "2025-09-01 23:00:00",
+      "home_team": "Vivo Keyd Stars.A",
+      "away_team": "Los Grandes",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 225,
+          "event_id": "179929765",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 29.5,
+          "house_odds": 1.83,
+          "roi_average": 28.1,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-22 13:50:51"
+        },
+        {
+          "bet_id": 226,
+          "event_id": "179929765",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 29.5,
+          "house_odds": 1.83,
+          "roi_average": 28.1,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-22 13:50:51"
+        }
+      ]
+    },
+    {
+      "event_id": "180211663",
+      "league_name": "LOL - LCK CL Season Play-In",
+      "match_date": "2025-09-01 05:00:00",
+      "home_team": "Gen.G.GA",
+      "away_team": "DN Freecs.Ch",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 6,
+      "pending_bets": [
+        {
+          "bet_id": 2045,
+          "event_id": "180211663",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 1.8,
+          "roi_average": 35.0,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-25 21:08:18"
+        },
+        {
+          "bet_id": 2046,
+          "event_id": "180211663",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 32.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-25 21:08:18"
+        },
+        {
+          "bet_id": 2047,
+          "event_id": "180211663",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 1.83,
+          "roi_average": 28.1,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-25 21:08:18"
+        },
+        {
+          "bet_id": 2048,
+          "event_id": "180211663",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 1.8,
+          "roi_average": 35.0,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-25 21:08:18"
+        },
+        {
+          "bet_id": 2049,
+          "event_id": "180211663",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 32.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-25 21:08:18"
+        },
+        {
+          "bet_id": 2050,
+          "event_id": "180211663",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 1.83,
+          "roi_average": 28.1,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-25 21:08:18"
+        }
+      ]
+    },
+    {
+      "event_id": "180486734",
+      "league_name": "LOL - PCS Split 3 Playoffs",
+      "match_date": "2025-08-31 09:00:00",
+      "home_team": "Frank Esports",
+      "away_team": "Deep Cross Gaming",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 2178,
+          "event_id": "180486734",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 46.400000000000006,
+          "fair_odds": 1.25,
+          "bet_created": "2025-08-30 21:06:55"
+        },
+        {
+          "bet_id": 2179,
+          "event_id": "180486734",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 46.400000000000006,
+          "fair_odds": 1.25,
+          "bet_created": "2025-08-30 21:06:55"
+        }
+      ]
+    },
+    {
+      "event_id": "180135286",
+      "league_name": "LOL - LPLOL Summer",
+      "match_date": "2025-08-30 21:00:00",
+      "home_team": "ZeroZone Gaming",
+      "away_team": "Papo Secos",
+      "event_status": "scheduled",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 1981,
+          "event_id": "180135286",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-24 15:11:35"
+        },
+        {
+          "bet_id": 1982,
+          "event_id": "180135286",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-24 15:11:35"
+        }
+      ]
+    },
+    {
+      "event_id": "179310062",
+      "league_name": "LOL - Prime Pokal",
+      "match_date": "2025-08-30 16:00:00",
+      "home_team": "Unicorns of Love SE",
+      "away_team": "BIG",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 2023,
+          "event_id": "179310062",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 64.7,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-25 09:22:52"
+        },
+        {
+          "bet_id": 2024,
+          "event_id": "179310062",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 64.7,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-25 09:22:52"
+        }
+      ]
+    },
+    {
+      "event_id": "180435214",
+      "league_name": "LOL - PCS Split 3 Playoffs",
+      "match_date": "2025-08-30 09:00:00",
+      "home_team": "PSG Talon.A",
+      "away_team": "Deep Cross Gaming",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 2158,
+          "event_id": "180435214",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 55.55,
+          "fair_odds": 1.1764705882352942,
+          "bet_created": "2025-08-29 21:08:08"
+        },
+        {
+          "bet_id": 2159,
+          "event_id": "180435214",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 55.55,
+          "fair_odds": 1.1764705882352942,
+          "bet_created": "2025-08-29 21:08:08"
+        }
+      ]
+    },
+    {
+      "event_id": "179600983",
+      "league_name": "LOL - LJL Finals",
+      "match_date": "2025-08-30 05:00:00",
+      "home_team": "DFM Academy",
+      "away_team": "QT DIG",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 53,
+          "event_id": "179600983",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 36.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 54,
+          "event_id": "179600983",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 36.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "180135284",
+      "league_name": "LOL - LPLOL Summer",
+      "match_date": "2025-08-29 21:00:00",
+      "home_team": "Rage Bait e-Sports",
+      "away_team": "NORTHS FURY",
+      "event_status": "finished",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 1983,
+          "event_id": "180135284",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 35.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-24 15:11:35"
+        },
+        {
+          "bet_id": 1984,
+          "event_id": "180135284",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 35.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-24 15:11:35"
+        }
+      ]
+    },
+    {
+      "event_id": "180135283",
+      "league_name": "LOL - LPLOL Summer",
+      "match_date": "2025-08-29 18:00:00",
+      "home_team": "Crusaders",
+      "away_team": "GTZ Esports",
+      "event_status": "finished",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 1967,
+          "event_id": "180135283",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-24 15:11:35"
+        },
+        {
+          "bet_id": 1968,
+          "event_id": "180135283",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-24 15:11:35"
+        }
+      ]
+    },
+    {
+      "event_id": "179991880",
+      "league_name": "LOL - LCK CL Rounds 3-5",
+      "match_date": "2025-08-29 05:00:00",
+      "home_team": "Nongshim.EA",
+      "away_team": "DN Freecs.Ch",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 8,
+      "pending_bets": [
+        {
+          "bet_id": 247,
+          "event_id": "179991880",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.3,
+          "roi_average": 30.0,
+          "fair_odds": 1.0,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 248,
+          "event_id": "179991880",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 2.0,
+          "roi_average": 45.0,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 249,
+          "event_id": "179991880",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 31.5,
+          "house_odds": 1.83,
+          "roi_average": 23.525000000000006,
+          "fair_odds": 1.4814814814814814,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 250,
+          "event_id": "179991880",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 1.83,
+          "roi_average": 32.675000000000004,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 251,
+          "event_id": "179991880",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.3,
+          "roi_average": 30.0,
+          "fair_odds": 1.0,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 252,
+          "event_id": "179991880",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 2.0,
+          "roi_average": 45.0,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 253,
+          "event_id": "179991880",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 31.5,
+          "house_odds": 1.83,
+          "roi_average": 23.525000000000006,
+          "fair_odds": 1.4814814814814814,
+          "bet_created": "2025-08-22 17:49:45"
+        },
+        {
+          "bet_id": 254,
+          "event_id": "179991880",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 1.83,
+          "roi_average": 32.675000000000004,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-22 17:49:45"
+        }
+      ]
+    },
+    {
+      "event_id": "179932036",
+      "league_name": "LOL - CD Split 2 Playoffs",
+      "match_date": "2025-08-26 16:00:00",
+      "home_team": "e-Champ Gaming",
+      "away_team": "Flamengo MDL",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 43,
+          "event_id": "179932036",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 46.39999999999999,
+          "fair_odds": 1.25,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 44,
+          "event_id": "179932036",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 34.5,
+          "house_odds": 1.83,
+          "roi_average": 46.39999999999999,
+          "fair_odds": 1.25,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179936754",
+      "league_name": "LOL - LRS Split 2 Playoffs",
+      "match_date": "2025-08-26 15:00:00",
+      "home_team": "Maze Gaming",
+      "away_team": "Seven Dark",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 13,
+          "event_id": "179936754",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 28.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 14,
+          "event_id": "179936754",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 28.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "180191277",
+      "league_name": "LOL - PCS Split 3 Playoffs",
+      "match_date": "2025-08-26 09:00:00",
+      "home_team": "Deep Cross Gaming",
+      "away_team": "PSG Talon.A",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 2025,
+          "event_id": "180191277",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615383,
+          "bet_created": "2025-08-25 09:22:52"
+        },
+        {
+          "bet_id": 2026,
+          "event_id": "180191277",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615383,
+          "bet_created": "2025-08-25 09:22:52"
+        }
+      ]
+    },
+    {
+      "event_id": "179857388",
+      "league_name": "LOL - CD Split 2 Playoffs",
+      "match_date": "2025-08-25 16:00:00",
+      "home_team": "KaBuM! IDL",
+      "away_team": "Corinthians Esports",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 25,
+          "event_id": "179857388",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 27.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 26,
+          "event_id": "179857388",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Over Total Kills",
+          "handicap": 27.5,
+          "house_odds": 1.83,
+          "roi_average": 37.25,
+          "fair_odds": 1.3333333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "180040928",
+      "league_name": "LOL - EBL Summer Playoffs",
+      "match_date": "2025-08-23 17:00:00",
+      "home_team": "Lenovo Legion Honved",
+      "away_team": "Crvena Zvezda",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 237,
+          "event_id": "180040928",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 35.5,
+          "house_odds": 1.83,
+          "roi_average": 73.85,
+          "fair_odds": 1.0526315789473684,
+          "bet_created": "2025-08-22 15:05:22"
+        },
+        {
+          "bet_id": 238,
+          "event_id": "180040928",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 35.5,
+          "house_odds": 1.83,
+          "roi_average": 73.85,
+          "fair_odds": 1.0526315789473684,
+          "bet_created": "2025-08-22 15:05:22"
+        }
+      ]
+    },
+    {
+      "event_id": "179390057",
+      "league_name": "LOL - Equal Esports Cup Playoffs",
+      "match_date": "2025-08-23 09:00:00",
+      "home_team": "G2 Hel",
+      "away_team": "Solary Academy",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 49,
+          "event_id": "179390057",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 30.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 50,
+          "event_id": "179390057",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 30.5,
+          "house_odds": 1.83,
+          "roi_average": 18.950000000000003,
+          "fair_odds": 1.5384615384615388,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179857558",
+      "league_name": "LOL - LPLOL Summer",
+      "match_date": "2025-08-22 14:00:00",
+      "home_team": "Evolve Esports",
+      "away_team": "ZeroZone Gaming",
+      "event_status": "finished",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 2,
+      "pending_bets": [
+        {
+          "bet_id": 23,
+          "event_id": "179857558",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 28.099999999999994,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 24,
+          "event_id": "179857558",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 28.099999999999994,
+          "fair_odds": 1.4285714285714286,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179606654",
+      "league_name": "LOL - LCK CL Rounds 3-5",
+      "match_date": "2025-08-22 01:00:00",
+      "home_team": "T1.EA",
+      "away_team": "BNK FearX.Y",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 10,
+      "pending_bets": [
+        {
+          "bet_id": 55,
+          "event_id": "179606654",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.28,
+          "roi_average": 18.857142857142858,
+          "fair_odds": 1.0769230769230769,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 56,
+          "event_id": "179606654",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.2,
+          "roi_average": 24.14285714285716,
+          "fair_odds": 1.7721518987341773,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 57,
+          "event_id": "179606654",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 2.1,
+          "roi_average": 44.0,
+          "fair_odds": 1.4583333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 58,
+          "event_id": "179606654",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 25.48571428571429,
+          "fair_odds": 1.4583333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 59,
+          "event_id": "179606654",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.5,
+          "roi_average": 39.285714285714285,
+          "fair_odds": 1.0769230769230769,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 60,
+          "event_id": "179606654",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.28,
+          "roi_average": 18.857142857142858,
+          "fair_odds": 1.0769230769230769,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 61,
+          "event_id": "179606654",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.2,
+          "roi_average": 24.14285714285716,
+          "fair_odds": 1.7721518987341773,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 62,
+          "event_id": "179606654",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 2.1,
+          "roi_average": 44.0,
+          "fair_odds": 1.4583333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 63,
+          "event_id": "179606654",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 33.5,
+          "house_odds": 1.83,
+          "roi_average": 25.48571428571429,
+          "fair_odds": 1.4583333333333333,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 64,
+          "event_id": "179606654",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.5,
+          "roi_average": 39.285714285714285,
+          "fair_odds": 1.0769230769230769,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179606655",
+      "league_name": "LOL - LCK CL Rounds 3-5",
+      "match_date": "2025-08-22 01:00:00",
+      "home_team": "Dplus KIA.Ch",
+      "away_team": "OKSavingsBank BRION.Ch",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 6,
+      "pending_bets": [
+        {
+          "bet_id": 149,
+          "event_id": "179606655",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.44,
+          "roi_average": 29.599999999999998,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 150,
+          "event_id": "179606655",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 1.8,
+          "roi_average": 49.14285714285715,
+          "fair_odds": 1.2068965517241381,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 151,
+          "event_id": "179606655",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.53,
+          "roi_average": 34.421428571428564,
+          "fair_odds": 1.1382113821138211,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 152,
+          "event_id": "179606655",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.44,
+          "roi_average": 29.599999999999998,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 153,
+          "event_id": "179606655",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 1.8,
+          "roi_average": 49.14285714285715,
+          "fair_odds": 1.2068965517241381,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 154,
+          "event_id": "179606655",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.53,
+          "roi_average": 34.421428571428564,
+          "fair_odds": 1.1382113821138211,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179606652",
+      "league_name": "LOL - LCK CL Rounds 3-5",
+      "match_date": "2025-08-21 01:00:00",
+      "home_team": "DRX.Ch",
+      "away_team": "KT Rolster.Ch",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 6,
+      "pending_bets": [
+        {
+          "bet_id": 191,
+          "event_id": "179606652",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.2,
+          "roi_average": 51.55555555555558,
+          "fair_odds": 1.4516129032258065,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 192,
+          "event_id": "179606652",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 32.5,
+          "house_odds": 1.83,
+          "roi_average": 35.21666666666667,
+          "fair_odds": 1.3533834586466165,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 193,
+          "event_id": "179606652",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.57,
+          "roi_average": 16.00555555555556,
+          "fair_odds": 1.3533834586466165,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 194,
+          "event_id": "179606652",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.2,
+          "roi_average": 51.55555555555558,
+          "fair_odds": 1.4516129032258065,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 195,
+          "event_id": "179606652",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Kills",
+          "handicap": 32.5,
+          "house_odds": 1.83,
+          "roi_average": 35.21666666666667,
+          "fair_odds": 1.3533834586466165,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 196,
+          "event_id": "179606652",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 12.5,
+          "house_odds": 1.57,
+          "roi_average": 16.00555555555556,
+          "fair_odds": 1.3533834586466165,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    },
+    {
+      "event_id": "179606653",
+      "league_name": "LOL - LCK CL Rounds 3-5",
+      "match_date": "2025-08-21 01:00:00",
+      "home_team": "Nongshim.EA",
+      "away_team": "Hanwha Life Esports.Ch",
+      "event_status": "in_play",
+      "home_score": 0,
+      "away_score": 0,
+      "winner": null,
+      "pending_bets_count": 8,
+      "pending_bets": [
+        {
+          "bet_id": 15,
+          "event_id": "179606653",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.4,
+          "roi_average": 25.999999999999993,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 16,
+          "event_id": "179606653",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.25,
+          "roi_average": 49.0625,
+          "fair_odds": 1.509433962264151,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 17,
+          "event_id": "179606653",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 1.9,
+          "roi_average": 37.749999999999986,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 18,
+          "event_id": "179606653",
+          "market_name": "Map 1 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 2.0,
+          "roi_average": 35.0,
+          "fair_odds": 1.4814814814814814,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 19,
+          "event_id": "179606653",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Barons",
+          "handicap": 1.5,
+          "house_odds": 1.4,
+          "roi_average": 25.999999999999993,
+          "fair_odds": 1.1111111111111112,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 20,
+          "event_id": "179606653",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Dragons",
+          "handicap": 4.5,
+          "house_odds": 2.25,
+          "roi_average": 49.0625,
+          "fair_odds": 1.509433962264151,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 21,
+          "event_id": "179606653",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Inhibitors",
+          "handicap": 1.5,
+          "house_odds": 1.9,
+          "roi_average": 37.749999999999986,
+          "fair_odds": 1.3793103448275863,
+          "bet_created": "2025-08-21 22:32:28"
+        },
+        {
+          "bet_id": 22,
+          "event_id": "179606653",
+          "market_name": "Map 2 - Totals",
+          "selection_line": "Under Total Towers",
+          "handicap": 11.5,
+          "house_odds": 2.0,
+          "roi_average": 35.0,
+          "fair_odds": 1.4814814814814814,
+          "bet_created": "2025-08-21 22:32:28"
+        }
+      ]
+    }
+  ],
+  "problematic_event_ids": [
+    "179936755",
+    "179929765",
+    "180211663",
+    "180486734",
+    "180135286",
+    "179310062",
+    "180435214",
+    "179600983",
+    "180135284",
+    "180135283",
+    "179991880",
+    "179932036",
+    "179936754",
+    "180191277",
+    "179857388",
+    "180040928",
+    "179390057",
+    "179857558",
+    "179606654",
+    "179606655",
+    "179606652",
+    "179606653"
+  ]
+}
