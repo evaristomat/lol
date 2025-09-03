@@ -432,7 +432,7 @@ class BetScanner:
         conn.close()
 
     def analyze_event_for_bets(self, event_id: str, min_roi: float = 10) -> List[Dict]:
-        """Analisa um evento e retorna as melhores apostas, agrupando quando são iguais em ambos os mapas"""
+        """Analisa um evento e retorna as melhores apostas mantendo mapas separados"""
         all_good_bets = []
 
         # Busca e salva informações do evento
@@ -447,12 +447,12 @@ class BetScanner:
 
         # Processar cada mercado separadamente
         markets = ["Map 1 - Totals", "Map 2 - Totals"]
-        market_bets = {"Map 1 - Totals": [], "Map 2 - Totals": []}
 
         for market in markets:
             # Busca linhas de aposta para o mercado específico
             betting_lines = self.analyzer.get_betting_lines(event_id, market)
 
+            market_bets = []
             for line in betting_lines:
                 selection = line["selection"]
                 handicap = line["handicap"]
@@ -476,50 +476,12 @@ class BetScanner:
                         "roi_average": roi_average,
                         "fair_odds": fair_odds_average,
                     }
-                    market_bets[market].append(bet_data)
+                    market_bets.append(bet_data)
 
-            # Ordena as apostas deste mercado por ROI (decrescente)
-            market_bets[market].sort(key=lambda x: x['roi_average'], reverse=True)
+            # Ordena as apostas deste mercado por ROI (decrescente) e pega as 2 melhores
+            market_bets.sort(key=lambda x: x['roi_average'], reverse=True)
+            all_good_bets.extend(market_bets[:2])
 
-        # Primeiro, verificar se há apostas iguais em ambos os mapas
-        map1_bets = market_bets["Map 1 - Totals"]
-        map2_bets = market_bets["Map 2 - Totals"]
-        
-        matched_bets = []
-        unmatched_map1 = []
-        unmatched_map2 = []
-        
-        # Procurar correspondências entre os mapas
-        for bet1 in map1_bets[:2]:  # Apenas as duas melhores do Map 1
-            found_match = False
-            for bet2 in map2_bets[:2]:  # Apenas as duas melhores do Map 2
-                if (bet1["selection_line"] == bet2["selection_line"] and 
-                    bet1["handicap"] == bet2["handicap"]):
-                    # Encontrou uma aposta igual em ambos os mapas
-                    matched_bet = bet1.copy()
-                    matched_bet["market_name"] = "Map 1 & 2 - Totals"  # Marcador especial
-                    matched_bets.append(matched_bet)
-                    found_match = True
-                    break
-            
-            if not found_match:
-                unmatched_map1.append(bet1)
-        
-        # Adicionar apostas não correspondentes do Map 2
-        for bet2 in map2_bets[:2]:
-            found_match = False
-            for bet1 in map1_bets[:2]:
-                if (bet2["selection_line"] == bet1["selection_line"] and 
-                    bet2["handicap"] == bet1["handicap"]):
-                    found_match = True
-                    break
-            
-            if not found_match:
-                unmatched_map2.append(bet2)
-        
-        # Combinar todas as apostas (agrupadas + não agrupadas)
-        all_good_bets = matched_bets + unmatched_map1 + unmatched_map2
-        
         return all_good_bets
 
     def save_bets(self, bets: List[Dict], stake: float = 1.0):

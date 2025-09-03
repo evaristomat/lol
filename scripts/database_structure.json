@@ -110,7 +110,7 @@
         }
       ],
       "foreign_keys": [],
-      "record_count": 548,
+      "record_count": 598,
       "sample_data": {
         "columns": [
           "event_id",
@@ -137,7 +137,7 @@
             0,
             null,
             "2025-08-21 22:32:22",
-            "2025-08-27 09:21:10"
+            "2025-09-03 15:21:03"
           ],
           [
             "179606999",
@@ -150,7 +150,7 @@
             0,
             null,
             "2025-08-21 22:32:22",
-            "2025-08-27 09:21:10"
+            "2025-09-03 15:21:03"
           ],
           [
             "179555503",
@@ -328,7 +328,7 @@
           "match": "NONE"
         }
       ],
-      "record_count": 2085,
+      "record_count": 2149,
       "sample_data": {
         "columns": [
           "id",
@@ -427,7 +427,7 @@
       ],
       "indexes": [],
       "foreign_keys": [],
-      "record_count": 1,
+      "record_count": 2,
       "sample_data": {
         "columns": [
           "name",
@@ -436,7 +436,11 @@
         "records": [
           [
             "bets",
-            2085
+            2149
+          ],
+          [
+            "strategy_filters",
+            589
           ]
         ]
       }
@@ -532,6 +536,73 @@
         }
       ],
       "record_count": 0
+    },
+    "strategy_filters": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "filter_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "filter_value",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "created_at",
+          "type": "DATETIME",
+          "notnull": false,
+          "default_value": "CURRENT_TIMESTAMP",
+          "pk": false
+        }
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "record_count": 39,
+      "sample_data": {
+        "columns": [
+          "id",
+          "filter_type",
+          "filter_value",
+          "created_at"
+        ],
+        "records": [
+          [
+            551,
+            "market",
+            "Map 1 - Totals - Under Total Kills",
+            "2025-08-27 13:53:51"
+          ],
+          [
+            552,
+            "market",
+            "Map 2 - Totals - Under Total Dragons",
+            "2025-08-27 13:53:51"
+          ],
+          [
+            553,
+            "market",
+            "Map 1 - Totals - Under Total Inhibitors",
+            "2025-08-27 13:53:51"
+          ]
+        ]
+      }
     }
   }
 }
