@@ -115,22 +115,27 @@ def load_events():
     with get_connection() as conn:
         return pd.read_sql("SELECT * FROM events", conn)
 
+
 @st.cache_data
 def load_bets():
     with get_connection() as conn:
         return pd.read_sql("SELECT * FROM bets", conn)
+
 
 @st.cache_data
 def load_pending_bets():
     with get_connection() as conn:
         return pd.read_sql("SELECT * FROM bets WHERE bet_status = 'pending'", conn)
 
+
 @st.cache_data
 def load_resolved_bets():
     with get_connection() as conn:
         return pd.read_sql(
-            "SELECT * FROM bets WHERE bet_status IN ('win', 'loss', 'won', 'lost')", conn
+            "SELECT * FROM bets WHERE bet_status IN ('win', 'loss', 'won', 'lost')",
+            conn,
         )
+
 
 # Função para calcular lucro/prejuízo corretamente
 def calculate_profit_loss(row):
@@ -158,7 +163,7 @@ def main():
         resolved_bets_df["bet_status"] = resolved_bets_df["bet_status"].replace(
             {"won": "win", "lost": "loss"}
         )
-        
+
     pending_with_events = pd.merge(
         pending_bets_df,
         events_df[
@@ -191,10 +196,16 @@ def main():
         if not resolved_bets_df.empty:
             # Calcular ROI geral (lucro total / total apostado * 100)
             resolved_bets_df_copy = resolved_bets_df.copy()
-            resolved_bets_df_copy["Lucro_Prejuizo"] = resolved_bets_df_copy.apply(calculate_profit_loss, axis=1)
+            resolved_bets_df_copy["Lucro_Prejuizo"] = resolved_bets_df_copy.apply(
+                calculate_profit_loss, axis=1
+            )
             total_profit = resolved_bets_df_copy["Lucro_Prejuizo"].sum()
             total_stake_resolved = resolved_bets_df_copy["stake"].sum()
-            roi_geral = (total_profit / total_stake_resolved * 100) if total_stake_resolved > 0 else 0
+            roi_geral = (
+                (total_profit / total_stake_resolved * 100)
+                if total_stake_resolved > 0
+                else 0
+            )
             st.metric("📈 ROI Geral", f"{roi_geral:.1f}%")
         else:
             st.metric("📈 ROI Geral", "0.0%")
@@ -579,7 +590,9 @@ def show_strategy_v1():
         sorted_bets["Partida"] = (
             sorted_bets["home_team"] + " vs " + sorted_bets["away_team"]
         )
-        sorted_bets.loc[:, "Retorno Esperado"] = sorted_bets["house_odds"] * sorted_bets["stake"]
+        sorted_bets.loc[:, "Retorno Esperado"] = (
+            sorted_bets["house_odds"] * sorted_bets["stake"]
+        )
 
         # Certificar-se de que a coluna handicap existe
         if "handicap" not in sorted_bets.columns:
@@ -697,7 +710,9 @@ def show_strategy_v1():
         if not estrategia_resolved.empty:
             # Calcular lucro/prejuízo corretamente
             estrategia_resolved = estrategia_resolved.copy()
-            estrategia_resolved.loc[:, "Lucro_Prejuizo"] = estrategia_resolved.apply(calculate_profit_loss, axis=1)
+            estrategia_resolved.loc[:, "Lucro_Prejuizo"] = estrategia_resolved.apply(
+                calculate_profit_loss, axis=1
+            )
 
             # Estatísticas gerais
             total_stake = estrategia_resolved["stake"].sum()
@@ -1096,6 +1111,7 @@ def show_strategy_v1():
     else:
         st.info("Nenhuma aposta resolvida disponível para análise.")
 
+
 def show_general_results(resolved_bets, events_df):
     """Renomeado de show_results para show_general_results"""
     st.header("📈 Resultado Geral")
@@ -1113,7 +1129,9 @@ def show_general_results(resolved_bets, events_df):
     ).copy()
 
     # Calcular lucro/prejuízo corretamente
-    results_with_events.loc[:, "Lucro_Prejuizo"] = results_with_events.apply(calculate_profit_loss, axis=1)
+    results_with_events.loc[:, "Lucro_Prejuizo"] = results_with_events.apply(
+        calculate_profit_loss, axis=1
+    )
 
     # Ordenar por data
     results_with_events["match_date"] = pd.to_datetime(
