@@ -436,7 +436,7 @@ def main():
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Abas principais com design moderno
-    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         [
             "🏠 Dashboard",
             "🎯 Apostas em Aberto",
@@ -444,7 +444,6 @@ def main():
             f"📅 Resultados {datetime.now().strftime('%B %Y')}",
             "📈 Resultado Geral",
             "📋 Estatísticas Avançadas",
-            "➕ Nova Aposta",
         ]
     )
 
@@ -466,8 +465,6 @@ def main():
     with tab6:
         show_advanced_statistics(resolved_bets_df, events_df)
 
-    with tab7:
-        show_add_bet_form()
 
     # Footer moderno
     st.markdown(
@@ -1503,173 +1500,6 @@ def show_advanced_statistics(resolved_bets_df, events_df):
         ].round(2),
         use_container_width=True,
     )
-
-
-def show_add_bet_form():
-    """Formulário para adicionar nova aposta"""
-    st.markdown(
-        '<h2 class="section-header">➕ Adicionar Nova Aposta</h2>',
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        """
-    <div class="content-card">
-        <p>Use este formulário para registrar uma nova aposta no sistema. Todos os campos marcados com * são obrigatórios.</p>
-    </div>
-    """,
-        unsafe_allow_html=True,
-    )
-
-    with st.form("add_bet_form", clear_on_submit=True):
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.markdown("#### 🏟️ Informações da Partida")
-
-            home_team = st.text_input("Time da Casa *", placeholder="Ex: T1")
-            away_team = st.text_input("Time Visitante *", placeholder="Ex: G2 Esports")
-
-            match_date = st.date_input(
-                "Data e Hora da Partida *",
-                value=datetime.now().date() + timedelta(hours=1),
-                min_value=datetime.now().date(),
-            )
-            match_time = st.time_input("Hora da Partida *", value=datetime.now().time())
-            # Combinar data e hora
-            match_datetime = datetime.combine(match_date, match_time)
-
-            league_name = st.selectbox(
-                "Liga/Torneio *",
-                ["LCK", "LEC", "LCS", "LPL", "Worlds", "MSI", "TCL", "LCP", "Outros"],
-                index=0,
-            )
-
-        with col2:
-            st.markdown("#### 🎯 Detalhes da Aposta")
-
-            market_name = st.selectbox(
-                "Mercado *",
-                [
-                    "Map 1 - Totals",
-                    "Map 2 - Totals",
-                    "Match Winner",
-                    "Total Maps",
-                    "First Blood",
-                    "Outros",
-                ],
-                index=0,
-            )
-
-            selection_line = st.text_input(
-                "Seleção *", placeholder="Ex: Over 25.5 Kills"
-            )
-
-            house_odds = st.number_input(
-                "Odds da Casa *", min_value=1.01, value=2.00, step=0.01, format="%.2f"
-            )
-
-            stake = st.number_input(
-                "Stake (unidades) *", min_value=0.1, value=1.0, step=0.1, format="%.1f"
-            )
-
-        col1, col2 = st.columns(2)
-
-        with col1:
-            fair_odds = st.number_input(
-                "Odds Justas",
-                min_value=1.01,
-                value=house_odds,
-                step=0.01,
-                format="%.2f",
-            )
-
-        with col2:
-            handicap = st.number_input(
-                "Handicap (se aplicável)", value=0.0, step=0.5, format="%.1f"
-            )
-
-        # Calcular automaticamente
-        if house_odds > 0 and stake > 0:
-            potential_win = stake * house_odds
-            roi_average = ((house_odds / fair_odds) - 1) * 100 if fair_odds > 0 else 0
-
-            col1, col2 = st.columns(2)
-            with col1:
-                st.info(f"💰 Ganho Potencial: {potential_win:.2f} unidades")
-            with col2:
-                st.info(f"📈 ROI Estimado: {roi_average:.1f}%")
-
-        submitted = st.form_submit_button(
-            "🚀 Adicionar Aposta", use_container_width=True
-        )
-
-        if submitted:
-            # Validação
-            if not all([home_team, away_team, selection_line]):
-                st.error("❌ Por favor, preencha todos os campos obrigatórios.")
-                return
-
-            try:
-                # Inserir no banco de dados
-                with get_connection() as conn:
-                    # Primeiro, inserir o evento se não existir
-                    event_id = f"{home_team}_{away_team}_{match_datetime.strftime('%Y%m%d_%H%M')}"
-
-                    conn.execute(
-                        """
-                        INSERT OR REPLACE INTO events 
-                        (event_id, home_team, away_team, match_date, league_name, status)
-                        VALUES (?, ?, ?, ?, ?, 'scheduled')
-                    """,
-                        (
-                            event_id,
-                            home_team,
-                            away_team,
-                            match_datetime.isoformat(),
-                            league_name,
-                        ),
-                    )
-
-                    # Inserir a aposta
-                    potential_win = stake * house_odds
-                    roi_average = (
-                        ((house_odds / fair_odds) - 1) * 100 if fair_odds > 0 else 0
-                    )
-
-                    conn.execute(
-                        """
-                        INSERT INTO bets 
-                        (event_id, market_name, selection_line, house_odds, fair_odds, 
-                         roi_average, stake, potential_win, bet_status, handicap)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)
-                    """,
-                        (
-                            event_id,
-                            market_name,
-                            selection_line,
-                            house_odds,
-                            fair_odds,
-                            roi_average,
-                            stake,
-                            potential_win,
-                            handicap if handicap != 0 else None,
-                        ),
-                    )
-
-                    conn.commit()
-
-                # Limpar cache e mostrar sucesso
-                st.cache_data.clear()
-                st.success("✅ Aposta adicionada com sucesso!")
-                st.balloons()
-
-                # Atualizar a página após um breve delay
-                time.sleep(1)
-                st.rerun()
-
-            except Exception as e:
-                st.error(f"❌ Erro ao adicionar aposta: {str(e)}")
 
 
 if __name__ == "__main__":
