@@ -1457,9 +1457,12 @@ def show_general_results(resolved_bets_df, events_df):
     monthly_performance["ROI"] = (
         monthly_performance["Lucro"] / monthly_performance["Stake_Total"] * 100
     )
+    monthly_performance["Lucro_Acumulado"] = monthly_performance["Lucro"].cumsum()
 
+    # Criar gráfico combinado mais impactante
     fig = go.Figure()
 
+    # Barras de lucro mensal
     fig.add_trace(
         go.Bar(
             x=monthly_performance["Mes"].astype(str),
@@ -1468,19 +1471,99 @@ def show_general_results(resolved_bets_df, events_df):
             marker_color=[
                 "#10b981" if x >= 0 else "#ef4444" for x in monthly_performance["Lucro"]
             ],
+            text=[f"{x:.1f}" for x in monthly_performance["Lucro"]],
+            textposition="outside",
+            yaxis="y",
+            opacity=0.8,
         )
     )
 
+    # Linha de lucro acumulado
+    fig.add_trace(
+        go.Scatter(
+            x=monthly_performance["Mes"].astype(str),
+            y=monthly_performance["Lucro_Acumulado"],
+            mode="lines+markers",
+            name="Lucro Acumulado",
+            line=dict(color="#3b82f6", width=4),
+            marker=dict(size=10, color="#1e40af", symbol="diamond"),
+            yaxis="y2",
+            hovertemplate="<b>%{x}</b><br>Lucro Acumulado: %{y:.2f} un<extra></extra>",
+        )
+    )
+
+    # Linha de referência no zero
+    fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
+
+    # Layout com dois eixos Y
     fig.update_layout(
-        title="Performance Mensal",
+        title={
+            "text": "📈 Evolução da Performance Mensal",
+            "x": 0.5,
+            "font": {"size": 20, "color": "#1e293b"},
+        },
         xaxis_title="Mês",
-        yaxis_title="Lucro (unidades)",
-        height=400,
+        yaxis=dict(title="Lucro Mensal (unidades)", side="left", color="#1e293b"),
+        yaxis2=dict(
+            title="Lucro Acumulado (unidades)",
+            side="right",
+            overlaying="y",
+            color="#3b82f6",
+        ),
+        height=500,
         template="plotly_white",
         font=dict(family="Inter, sans-serif"),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        hovermode="x unified",
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
+    )
+
+    # Adicionar gradiente de fundo
+    fig.update_layout(
+        shapes=[
+            dict(
+                type="rect",
+                xref="paper",
+                yref="paper",
+                x0=0,
+                y0=0,
+                x1=1,
+                y1=1,
+                fillcolor="rgba(59, 130, 246, 0.02)",
+                layer="below",
+                line_width=0,
+            )
+        ]
     )
 
     st.plotly_chart(fig, use_container_width=True)
+
+    # Adicionar métricas de resumo mensal
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        melhor_mes = monthly_performance.loc[monthly_performance["Lucro"].idxmax()]
+        st.metric(
+            "🏆 Melhor Mês", str(melhor_mes["Mes"]), f"+{melhor_mes['Lucro']:.2f} un"
+        )
+
+    with col2:
+        if (monthly_performance["Lucro"] < 0).any():
+            pior_mes = monthly_performance.loc[monthly_performance["Lucro"].idxmin()]
+            st.metric(
+                "📉 Pior Mês", str(pior_mes["Mes"]), f"{pior_mes['Lucro']:.2f} un"
+            )
+        else:
+            st.metric("📉 Pior Mês", "Nenhum", "Todos positivos! 🎉")
+
+    with col3:
+        lucro_medio = monthly_performance["Lucro"].mean()
+        st.metric(
+            "📊 Lucro Médio/Mês",
+            f"{lucro_medio:.2f} un",
+            f"ROI: {monthly_performance['ROI'].mean():.1f}%",
+        )
 
     # Análise por mercado
     col1, col2 = st.columns(2)
