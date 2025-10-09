@@ -9,6 +9,7 @@ import os
 from contextlib import contextmanager
 import time
 import calendar
+import io
 
 
 def check_db_modified():
@@ -291,146 +292,830 @@ def calculate_profit_loss(row):
         return -row["stake"]
 
 
-# Interface principal
-def main():
-    # Header principal com animação
-    st.markdown(
-        '<h1 class="main-header animate-fade-in">🎮 LoL Betting Analytics</h1>',
-        unsafe_allow_html=True,
+# === FUNÇÕES DA ABA HISTÓRICO ===
+
+
+def preparar_dados_para_csv(dados_filtrados):
+    """Prepara os dados filtrados para exportação CSV com formatação adequada"""
+
+    if dados_filtrados.empty:
+        return pd.DataFrame()
+
+    # Criar cópia dos dados para não modificar o original
+    dados_csv = dados_filtrados.copy()
+
+    # Formatar colunas para CSV
+    dados_csv["data_aposta"] = dados_csv["match_date"].dt.strftime("%d/%m/%Y %H:%M")
+    dados_csv["partida"] = dados_csv["home_team"] + " vs " + dados_csv["away_team"]
+    dados_csv["liga"] = dados_csv["league_name"]
+    dados_csv["mercado"] = dados_csv["market_name"]
+    dados_csv["selecao"] = dados_csv["selection_line"]
+    dados_csv["odds"] = dados_csv["house_odds"].round(2)
+    dados_csv["stake_unidades"] = dados_csv["stake"].round(2)
+
+    # Formatar status em português
+    status_map = {
+        "win": "Ganhou",
+        "won": "Ganhou",
+        "loss": "Perdeu",
+        "lost": "Perdeu",
+        "pending": "Pendente",
+    }
+    dados_csv["status"] = dados_csv["bet_status"].map(status_map)
+
+    # Calcular lucro/prejuízo formatado
+    def formatar_lucro_prejuizo(row):
+        if row["bet_status"] in ["win", "won"]:
+            return round(row["stake"] * (row["house_odds"] - 1), 2)
+        elif row["bet_status"] in ["loss", "lost"]:
+            return round(-row["stake"], 2)
+        else:  # pending
+            return 0.0
+
+    dados_csv["lucro_prejuizo"] = dados_csv.apply(formatar_lucro_prejuizo, axis=1)
+
+    # Calcular ROI percentual
+    def calcular_roi_percent(row):
+        if row["bet_status"] in ["win", "won", "loss", "lost"]:
+            return round((row["lucro_prejuizo"] / row["stake"]) * 100, 1)
+        else:
+            return 0.0
+
+    dados_csv["roi_percent"] = dados_csv.apply(calcular_roi_percent, axis=1)
+
+    # Adicionar informações extras úteis
+    dados_csv["potencial_ganho"] = (dados_csv["stake"] * (dados_csv["odds"] - 1)).round(
+        2
+    )
+    dados_csv["dia_semana"] = dados_csv["match_date"].dt.strftime("%A")
+    dados_csv["mes_ano"] = dados_csv["match_date"].dt.strftime("%m/%Y")
+
+    # Traduzir dias da semana
+    dias_pt = {
+        "Monday": "Segunda-feira",
+        "Tuesday": "Terça-feira",
+        "Wednesday": "Quarta-feira",
+        "Thursday": "Quinta-feira",
+        "Friday": "Sexta-feira",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo",
+    }
+    dados_csv["dia_semana"] = dados_csv["dia_semana"].map(dias_pt)
+
+    # Selecionar e ordenar colunas finais para CSV
+    colunas_csv = [
+        "data_aposta",
+        "partida",
+        "liga",
+        "mercado",
+        "selecao",
+        "odds",
+        "stake_unidades",
+        "status",
+        "lucro_prejuizo",
+        "roi_percent",
+        "potencial_ganho",
+        "dia_semana",
+        "mes_ano",
+    ]
+
+    return dados_csv[colunas_csv]
+
+
+def gerar_metadados_csv(dados_filtrados, filtros_aplicados=None):
+    """Gera metadados para incluir no CSV"""
+
+    metadados = {
+        "data_exportacao": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+        "total_registros": len(dados_filtrados),
+        "periodo_inicio": dados_filtrados["match_date"].min().strftime("%d/%m/%Y")
+        if not dados_filtrados.empty
+        else "N/A",
+        "periodo_fim": dados_filtrados["match_date"].max().strftime("%d/%m/%Y")
+        if not dados_filtrados.empty
+        else "N/A",
+    }
+
+    if not dados_filtrados.empty:
+        # Estatísticas resumidas
+        apostas_resolvidas = dados_filtrados[
+            dados_filtrados["bet_status"].isin(["win", "won", "loss", "lost"])
+        ]
+
+        if not apostas_resolvidas.empty:
+            lucro_total = apostas_resolvidas["Lucro_Prejuizo"].sum()
+            stake_total = apostas_resolvidas["stake"].sum()
+            roi_geral = (lucro_total / stake_total * 100) if stake_total > 0 else 0
+            win_rate = (
+                apostas_resolvidas["bet_status"].isin(["win", "won"]).sum()
+                / len(apostas_resolvidas)
+                * 100
+            )
+
+            metadados.update(
+                {
+                    "apostas_resolvidas": len(apostas_resolvidas),
+                    "apostas_pendentes": len(
+                        dados_filtrados[dados_filtrados["bet_status"] == "pending"]
+                    ),
+                    "lucro_total": round(lucro_total, 2),
+                    "roi_geral_percent": round(roi_geral, 1),
+                    "win_rate_percent": round(win_rate, 1),
+                    "stake_total": round(stake_total, 2),
+                    "odds_media": round(dados_filtrados["house_odds"].mean(), 2),
+                    "mercados_unicos": dados_filtrados["market_name"].nunique(),
+                    "ligas_unicas": dados_filtrados["league_name"].nunique(),
+                }
+            )
+
+    if filtros_aplicados:
+        metadados["filtros_aplicados"] = filtros_aplicados
+
+    return metadados
+
+
+def criar_csv_com_metadados(dados_csv, metadados):
+    """Cria arquivo CSV com metadados no cabeçalho"""
+
+    output = io.StringIO()
+
+    # Escrever metadados como comentários
+    output.write("# LoL Betting Analytics - Exportação de Histórico\n")
+    output.write(f"# Data de Exportação: {metadados['data_exportacao']}\n")
+    output.write(f"# Total de Registros: {metadados['total_registros']}\n")
+    output.write(
+        f"# Período: {metadados['periodo_inicio']} até {metadados['periodo_fim']}\n"
     )
 
-    # Subtitle
-    st.markdown(
-        '<p style="text-align: center; color: #64748b; font-size: 1.2rem; margin-bottom: 2rem;">Dashboard Avançado de Estatísticas de Apostas em League of Legends</p>',
-        unsafe_allow_html=True,
-    )
+    if "apostas_resolvidas" in metadados:
+        output.write(f"# Apostas Resolvidas: {metadados['apostas_resolvidas']}\n")
+        output.write(f"# Apostas Pendentes: {metadados['apostas_pendentes']}\n")
+        output.write(f"# Lucro Total: {metadados['lucro_total']} unidades\n")
+        output.write(f"# ROI Geral: {metadados['roi_geral_percent']}%\n")
+        output.write(f"# Win Rate: {metadados['win_rate_percent']}%\n")
+        output.write(f"# Stake Total: {metadados['stake_total']} unidades\n")
+        output.write(f"# Odds Média: {metadados['odds_media']}\n")
+        output.write(f"# Mercados Únicos: {metadados['mercados_unicos']}\n")
+        output.write(f"# Ligas Únicas: {metadados['ligas_unicas']}\n")
 
-    # Carregar dados
-    events_df = load_events()
-    bets_df = load_bets()
-    pending_bets_df = load_pending_bets()
-    resolved_bets_df = load_resolved_bets()
+    if "filtros_aplicados" in metadados:
+        output.write(f"# Filtros Aplicados: {metadados['filtros_aplicados']}\n")
 
-    # Corrigir status para consistência
-    if not resolved_bets_df.empty:
-        resolved_bets_df["bet_status"] = resolved_bets_df["bet_status"].replace(
-            {"won": "win", "lost": "loss"}
+    output.write("#\n")
+    output.write("# Colunas:\n")
+    output.write("# data_aposta: Data e hora da aposta\n")
+    output.write("# partida: Times que jogaram (Home vs Away)\n")
+    output.write("# liga: Nome da liga/campeonato\n")
+    output.write("# mercado: Tipo de mercado apostado\n")
+    output.write("# selecao: Linha/seleção específica\n")
+    output.write("# odds: Odds da casa de apostas\n")
+    output.write("# stake_unidades: Valor apostado em unidades\n")
+    output.write("# status: Resultado da aposta (Ganhou/Perdeu/Pendente)\n")
+    output.write("# lucro_prejuizo: Lucro ou prejuízo em unidades\n")
+    output.write("# roi_percent: Retorno sobre investimento em %\n")
+    output.write("# potencial_ganho: Ganho potencial se a aposta for vencedora\n")
+    output.write("# dia_semana: Dia da semana da partida\n")
+    output.write("# mes_ano: Mês e ano da partida\n")
+    output.write("#\n")
+
+    # Escrever dados CSV
+    dados_csv.to_csv(output, index=False, sep=",", decimal=".", encoding="utf-8")
+
+    return output.getvalue()
+
+
+def show_export_section(dados_filtrados, filtros_info=None):
+    """Exibe seção de exportação CSV com opções avançadas"""
+
+    st.markdown("### 📥 Exportar Dados")
+
+    if dados_filtrados.empty:
+        st.warning(
+            "⚠️ Não há dados para exportar. Ajuste os filtros para incluir mais apostas."
         )
+        return
 
-    # Layout principal - Métricas com design moderno
-    st.markdown('<div class="animate-fade-in">', unsafe_allow_html=True)
-
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns([2, 1])
 
     with col1:
-        st.metric(
-            "📊 Total de Apostas",
-            len(bets_df),
-            help="Número total de apostas registradas no sistema",
+        st.markdown(
+            f"""
+        <div class="content-card">
+            <h4>📊 Resumo da Exportação</h4>
+            <p><strong>Total de apostas:</strong> {len(dados_filtrados)}</p>
+            <p><strong>Período:</strong> {dados_filtrados["match_date"].min().strftime("%d/%m/%Y")} até {dados_filtrados["match_date"].max().strftime("%d/%m/%Y")}</p>
+            <p><strong>Formato:</strong> CSV com metadados inclusos</p>
+            <p><strong>Encoding:</strong> UTF-8 (compatível com Excel brasileiro)</p>
+        </div>
+        """,
+            unsafe_allow_html=True,
         )
 
     with col2:
-        st.metric(
-            "⏳ Apostas Pendentes",
-            len(pending_bets_df),
-            help="Apostas aguardando resultado",
+        # Opções de exportação
+        incluir_metadados = st.checkbox(
+            "📋 Incluir metadados no arquivo",
+            value=True,
+            help="Adiciona informações resumidas no cabeçalho do CSV",
         )
 
-    with col3:
-        st.metric(
-            "✅ Apostas Resolvidas",
-            len(resolved_bets_df),
-            help="Apostas com resultado definido",
+        formato_decimal = st.selectbox(
+            "🔢 Separador decimal",
+            options=["Ponto (.)", "Vírgula (,)"],
+            index=0,
+            help="Escolha o formato de decimal para compatibilidade",
         )
 
-    with col4:
-        if not resolved_bets_df.empty:
-            resolved_bets_df_copy = resolved_bets_df.copy()
-            resolved_bets_df_copy["Lucro_Prejuizo"] = resolved_bets_df_copy.apply(
-                calculate_profit_loss, axis=1
-            )
-            total_profit = resolved_bets_df_copy["Lucro_Prejuizo"].sum()
-            total_stake_resolved = resolved_bets_df_copy["stake"].sum()
-            roi_geral = (
-                (total_profit / total_stake_resolved * 100)
-                if total_stake_resolved > 0
-                else 0
-            )
+    # Preparar dados para exportação
+    dados_csv = preparar_dados_para_csv(dados_filtrados)
 
-            st.metric(
-                "📈 ROI Geral",
-                f"{roi_geral:.1f}%",
-                delta=f"{total_profit:.2f} unidades",
-                help="Retorno sobre investimento geral",
+    if dados_csv.empty:
+        st.error("❌ Erro ao preparar dados para exportação.")
+        return
+
+    # Gerar metadados
+    metadados = gerar_metadados_csv(dados_filtrados, filtros_info)
+
+    # Criar arquivo CSV
+    if incluir_metadados:
+        csv_content = criar_csv_com_metadados(dados_csv, metadados)
+    else:
+        # CSV simples sem metadados
+        if formato_decimal == "Vírgula (,)":
+            csv_content = dados_csv.to_csv(
+                index=False, sep=";", decimal=",", encoding="utf-8"
             )
         else:
-            st.metric("📈 ROI Geral", "0.0%", help="Retorno sobre investimento geral")
+            csv_content = dados_csv.to_csv(
+                index=False, sep=",", decimal=".", encoding="utf-8"
+            )
 
-    st.markdown("</div>", unsafe_allow_html=True)
+    # Ajustar formato decimal se necessário
+    if formato_decimal == "Vírgula (,)" and incluir_metadados:
+        # Substituir pontos por vírgulas nos números (preservando metadados)
+        lines = csv_content.split("\n")
+        header_end = 0
+        for i, line in enumerate(lines):
+            if not line.startswith("#"):
+                header_end = i
+                break
 
-    # Obter nome do mês atual em português
-    current_month = datetime.now().month
-    current_year = datetime.now().year
-    month_name = calendar.month_name[current_month]
+        # Processar apenas as linhas de dados
+        for i in range(header_end, len(lines)):
+            if lines[i] and not lines[i].startswith("#"):
+                # Substituir separador de campo por ; e decimal por ,
+                lines[i] = lines[i].replace(",", ";").replace(".", ",")
 
-    # Traduzir para português
-    month_names_pt = {
-        "January": "Janeiro",
-        "February": "Fevereiro",
-        "March": "Março",
-        "April": "Abril",
-        "May": "Maio",
-        "June": "Junho",
-        "July": "Julho",
-        "August": "Agosto",
-        "September": "Setembro",
-        "October": "Outubro",
-        "November": "Novembro",
-        "December": "Dezembro",
-    }
-    month_name_pt = month_names_pt.get(month_name, month_name)
+        csv_content = "\n".join(lines)
 
-    # Abas principais com design moderno
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
-        [
-            "🏠 Dashboard",
-            "🎯 Apostas em Aberto",
-            "🎮 Estratégia V1",
-            f"📅 Resultados de {month_name_pt}",
-            "📈 Resultados Gerais",
-            "📋 Estatísticas Avançadas",
-        ]
+    # Nome do arquivo
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    nome_arquivo = f"lol_betting_historico_{timestamp}.csv"
+
+    # Botão de download
+    st.download_button(
+        label="📥 Baixar Histórico CSV",
+        data=csv_content,
+        file_name=nome_arquivo,
+        mime="text/csv",
+        help="Clique para baixar o arquivo CSV com o histórico filtrado",
+        use_container_width=True,
     )
 
-    with tab1:
-        show_modern_dashboard(resolved_bets_df, pending_bets_df, events_df)
-
-    with tab2:
-        show_pending_bets_modern(pending_bets_df, events_df)
-
-    with tab3:
-        show_strategy_v1()
-
-    with tab4:
-        show_current_month_results(resolved_bets_df, events_df)
-
-    with tab5:
-        show_general_results(resolved_bets_df, events_df)
-
-    with tab6:
-        show_advanced_statistics(resolved_bets_df, events_df)
-
-    # Footer moderno
+    # Informações adicionais
     st.markdown(
         f"""
-    <div class="footer">
-        <p><strong>🎯 LoL Betting Analytics</strong> | Última atualização: {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>
-        <p>Total de eventos: {len(events_df)} | Banco: data/bets.db ({len(bets_df)} apostas)</p>
-        <p>Desenvolvido com ❤️ para a comunidade de League of Legends</p>
+    <div style="margin-top: 1rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 8px; border-left: 4px solid #3b82f6;">
+        <h5>💡 Dicas para usar o CSV:</h5>
+        <ul>
+            <li><strong>Excel:</strong> Use "Dados > Obter Dados > De Arquivo > CSV" para importar corretamente</li>
+            <li><strong>Google Sheets:</strong> Importe o arquivo e escolha "vírgula" como separador</li>
+            <li><strong>Análise:</strong> Os metadados no cabeçalho contêm estatísticas resumidas</li>
+            <li><strong>Filtros:</strong> Use as colunas 'status', 'liga' e 'mercado' para análises específicas</li>
+        </ul>
     </div>
     """,
         unsafe_allow_html=True,
     )
+
+    # Preview dos dados
+    with st.expander("👀 Visualizar Preview dos Dados CSV", expanded=False):
+        st.markdown("**Primeiras 10 linhas do arquivo CSV:**")
+        st.dataframe(dados_csv.head(10), use_container_width=True, height=300)
+
+        st.markdown(
+            f"**Total de colunas:** {len(dados_csv.columns)} | **Total de linhas:** {len(dados_csv)}"
+        )
+
+
+def get_filtros_aplicados_info(periodo, status, liga, mercado, odds_range=None):
+    """Gera string com informações dos filtros aplicados"""
+
+    filtros = []
+
+    if periodo != "Todos":
+        filtros.append(f"Período: {periodo}")
+
+    if status != "Todos":
+        filtros.append(f"Status: {status}")
+
+    if liga != "Todas":
+        filtros.append(f"Liga: {liga}")
+
+    if mercado != "Todos":
+        filtros.append(f"Mercado: {mercado}")
+
+    if odds_range:
+        filtros.append(f"Odds: {odds_range[0]:.1f} - {odds_range[1]:.1f}")
+
+    return " | ".join(filtros) if filtros else "Nenhum filtro aplicado"
+
+
+def show_historico_completo(resolved_bets_df, pending_bets_df, events_df):
+    """Aba de histórico completo com todas as apostas e visualizações avançadas"""
+    st.markdown(
+        '<h2 class="section-header">📜 Histórico Completo</h2>', unsafe_allow_html=True
+    )
+
+    # Combinar apostas resolvidas e pendentes
+    all_bets_df = pd.concat([resolved_bets_df, pending_bets_df], ignore_index=True)
+
+    if all_bets_df.empty:
+        st.markdown(
+            """
+        <div class="content-card">
+            <h3>📜 Histórico Vazio</h3>
+            <p>Ainda não há apostas registradas no sistema. Comece fazendo suas primeiras apostas para ver o histórico aqui!</p>
+        </div>
+        """,
+            unsafe_allow_html=True,
+        )
+        return
+
+    # Merge com eventos para obter informações completas
+    historico_completo = pd.merge(
+        all_bets_df,
+        events_df[
+            [
+                "event_id",
+                "home_team",
+                "away_team",
+                "match_date",
+                "league_name",
+                "status",
+            ]
+        ],
+        on="event_id",
+        how="left",
+    )
+
+    # Limpar dados e converter datas
+    historico_completo = historico_completo.dropna(subset=["match_date"])
+    historico_completo["match_date"] = pd.to_datetime(historico_completo["match_date"])
+
+    # Calcular lucro/prejuízo para apostas resolvidas
+    def calculate_profit_loss_safe(row):
+        if row["bet_status"] in ["win", "won"]:
+            return row["stake"] * (row["house_odds"] - 1)
+        elif row["bet_status"] in ["loss", "lost"]:
+            return -row["stake"]
+        else:  # pending
+            return 0
+
+    historico_completo["Lucro_Prejuizo"] = historico_completo.apply(
+        calculate_profit_loss_safe, axis=1
+    )
+
+    # Ordenar por data (mais recente primeiro)
+    historico_completo = historico_completo.sort_values("match_date", ascending=False)
+
+    # === MÉTRICAS DE RESUMO ===
+    st.markdown("### 📊 Resumo Geral do Histórico")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        total_apostas = len(historico_completo)
+        st.metric(
+            "📈 Total de Apostas",
+            total_apostas,
+            help="Número total de apostas registradas (resolvidas + pendentes)",
+        )
+
+    with col2:
+        if not historico_completo.empty:
+            primeira_aposta = (
+                historico_completo["match_date"].min().strftime("%d/%m/%Y")
+            )
+            ultima_aposta = historico_completo["match_date"].max().strftime("%d/%m/%Y")
+            st.metric(
+                "📅 Período de Atividade",
+                f"{primeira_aposta}",
+                delta=f"até {ultima_aposta}",
+                help="Período entre a primeira e última aposta",
+            )
+        else:
+            st.metric("📅 Período", "N/A")
+
+    with col3:
+        apostas_resolvidas = len(
+            historico_completo[
+                historico_completo["bet_status"].isin(["win", "won", "loss", "lost"])
+            ]
+        )
+        apostas_pendentes = len(
+            historico_completo[historico_completo["bet_status"] == "pending"]
+        )
+        st.metric(
+            "✅ Resolvidas",
+            apostas_resolvidas,
+            delta=f"{apostas_pendentes} pendentes",
+            help="Apostas com resultado definido vs pendentes",
+        )
+
+    with col4:
+        if apostas_resolvidas > 0:
+            lucro_total = historico_completo[
+                historico_completo["bet_status"].isin(["win", "won", "loss", "lost"])
+            ]["Lucro_Prejuizo"].sum()
+            stake_total = historico_completo[
+                historico_completo["bet_status"].isin(["win", "won", "loss", "lost"])
+            ]["stake"].sum()
+            roi_geral = (lucro_total / stake_total * 100) if stake_total > 0 else 0
+
+            st.metric(
+                "💎 ROI Histórico",
+                f"{roi_geral:.1f}%",
+                delta=f"{lucro_total:.2f} un",
+                help="Retorno sobre investimento de todas as apostas resolvidas",
+            )
+        else:
+            st.metric("💎 ROI Histórico", "0.0%")
+
+    # === FILTROS AVANÇADOS ===
+    st.markdown("### 🔍 Filtros Avançados")
+
+    with st.expander("🎛️ Configurar Filtros", expanded=False):
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            # Filtro de período
+            periodo_opcoes = [
+                "Todos",
+                "Hoje",
+                "Última Semana",
+                "Último Mês",
+                "Últimos 3 Meses",
+                "Personalizado",
+            ]
+            periodo_selecionado = st.selectbox(
+                "📅 Período", periodo_opcoes, key="hist_periodo"
+            )
+
+            if periodo_selecionado == "Personalizado":
+                data_inicio = st.date_input(
+                    "Data Início", value=historico_completo["match_date"].min().date()
+                )
+                data_fim = st.date_input(
+                    "Data Fim", value=historico_completo["match_date"].max().date()
+                )
+
+        with col2:
+            # Filtro de status
+            status_opcoes = ["Todos"] + list(historico_completo["bet_status"].unique())
+            status_selecionado = st.selectbox(
+                "🎯 Status", status_opcoes, key="hist_status"
+            )
+
+            # Filtro de liga
+            ligas_opcoes = ["Todas"] + sorted(
+                historico_completo["league_name"].dropna().unique()
+            )
+            liga_selecionada = st.selectbox("🏆 Liga", ligas_opcoes, key="hist_liga")
+
+        with col3:
+            # Filtro de mercado
+            mercados_opcoes = ["Todos"] + sorted(
+                historico_completo["market_name"].dropna().unique()
+            )
+            mercado_selecionado = st.selectbox(
+                "📊 Mercado", mercados_opcoes, key="hist_mercado"
+            )
+
+            # Filtro de odds
+            if not historico_completo["house_odds"].isna().all():
+                odds_min, odds_max = st.slider(
+                    "🎲 Faixa de Odds",
+                    min_value=float(historico_completo["house_odds"].min()),
+                    max_value=float(historico_completo["house_odds"].max()),
+                    value=(
+                        float(historico_completo["house_odds"].min()),
+                        float(historico_completo["house_odds"].max()),
+                    ),
+                    step=0.1,
+                    key="hist_odds",
+                )
+
+    # Aplicar filtros
+    dados_filtrados = historico_completo.copy()
+
+    # Filtro de período
+    if periodo_selecionado == "Hoje":
+        hoje = datetime.now().date()
+        dados_filtrados = dados_filtrados[dados_filtrados["match_date"].dt.date == hoje]
+    elif periodo_selecionado == "Última Semana":
+        uma_semana_atras = datetime.now() - timedelta(days=7)
+        dados_filtrados = dados_filtrados[
+            dados_filtrados["match_date"] >= uma_semana_atras
+        ]
+    elif periodo_selecionado == "Último Mês":
+        um_mes_atras = datetime.now() - timedelta(days=30)
+        dados_filtrados = dados_filtrados[dados_filtrados["match_date"] >= um_mes_atras]
+    elif periodo_selecionado == "Últimos 3 Meses":
+        tres_meses_atras = datetime.now() - timedelta(days=90)
+        dados_filtrados = dados_filtrados[
+            dados_filtrados["match_date"] >= tres_meses_atras
+        ]
+    elif periodo_selecionado == "Personalizado":
+        dados_filtrados = dados_filtrados[
+            (dados_filtrados["match_date"].dt.date >= data_inicio)
+            & (dados_filtrados["match_date"].dt.date <= data_fim)
+        ]
+
+    # Outros filtros
+    if status_selecionado != "Todos":
+        dados_filtrados = dados_filtrados[
+            dados_filtrados["bet_status"] == status_selecionado
+        ]
+
+    if liga_selecionada != "Todas":
+        dados_filtrados = dados_filtrados[
+            dados_filtrados["league_name"] == liga_selecionada
+        ]
+
+    if mercado_selecionado != "Todos":
+        dados_filtrados = dados_filtrados[
+            dados_filtrados["market_name"] == mercado_selecionado
+        ]
+
+    if not historico_completo["house_odds"].isna().all():
+        dados_filtrados = dados_filtrados[
+            (dados_filtrados["house_odds"] >= odds_min)
+            & (dados_filtrados["house_odds"] <= odds_max)
+        ]
+
+    # Verificar se há dados após filtros
+    if dados_filtrados.empty:
+        st.warning(
+            "🔍 Nenhuma aposta encontrada com os filtros aplicados. Tente ajustar os critérios de busca."
+        )
+        return
+
+    # === VISUALIZAÇÕES GRÁFICAS ===
+    st.markdown("### 📈 Visualizações do Histórico")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Timeline de apostas
+        st.markdown("#### 📅 Timeline de Apostas")
+
+        # Agrupar por data
+        timeline_data = (
+            dados_filtrados.groupby(dados_filtrados["match_date"].dt.date)
+            .size()
+            .reset_index()
+        )
+        timeline_data.columns = ["Data", "Quantidade"]
+
+        fig_timeline = px.line(
+            timeline_data,
+            x="Data",
+            y="Quantidade",
+            title="",
+            markers=True,
+            line_shape="spline",
+        )
+
+        fig_timeline.update_traces(
+            line=dict(color="#3b82f6", width=3), marker=dict(size=8, color="#1e40af")
+        )
+
+        fig_timeline.update_layout(
+            height=300,
+            template="plotly_white",
+            font=dict(family="Inter, sans-serif"),
+            xaxis_title="Data",
+            yaxis_title="Número de Apostas",
+            hovermode="x unified",
+        )
+
+        st.plotly_chart(fig_timeline, use_container_width=True)
+
+    with col2:
+        # Distribuição por status
+        st.markdown("#### 🎯 Distribuição por Status")
+
+        status_counts = dados_filtrados["bet_status"].value_counts()
+
+        # Mapear cores por status
+        color_map = {
+            "win": "#10b981",
+            "won": "#10b981",
+            "loss": "#ef4444",
+            "lost": "#ef4444",
+            "pending": "#f59e0b",
+        }
+
+        colors = [color_map.get(status, "#64748b") for status in status_counts.index]
+
+        fig_status = px.pie(
+            values=status_counts.values,
+            names=status_counts.index,
+            title="",
+            hole=0.4,
+            color_discrete_sequence=colors,
+        )
+
+        fig_status.update_traces(
+            textposition="inside", textinfo="percent+label", textfont_size=12
+        )
+
+        fig_status.update_layout(
+            height=300, template="plotly_white", font=dict(family="Inter, sans-serif")
+        )
+
+        st.plotly_chart(fig_status, use_container_width=True)
+
+    # === HEATMAP DE ATIVIDADE ===
+    st.markdown("#### 🔥 Heatmap de Atividade por Dia da Semana e Hora")
+
+    # Preparar dados para heatmap
+    dados_filtrados["dia_semana"] = dados_filtrados["match_date"].dt.day_name()
+    dados_filtrados["hora"] = dados_filtrados["match_date"].dt.hour
+
+    # Traduzir dias da semana
+    dias_pt = {
+        "Monday": "Segunda",
+        "Tuesday": "Terça",
+        "Wednesday": "Quarta",
+        "Thursday": "Quinta",
+        "Friday": "Sexta",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo",
+    }
+    dados_filtrados["dia_semana_pt"] = dados_filtrados["dia_semana"].map(dias_pt)
+
+    # Criar matriz para heatmap
+    heatmap_data = (
+        dados_filtrados.groupby(["dia_semana_pt", "hora"])
+        .size()
+        .reset_index(name="count")
+    )
+    heatmap_pivot = heatmap_data.pivot(
+        index="dia_semana_pt", columns="hora", values="count"
+    ).fillna(0)
+
+    # Reordenar dias da semana
+    ordem_dias = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+    heatmap_pivot = heatmap_pivot.reindex(ordem_dias)
+
+    fig_heatmap = px.imshow(
+        heatmap_pivot, title="", color_continuous_scale="Blues", aspect="auto"
+    )
+
+    fig_heatmap.update_layout(
+        height=300,
+        template="plotly_white",
+        font=dict(family="Inter, sans-serif"),
+        xaxis_title="Hora do Dia",
+        yaxis_title="Dia da Semana",
+    )
+
+    st.plotly_chart(fig_heatmap, use_container_width=True)
+
+    # === MÉTRICAS DOS DADOS FILTRADOS ===
+    if len(dados_filtrados) != len(historico_completo):
+        st.markdown("### 📊 Estatísticas dos Dados Filtrados")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.metric("🔍 Apostas Filtradas", len(dados_filtrados))
+
+        with col2:
+            if not dados_filtrados.empty:
+                mercados_unicos = dados_filtrados["market_name"].nunique()
+                st.metric("📊 Mercados Únicos", mercados_unicos)
+
+        with col3:
+            if not dados_filtrados.empty:
+                ligas_unicas = dados_filtrados["league_name"].nunique()
+                st.metric("🏆 Ligas Únicas", ligas_unicas)
+
+        with col4:
+            apostas_resolvidas_filtradas = len(
+                dados_filtrados[
+                    dados_filtrados["bet_status"].isin(["win", "won", "loss", "lost"])
+                ]
+            )
+            if apostas_resolvidas_filtradas > 0:
+                lucro_filtrado = dados_filtrados[
+                    dados_filtrados["bet_status"].isin(["win", "won", "loss", "lost"])
+                ]["Lucro_Prejuizo"].sum()
+                st.metric("💰 Lucro Filtrado", f"{lucro_filtrado:.2f} un")
+
+    # === SEÇÃO DE EXPORTAÇÃO ===
+    filtros_info = get_filtros_aplicados_info(
+        periodo_selecionado,
+        status_selecionado,
+        liga_selecionada,
+        mercado_selecionado,
+        (odds_min, odds_max)
+        if not historico_completo["house_odds"].isna().all()
+        else None,
+    )
+
+    show_export_section(dados_filtrados, filtros_info)
+
+    # === TABELA DE HISTÓRICO ===
+    st.markdown("### 📋 Tabela Completa do Histórico")
+
+    # Preparar dados para exibição na tabela
+    tabela_dados = dados_filtrados.copy()
+
+    # Formatar colunas para exibição
+    tabela_dados["Data/Hora"] = tabela_dados["match_date"].dt.strftime("%d/%m/%Y %H:%M")
+    tabela_dados["Partida"] = (
+        tabela_dados["home_team"] + " vs " + tabela_dados["away_team"]
+    )
+    tabela_dados["Odds"] = tabela_dados["house_odds"].apply(
+        lambda x: f"{x:.2f}" if pd.notna(x) else "N/A"
+    )
+    tabela_dados["Stake"] = tabela_dados["stake"].apply(
+        lambda x: f"{x:.0f} un" if pd.notna(x) else "N/A"
+    )
+
+    # Formatar resultado baseado no status
+    def formatar_resultado(row):
+        if row["bet_status"] in ["win", "won"]:
+            return f"+{row['Lucro_Prejuizo']:.2f} un"
+        elif row["bet_status"] in ["loss", "lost"]:
+            return f"{row['Lucro_Prejuizo']:.2f} un"
+        else:
+            return "Pendente"
+
+    tabela_dados["Resultado"] = tabela_dados.apply(formatar_resultado, axis=1)
+
+    # Formatar status para exibição
+    status_map = {
+        "win": "✅ Ganhou",
+        "won": "✅ Ganhou",
+        "loss": "❌ Perdeu",
+        "lost": "❌ Perdeu",
+        "pending": "⏳ Pendente",
+    }
+    tabela_dados["Status_Formatado"] = tabela_dados["bet_status"].map(status_map)
+
+    # Selecionar colunas para exibição
+    colunas_exibicao = [
+        "Data/Hora",
+        "Partida",
+        "league_name",
+        "market_name",
+        "selection_line",
+        "Odds",
+        "Stake",
+        "Status_Formatado",
+        "Resultado",
+    ]
+
+    # Configurar colunas
+    config_colunas = {
+        "league_name": "Liga",
+        "market_name": "Mercado",
+        "selection_line": "Seleção",
+        "Status_Formatado": "Status",
+    }
+
+    # Exibir tabela com paginação
+    st.dataframe(
+        tabela_dados[colunas_exibicao],
+        column_config=config_colunas,
+        hide_index=True,
+        use_container_width=True,
+        height=500,
+    )
+
+    # Informações adicionais
+    st.markdown(
+        f"**📊 Exibindo {len(dados_filtrados)} de {len(historico_completo)} apostas totais**"
+    )
+
+    return dados_filtrados  # Retornar dados filtrados para uso na exportação
+
+
+# === FUNÇÕES ORIGINAIS (mantidas) ===
 
 
 def show_modern_dashboard(resolved_bets_df, pending_bets_df, events_df):
@@ -989,242 +1674,26 @@ def show_strategy_v1():
                     height=400,
                 )
             else:
-                st.info(f"📊 Nenhuma aposta V1 encontrada para o período selecionado.")
+                st.info("📊 Nenhuma aposta V1 encontrada para o período selecionado.")
         else:
-            st.info("📊 Nenhuma aposta pendente seguindo a Estratégia V1 encontrada.")
-
-    # Performance da Estratégia V1
-    if not resolved_bets_df.empty:
-        st.markdown("### 📊 Performance da Estratégia V1")
-
-        # Merge com eventos para análise
-        resolved_with_events = pd.merge(
-            resolved_bets_df,
-            events_df[
-                ["event_id", "home_team", "away_team", "match_date", "league_name"]
-            ],
-            on="event_id",
-            how="left",
-        )
-
-        resolved_with_events["Lucro_Prejuizo"] = resolved_with_events.apply(
-            calculate_profit_loss, axis=1
-        )
-
-        # Filtrar apostas que seguem a estratégia V1 (igual ao código original)
-        strategy_bets = resolved_with_events[
-            (resolved_with_events["house_odds"] >= estrategia_filtrada["min_odds"])
-            & (
-                ~resolved_with_events["league_name"].isin(
-                    estrategia_filtrada["avoid_leagues"]
-                )
-            )
-        ]
-
-        if not strategy_bets.empty:
-            col1, col2, col3, col4 = st.columns(4)
-
-            with col1:
-                st.metric("🎯 Apostas V1", len(strategy_bets))
-
-            with col2:
-                # Calcular win rate considerando diferentes formatos de status
-                wins = strategy_bets["bet_status"].isin(["win", "won"]).sum()
-                total = len(strategy_bets)
-                win_rate = (wins / total * 100) if total > 0 else 0
-                st.metric("📈 Win Rate", f"{win_rate:.1f}%")
-
-            with col3:
-                total_profit_v1 = strategy_bets["Lucro_Prejuizo"].sum()
-                st.metric("💰 Lucro V1", f"{total_profit_v1:.2f} un")
-
-            with col4:
-                total_stake_v1 = strategy_bets["stake"].sum()
-                roi_v1 = (
-                    (total_profit_v1 / total_stake_v1 * 100)
-                    if total_stake_v1 > 0
-                    else 0
-                )
-                st.metric("📊 ROI V1", f"{roi_v1:.1f}%")
-
-            # Evolução mensal da Estratégia V1
-            st.markdown("### 📅 Evolução Mensal - Estratégia V1")
-
-            strategy_bets["match_date"] = pd.to_datetime(strategy_bets["match_date"])
-            strategy_bets["Ano_Mes"] = strategy_bets["match_date"].dt.to_period("M")
-
-            monthly_v1 = (
-                strategy_bets.groupby("Ano_Mes")
-                .agg(
-                    {
-                        "Lucro_Prejuizo": "sum",
-                        "stake": ["count", "sum"],
-                        "bet_status": lambda x: (x.isin(["win", "won"])).mean() * 100,
-                    }
-                )
-                .reset_index()
-            )
-
-            monthly_v1.columns = ["Mes", "Lucro", "Apostas", "Stake_Total", "Win_Rate"]
-            monthly_v1["ROI"] = monthly_v1["Lucro"] / monthly_v1["Stake_Total"] * 100
-            monthly_v1["Lucro_Acumulado"] = monthly_v1["Lucro"].cumsum()
-
-            if len(monthly_v1) > 0:
-                fig_v1 = go.Figure()
-
-                # Barras de lucro mensal V1
-                fig_v1.add_trace(
-                    go.Bar(
-                        x=monthly_v1["Mes"].astype(str),
-                        y=monthly_v1["Lucro"],
-                        name="Lucro Mensal V1",
-                        marker_color=[
-                            "#10b981" if x >= 0 else "#ef4444"
-                            for x in monthly_v1["Lucro"]
-                        ],
-                        text=[f"{x:.1f}" for x in monthly_v1["Lucro"]],
-                        textposition="outside",
-                        yaxis="y",
-                        opacity=0.8,
-                    )
-                )
-
-                # Linha de lucro acumulado V1
-                fig_v1.add_trace(
-                    go.Scatter(
-                        x=monthly_v1["Mes"].astype(str),
-                        y=monthly_v1["Lucro_Acumulado"],
-                        mode="lines+markers",
-                        name="Lucro Acumulado V1",
-                        line=dict(color="#7c3aed", width=4),
-                        marker=dict(size=10, color="#5b21b6", symbol="star"),
-                        yaxis="y2",
-                        hovertemplate="<b>%{x}</b><br>Lucro Acumulado V1: %{y:.2f} un<extra></extra>",
-                    )
-                )
-
-                # Linha de referência no zero
-                fig_v1.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
-
-                # Layout com dois eixos Y
-                fig_v1.update_layout(
-                    title={
-                        "text": "🎮 Performance Mensal - Estratégia V1",
-                        "x": 0.5,
-                        "font": {"size": 18, "color": "#1e293b"},
-                    },
-                    xaxis_title="Mês",
-                    yaxis=dict(
-                        title="Lucro Mensal V1 (unidades)", side="left", color="#1e293b"
-                    ),
-                    yaxis2=dict(
-                        title="Lucro Acumulado V1 (unidades)",
-                        side="right",
-                        overlaying="y",
-                        color="#7c3aed",
-                    ),
-                    height=450,
-                    template="plotly_white",
-                    font=dict(family="Inter, sans-serif"),
-                    legend=dict(
-                        orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1
-                    ),
-                    hovermode="x unified",
-                    plot_bgcolor="rgba(0,0,0,0)",
-                    paper_bgcolor="rgba(0,0,0,0)",
-                )
-
-                # Gradiente de fundo roxo para V1
-                fig_v1.update_layout(
-                    shapes=[
-                        dict(
-                            type="rect",
-                            xref="paper",
-                            yref="paper",
-                            x0=0,
-                            y0=0,
-                            x1=1,
-                            y1=1,
-                            fillcolor="rgba(124, 58, 237, 0.02)",
-                            layer="below",
-                            line_width=0,
-                        )
-                    ]
-                )
-
-                st.plotly_chart(fig_v1, use_container_width=True)
-
-                # Métricas de resumo mensal V1
-                col1, col2, col3 = st.columns(3)
-
-                with col1:
-                    melhor_mes_v1 = monthly_v1.loc[monthly_v1["Lucro"].idxmax()]
-                    st.metric(
-                        "🏆 Melhor Mês V1",
-                        str(melhor_mes_v1["Mes"]),
-                        f"+{melhor_mes_v1['Lucro']:.2f} un",
-                    )
-
-                with col2:
-                    if (monthly_v1["Lucro"] < 0).any():
-                        pior_mes_v1 = monthly_v1.loc[monthly_v1["Lucro"].idxmin()]
-                        st.metric(
-                            "📉 Pior Mês V1",
-                            str(pior_mes_v1["Mes"]),
-                            f"{pior_mes_v1['Lucro']:.2f} un",
-                        )
-                    else:
-                        st.metric("📉 Pior Mês V1", "Nenhum", "Todos positivos! 🎉")
-
-                with col3:
-                    lucro_medio_v1 = monthly_v1["Lucro"].mean()
-                    st.metric(
-                        "📊 Lucro Médio/Mês V1",
-                        f"{lucro_medio_v1:.2f} un",
-                        f"ROI: {monthly_v1['ROI'].mean():.1f}%",
-                    )
-            else:
-                st.info("📊 Dados insuficientes para análise mensal da Estratégia V1.")
-        else:
-            st.info(
-                "📊 Nenhuma aposta seguindo a Estratégia V1 encontrada nos dados atuais."
-            )
+            st.info("📊 Nenhuma aposta pendente segue os critérios da Estratégia V1.")
+    else:
+        st.info("📊 Não há apostas pendentes no momento.")
 
 
 def show_current_month_results(resolved_bets_df, events_df):
     """Resultados do mês atual"""
-    current_month = datetime.now().month
-    current_year = datetime.now().year
-    month_name = calendar.month_name[current_month]
-
-    # Traduzir para português
-    month_names_pt = {
-        "January": "Janeiro",
-        "February": "Fevereiro",
-        "March": "Março",
-        "April": "Abril",
-        "May": "Maio",
-        "June": "Junho",
-        "July": "Julho",
-        "August": "Agosto",
-        "September": "Setembro",
-        "October": "Outubro",
-        "November": "Novembro",
-        "December": "Dezembro",
-    }
-    month_name_pt = month_names_pt.get(month_name, month_name)
-
     st.markdown(
-        f'<h2 class="section-header">📅 Resultados de {month_name_pt} {current_year}</h2>',
+        '<h2 class="section-header">📅 Resultados do Mês Atual</h2>',
         unsafe_allow_html=True,
     )
 
     if resolved_bets_df.empty:
         st.markdown(
-            f"""
+            """
         <div class="content-card">
-            <h3>📊 Nenhum Resultado em {month_name_pt}</h3>
-            <p>Ainda não há apostas resolvidas para {month_name_pt} de {current_year}.</p>
+            <h3>📅 Sem Dados do Mês Atual</h3>
+            <p>Ainda não há apostas resolvidas para este mês.</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -1246,58 +1715,58 @@ def show_current_month_results(resolved_bets_df, events_df):
         resolved_with_events["match_date"]
     )
 
-    # Filtrar pelo mês atual
-    current_month_bets = resolved_with_events[
+    # Filtrar apenas o mês atual
+    current_month = datetime.now().month
+    current_year = datetime.now().year
+
+    current_month_data = resolved_with_events[
         (resolved_with_events["match_date"].dt.month == current_month)
         & (resolved_with_events["match_date"].dt.year == current_year)
     ]
 
-    if current_month_bets.empty:
-        st.info(
-            f"📊 Nenhuma aposta resolvida encontrada para {month_name_pt} de {current_year}."
-        )
+    if current_month_data.empty:
+        st.info("📊 Nenhuma aposta resolvida encontrada para este mês.")
         return
 
     # Métricas do mês
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("🎯 Apostas do Mês", len(current_month_bets))
+        st.metric("📊 Apostas do Mês", len(current_month_data))
 
     with col2:
-        win_rate = (current_month_bets["bet_status"] == "win").mean() * 100
-        st.metric("📈 Win Rate", f"{win_rate:.1f}%")
+        lucro_mes = current_month_data["Lucro_Prejuizo"].sum()
+        st.metric("💰 Lucro do Mês", f"{lucro_mes:.2f} un")
 
     with col3:
-        total_profit_month = current_month_bets["Lucro_Prejuizo"].sum()
-        st.metric("💰 Lucro do Mês", f"{total_profit_month:.2f} un")
+        win_rate = (
+            current_month_data["bet_status"].value_counts().get("win", 0)
+            / len(current_month_data)
+            * 100
+        )
+        st.metric("🎯 Win Rate", f"{win_rate:.1f}%")
 
     with col4:
-        total_stake_month = current_month_bets["stake"].sum()
-        roi_month = (
-            (total_profit_month / total_stake_month * 100)
-            if total_stake_month > 0
-            else 0
-        )
-        st.metric("📊 ROI do Mês", f"{roi_month:.1f}%")
+        stake_total = current_month_data["stake"].sum()
+        roi_mes = (lucro_mes / stake_total * 100) if stake_total > 0 else 0
+        st.metric("📈 ROI do Mês", f"{roi_mes:.1f}%")
 
-    # Gráfico de evolução diária do mês
-    st.markdown(f"### 📈 Evolução Diária - {month_name_pt}")
+    # Gráfico de evolução diária
+    st.markdown("### 📈 Evolução Diária do Mês")
 
-    daily_results = (
-        current_month_bets.groupby(current_month_bets["match_date"].dt.date)
+    daily_data = (
+        current_month_data.groupby(current_month_data["match_date"].dt.date)
         .agg({"Lucro_Prejuizo": "sum"})
         .reset_index()
     )
-
-    daily_results["Lucro_Acumulado"] = daily_results["Lucro_Prejuizo"].cumsum()
+    daily_data["Lucro_Acumulado"] = daily_data["Lucro_Prejuizo"].cumsum()
 
     fig = go.Figure()
 
     fig.add_trace(
         go.Scatter(
-            x=daily_results["match_date"],
-            y=daily_results["Lucro_Acumulado"],
+            x=daily_data["match_date"],
+            y=daily_data["Lucro_Acumulado"],
             mode="lines+markers",
             name="Lucro Acumulado",
             line=dict(color="#3b82f6", width=3),
@@ -1308,7 +1777,7 @@ def show_current_month_results(resolved_bets_df, events_df):
     fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
 
     fig.update_layout(
-        title=f"Evolução do Lucro em {month_name_pt}",
+        title="Evolução do Lucro Acumulado no Mês",
         xaxis_title="Data",
         yaxis_title="Lucro Acumulado (unidades)",
         height=400,
@@ -1322,69 +1791,54 @@ def show_current_month_results(resolved_bets_df, events_df):
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(f"### 🏆 Todas as Ligas - {month_name_pt}")
+        st.markdown("### 🏆 Performance por Liga (Mês)")
 
-        league_performance_month = (
-            current_month_bets.groupby("league_name")
+        league_month = (
+            current_month_data.groupby("league_name")
             .agg({"Lucro_Prejuizo": "sum", "stake": "count"})
             .reset_index()
         )
+        league_month = league_month.sort_values("Lucro_Prejuizo", ascending=False)
 
-        league_performance_month = league_performance_month.sort_values(
-            "Lucro_Prejuizo", ascending=False
+        st.dataframe(
+            league_month,
+            column_config={
+                "league_name": "Liga",
+                "Lucro_Prejuizo": st.column_config.NumberColumn(
+                    "Lucro", format="%.2f un"
+                ),
+                "stake": "Apostas",
+            },
+            hide_index=True,
+            use_container_width=True,
         )
-
-        if not league_performance_month.empty:
-            fig = px.bar(
-                league_performance_month,
-                x="Lucro_Prejuizo",
-                y="league_name",
-                orientation="h",
-                title="",
-                color="Lucro_Prejuizo",
-                color_continuous_scale="RdYlGn",
-                text="Lucro_Prejuizo",
-            )
-
-            fig.update_traces(texttemplate="%{text:.2f}", textposition="outside")
-            fig.update_layout(
-                yaxis={"categoryorder": "total ascending"},
-                height=max(300, len(league_performance_month) * 25),  # Altura dinâmica
-                template="plotly_white",
-                font=dict(family="Inter, sans-serif"),
-                showlegend=False,
-            )
-
-            st.plotly_chart(fig, use_container_width=True)
-        else:
-            st.info("Dados insuficientes para análise por liga.")
 
     with col2:
-        st.markdown(f"### 📊 Distribuição de Resultados em {month_name_pt}")
+        st.markdown("### 📊 Distribuição de Mercados (Mês)")
 
-        result_counts_month = current_month_bets["bet_status"].value_counts()
+        market_month = current_month_data["market_name"].value_counts().head(10)
 
-        fig = px.pie(
-            values=result_counts_month.values,
-            names=result_counts_month.index,
+        fig = px.bar(
+            x=market_month.values,
+            y=market_month.index,
+            orientation="h",
             title="",
-            color_discrete_map={"win": "#10b981", "loss": "#ef4444"},
-            hole=0.4,
-        )
-
-        fig.update_traces(
-            textposition="inside", textinfo="percent+label", textfont_size=12
+            color=market_month.values,
+            color_continuous_scale="Blues",
         )
 
         fig.update_layout(
-            height=300, template="plotly_white", font=dict(family="Inter, sans-serif")
+            height=300,
+            template="plotly_white",
+            font=dict(family="Inter, sans-serif"),
+            showlegend=False,
         )
 
         st.plotly_chart(fig, use_container_width=True)
 
 
 def show_general_results(resolved_bets_df, events_df):
-    """Resultados gerais de todas as apostas"""
+    """Resultados gerais com análise mensal"""
     st.markdown(
         '<h2 class="section-header">📈 Resultados Gerais</h2>', unsafe_allow_html=True
     )
@@ -1393,7 +1847,7 @@ def show_general_results(resolved_bets_df, events_df):
         st.markdown(
             """
         <div class="content-card">
-            <h3>📊 Nenhum Resultado Disponível</h3>
+            <h3>📈 Sem Dados Gerais</h3>
             <p>Ainda não há apostas resolvidas para análise geral.</p>
         </div>
         """,
@@ -1416,50 +1870,38 @@ def show_general_results(resolved_bets_df, events_df):
         resolved_with_events["match_date"]
     )
 
-    # Métricas gerais
-    col1, col2, col3, col4 = st.columns(4)
-
-    with col1:
-        st.metric("🎯 Total de Apostas", len(resolved_with_events))
-
-    with col2:
-        win_rate = (resolved_with_events["bet_status"] == "win").mean() * 100
-        st.metric("📈 Win Rate Geral", f"{win_rate:.1f}%")
-
-    with col3:
-        total_profit = resolved_with_events["Lucro_Prejuizo"].sum()
-        st.metric("💰 Lucro Total", f"{total_profit:.2f} un")
-
-    with col4:
-        total_stake = resolved_with_events["stake"].sum()
-        roi_geral = (total_profit / total_stake * 100) if total_stake > 0 else 0
-        st.metric("📊 ROI Geral", f"{roi_geral:.1f}%")
-
-    # Performance mensal
+    # Análise mensal
     st.markdown("### 📅 Performance Mensal")
 
-    resolved_with_events["Ano_Mes"] = resolved_with_events["match_date"].dt.to_period(
+    resolved_with_events["Mes_Ano"] = resolved_with_events["match_date"].dt.to_period(
         "M"
     )
+
     monthly_performance = (
-        resolved_with_events.groupby("Ano_Mes")
+        resolved_with_events.groupby("Mes_Ano")
         .agg(
             {
                 "Lucro_Prejuizo": "sum",
-                "stake": ["count", "sum"],
+                "stake": ["sum", "count"],
                 "bet_status": lambda x: (x == "win").mean() * 100,
             }
         )
         .reset_index()
     )
 
-    monthly_performance.columns = ["Mes", "Lucro", "Apostas", "Stake_Total", "Win_Rate"]
+    monthly_performance.columns = [
+        "Mes",
+        "Lucro",
+        "Stake_Total",
+        "Apostas",
+        "Win_Rate",
+    ]
     monthly_performance["ROI"] = (
         monthly_performance["Lucro"] / monthly_performance["Stake_Total"] * 100
     )
     monthly_performance["Lucro_Acumulado"] = monthly_performance["Lucro"].cumsum()
 
-    # Criar gráfico combinado mais impactante
+    # Gráfico de performance mensal
     fig = go.Figure()
 
     # Barras de lucro mensal
@@ -1471,10 +1913,8 @@ def show_general_results(resolved_bets_df, events_df):
             marker_color=[
                 "#10b981" if x >= 0 else "#ef4444" for x in monthly_performance["Lucro"]
             ],
-            text=[f"{x:.1f}" for x in monthly_performance["Lucro"]],
-            textposition="outside",
             yaxis="y",
-            opacity=0.8,
+            opacity=0.7,
         )
     )
 
@@ -1485,17 +1925,12 @@ def show_general_results(resolved_bets_df, events_df):
             y=monthly_performance["Lucro_Acumulado"],
             mode="lines+markers",
             name="Lucro Acumulado",
-            line=dict(color="#3b82f6", width=4),
-            marker=dict(size=10, color="#1e40af", symbol="diamond"),
+            line=dict(color="#3b82f6", width=3),
+            marker=dict(size=8, color="#1e40af"),
             yaxis="y2",
-            hovertemplate="<b>%{x}</b><br>Lucro Acumulado: %{y:.2f} un<extra></extra>",
         )
     )
 
-    # Linha de referência no zero
-    fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5)
-
-    # Layout com dois eixos Y
     fig.update_layout(
         title={
             "text": "📈 Evolução da Performance Mensal",
@@ -1860,6 +2295,152 @@ def show_advanced_statistics(resolved_bets_df, events_df):
         },
         hide_index=True,
         use_container_width=True,
+    )
+
+
+# Interface principal
+def main():
+    # Header principal com animação
+    st.markdown(
+        '<h1 class="main-header animate-fade-in">🎮 LoL Betting Analytics</h1>',
+        unsafe_allow_html=True,
+    )
+
+    # Subtitle
+    st.markdown(
+        '<p style="text-align: center; color: #64748b; font-size: 1.2rem; margin-bottom: 2rem;">Dashboard Avançado de Estatísticas de Apostas em League of Legends</p>',
+        unsafe_allow_html=True,
+    )
+
+    # Carregar dados
+    events_df = load_events()
+    bets_df = load_bets()
+    pending_bets_df = load_pending_bets()
+    resolved_bets_df = load_resolved_bets()
+
+    # Corrigir status para consistência
+    if not resolved_bets_df.empty:
+        resolved_bets_df["bet_status"] = resolved_bets_df["bet_status"].replace(
+            {"won": "win", "lost": "loss"}
+        )
+
+    # Layout principal - Métricas com design moderno
+    st.markdown('<div class="animate-fade-in">', unsafe_allow_html=True)
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric(
+            "📊 Total de Apostas",
+            len(bets_df),
+            help="Número total de apostas registradas no sistema",
+        )
+
+    with col2:
+        st.metric(
+            "⏳ Apostas Pendentes",
+            len(pending_bets_df),
+            help="Apostas aguardando resultado",
+        )
+
+    with col3:
+        st.metric(
+            "✅ Apostas Resolvidas",
+            len(resolved_bets_df),
+            help="Apostas com resultado definido",
+        )
+
+    with col4:
+        if not resolved_bets_df.empty:
+            resolved_bets_df_copy = resolved_bets_df.copy()
+            resolved_bets_df_copy["Lucro_Prejuizo"] = resolved_bets_df_copy.apply(
+                calculate_profit_loss, axis=1
+            )
+            total_profit = resolved_bets_df_copy["Lucro_Prejuizo"].sum()
+            total_stake_resolved = resolved_bets_df_copy["stake"].sum()
+            roi_geral = (
+                (total_profit / total_stake_resolved * 100)
+                if total_stake_resolved > 0
+                else 0
+            )
+
+            st.metric(
+                "📈 ROI Geral",
+                f"{roi_geral:.1f}%",
+                delta=f"{total_profit:.2f} unidades",
+                help="Retorno sobre investimento geral",
+            )
+        else:
+            st.metric("📈 ROI Geral", "0.0%", help="Retorno sobre investimento geral")
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Obter nome do mês atual em português
+    current_month = datetime.now().month
+    current_year = datetime.now().year
+    month_name = calendar.month_name[current_month]
+
+    # Traduzir para português
+    month_names_pt = {
+        "January": "Janeiro",
+        "February": "Fevereiro",
+        "March": "Março",
+        "April": "Abril",
+        "May": "Maio",
+        "June": "Junho",
+        "July": "Julho",
+        "August": "Agosto",
+        "September": "Setembro",
+        "October": "Outubro",
+        "November": "Novembro",
+        "December": "Dezembro",
+    }
+    month_name_pt = month_names_pt.get(month_name, month_name)
+
+    # Abas principais com design moderno - INCLUINDO A NOVA ABA HISTÓRICO
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+        [
+            "🏠 Dashboard",
+            "🎯 Apostas em Aberto",
+            "🎮 Estratégia V1",
+            f"📅 Resultados de {month_name_pt}",
+            "📈 Resultados Gerais",
+            "📋 Estatísticas Avançadas",
+            "📜 Histórico",  # NOVA ABA
+        ]
+    )
+
+    with tab1:
+        show_modern_dashboard(resolved_bets_df, pending_bets_df, events_df)
+
+    with tab2:
+        show_pending_bets_modern(pending_bets_df, events_df)
+
+    with tab3:
+        show_strategy_v1()
+
+    with tab4:
+        show_current_month_results(resolved_bets_df, events_df)
+
+    with tab5:
+        show_general_results(resolved_bets_df, events_df)
+
+    with tab6:
+        show_advanced_statistics(resolved_bets_df, events_df)
+
+    with tab7:  # NOVA ABA HISTÓRICO
+        show_historico_completo(resolved_bets_df, pending_bets_df, events_df)
+
+    # Footer moderno
+    st.markdown(
+        f"""
+    <div class="footer">
+        <p><strong>🎯 LoL Betting Analytics</strong> | Última atualização: {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>
+        <p>Total de eventos: {len(events_df)} | Banco: data/bets.db ({len(bets_df)} apostas)</p>
+        <p>Desenvolvido com ❤️ para a comunidade de League of Legends</p>
+    </div>
+    """,
+        unsafe_allow_html=True,
     )
 
 
