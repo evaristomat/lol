@@ -1,15 +1,15 @@
 import asyncio
 import json
-import os
-import sys
-import sqlite3
-import aiohttp
 import logging
+import os
+import sqlite3
+import sys
 import time
 from datetime import datetime, timedelta
-
-from typing import Dict, List, Optional, Tuple, Set
 from pathlib import Path
+from typing import Dict, List, Optional, Set, Tuple
+
+import aiohttp
 
 # Adicionar o diretório pai ao path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -25,7 +25,8 @@ if not telegram_token or not telegram_chat_id:
     print("⚠️ Variáveis de ambiente do Telegram não configuradas")
 else:
     print("✅ Variáveis de ambiente do Telegram configuradas")
-    
+
+
 # Códigos de cores ANSI
 class Colors:
     RESET = "\033[0m"
@@ -147,10 +148,8 @@ class LoLOddsDatabase:
         self.telegram_notifier = TelegramNotifier()
         self.lol_sport_id = 151
         self.rate_limiter = RateLimiter(max_requests=3500, time_window=3600)
-        self.semaphore = asyncio.Semaphore(
-            10
-        )  # Aumentado para 10 requisições simultâneas
-        self.odds_cache = {}  # Cache para odds já processadas
+        self.semaphore = asyncio.Semaphore(10)
+        self.odds_cache = {}
         self.init_database()
         logger.info(f"📀 Database inicializado: {self.db_path}")
 
@@ -160,7 +159,8 @@ class LoLOddsDatabase:
             conn.execute("PRAGMA foreign_keys = ON")
 
             # Tabela de times
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS teams (
                     id INTEGER PRIMARY KEY,
                     team_id TEXT UNIQUE NOT NULL,
@@ -169,10 +169,12 @@ class LoLOddsDatabase:
                     created_at TEXT DEFAULT (datetime('now')),
                     updated_at TEXT DEFAULT (datetime('now'))
                 )
-            """)
+            """
+            )
 
             # Tabela principal de eventos
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS events (
                     id INTEGER PRIMARY KEY,
                     event_id TEXT UNIQUE NOT NULL,
@@ -187,10 +189,12 @@ class LoLOddsDatabase:
                     FOREIGN KEY (home_team_id) REFERENCES teams (id),
                     FOREIGN KEY (away_team_id) REFERENCES teams (id)
                 )
-            """)
+            """
+            )
 
             # Tabela de odds atuais
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS current_odds (
                     id INTEGER PRIMARY KEY,
                     event_id TEXT NOT NULL,
@@ -203,10 +207,12 @@ class LoLOddsDatabase:
                     raw_data TEXT,
                     FOREIGN KEY (event_id) REFERENCES events (event_id) ON DELETE CASCADE
                 )
-            """)
+            """
+            )
 
             # Tabela de resultados
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS results (
                     id INTEGER PRIMARY KEY,
                     event_id TEXT NOT NULL,
@@ -218,7 +224,8 @@ class LoLOddsDatabase:
                     raw_result TEXT,
                     FOREIGN KEY (event_id) REFERENCES events (event_id) ON DELETE CASCADE
                 )
-            """)
+            """
+            )
 
             # Índices para performance
             conn.execute(
@@ -250,14 +257,13 @@ class LoLOddsDatabase:
         existing_team = cursor.fetchone()
 
         if existing_team:
-            return existing_team[0]  # Retorna o team_id da API
+            return existing_team[0]
 
-        # Criar novo time
         cursor = conn.execute(
             "INSERT INTO teams (team_id, name, region) VALUES (?, ?, ?)",
             (team_id, team_name, region),
         )
-        return team_id  # Retorna o team_id da API
+        return team_id
 
     def _is_lol_event(self, event: Dict) -> bool:
         """Filtro para identificar apenas League of Legends"""
@@ -302,8 +308,6 @@ class LoLOddsDatabase:
                 logger.info(
                     f"📅 Buscando eventos para {target_date.strftime('%Y-%m-%d')}"
                 )
-
-                # Respeitar rate limiting
                 await self.rate_limiter.acquire()
 
                 daily_events = await self.client.upcoming(
@@ -316,14 +320,10 @@ class LoLOddsDatabase:
                         for event in daily_events["results"]
                         if self._is_lol_event(event)
                     ]
-
                     events.extend(lol_events)
 
                     if lol_events:
                         logger.info(f"   ✅ {len(lol_events)} jogos de LoL encontrados")
-                        for event in lol_events:
-                            league_name = event.get("league", {}).get("name", "N/A")
-                            logger.debug(f"      🎮 {league_name}")
                     else:
                         logger.info("   ℹ️  Nenhum jogo de LoL encontrado")
                 else:
@@ -349,7 +349,6 @@ class LoLOddsDatabase:
             for event in events:
                 event_id = event.get("id")
 
-                # Verificar se evento existe
                 cursor = conn.execute(
                     "SELECT 1 FROM events WHERE event_id = ?", (event_id,)
                 )
@@ -359,7 +358,6 @@ class LoLOddsDatabase:
                     stats["existing"] += 1
                     continue
 
-                # Extrair informações dos times
                 home_team_info = event.get("home", {})
                 away_team_info = event.get("away", {})
                 home_team_id = home_team_info.get("id")
@@ -367,9 +365,12 @@ class LoLOddsDatabase:
                 home_team_name = home_team_info.get("name", "Unknown")
                 away_team_name = away_team_info.get("name", "Unknown")
 
-                # Obter ou criar times
-                home_api_id = self._get_or_create_team(conn, home_team_id, home_team_name)
-                away_api_id = self._get_or_create_team(conn, away_team_id, away_team_name)
+                home_api_id = self._get_or_create_team(
+                    conn, home_team_id, home_team_name
+                )
+                away_api_id = self._get_or_create_team(
+                    conn, away_team_id, away_team_name
+                )
 
                 if home_api_id and away_api_id:
                     stats["teams_created"] += 1
@@ -387,7 +388,6 @@ class LoLOddsDatabase:
                     except:
                         pass
 
-                # Inserir evento usando os team_id da API
                 conn.execute(
                     """
                     INSERT INTO events 
@@ -409,9 +409,7 @@ class LoLOddsDatabase:
                     f"✅ Novo evento: {home_team_name} vs {away_team_name} - {league_name}"
                 )
 
-                # Enviar notificação para o Telegram
                 try:
-                    # Formatar a data para exibição amigável
                     display_date = "Data não definida"
                     if match_date:
                         try:
@@ -420,7 +418,6 @@ class LoLOddsDatabase:
                         except:
                             display_date = match_date
 
-                    # Enviar notificação
                     success = self.telegram_notifier.notify_new_event(
                         home_team=home_team_name,
                         away_team=away_team_name,
@@ -430,28 +427,21 @@ class LoLOddsDatabase:
 
                     if success:
                         stats["notifications_sent"] += 1
-                        logger.info(
-                            f"📤 Notificação enviada para Telegram: {home_team_name} vs {away_team_name}"
-                        )
                     else:
                         stats["notification_errors"] += 1
-                        logger.warning(
-                            f"⚠️ Falha ao enviar notificação para Telegram: {home_team_name} vs {away_team_name}"
-                        )
 
                 except Exception as e:
                     stats["notification_errors"] += 1
-                    logger.error(f"❌ Erro ao enviar notificação para Telegram: {str(e)}")
+                    logger.error(
+                        f"❌ Erro ao enviar notificação para Telegram: {str(e)}"
+                    )
 
             conn.commit()
 
         logger.info(
             f"📝 Eventos processados - "
             f"Novos: {stats['new']}, "
-            f"Existentes: {stats['existing']}, "
-            f"Times criados: {stats['teams_created']}, "
-            f"Notificações enviadas: {stats['notifications_sent']}, "
-            f"Erros de notificação: {stats['notification_errors']}"
+            f"Existentes: {stats['existing']}"
         )
         return stats
 
@@ -460,7 +450,6 @@ class LoLOddsDatabase:
     ):
         """Busca e salva odds em lotes para melhor performance"""
         with sqlite3.connect(self.db_path) as conn:
-            # Eventos próximos sem odds ou com odds antigas
             cursor = conn.execute(
                 """
                 SELECT DISTINCT e.event_id, ht.name, at.name
@@ -489,32 +478,27 @@ class LoLOddsDatabase:
         )
         odds_collected = 0
 
-        # Processar em lotes
         for i in range(0, len(events_to_update), batch_size):
             batch = events_to_update[i : i + batch_size]
             logger.info(
                 f"   📦 Processando lote {i // batch_size + 1}/{(len(events_to_update) - 1) // batch_size + 1}"
             )
 
-            # Criar tarefas para o lote atual
             tasks = []
             for event_id, home, away in batch:
                 task = self._fetch_odds_for_event(event_id, home, away)
                 tasks.append(task)
 
-            # Executar o lote em paralelo
             batch_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-            # Processar resultados
             for result in batch_results:
                 if isinstance(result, Exception):
                     logger.error(f"      ❌ Erro em tarefa: {str(result)}")
                 elif result:
                     odds_collected += 1
 
-            # Pequena pausa entre lotes para evitar sobrecarga
             if i + batch_size < len(events_to_update):
-                await asyncio.sleep(0.5)  # Reduzida para 0.5 segundos
+                await asyncio.sleep(0.5)
 
         logger.info(
             f"📊 Coleta finalizada: {odds_collected}/{len(events_to_update)} eventos com odds"
@@ -523,15 +507,13 @@ class LoLOddsDatabase:
 
     async def _fetch_odds_for_event(self, event_id: str, home: str, away: str) -> bool:
         """Busca odds para um evento específico com controle de concorrência"""
-        async with self.semaphore:  # Controlar concorrência
+        async with self.semaphore:
             try:
-                # Verificar cache primeiro (cache por 1 hora)
                 cache_key = f"{event_id}_{int(time.time() / 3600)}"
                 if cache_key in self.odds_cache:
                     logger.debug(f"      ♻️  Usando cache para {home} vs {away}")
                     return True
 
-                # Respeitar rate limiting
                 await self.rate_limiter.acquire()
 
                 logger.debug(f"      📡 Buscando odds para {home} vs {away}")
@@ -545,9 +527,8 @@ class LoLOddsDatabase:
                     result = odds_data["results"][0]
                     self._save_odds_data(event_id, result)
 
-                    # Adicionar ao cache
                     self.odds_cache[cache_key] = True
-                    if len(self.odds_cache) > 1000:  # Limitar tamanho do cache
+                    if len(self.odds_cache) > 1000:
                         self.odds_cache.pop(next(iter(self.odds_cache)))
 
                     logger.debug(f"      ✅ Odds salvas para {home} vs {away}")
@@ -563,14 +544,14 @@ class LoLOddsDatabase:
                 return False
 
     def _save_odds_data(self, event_id: str, odds_data: Dict):
-        """Processa e salva dados de odds"""
+        """Processa e salva dados de odds INCLUINDO PLAYER ODDS"""
         with sqlite3.connect(self.db_path) as conn:
-            # Limpar odds antigas
             conn.execute("DELETE FROM current_odds WHERE event_id = ?", (event_id,))
 
             total_odds = 0
-            sections = ["main", "map_1", "map_2", "match", "schedule"]
 
+            # Seções regulares
+            sections = ["main", "map_1", "map_2", "match", "schedule"]
             for section in sections:
                 if section in odds_data and "sp" in odds_data[section]:
                     total_odds += self._process_odds_section(
@@ -585,8 +566,62 @@ class LoLOddsDatabase:
                             conn, event_id, f"others_{i}", other_item["sp"]
                         )
 
+            # PROCESSAR PLAYER ODDS
+            if "player" in odds_data and "sp" in odds_data["player"]:
+                player_odds = self._process_player_odds(
+                    conn, event_id, odds_data["player"]["sp"]
+                )
+                total_odds += player_odds
+                if player_odds > 0:
+                    logger.debug(f"      🎮 {player_odds} player odds processadas")
+
             conn.commit()
             logger.debug(f"      📊 {total_odds} odds processadas")
+
+    def _process_player_odds(self, conn, event_id: str, player_markets: Dict) -> int:
+        """Processa mercados de jogadores"""
+        odds_count = 0
+
+        for market_key, market_data in player_markets.items():
+            if not isinstance(market_data, dict) or "odds" not in market_data:
+                continue
+
+            market_name = market_data.get("name", market_key)
+
+            for odd in market_data["odds"]:
+                if isinstance(odd, dict):
+                    try:
+                        header = odd.get("header", "")
+                        name = odd.get("name", "")
+                        selection_name = f"{header} {name}".strip() if header else name
+                        odds_value = float(odd.get("odds", 0))
+                        handicap = odd.get("handicap", "")
+
+                        if odds_value == 0:
+                            continue
+
+                        conn.execute(
+                            """
+                            INSERT INTO current_odds 
+                            (event_id, odds_type, market_name, selection_name, odds_value, handicap, raw_data)
+                            VALUES (?, ?, ?, ?, ?, ?, ?)
+                        """,
+                            (
+                                event_id,
+                                "player",  # odds_type = player
+                                market_name,
+                                selection_name,
+                                odds_value,
+                                handicap,
+                                json.dumps(odd),
+                            ),
+                        )
+
+                        odds_count += 1
+                    except Exception as e:
+                        logger.error(f"❌ Erro ao salvar player odd: {str(e)}")
+
+        return odds_count
 
     def _process_odds_section(
         self, conn, event_id: str, section: str, markets: Dict
@@ -661,12 +696,16 @@ class LoLOddsDatabase:
             dashboard.append("📊 DASHBOARD - LOL ODDS DATABASE")
             dashboard.append("=" * 60)
 
-            # Estatísticas gerais
             cursor = conn.execute("SELECT COUNT(*) FROM events")
             total_events = cursor.fetchone()[0]
 
             cursor = conn.execute("SELECT COUNT(*) FROM current_odds")
             total_odds = cursor.fetchone()[0]
+
+            cursor = conn.execute(
+                "SELECT COUNT(*) FROM current_odds WHERE odds_type = 'player'"
+            )
+            player_odds = cursor.fetchone()[0]
 
             cursor = conn.execute("SELECT COUNT(*) FROM teams")
             total_teams = cursor.fetchone()[0]
@@ -675,13 +714,12 @@ class LoLOddsDatabase:
             dashboard.append(f"  Total de Eventos: {total_events:,}")
             dashboard.append(f"  Total de Times: {total_teams:,}")
             dashboard.append(f"  Odds Atuais: {total_odds:,}")
+            dashboard.append(f"  Player Odds: {player_odds:,}")
 
-            # Tamanho do banco
             if os.path.exists(self.db_path):
                 size_mb = os.path.getsize(self.db_path) / 1024 / 1024
                 dashboard.append(f"  Tamanho do Banco: {size_mb:.2f} MB")
 
-            # Próximos eventos
             dashboard.append(f"\n🎮 PRÓXIMOS EVENTOS:")
 
             cursor = conn.execute(
@@ -689,26 +727,29 @@ class LoLOddsDatabase:
             )
             upcoming = cursor.fetchone()[0]
 
-            cursor = conn.execute("""
+            cursor = conn.execute(
+                """
                 SELECT COUNT(*) FROM events 
                 WHERE match_timestamp BETWEEN strftime('%s', 'now') 
                 AND strftime('%s', 'now', '+24 hours')
                 AND status = 'upcoming'
-            """)
+            """
+            )
             next_24h = cursor.fetchone()[0]
 
             dashboard.append(f"  Eventos Futuros: {upcoming}")
             dashboard.append(f"  Próximas 24h: {next_24h}")
 
-            # Cobertura de odds
-            cursor = conn.execute("""
+            cursor = conn.execute(
+                """
                 SELECT 
                     COUNT(DISTINCT e.event_id) as total,
                     COUNT(DISTINCT co.event_id) as with_odds
                 FROM events e
                 LEFT JOIN current_odds co ON e.event_id = co.event_id
                 WHERE e.status = 'upcoming'
-            """)
+            """
+            )
             total, with_odds = cursor.fetchone()
             coverage = (with_odds / total * 100) if total > 0 else 0
 
@@ -717,94 +758,17 @@ class LoLOddsDatabase:
                 f"  Eventos com Odds: {with_odds}/{total} ({coverage:.1f}%)"
             )
 
-            # Eventos sem odds
-            cursor = conn.execute("""
-                SELECT COUNT(*) FROM events e
-                WHERE e.status = 'upcoming'
-                AND e.event_id NOT IN (SELECT DISTINCT event_id FROM current_odds)
-            """)
-            without_odds = cursor.fetchone()[0]
+            # Player odds coverage
+            cursor = conn.execute(
+                """
+                SELECT COUNT(DISTINCT event_id) 
+                FROM current_odds 
+                WHERE odds_type = 'player'
+            """
+            )
+            events_with_player_odds = cursor.fetchone()[0]
+            dashboard.append(f"  Eventos com Player Odds: {events_with_player_odds}")
 
-            cursor = conn.execute("""
-                SELECT COUNT(DISTINCT e.event_id) FROM events e
-                JOIN current_odds co ON e.event_id = co.event_id
-                WHERE e.status = 'upcoming'
-                AND datetime(co.updated_at) < datetime('now', '-2 hours')
-            """)
-            old_odds = cursor.fetchone()[0]
-
-            dashboard.append(f"  Sem Odds: {without_odds}")
-            dashboard.append(f"  Odds Antigas (>2h): {old_odds}")
-
-            # Ligas ativas
-            dashboard.append(f"\n🏆 TOP 5 LIGAS ATIVAS:")
-            cursor = conn.execute("""
-                SELECT league_name, COUNT(*) as count
-                FROM events 
-                WHERE status = 'upcoming'
-                GROUP BY league_name
-                ORDER BY count DESC
-                LIMIT 5
-            """)
-
-            for league, count in cursor.fetchall():
-                dashboard.append(f"  {league}: {count} jogos")
-
-            # Times mais frequentes
-            dashboard.append(f"\n⭐ TOP 5 TIMES MAIS FREQUENTES:")
-            cursor = conn.execute("""
-                SELECT t.name, COUNT(*) as count
-                FROM events e
-                JOIN teams t ON e.home_team_id = t.id OR e.away_team_id = t.id
-                WHERE e.status = 'upcoming'
-                GROUP BY t.id
-                ORDER BY count DESC
-                LIMIT 5
-            """)
-
-            for team, count in cursor.fetchall():
-                dashboard.append(f"  {team}: {count} jogos")
-
-            # Mercados disponíveis
-            dashboard.append(f"\n🎯 TOP 5 MERCADOS:")
-            cursor = conn.execute("""
-                SELECT market_name, COUNT(*) as count
-                FROM current_odds
-                GROUP BY market_name
-                ORDER BY count DESC
-                LIMIT 5
-            """)
-
-            for market, count in cursor.fetchall():
-                dashboard.append(f"  {market}: {count:,} seleções")
-
-            # Próximos jogos com odds
-            dashboard.append(f"\n⚽ PRÓXIMOS 3 JOGOS COM ODDS:")
-            cursor = conn.execute("""
-                SELECT 
-                    ht.name, at.name, e.match_date,
-                    COUNT(DISTINCT co.market_name) as markets
-                FROM events e
-                JOIN teams ht ON e.home_team_id = ht.team_id
-                JOIN teams at ON e.away_team_id = at.team_id
-                JOIN current_odds co ON e.event_id = co.event_id
-                WHERE e.status = 'upcoming'
-                GROUP BY e.event_id
-                ORDER BY e.match_timestamp
-                LIMIT 3
-            """)
-
-            for home, away, date, markets in cursor.fetchall():
-                if date:
-                    dt = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
-                    date_str = dt.strftime("%d/%m %H:%M")
-                else:
-                    date_str = "TBD"
-                dashboard.append(
-                    f"  {date_str} - {home} vs {away} ({markets} mercados)"
-                )
-
-            # Última atualização
             cursor = conn.execute("SELECT MAX(updated_at) FROM current_odds")
             last_update = cursor.fetchone()[0]
             if last_update:
@@ -819,26 +783,25 @@ class LoLOddsDatabase:
         cutoff_timestamp = int((datetime.now() - timedelta(days=days_keep)).timestamp())
 
         with sqlite3.connect(self.db_path) as conn:
-            # Remove eventos antigos e suas odds (CASCADE)
             cursor = conn.execute(
                 "DELETE FROM events WHERE match_timestamp < ?", (cutoff_timestamp,)
             )
             deleted_events = cursor.rowcount
 
-            # Remove times não utilizados
-            cursor = conn.execute("""
+            cursor = conn.execute(
+                """
                 DELETE FROM teams 
                 WHERE team_id NOT IN (
                     SELECT home_team_id FROM events
                     UNION
                     SELECT away_team_id FROM events
                 )
-            """)
+            """
+            )
             deleted_teams = cursor.rowcount
 
             conn.commit()
 
-        # VACUUM fora da transação
         with sqlite3.connect(self.db_path) as conn:
             conn.execute("VACUUM")
 
@@ -855,11 +818,8 @@ class LoLOddsDatabase:
         start_time = datetime.now()
 
         try:
-            # 1. Buscar e salvar novos eventos
             logger.info("\n📅 FASE 1: Buscando eventos...")
-            events = await self.fetch_upcoming_events(
-                days_ahead=10
-            )  # 10 dias por padrão
+            events = await self.fetch_upcoming_events(days_ahead=10)
 
             if events:
                 stats = self.save_events(events)
@@ -869,7 +829,6 @@ class LoLOddsDatabase:
             else:
                 logger.warning("ℹ️ Nenhum evento encontrado")
 
-            # 2. Atualizar odds
             logger.info("\n💰 FASE 2: Atualizando odds...")
             odds_collected = await self.fetch_and_save_odds(
                 hours_old_threshold=2, batch_size=10

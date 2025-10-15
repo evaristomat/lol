@@ -6082,3 +6082,725 @@
 2025-09-03 16:25:13,987 - INFO - ============================================================
 2025-09-03 16:25:13,987 - INFO - ✅ Atualização concluída com sucesso!
 2025-09-03 16:25:13,988 - INFO - 👋 Conexões encerradas. Script finalizado.
+2025-10-15 10:52:21,320 - INFO - 🎯 INICIANDO ATUALIZADOR DOS ÚLTIMOS 30 DIAS
+2025-10-15 10:52:21,320 - INFO - ============================================================
+2025-10-15 10:52:21,580 - INFO - 🚀 INICIANDO ATUALIZAÇÃO DOS ÚLTIMOS 30 DIAS
+2025-10-15 10:52:21,581 - INFO - ============================================================
+2025-10-15 10:52:21,581 - INFO - 📅 PROCESSANDO DIA: 2025-10-15 (1/30)
+2025-10-15 10:52:21,581 - INFO -    🔍 Buscando eventos para o dia 20251015...
+2025-10-15 10:52:22,244 - INFO -    ✅ 50 eventos encontrados para o dia 20251015
+2025-10-15 10:52:22,244 - INFO -    🎯 9 jogos de LoL encontrados
+2025-10-15 10:52:22,244 - INFO -    ⚔️  Processando: Vivo Keyd Stars vs Team Secret Whales (LOL - World Champs) - ID: 183017511
+2025-10-15 10:52:22,246 - INFO -    ⏭️  Evento 183017511 está finalizado, não precisa atualizar
+2025-10-15 10:52:22,246 - INFO -    ⏭️  EVENTO PULADO: 183017511
+2025-10-15 10:52:22,246 - INFO -    ⚔️  Processando: CTBC Flying Oyster vs Fnatic (LOL - World Champs) - ID: 183017508
+2025-10-15 10:52:22,247 - INFO -    ⏭️  Evento 183017508 está finalizado, não precisa atualizar
+2025-10-15 10:52:22,247 - INFO -    ⏭️  EVENTO PULADO: 183017508
+2025-10-15 10:52:22,247 - INFO -    ⚔️  Processando: KT Rolster vs Movistar KOI (LOL - World Champs) - ID: 183017512
+2025-10-15 10:52:22,248 - INFO -    ⏭️  Evento 183017512 está finalizado, não precisa atualizar
+2025-10-15 10:52:22,248 - INFO -    ⏭️  EVENTO PULADO: 183017512
+2025-10-15 10:52:22,248 - INFO -    ⚔️  Processando: Bilibili Gaming vs 100 Thieves (LOL - World Champs) - ID: 183017509
+2025-10-15 10:52:22,249 - INFO -    ⏭️  Evento 183017509 está finalizado, não precisa atualizar
+2025-10-15 10:52:22,249 - INFO -    ⏭️  EVENTO PULADO: 183017509
+2025-10-15 10:52:22,249 - INFO -    ⚔️  Processando: FlyQuest vs T1 (LOL - World Champs) - ID: 183017505
+2025-10-15 10:52:22,252 - INFO -    ✅ Evento 183017505 precisa ser atualizado
+2025-10-15 10:52:22,252 - INFO -    📥 Buscando detalhes para atualizar evento 183017505...
+2025-10-15 10:52:22,484 - INFO -    💾 Evento 183017505 atualizado com sucesso no banco de dados
+2025-10-15 10:52:22,485 - INFO -    🔄 EVENTO ATUALIZADO: 183017505
+2025-10-15 10:52:22,485 - INFO -    ⚔️  Processando: FlyQuest vs T1 (LOL - World Champs) - ID: 183048751
+2025-10-15 10:52:22,487 - INFO -    ✅ Evento 183048751 precisa ser atualizado
+2025-10-15 10:52:22,487 - INFO -    📥 Buscando detalhes para atualizar evento 183048751...
+2025-10-15 10:52:22,751 - INFO -    📊 Estatísticas salvas: 1 mapas, 6 estatísticas
+2025-10-15 10:52:22,753 - INFO -    💾 Evento 183048751 atualizado com sucesso no banco de dados
+2025-10-15 10:52:22,753 - INFO -    🔄 EVENTO ATUALIZADO: 183048751
+2025-10-15 10:52:22,754 - INFO -    ⚔️  Processando: Hanwha Life Esports vs Anyone's Legend (LOL - World Champs) - ID: 183017510
+2025-10-15 10:52:22,755 - INFO -    ✅ Evento 183017510 precisa ser atualizado
+2025-10-15 10:52:22,756 - INFO -    📥 Buscando detalhes para atualizar evento 183017510...
+2025-10-15 10:52:23,090 - INFO -    📊 Estatísticas salvas: 1 mapas, 6 estatísticas
+2025-10-15 10:52:23,093 - INFO -    💾 Evento 183017510 atualizado com sucesso no banco de dados
+2025-10-15 10:52:23,094 - INFO -    🔄 EVENTO ATUALIZADO: 183017510
+2025-10-15 10:52:23,094 - INFO -    ⚔️  Processando: G2 Esports vs Top Esports (LOL - World Champs) - ID: 183017506
+2025-10-15 10:52:23,096 - INFO -    ✅ Evento 183017506 precisa ser atualizado
+2025-10-15 10:52:23,096 - INFO -    📥 Buscando detalhes para atualizar evento 183017506...
+2025-10-15 10:52:23,353 - INFO -    📊 Estatísticas salvas: 1 mapas, 6 estatísticas
+2025-10-15 10:52:23,356 - INFO -    💾 Evento 183017506 atualizado com sucesso no banco de dados
+2025-10-15 10:52:23,356 - INFO -    🔄 EVENTO ATUALIZADO: 183017506
+2025-10-15 10:52:23,356 - INFO -    ⚔️  Processando: Gen.G vs PSG Talon (LOL - World Champs) - ID: 183017503
+2025-10-15 10:52:23,358 - INFO -    ✅ Evento 183017503 precisa ser atualizado
+2025-10-15 10:52:23,358 - INFO -    📥 Buscando detalhes para atualizar evento 183017503...
+2025-10-15 10:52:23,609 - INFO -    📊 Estatísticas salvas: 1 mapas, 6 estatísticas
+2025-10-15 10:52:23,617 - INFO -    💾 Evento 183017503 atualizado com sucesso no banco de dados
+2025-10-15 10:52:23,618 - INFO -    🔄 EVENTO ATUALIZADO: 183017503
+2025-10-15 10:52:23,618 - INFO -    📊 RESUMO DO DIA 2025-10-15:
+2025-10-15 10:52:23,618 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:23,618 - INFO -       🔄 Atualizados: 5
+2025-10-15 10:52:23,618 - INFO -       ⏭️  Pulados: 4
+2025-10-15 10:52:23,618 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:23,618 - INFO -       📋 Total processado: 9
+2025-10-15 10:52:24,631 - INFO - 📅 PROCESSANDO DIA: 2025-10-14 (2/30)
+2025-10-15 10:52:24,632 - INFO -    🔍 Buscando eventos para o dia 20251014...
+2025-10-15 10:52:29,705 - INFO -    ✅ 50 eventos encontrados para o dia 20251014
+2025-10-15 10:52:29,706 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:52:29,706 - INFO -    ⚔️  Processando: T1 vs Invictus Gaming (LOL - World Champs) - ID: 182052047
+2025-10-15 10:52:29,708 - INFO -    ⏭️  Evento 182052047 está finalizado, não precisa atualizar
+2025-10-15 10:52:29,708 - INFO -    ⏭️  EVENTO PULADO: 182052047
+2025-10-15 10:52:29,709 - INFO -    📊 RESUMO DO DIA 2025-10-14:
+2025-10-15 10:52:29,709 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:29,709 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:52:29,709 - INFO -       ⏭️  Pulados: 1
+2025-10-15 10:52:29,709 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:29,709 - INFO -       📋 Total processado: 1
+2025-10-15 10:52:30,710 - INFO - 📅 PROCESSANDO DIA: 2025-10-13 (3/30)
+2025-10-15 10:52:30,710 - INFO -    🔍 Buscando eventos para o dia 20251013...
+2025-10-15 10:52:30,997 - INFO -    ✅ 28 eventos encontrados para o dia 20251013
+2025-10-15 10:52:30,997 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:52:30,997 - INFO -    ⚔️  Processando: T1.EA vs DRX.Ch (LOL - Asia Masters) - ID: 182908737
+2025-10-15 10:52:30,999 - INFO -    ✅ Evento 182908737 precisa ser atualizado
+2025-10-15 10:52:30,999 - INFO -    📥 Buscando detalhes para atualizar evento 182908737...
+2025-10-15 10:52:31,326 - INFO -    💾 Evento 182908737 atualizado com sucesso no banco de dados
+2025-10-15 10:52:31,327 - INFO -    🔄 EVENTO ATUALIZADO: 182908737
+2025-10-15 10:52:31,327 - INFO -    📊 RESUMO DO DIA 2025-10-13:
+2025-10-15 10:52:31,327 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:31,327 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:52:31,327 - INFO -       ⏭️  Pulados: 0
+2025-10-15 10:52:31,327 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:31,327 - INFO -       📋 Total processado: 1
+2025-10-15 10:52:32,329 - INFO - 📅 PROCESSANDO DIA: 2025-10-12 (4/30)
+2025-10-15 10:52:32,329 - INFO -    🔍 Buscando eventos para o dia 20251012...
+2025-10-15 10:52:33,551 - INFO -    ✅ 50 eventos encontrados para o dia 20251012
+2025-10-15 10:52:33,551 - INFO -    🎯 4 jogos de LoL encontrados
+2025-10-15 10:52:33,551 - INFO -    ⚔️  Processando: DRX.Ch vs DN Freecs.Ch (LOL - Asia Masters) - ID: 182847661
+2025-10-15 10:52:33,554 - INFO -    ✅ Evento 182847661 precisa ser atualizado
+2025-10-15 10:52:33,554 - INFO -    📥 Buscando detalhes para atualizar evento 182847661...
+2025-10-15 10:52:33,853 - INFO -    💾 Evento 182847661 atualizado com sucesso no banco de dados
+2025-10-15 10:52:33,854 - INFO -    🔄 EVENTO ATUALIZADO: 182847661
+2025-10-15 10:52:33,854 - INFO -    ⚔️  Processando: Dplus KIA vs BNK FearX (LOL - Asia Invitational) - ID: 182847620
+2025-10-15 10:52:33,856 - INFO -    ⏭️  Evento 182847620 está finalizado, não precisa atualizar
+2025-10-15 10:52:33,856 - INFO -    ⏭️  EVENTO PULADO: 182847620
+2025-10-15 10:52:33,856 - INFO -    ⚔️  Processando: Vitality.Bee vs Los Ratones (LOL - EMEA Masters Summer) - ID: 182696568
+2025-10-15 10:52:33,857 - INFO -    ⏭️  Evento 182696568 está finalizado, não precisa atualizar
+2025-10-15 10:52:33,857 - INFO -    ⏭️  EVENTO PULADO: 182696568
+2025-10-15 10:52:33,857 - INFO -    ⚔️  Processando: Galions vs Barca eSports (LOL - EMEA Masters Summer) - ID: 182696569
+2025-10-15 10:52:33,858 - INFO -    ⏭️  Evento 182696569 está finalizado, não precisa atualizar
+2025-10-15 10:52:33,859 - INFO -    ⏭️  EVENTO PULADO: 182696569
+2025-10-15 10:52:33,859 - INFO -    📊 RESUMO DO DIA 2025-10-12:
+2025-10-15 10:52:33,859 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:33,859 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:52:33,859 - INFO -       ⏭️  Pulados: 3
+2025-10-15 10:52:33,859 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:33,859 - INFO -       📋 Total processado: 4
+2025-10-15 10:52:34,863 - INFO - 📅 PROCESSANDO DIA: 2025-10-11 (5/30)
+2025-10-15 10:52:34,863 - INFO -    🔍 Buscando eventos para o dia 20251011...
+2025-10-15 10:52:35,182 - INFO -    ✅ 50 eventos encontrados para o dia 20251011
+2025-10-15 10:52:35,182 - INFO -    🎯 5 jogos de LoL encontrados
+2025-10-15 10:52:35,182 - INFO -    ⚔️  Processando: DRX.Ch vs T1.EA (LOL - Asia Masters) - ID: 182791402
+2025-10-15 10:52:35,183 - INFO -    ✅ Evento 182791402 precisa ser atualizado
+2025-10-15 10:52:35,183 - INFO -    📥 Buscando detalhes para atualizar evento 182791402...
+2025-10-15 10:52:35,431 - INFO -    💾 Evento 182791402 atualizado com sucesso no banco de dados
+2025-10-15 10:52:35,431 - INFO -    🔄 EVENTO ATUALIZADO: 182791402
+2025-10-15 10:52:35,431 - INFO -    ⚔️  Processando: DN Freecs.Ch vs BNK FearX.Y (LOL - Asia Masters) - ID: 182791403
+2025-10-15 10:52:35,434 - INFO -    ✅ Evento 182791403 precisa ser atualizado
+2025-10-15 10:52:35,434 - INFO -    📥 Buscando detalhes para atualizar evento 182791403...
+2025-10-15 10:52:35,701 - INFO -    💾 Evento 182791403 atualizado com sucesso no banco de dados
+2025-10-15 10:52:35,701 - INFO -    🔄 EVENTO ATUALIZADO: 182791403
+2025-10-15 10:52:35,701 - INFO -    ⚔️  Processando: Weibo Gaming vs BNK FearX.Y (LOL - Asia Invitational) - ID: 182788544
+2025-10-15 10:52:35,703 - INFO -    ⏭️  Evento 182788544 está finalizado, não precisa atualizar
+2025-10-15 10:52:35,704 - INFO -    ⏭️  EVENTO PULADO: 182788544
+2025-10-15 10:52:35,704 - INFO -    ⚔️  Processando: Weibo Gaming vs BNK FearX (LOL - Asia Invitational) - ID: 182838659
+2025-10-15 10:52:35,705 - INFO -    ⏭️  Evento 182838659 está finalizado, não precisa atualizar
+2025-10-15 10:52:35,705 - INFO -    ⏭️  EVENTO PULADO: 182838659
+2025-10-15 10:52:35,705 - INFO -    ⚔️  Processando: Nongshim RedForce vs BNK FearX (LOL - Asia Invitational) - ID: 182843073
+2025-10-15 10:52:35,706 - INFO -    ⏭️  Evento 182843073 está finalizado, não precisa atualizar
+2025-10-15 10:52:35,706 - INFO -    ⏭️  EVENTO PULADO: 182843073
+2025-10-15 10:52:35,707 - INFO -    📊 RESUMO DO DIA 2025-10-11:
+2025-10-15 10:52:35,707 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:35,707 - INFO -       🔄 Atualizados: 2
+2025-10-15 10:52:35,707 - INFO -       ⏭️  Pulados: 3
+2025-10-15 10:52:35,707 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:35,707 - INFO -       📋 Total processado: 5
+2025-10-15 10:52:36,713 - INFO - 📅 PROCESSANDO DIA: 2025-10-10 (6/30)
+2025-10-15 10:52:36,713 - INFO -    🔍 Buscando eventos para o dia 20251010...
+2025-10-15 10:52:37,210 - INFO -    ✅ 50 eventos encontrados para o dia 20251010
+2025-10-15 10:52:37,210 - INFO -    🎯 5 jogos de LoL encontrados
+2025-10-15 10:52:37,210 - INFO -    ⚔️  Processando: DRX.Ch vs DN Freecs.Ch (LOL - Asia Masters) - ID: 182741550
+2025-10-15 10:52:37,211 - INFO -    ✅ Evento 182741550 precisa ser atualizado
+2025-10-15 10:52:37,212 - INFO -    📥 Buscando detalhes para atualizar evento 182741550...
+2025-10-15 10:52:37,472 - INFO -    💾 Evento 182741550 atualizado com sucesso no banco de dados
+2025-10-15 10:52:37,473 - INFO -    🔄 EVENTO ATUALIZADO: 182741550
+2025-10-15 10:52:37,473 - INFO -    ⚔️  Processando: Weibo Gaming vs Nongshim RedForce (LOL - Asia Invitational) - ID: 182737733
+2025-10-15 10:52:37,475 - INFO -    ⏭️  Evento 182737733 está finalizado, não precisa atualizar
+2025-10-15 10:52:37,475 - INFO -    ⏭️  EVENTO PULADO: 182737733
+2025-10-15 10:52:37,475 - INFO -    ⚔️  Processando: BNK FearX.Y vs T1.EA (LOL - Asia Masters) - ID: 182741551
+2025-10-15 10:52:37,476 - INFO -    ✅ Evento 182741551 precisa ser atualizado
+2025-10-15 10:52:37,477 - INFO -    📥 Buscando detalhes para atualizar evento 182741551...
+2025-10-15 10:52:37,736 - INFO -    💾 Evento 182741551 atualizado com sucesso no banco de dados
+2025-10-15 10:52:37,736 - INFO -    🔄 EVENTO ATUALIZADO: 182741551
+2025-10-15 10:52:37,736 - INFO -    ⚔️  Processando: BNK FearX vs Dplus KIA (LOL - Asia Invitational) - ID: 182737734
+2025-10-15 10:52:37,738 - INFO -    ⏭️  Evento 182737734 está finalizado, não precisa atualizar
+2025-10-15 10:52:37,738 - INFO -    ⏭️  EVENTO PULADO: 182737734
+2025-10-15 10:52:37,739 - INFO -    ⚔️  Processando: Nongshim RedForce vs Dplus KIA (LOL - Asia Invitational) - ID: 182788543
+2025-10-15 10:52:37,740 - INFO -    ⏭️  Evento 182788543 está finalizado, não precisa atualizar
+2025-10-15 10:52:37,740 - INFO -    ⏭️  EVENTO PULADO: 182788543
+2025-10-15 10:52:37,740 - INFO -    📊 RESUMO DO DIA 2025-10-10:
+2025-10-15 10:52:37,740 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:37,740 - INFO -       🔄 Atualizados: 2
+2025-10-15 10:52:37,740 - INFO -       ⏭️  Pulados: 3
+2025-10-15 10:52:37,740 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:37,741 - INFO -       📋 Total processado: 5
+2025-10-15 10:52:38,741 - INFO - 📅 PROCESSANDO DIA: 2025-10-09 (7/30)
+2025-10-15 10:52:38,741 - INFO -    🔍 Buscando eventos para o dia 20251009...
+2025-10-15 10:52:39,082 - INFO -    ✅ 50 eventos encontrados para o dia 20251009
+2025-10-15 10:52:39,082 - INFO -    🎯 6 jogos de LoL encontrados
+2025-10-15 10:52:39,083 - INFO -    ⚔️  Processando: KT Rolster.Ch vs DRX.Ch (LOL - Asia Masters) - ID: 182679489
+2025-10-15 10:52:39,084 - INFO -    ✅ Evento 182679489 precisa ser atualizado
+2025-10-15 10:52:39,084 - INFO -    📥 Buscando detalhes para atualizar evento 182679489...
+2025-10-15 10:52:39,331 - INFO -    💾 Evento 182679489 atualizado com sucesso no banco de dados
+2025-10-15 10:52:39,331 - INFO -    🔄 EVENTO ATUALIZADO: 182679489
+2025-10-15 10:52:39,331 - INFO -    ⚔️  Processando: BNK FearX vs MGN Vikings Esports (LOL - Asia Invitational) - ID: 182218908
+2025-10-15 10:52:39,333 - INFO -    ⏭️  Evento 182218908 está finalizado, não precisa atualizar
+2025-10-15 10:52:39,334 - INFO -    ⏭️  EVENTO PULADO: 182218908
+2025-10-15 10:52:39,334 - INFO -    ⚔️  Processando: KT Rolster.Ch vs Dplus KIA.Ch (LOL - Asia Masters) - ID: 182679490
+2025-10-15 10:52:39,335 - INFO -    ✅ Evento 182679490 precisa ser atualizado
+2025-10-15 10:52:39,335 - INFO -    📥 Buscando detalhes para atualizar evento 182679490...
+2025-10-15 10:52:39,586 - INFO -    💾 Evento 182679490 atualizado com sucesso no banco de dados
+2025-10-15 10:52:39,586 - INFO -    🔄 EVENTO ATUALIZADO: 182679490
+2025-10-15 10:52:39,586 - INFO -    ⚔️  Processando: Dplus KIA vs GAM Esports (LOL - Asia Invitational) - ID: 182218910
+2025-10-15 10:52:39,588 - INFO -    ⏭️  Evento 182218910 está finalizado, não precisa atualizar
+2025-10-15 10:52:39,588 - INFO -    ⏭️  EVENTO PULADO: 182218910
+2025-10-15 10:52:39,588 - INFO -    ⚔️  Processando: Dplus KIA.Ch vs DRX.Ch (LOL - Asia Masters) - ID: 182679492
+2025-10-15 10:52:39,589 - INFO -    ⏭️  Evento 182679492 está finalizado, não precisa atualizar
+2025-10-15 10:52:39,589 - INFO -    ⏭️  EVENTO PULADO: 182679492
+2025-10-15 10:52:39,590 - INFO -    ⚔️  Processando: Ninjas In Pyjamas vs Nongshim RedForce (LOL - Asia Invitational) - ID: 182218911
+2025-10-15 10:52:39,591 - INFO -    ⏭️  Evento 182218911 está finalizado, não precisa atualizar
+2025-10-15 10:52:39,591 - INFO -    ⏭️  EVENTO PULADO: 182218911
+2025-10-15 10:52:39,591 - INFO -    📊 RESUMO DO DIA 2025-10-09:
+2025-10-15 10:52:39,591 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:39,591 - INFO -       🔄 Atualizados: 2
+2025-10-15 10:52:39,591 - INFO -       ⏭️  Pulados: 4
+2025-10-15 10:52:39,591 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:39,591 - INFO -       📋 Total processado: 6
+2025-10-15 10:52:40,592 - INFO - 📅 PROCESSANDO DIA: 2025-10-08 (8/30)
+2025-10-15 10:52:40,592 - INFO -    🔍 Buscando eventos para o dia 20251008...
+2025-10-15 10:52:40,980 - INFO -    ✅ 50 eventos encontrados para o dia 20251008
+2025-10-15 10:52:40,981 - INFO -    🎯 10 jogos de LoL encontrados
+2025-10-15 10:52:40,981 - INFO -    ⚔️  Processando: Dplus KIA.Ch vs Bilibili Gaming.Jr (LOL - Asia Masters) - ID: 182626775
+2025-10-15 10:52:40,982 - INFO -    ✅ Evento 182626775 precisa ser atualizado
+2025-10-15 10:52:40,982 - INFO -    📥 Buscando detalhes para atualizar evento 182626775...
+2025-10-15 10:52:41,236 - INFO -    💾 Evento 182626775 atualizado com sucesso no banco de dados
+2025-10-15 10:52:41,237 - INFO -    🔄 EVENTO ATUALIZADO: 182626775
+2025-10-15 10:52:41,237 - INFO -    ⚔️  Processando: JD Gaming vs GAM Esports (LOL - Asia Invitational) - ID: 182218903
+2025-10-15 10:52:41,239 - INFO -    ⏭️  Evento 182218903 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,239 - INFO -    ⏭️  EVENTO PULADO: 182218903
+2025-10-15 10:52:41,239 - INFO -    ⚔️  Processando: DRX.Ch vs Gen.G.GA (LOL - Asia Masters) - ID: 182626776
+2025-10-15 10:52:41,240 - INFO -    ✅ Evento 182626776 precisa ser atualizado
+2025-10-15 10:52:41,240 - INFO -    📥 Buscando detalhes para atualizar evento 182626776...
+2025-10-15 10:52:41,489 - INFO -    💾 Evento 182626776 atualizado com sucesso no banco de dados
+2025-10-15 10:52:41,489 - INFO -    🔄 EVENTO ATUALIZADO: 182626776
+2025-10-15 10:52:41,489 - INFO -    ⚔️  Processando: Ninjas In Pyjamas vs MGN Vikings Esports (LOL - Asia Invitational) - ID: 182218904
+2025-10-15 10:52:41,491 - INFO -    ⏭️  Evento 182218904 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,491 - INFO -    ⏭️  EVENTO PULADO: 182218904
+2025-10-15 10:52:41,491 - INFO -    ⚔️  Processando: KT Rolster.Ch vs Deep Cross Gaming (LOL - Asia Masters) - ID: 182626777
+2025-10-15 10:52:41,492 - INFO -    ✅ Evento 182626777 precisa ser atualizado
+2025-10-15 10:52:41,492 - INFO -    📥 Buscando detalhes para atualizar evento 182626777...
+2025-10-15 10:52:41,729 - INFO -    💾 Evento 182626777 atualizado com sucesso no banco de dados
+2025-10-15 10:52:41,730 - INFO -    🔄 EVENTO ATUALIZADO: 182626777
+2025-10-15 10:52:41,730 - INFO -    ⚔️  Processando: Dplus KIA vs Weibo Gaming (LOL - Asia Invitational) - ID: 182218906
+2025-10-15 10:52:41,731 - INFO -    ⏭️  Evento 182218906 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,732 - INFO -    ⏭️  EVENTO PULADO: 182218906
+2025-10-15 10:52:41,732 - INFO -    ⚔️  Processando: Partizan Sangal vs Unicorns of Love SE (LOL - EMEA Masters Summer) - ID: 182638124
+2025-10-15 10:52:41,733 - INFO -    ⏭️  Evento 182638124 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,733 - INFO -    ⏭️  EVENTO PULADO: 182638124
+2025-10-15 10:52:41,733 - INFO -    ⚔️  Processando: Bushido Wildcats vs Forsaken (LOL - EMEA Masters Summer) - ID: 182638125
+2025-10-15 10:52:41,734 - INFO -    ⏭️  Evento 182638125 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,734 - INFO -    ⏭️  EVENTO PULADO: 182638125
+2025-10-15 10:52:41,734 - INFO -    ⚔️  Processando: Zero Tenacity vs Veni Vidi Vici (LOL - EMEA Masters Summer) - ID: 182638127
+2025-10-15 10:52:41,735 - INFO -    ⏭️  Evento 182638127 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,735 - INFO -    ⏭️  EVENTO PULADO: 182638127
+2025-10-15 10:52:41,735 - INFO -    ⚔️  Processando: Isurus vs Alpha7 Esports (LOL - LTA South Promotion) - ID: 182557571
+2025-10-15 10:52:41,736 - INFO -    ⏭️  Evento 182557571 está finalizado, não precisa atualizar
+2025-10-15 10:52:41,736 - INFO -    ⏭️  EVENTO PULADO: 182557571
+2025-10-15 10:52:41,736 - INFO -    📊 RESUMO DO DIA 2025-10-08:
+2025-10-15 10:52:41,736 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:41,737 - INFO -       🔄 Atualizados: 3
+2025-10-15 10:52:41,737 - INFO -       ⏭️  Pulados: 7
+2025-10-15 10:52:41,737 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:41,737 - INFO -       📋 Total processado: 10
+2025-10-15 10:52:42,751 - INFO - 📅 PROCESSANDO DIA: 2025-10-07 (9/30)
+2025-10-15 10:52:42,751 - INFO -    🔍 Buscando eventos para o dia 20251007...
+2025-10-15 10:52:43,088 - INFO -    ✅ 50 eventos encontrados para o dia 20251007
+2025-10-15 10:52:43,088 - INFO -    🎯 13 jogos de LoL encontrados
+2025-10-15 10:52:43,088 - INFO -    ⚔️  Processando: T1.EA vs Bilibili Gaming.Jr (LOL - Asia Masters) - ID: 182564234
+2025-10-15 10:52:43,089 - INFO -    ✅ Evento 182564234 precisa ser atualizado
+2025-10-15 10:52:43,089 - INFO -    📥 Buscando detalhes para atualizar evento 182564234...
+2025-10-15 10:52:43,439 - INFO -    💾 Evento 182564234 atualizado com sucesso no banco de dados
+2025-10-15 10:52:43,439 - INFO -    🔄 EVENTO ATUALIZADO: 182564234
+2025-10-15 10:52:43,439 - INFO -    ⚔️  Processando: MGN Vikings Esports vs Gen.G.GA (LOL - Asia Masters) - ID: 182564235
+2025-10-15 10:52:43,441 - INFO -    ✅ Evento 182564235 precisa ser atualizado
+2025-10-15 10:52:43,442 - INFO -    📥 Buscando detalhes para atualizar evento 182564235...
+2025-10-15 10:52:43,678 - INFO -    💾 Evento 182564235 atualizado com sucesso no banco de dados
+2025-10-15 10:52:43,679 - INFO -    🔄 EVENTO ATUALIZADO: 182564235
+2025-10-15 10:52:43,679 - INFO -    ⚔️  Processando: BNK FearX vs Ninjas In Pyjamas (LOL - Asia Invitational) - ID: 182218900
+2025-10-15 10:52:43,681 - INFO -    ⏭️  Evento 182218900 está finalizado, não precisa atualizar
+2025-10-15 10:52:43,681 - INFO -    ⏭️  EVENTO PULADO: 182218900
+2025-10-15 10:52:43,681 - INFO -    ⚔️  Processando: Dplus KIA.Ch vs Top Esports.Ch (LOL - Asia Masters) - ID: 182564236
+2025-10-15 10:52:43,682 - INFO -    ✅ Evento 182564236 precisa ser atualizado
+2025-10-15 10:52:43,682 - INFO -    📥 Buscando detalhes para atualizar evento 182564236...
+2025-10-15 10:52:43,938 - INFO -    💾 Evento 182564236 atualizado com sucesso no banco de dados
+2025-10-15 10:52:43,939 - INFO -    🔄 EVENTO ATUALIZADO: 182564236
+2025-10-15 10:52:43,939 - INFO -    ⚔️  Processando: Edward Gaming.Y vs Deep Cross Gaming (LOL - Asia Masters) - ID: 182564237
+2025-10-15 10:52:43,941 - INFO -    ✅ Evento 182564237 precisa ser atualizado
+2025-10-15 10:52:43,941 - INFO -    📥 Buscando detalhes para atualizar evento 182564237...
+2025-10-15 10:52:44,186 - INFO -    💾 Evento 182564237 atualizado com sucesso no banco de dados
+2025-10-15 10:52:44,187 - INFO -    🔄 EVENTO ATUALIZADO: 182564237
+2025-10-15 10:52:44,187 - INFO -    ⚔️  Processando: JD Gaming vs Weibo Gaming (LOL - Asia Invitational) - ID: 182218901
+2025-10-15 10:52:44,189 - INFO -    ⏭️  Evento 182218901 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,189 - INFO -    ⏭️  EVENTO PULADO: 182218901
+2025-10-15 10:52:44,189 - INFO -    ⚔️  Processando: DRX.Ch vs BNK FearX.Y (LOL - Asia Masters) - ID: 182564238
+2025-10-15 10:52:44,190 - INFO -    ✅ Evento 182564238 precisa ser atualizado
+2025-10-15 10:52:44,190 - INFO -    📥 Buscando detalhes para atualizar evento 182564238...
+2025-10-15 10:52:44,426 - INFO -    💾 Evento 182564238 atualizado com sucesso no banco de dados
+2025-10-15 10:52:44,426 - INFO -    🔄 EVENTO ATUALIZADO: 182564238
+2025-10-15 10:52:44,427 - INFO -    ⚔️  Processando: KT Rolster.Ch vs DN Freecs.Ch (LOL - Asia Masters) - ID: 182564239
+2025-10-15 10:52:44,429 - INFO -    ✅ Evento 182564239 precisa ser atualizado
+2025-10-15 10:52:44,430 - INFO -    📥 Buscando detalhes para atualizar evento 182564239...
+2025-10-15 10:52:44,674 - INFO -    💾 Evento 182564239 atualizado com sucesso no banco de dados
+2025-10-15 10:52:44,674 - INFO -    🔄 EVENTO ATUALIZADO: 182564239
+2025-10-15 10:52:44,675 - INFO -    ⚔️  Processando: Nongshim RedForce vs MGN Vikings Esports (LOL - Asia Invitational) - ID: 182218902
+2025-10-15 10:52:44,677 - INFO -    ⏭️  Evento 182218902 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,677 - INFO -    ⏭️  EVENTO PULADO: 182218902
+2025-10-15 10:52:44,677 - INFO -    ⚔️  Processando: Odivelas Sports Club vs Forsaken (LOL - EMEA Masters Summer) - ID: 182579624
+2025-10-15 10:52:44,678 - INFO -    ⏭️  Evento 182579624 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,678 - INFO -    ⏭️  EVENTO PULADO: 182579624
+2025-10-15 10:52:44,678 - INFO -    ⚔️  Processando: TeamOrangeGaming vs GNG Amazigh (LOL - EMEA Masters Summer) - ID: 182579625
+2025-10-15 10:52:44,679 - INFO -    ⏭️  Evento 182579625 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,679 - INFO -    ⏭️  EVENTO PULADO: 182579625
+2025-10-15 10:52:44,679 - INFO -    ⚔️  Processando: Los Heretics vs Barca eSports (LOL - EMEA Masters Summer) - ID: 182579628
+2025-10-15 10:52:44,680 - INFO -    ⏭️  Evento 182579628 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,680 - INFO -    ⏭️  EVENTO PULADO: 182579628
+2025-10-15 10:52:44,680 - INFO -    ⚔️  Processando: Partizan Sangal vs Karmine Corp Blue (LOL - EMEA Masters Summer) - ID: 182579630
+2025-10-15 10:52:44,681 - INFO -    ⏭️  Evento 182579630 está finalizado, não precisa atualizar
+2025-10-15 10:52:44,681 - INFO -    ⏭️  EVENTO PULADO: 182579630
+2025-10-15 10:52:44,681 - INFO -    📊 RESUMO DO DIA 2025-10-07:
+2025-10-15 10:52:44,681 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:44,681 - INFO -       🔄 Atualizados: 6
+2025-10-15 10:52:44,681 - INFO -       ⏭️  Pulados: 7
+2025-10-15 10:52:44,682 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:44,682 - INFO -       📋 Total processado: 13
+2025-10-15 10:52:45,689 - INFO - 📅 PROCESSANDO DIA: 2025-10-06 (10/30)
+2025-10-15 10:52:45,689 - INFO -    🔍 Buscando eventos para o dia 20251006...
+2025-10-15 10:52:46,068 - INFO -    ✅ 50 eventos encontrados para o dia 20251006
+2025-10-15 10:52:46,068 - INFO -    🎯 15 jogos de LoL encontrados
+2025-10-15 10:52:46,068 - INFO -    ⚔️  Processando: Bilibili Gaming.Jr vs Top Esports.Ch (LOL - Asia Masters) - ID: 182391412
+2025-10-15 10:52:46,069 - INFO -    ✅ Evento 182391412 precisa ser atualizado
+2025-10-15 10:52:46,069 - INFO -    📥 Buscando detalhes para atualizar evento 182391412...
+2025-10-15 10:52:46,387 - INFO -    💾 Evento 182391412 atualizado com sucesso no banco de dados
+2025-10-15 10:52:46,387 - INFO -    🔄 EVENTO ATUALIZADO: 182391412
+2025-10-15 10:52:46,387 - INFO -    ⚔️  Processando: Deep Cross Gaming vs DN Freecs.Ch (LOL - Asia Masters) - ID: 182391413
+2025-10-15 10:52:46,389 - INFO -    ✅ Evento 182391413 precisa ser atualizado
+2025-10-15 10:52:46,389 - INFO -    📥 Buscando detalhes para atualizar evento 182391413...
+2025-10-15 10:52:46,618 - INFO -    💾 Evento 182391413 atualizado com sucesso no banco de dados
+2025-10-15 10:52:46,619 - INFO -    🔄 EVENTO ATUALIZADO: 182391413
+2025-10-15 10:52:46,619 - INFO -    ⚔️  Processando: JD Gaming vs Dplus KIA (LOL - Asia Invitational) - ID: 182218896
+2025-10-15 10:52:46,620 - INFO -    ⏭️  Evento 182218896 está finalizado, não precisa atualizar
+2025-10-15 10:52:46,621 - INFO -    ⏭️  EVENTO PULADO: 182218896
+2025-10-15 10:52:46,621 - INFO -    ⚔️  Processando: Dplus KIA.Ch vs T1.EA (LOL - Asia Masters) - ID: 182391414
+2025-10-15 10:52:46,622 - INFO -    ✅ Evento 182391414 precisa ser atualizado
+2025-10-15 10:52:46,622 - INFO -    📥 Buscando detalhes para atualizar evento 182391414...
+2025-10-15 10:52:46,853 - INFO -    💾 Evento 182391414 atualizado com sucesso no banco de dados
+2025-10-15 10:52:46,853 - INFO -    🔄 EVENTO ATUALIZADO: 182391414
+2025-10-15 10:52:46,853 - INFO -    ⚔️  Processando: DRX.Ch vs MGN Vikings Esports (LOL - Asia Masters) - ID: 182391415
+2025-10-15 10:52:46,855 - INFO -    ✅ Evento 182391415 precisa ser atualizado
+2025-10-15 10:52:46,855 - INFO -    📥 Buscando detalhes para atualizar evento 182391415...
+2025-10-15 10:52:47,089 - INFO -    💾 Evento 182391415 atualizado com sucesso no banco de dados
+2025-10-15 10:52:47,089 - INFO -    🔄 EVENTO ATUALIZADO: 182391415
+2025-10-15 10:52:47,089 - INFO -    ⚔️  Processando: BNK FearX vs Nongshim RedForce (LOL - Asia Invitational) - ID: 182218897
+2025-10-15 10:52:47,091 - INFO -    ⏭️  Evento 182218897 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,091 - INFO -    ⏭️  EVENTO PULADO: 182218897
+2025-10-15 10:52:47,091 - INFO -    ⚔️  Processando: KT Rolster.Ch vs Edward Gaming.Y (LOL - Asia Masters) - ID: 182391416
+2025-10-15 10:52:47,092 - INFO -    ✅ Evento 182391416 precisa ser atualizado
+2025-10-15 10:52:47,092 - INFO -    📥 Buscando detalhes para atualizar evento 182391416...
+2025-10-15 10:52:47,408 - INFO -    💾 Evento 182391416 atualizado com sucesso no banco de dados
+2025-10-15 10:52:47,409 - INFO -    🔄 EVENTO ATUALIZADO: 182391416
+2025-10-15 10:52:47,409 - INFO -    ⚔️  Processando: BNK FearX.Y vs Gen.G.GA (LOL - Asia Masters) - ID: 182391417
+2025-10-15 10:52:47,411 - INFO -    ✅ Evento 182391417 precisa ser atualizado
+2025-10-15 10:52:47,411 - INFO -    📥 Buscando detalhes para atualizar evento 182391417...
+2025-10-15 10:52:47,656 - INFO -    💾 Evento 182391417 atualizado com sucesso no banco de dados
+2025-10-15 10:52:47,656 - INFO -    🔄 EVENTO ATUALIZADO: 182391417
+2025-10-15 10:52:47,656 - INFO -    ⚔️  Processando: Weibo Gaming vs GAM Esports (LOL - Asia Invitational) - ID: 182218898
+2025-10-15 10:52:47,658 - INFO -    ⏭️  Evento 182218898 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,658 - INFO -    ⏭️  EVENTO PULADO: 182218898
+2025-10-15 10:52:47,658 - INFO -    ⚔️  Processando: TeamOrangeGaming vs Barca eSports (LOL - EMEA Masters Summer) - ID: 182360522
+2025-10-15 10:52:47,659 - INFO -    ⏭️  Evento 182360522 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,660 - INFO -    ⏭️  EVENTO PULADO: 182360522
+2025-10-15 10:52:47,660 - INFO -    ⚔️  Processando: Veni Vidi Vici vs Galions (LOL - EMEA Masters Summer) - ID: 182360523
+2025-10-15 10:52:47,661 - INFO -    ⏭️  Evento 182360523 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,662 - INFO -    ⏭️  EVENTO PULADO: 182360523
+2025-10-15 10:52:47,662 - INFO -    ⚔️  Processando: StormMedia FMS vs The Otter Side (LOL - EMEA Masters Summer) - ID: 182360525
+2025-10-15 10:52:47,663 - INFO -    ⏭️  Evento 182360525 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,663 - INFO -    ⏭️  EVENTO PULADO: 182360525
+2025-10-15 10:52:47,663 - INFO -    ⚔️  Processando: Senshi eSports vs Zero Tenacity (LOL - EMEA Masters Summer) - ID: 182360524
+2025-10-15 10:52:47,664 - INFO -    ⏭️  Evento 182360524 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,665 - INFO -    ⏭️  EVENTO PULADO: 182360524
+2025-10-15 10:52:47,665 - INFO -    ⚔️  Processando: Karmine Corp Blue vs Odivelas Sports Club (LOL - EMEA Masters Summer) - ID: 182360526
+2025-10-15 10:52:47,666 - INFO -    ⏭️  Evento 182360526 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,666 - INFO -    ⏭️  EVENTO PULADO: 182360526
+2025-10-15 10:52:47,666 - INFO -    ⚔️  Processando: Bushido Wildcats vs Los Heretics (LOL - EMEA Masters Summer) - ID: 182360527
+2025-10-15 10:52:47,667 - INFO -    ⏭️  Evento 182360527 está finalizado, não precisa atualizar
+2025-10-15 10:52:47,668 - INFO -    ⏭️  EVENTO PULADO: 182360527
+2025-10-15 10:52:47,668 - INFO -    📊 RESUMO DO DIA 2025-10-06:
+2025-10-15 10:52:47,668 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:47,668 - INFO -       🔄 Atualizados: 6
+2025-10-15 10:52:47,668 - INFO -       ⏭️  Pulados: 9
+2025-10-15 10:52:47,668 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:47,668 - INFO -       📋 Total processado: 15
+2025-10-15 10:52:48,673 - INFO - 📅 PROCESSANDO DIA: 2025-10-05 (11/30)
+2025-10-15 10:52:48,673 - INFO -    🔍 Buscando eventos para o dia 20251005...
+2025-10-15 10:52:49,215 - INFO -    ✅ 50 eventos encontrados para o dia 20251005
+2025-10-15 10:52:49,215 - INFO -    🎯 0 jogos de LoL encontrados
+2025-10-15 10:52:49,215 - INFO -    📊 RESUMO DO DIA 2025-10-05:
+2025-10-15 10:52:49,215 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:49,215 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:52:49,216 - INFO -       ⏭️  Pulados: 0
+2025-10-15 10:52:49,216 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:49,216 - INFO -       📋 Total processado: 0
+2025-10-15 10:52:50,229 - INFO - 📅 PROCESSANDO DIA: 2025-10-04 (12/30)
+2025-10-15 10:52:50,229 - INFO -    🔍 Buscando eventos para o dia 20251004...
+2025-10-15 10:52:51,405 - INFO -    ✅ 50 eventos encontrados para o dia 20251004
+2025-10-15 10:52:51,405 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:52:51,405 - INFO -    ⚔️  Processando: MGN Vikings Esports vs Saigon Dino (LOL - LCP Promotion) - ID: 181883688
+2025-10-15 10:52:51,406 - INFO -    ✅ Evento 181883688 precisa ser atualizado
+2025-10-15 10:52:51,406 - INFO -    📥 Buscando detalhes para atualizar evento 181883688...
+2025-10-15 10:52:51,714 - INFO -    💾 Evento 181883688 atualizado com sucesso no banco de dados
+2025-10-15 10:52:51,714 - INFO -    🔄 EVENTO ATUALIZADO: 181883688
+2025-10-15 10:52:51,715 - INFO -    📊 RESUMO DO DIA 2025-10-04:
+2025-10-15 10:52:51,715 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:51,715 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:52:51,715 - INFO -       ⏭️  Pulados: 0
+2025-10-15 10:52:51,715 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:51,715 - INFO -       📋 Total processado: 1
+2025-10-15 10:52:52,730 - INFO - 📅 PROCESSANDO DIA: 2025-10-03 (13/30)
+2025-10-15 10:52:52,730 - INFO -    🔍 Buscando eventos para o dia 20251003...
+2025-10-15 10:52:53,358 - INFO -    ✅ 50 eventos encontrados para o dia 20251003
+2025-10-15 10:52:53,359 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:52:53,359 - INFO -    ⚔️  Processando: Chiefs Esports Club vs Deep Cross Gaming (LOL - LCP Promotion) - ID: 182346688
+2025-10-15 10:52:53,361 - INFO -    ✅ Evento 182346688 precisa ser atualizado
+2025-10-15 10:52:53,361 - INFO -    📥 Buscando detalhes para atualizar evento 182346688...
+2025-10-15 10:52:53,681 - INFO -    💾 Evento 182346688 atualizado com sucesso no banco de dados
+2025-10-15 10:52:53,681 - INFO -    🔄 EVENTO ATUALIZADO: 182346688
+2025-10-15 10:52:53,681 - INFO -    📊 RESUMO DO DIA 2025-10-03:
+2025-10-15 10:52:53,681 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:53,681 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:52:53,681 - INFO -       ⏭️  Pulados: 0
+2025-10-15 10:52:53,682 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:53,682 - INFO -       📋 Total processado: 1
+2025-10-15 10:52:54,682 - INFO - 📅 PROCESSANDO DIA: 2025-10-02 (14/30)
+2025-10-15 10:52:54,682 - INFO -    🔍 Buscando eventos para o dia 20251002...
+2025-10-15 10:52:57,185 - INFO -    ✅ 50 eventos encontrados para o dia 20251002
+2025-10-15 10:52:57,186 - INFO -    🎯 11 jogos de LoL encontrados
+2025-10-15 10:52:57,186 - INFO -    ⚔️  Processando: Deep Cross Gaming vs Inferno Esports (LOL - LCP Promotion) - ID: 182272656
+2025-10-15 10:52:57,188 - INFO -    ✅ Evento 182272656 precisa ser atualizado
+2025-10-15 10:52:57,188 - INFO -    📥 Buscando detalhes para atualizar evento 182272656...
+2025-10-15 10:52:57,442 - INFO -    💾 Evento 182272656 atualizado com sucesso no banco de dados
+2025-10-15 10:52:57,443 - INFO -    🔄 EVENTO ATUALIZADO: 182272656
+2025-10-15 10:52:57,443 - INFO -    ⚔️  Processando: Los Ratones vs Bushido Wildcats (LOL - EMEA Masters Summer) - ID: 182295160
+2025-10-15 10:52:57,445 - INFO -    ⏭️  Evento 182295160 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,445 - INFO -    ⏭️  EVENTO PULADO: 182295160
+2025-10-15 10:52:57,445 - INFO -    ⚔️  Processando: Galions vs Geekay Esports (LOL - EMEA Masters Summer) - ID: 182295161
+2025-10-15 10:52:57,446 - INFO -    ⏭️  Evento 182295161 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,446 - INFO -    ⏭️  EVENTO PULADO: 182295161
+2025-10-15 10:52:57,446 - INFO -    ⚔️  Processando: Barca eSports vs GIANTX PRIDE (LOL - EMEA Masters Summer) - ID: 182295166
+2025-10-15 10:52:57,447 - INFO -    ⏭️  Evento 182295166 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,447 - INFO -    ⏭️  EVENTO PULADO: 182295166
+2025-10-15 10:52:57,447 - INFO -    ⚔️  Processando: Zena Esports vs StormMedia FMS (LOL - EMEA Masters Summer) - ID: 182295261
+2025-10-15 10:52:57,448 - INFO -    ⏭️  Evento 182295261 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,448 - INFO -    ⏭️  EVENTO PULADO: 182295261
+2025-10-15 10:52:57,448 - INFO -    ⚔️  Processando: Isurus vs Flamengo MDL (LOL - LTA South Promotion) - ID: 182261422
+2025-10-15 10:52:57,449 - INFO -    ⏭️  Evento 182261422 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,449 - INFO -    ⏭️  EVENTO PULADO: 182261422
+2025-10-15 10:52:57,449 - INFO -    ⚔️  Processando: Los Heretics vs Misa Esports (LOL - EMEA Masters Summer) - ID: 182295163
+2025-10-15 10:52:57,450 - INFO -    ⏭️  Evento 182295163 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,450 - INFO -    ⏭️  EVENTO PULADO: 182295163
+2025-10-15 10:52:57,450 - INFO -    ⚔️  Processando: Gentle Mates vs Odivelas Sports Club (LOL - EMEA Masters Summer) - ID: 182295164
+2025-10-15 10:52:57,451 - INFO -    ⏭️  Evento 182295164 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,452 - INFO -    ⏭️  EVENTO PULADO: 182295164
+2025-10-15 10:52:57,452 - INFO -    ⚔️  Processando: Senshi eSports vs Entropiq (LOL - EMEA Masters Summer) - ID: 182295264
+2025-10-15 10:52:57,452 - INFO -    ⏭️  Evento 182295264 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,453 - INFO -    ⏭️  EVENTO PULADO: 182295264
+2025-10-15 10:52:57,453 - INFO -    ⚔️  Processando: Zero Tenacity vs GNG Amazigh (LOL - EMEA Masters Summer) - ID: 182295266
+2025-10-15 10:52:57,454 - INFO -    ⏭️  Evento 182295266 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,454 - INFO -    ⏭️  EVENTO PULADO: 182295266
+2025-10-15 10:52:57,454 - INFO -    ⚔️  Processando: Verdant vs The Otter Side (LOL - EMEA Masters Summer) - ID: 182295167
+2025-10-15 10:52:57,455 - INFO -    ⏭️  Evento 182295167 está finalizado, não precisa atualizar
+2025-10-15 10:52:57,455 - INFO -    ⏭️  EVENTO PULADO: 182295167
+2025-10-15 10:52:57,455 - INFO -    📊 RESUMO DO DIA 2025-10-02:
+2025-10-15 10:52:57,455 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:57,455 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:52:57,455 - INFO -       ⏭️  Pulados: 10
+2025-10-15 10:52:57,455 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:57,455 - INFO -       📋 Total processado: 11
+2025-10-15 10:52:58,460 - INFO - 📅 PROCESSANDO DIA: 2025-10-01 (15/30)
+2025-10-15 10:52:58,460 - INFO -    🔍 Buscando eventos para o dia 20251001...
+2025-10-15 10:52:58,985 - INFO -    ✅ 50 eventos encontrados para o dia 20251001
+2025-10-15 10:52:58,985 - INFO -    🎯 17 jogos de LoL encontrados
+2025-10-15 10:52:58,985 - INFO -    ⚔️  Processando: QT DIG vs Deep Cross Gaming (LOL - LCP Promotion) - ID: 181883686
+2025-10-15 10:52:58,987 - INFO -    ✅ Evento 181883686 precisa ser atualizado
+2025-10-15 10:52:58,987 - INFO -    📥 Buscando detalhes para atualizar evento 181883686...
+2025-10-15 10:52:59,235 - INFO -    💾 Evento 181883686 atualizado com sucesso no banco de dados
+2025-10-15 10:52:59,235 - INFO -    🔄 EVENTO ATUALIZADO: 181883686
+2025-10-15 10:52:59,235 - INFO -    ⚔️  Processando: Inferno Esports vs Saving OCE (LOL - LCP Promotion) - ID: 181883687
+2025-10-15 10:52:59,238 - INFO -    ✅ Evento 181883687 precisa ser atualizado
+2025-10-15 10:52:59,238 - INFO -    📥 Buscando detalhes para atualizar evento 181883687...
+2025-10-15 10:52:59,500 - INFO -    💾 Evento 181883687 atualizado com sucesso no banco de dados
+2025-10-15 10:52:59,500 - INFO -    🔄 EVENTO ATUALIZADO: 181883687
+2025-10-15 10:52:59,500 - INFO -    ⚔️  Processando: Entropiq vs Colossal Gaming (LOL - EMEA Masters Summer) - ID: 182237710
+2025-10-15 10:52:59,502 - INFO -    ⏭️  Evento 182237710 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,502 - INFO -    ⏭️  EVENTO PULADO: 182237710
+2025-10-15 10:52:59,502 - INFO -    ⚔️  Processando: The Otter Side vs Senshi eSports (LOL - EMEA Masters Summer) - ID: 182237713
+2025-10-15 10:52:59,503 - INFO -    ⏭️  Evento 182237713 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,503 - INFO -    ⏭️  EVENTO PULADO: 182237713
+2025-10-15 10:52:59,504 - INFO -    ⚔️  Processando: TeamOrangeGaming vs Galions (LOL - EMEA Masters Summer) - ID: 182237717
+2025-10-15 10:52:59,504 - INFO -    ⏭️  Evento 182237717 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,504 - INFO -    ⏭️  EVENTO PULADO: 182237717
+2025-10-15 10:52:59,505 - INFO -    ⚔️  Processando: GIANTX PRIDE vs Zero Tenacity (LOL - EMEA Masters Summer) - ID: 182237720
+2025-10-15 10:52:59,505 - INFO -    ⏭️  Evento 182237720 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,505 - INFO -    ⏭️  EVENTO PULADO: 182237720
+2025-10-15 10:52:59,506 - INFO -    ⚔️  Processando: Alpha7 Esports vs Farenvehn (LOL - LTA South Promotion) - ID: 181778998
+2025-10-15 10:52:59,506 - INFO -    ⏭️  Evento 181778998 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,507 - INFO -    ⏭️  EVENTO PULADO: 181778998
+2025-10-15 10:52:59,507 - INFO -    ⚔️  Processando: ROSSMANN Centaurs vs Barca eSports (LOL - EMEA Masters Summer) - ID: 182237705
+2025-10-15 10:52:59,508 - INFO -    ⏭️  Evento 182237705 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,508 - INFO -    ⏭️  EVENTO PULADO: 182237705
+2025-10-15 10:52:59,508 - INFO -    ⚔️  Processando: Gamespace MCE vs Zena Esports (LOL - EMEA Masters Summer) - ID: 182237709
+2025-10-15 10:52:59,509 - INFO -    ⏭️  Evento 182237709 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,509 - INFO -    ⏭️  EVENTO PULADO: 182237709
+2025-10-15 10:52:59,509 - INFO -    ⚔️  Processando: Odivelas Sports Club vs GNG Amazigh (LOL - EMEA Masters Summer) - ID: 182237715
+2025-10-15 10:52:59,510 - INFO -    ⏭️  Evento 182237715 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,510 - INFO -    ⏭️  EVENTO PULADO: 182237715
+2025-10-15 10:52:59,511 - INFO -    ⚔️  Processando: Verdant vs Karmine Corp Blue (LOL - EMEA Masters Summer) - ID: 182237719
+2025-10-15 10:52:59,511 - INFO -    ⏭️  Evento 182237719 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,511 - INFO -    ⏭️  EVENTO PULADO: 182237719
+2025-10-15 10:52:59,512 - INFO -    ⚔️  Processando: Misa Esports vs Partizan Sangal (LOL - EMEA Masters Summer) - ID: 182237706
+2025-10-15 10:52:59,512 - INFO -    ⏭️  Evento 182237706 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,513 - INFO -    ⏭️  EVENTO PULADO: 182237706
+2025-10-15 10:52:59,513 - INFO -    ⚔️  Processando: Gentle Mates vs BIG (LOL - EMEA Masters Summer) - ID: 182237707
+2025-10-15 10:52:59,513 - INFO -    ⏭️  Evento 182237707 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,514 - INFO -    ⏭️  EVENTO PULADO: 182237707
+2025-10-15 10:52:59,514 - INFO -    ⚔️  Processando: StormMedia FMS vs eSuba (LOL - EMEA Masters Summer) - ID: 182237712
+2025-10-15 10:52:59,515 - INFO -    ⏭️  Evento 182237712 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,515 - INFO -    ⏭️  EVENTO PULADO: 182237712
+2025-10-15 10:52:59,515 - INFO -    ⚔️  Processando: Team Phantasma vs Los Ratones (LOL - EMEA Masters Summer) - ID: 182237714
+2025-10-15 10:52:59,516 - INFO -    ⏭️  Evento 182237714 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,516 - INFO -    ⏭️  EVENTO PULADO: 182237714
+2025-10-15 10:52:59,516 - INFO -    ⚔️  Processando: Vitality.Bee vs Geekay Esports (LOL - EMEA Masters Summer) - ID: 182237708
+2025-10-15 10:52:59,517 - INFO -    ⏭️  Evento 182237708 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,517 - INFO -    ⏭️  EVENTO PULADO: 182237708
+2025-10-15 10:52:59,517 - INFO -    ⚔️  Processando: Forsaken vs Unicorns of Love SE (LOL - EMEA Masters Summer) - ID: 182237711
+2025-10-15 10:52:59,518 - INFO -    ⏭️  Evento 182237711 está finalizado, não precisa atualizar
+2025-10-15 10:52:59,518 - INFO -    ⏭️  EVENTO PULADO: 182237711
+2025-10-15 10:52:59,518 - INFO -    📊 RESUMO DO DIA 2025-10-01:
+2025-10-15 10:52:59,519 - INFO -       ➕ Novos: 0
+2025-10-15 10:52:59,519 - INFO -       🔄 Atualizados: 2
+2025-10-15 10:52:59,519 - INFO -       ⏭️  Pulados: 15
+2025-10-15 10:52:59,519 - INFO -       ❌ Erros: 0
+2025-10-15 10:52:59,519 - INFO -       📋 Total processado: 17
+2025-10-15 10:53:00,529 - INFO - 📅 PROCESSANDO DIA: 2025-09-30 (16/30)
+2025-10-15 10:53:00,529 - INFO -    🔍 Buscando eventos para o dia 20250930...
+2025-10-15 10:53:00,855 - INFO -    ✅ 50 eventos encontrados para o dia 20250930
+2025-10-15 10:53:00,855 - INFO -    🎯 6 jogos de LoL encontrados
+2025-10-15 10:53:00,855 - INFO -    ⚔️  Processando: KT Rolster.Ch vs BNK FearX.Y (LOL - LCK CL Season Playoffs) - ID: 182162323
+2025-10-15 10:53:00,857 - INFO -    ⏭️  Evento 182162323 está finalizado, não precisa atualizar
+2025-10-15 10:53:00,857 - INFO -    ⏭️  EVENTO PULADO: 182162323
+2025-10-15 10:53:00,857 - INFO -    ⚔️  Processando: Bushido Wildcats vs BIG (LOL - EMEA Masters Summer) - ID: 182181012
+2025-10-15 10:53:00,858 - INFO -    ⏭️  Evento 182181012 está finalizado, não precisa atualizar
+2025-10-15 10:53:00,858 - INFO -    ⏭️  EVENTO PULADO: 182181012
+2025-10-15 10:53:00,858 - INFO -    ⚔️  Processando: Odivelas Sports Club vs ROSSMANN Centaurs (LOL - EMEA Masters Summer) - ID: 182181015
+2025-10-15 10:53:00,859 - INFO -    ⏭️  Evento 182181015 está finalizado, não precisa atualizar
+2025-10-15 10:53:00,859 - INFO -    ⏭️  EVENTO PULADO: 182181015
+2025-10-15 10:53:00,859 - INFO -    ⚔️  Processando: eSuba vs Senshi eSports (LOL - EMEA Masters Summer) - ID: 182181019
+2025-10-15 10:53:00,860 - INFO -    ⏭️  Evento 182181019 está finalizado, não precisa atualizar
+2025-10-15 10:53:00,860 - INFO -    ⏭️  EVENTO PULADO: 182181019
+2025-10-15 10:53:00,860 - INFO -    ⚔️  Processando: Zena Esports vs Verdant (LOL - EMEA Masters Summer) - ID: 182181022
+2025-10-15 10:53:00,862 - INFO -    ⏭️  Evento 182181022 está finalizado, não precisa atualizar
+2025-10-15 10:53:00,862 - INFO -    ⏭️  EVENTO PULADO: 182181022
+2025-10-15 10:53:00,862 - INFO -    ⚔️  Processando: Flamengo MDL vs Sicar Esports (LOL - LTA South Promotion) - ID: 181778997
+2025-10-15 10:53:00,863 - INFO -    ✅ Evento 181778997 precisa ser atualizado
+2025-10-15 10:53:00,863 - INFO -    📥 Buscando detalhes para atualizar evento 181778997...
+2025-10-15 10:53:01,125 - INFO -    💾 Evento 181778997 atualizado com sucesso no banco de dados
+2025-10-15 10:53:01,125 - INFO -    🔄 EVENTO ATUALIZADO: 181778997
+2025-10-15 10:53:01,125 - INFO -    📊 RESUMO DO DIA 2025-09-30:
+2025-10-15 10:53:01,125 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:01,125 - INFO -       🔄 Atualizados: 1
+2025-10-15 10:53:01,125 - INFO -       ⏭️  Pulados: 5
+2025-10-15 10:53:01,126 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:01,126 - INFO -       📋 Total processado: 6
+2025-10-15 10:53:02,130 - INFO - 📅 PROCESSANDO DIA: 2025-09-29 (17/30)
+2025-10-15 10:53:02,130 - INFO -    🔍 Buscando eventos para o dia 20250929...
+2025-10-15 10:53:02,717 - INFO -    ✅ 50 eventos encontrados para o dia 20250929
+2025-10-15 10:53:02,717 - INFO -    🎯 9 jogos de LoL encontrados
+2025-10-15 10:53:02,717 - INFO -    ⚔️  Processando: T1.EA vs BNK FearX.Y (LOL - LCK CL Season Playoffs) - ID: 181995348
+2025-10-15 10:53:02,719 - INFO -    ⏭️  Evento 181995348 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,719 - INFO -    ⏭️  EVENTO PULADO: 181995348
+2025-10-15 10:53:02,720 - INFO -    ⚔️  Processando: TeamOrangeGaming vs Veni Vidi Vici (LOL - EMEA Masters Summer) - ID: 181954392
+2025-10-15 10:53:02,721 - INFO -    ⏭️  Evento 181954392 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,721 - INFO -    ⏭️  EVENTO PULADO: 181954392
+2025-10-15 10:53:02,721 - INFO -    ⚔️  Processando: Verdant vs Odivelas Sports Club (LOL - EMEA Masters Summer) - ID: 181954399
+2025-10-15 10:53:02,722 - INFO -    ⏭️  Evento 181954399 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,722 - INFO -    ⏭️  EVENTO PULADO: 181954399
+2025-10-15 10:53:02,722 - INFO -    ⚔️  Processando: Gentle Mates vs eSuba (LOL - EMEA Masters Summer) - ID: 181954406
+2025-10-15 10:53:02,723 - INFO -    ⏭️  Evento 181954406 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,723 - INFO -    ⏭️  EVENTO PULADO: 181954406
+2025-10-15 10:53:02,723 - INFO -    ⚔️  Processando: Misa Esports vs StormMedia FMS (LOL - EMEA Masters Summer) - ID: 181954410
+2025-10-15 10:53:02,724 - INFO -    ⏭️  Evento 181954410 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,724 - INFO -    ⏭️  EVENTO PULADO: 181954410
+2025-10-15 10:53:02,724 - INFO -    ⚔️  Processando: Galions vs Senshi eSports (LOL - EMEA Masters Summer) - ID: 181954394
+2025-10-15 10:53:02,725 - INFO -    ⏭️  Evento 181954394 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,725 - INFO -    ⏭️  EVENTO PULADO: 181954394
+2025-10-15 10:53:02,725 - INFO -    ⚔️  Processando: GIANTX PRIDE vs Partizan Sangal (LOL - EMEA Masters Summer) - ID: 181954398
+2025-10-15 10:53:02,726 - INFO -    ⏭️  Evento 181954398 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,726 - INFO -    ⏭️  EVENTO PULADO: 181954398
+2025-10-15 10:53:02,726 - INFO -    ⚔️  Processando: GNG Amazigh vs Entropiq (LOL - EMEA Masters Summer) - ID: 181954402
+2025-10-15 10:53:02,727 - INFO -    ⏭️  Evento 181954402 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,727 - INFO -    ⏭️  EVENTO PULADO: 181954402
+2025-10-15 10:53:02,728 - INFO -    ⚔️  Processando: ROSSMANN Centaurs vs Colossal Gaming (LOL - EMEA Masters Summer) - ID: 181954409
+2025-10-15 10:53:02,728 - INFO -    ⏭️  Evento 181954409 está finalizado, não precisa atualizar
+2025-10-15 10:53:02,729 - INFO -    ⏭️  EVENTO PULADO: 181954409
+2025-10-15 10:53:02,729 - INFO -    📊 RESUMO DO DIA 2025-09-29:
+2025-10-15 10:53:02,729 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:02,729 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:02,729 - INFO -       ⏭️  Pulados: 9
+2025-10-15 10:53:02,729 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:02,729 - INFO -       📋 Total processado: 9
+2025-10-15 10:53:03,731 - INFO - 📅 PROCESSANDO DIA: 2025-09-28 (18/30)
+2025-10-15 10:53:03,732 - INFO -    🔍 Buscando eventos para o dia 20250928...
+2025-10-15 10:53:04,167 - INFO -    ✅ 50 eventos encontrados para o dia 20250928
+2025-10-15 10:53:04,167 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:53:04,167 - INFO -    ⚔️  Processando: Hanwha Life Esports vs Gen.G (LOL - LCK Season Playoffs) - ID: 182039197
+2025-10-15 10:53:04,168 - INFO -    ⏭️  Evento 182039197 está finalizado, não precisa atualizar
+2025-10-15 10:53:04,168 - INFO -    ⏭️  EVENTO PULADO: 182039197
+2025-10-15 10:53:04,168 - INFO -    📊 RESUMO DO DIA 2025-09-28:
+2025-10-15 10:53:04,168 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:04,169 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:04,169 - INFO -       ⏭️  Pulados: 1
+2025-10-15 10:53:04,169 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:04,169 - INFO -       📋 Total processado: 1
+2025-10-15 10:53:05,178 - INFO - 📅 PROCESSANDO DIA: 2025-09-27 (19/30)
+2025-10-15 10:53:05,179 - INFO -    🔍 Buscando eventos para o dia 20250927...
+2025-10-15 10:53:05,516 - INFO -    ✅ 50 eventos encontrados para o dia 20250927
+2025-10-15 10:53:05,516 - INFO -    🎯 2 jogos de LoL encontrados
+2025-10-15 10:53:05,516 - INFO -    ⚔️  Processando: KT Rolster vs Gen.G (LOL - LCK Season Playoffs) - ID: 181705631
+2025-10-15 10:53:05,517 - INFO -    ⏭️  Evento 181705631 está finalizado, não precisa atualizar
+2025-10-15 10:53:05,517 - INFO -    ⏭️  EVENTO PULADO: 181705631
+2025-10-15 10:53:05,517 - INFO -    ⚔️  Processando: Invictus Gaming vs JD Gaming (LOL - LPL Regional Finals) - ID: 181995255
+2025-10-15 10:53:05,518 - INFO -    ⏭️  Evento 181995255 está finalizado, não precisa atualizar
+2025-10-15 10:53:05,518 - INFO -    ⏭️  EVENTO PULADO: 181995255
+2025-10-15 10:53:05,518 - INFO -    📊 RESUMO DO DIA 2025-09-27:
+2025-10-15 10:53:05,518 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:05,518 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:05,519 - INFO -       ⏭️  Pulados: 2
+2025-10-15 10:53:05,519 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:05,519 - INFO -       📋 Total processado: 2
+2025-10-15 10:53:06,522 - INFO - 📅 PROCESSANDO DIA: 2025-09-26 (20/30)
+2025-10-15 10:53:06,522 - INFO -    🔍 Buscando eventos para o dia 20250926...
+2025-10-15 10:53:06,865 - INFO -    ✅ 50 eventos encontrados para o dia 20250926
+2025-10-15 10:53:06,865 - INFO -    🎯 2 jogos de LoL encontrados
+2025-10-15 10:53:06,865 - INFO -    ⚔️  Processando: DRX.Ch vs BNK FearX.Y (LOL - LCK CL Season Playoffs) - ID: 181826962
+2025-10-15 10:53:06,866 - INFO -    ⏭️  Evento 181826962 está finalizado, não precisa atualizar
+2025-10-15 10:53:06,867 - INFO -    ⏭️  EVENTO PULADO: 181826962
+2025-10-15 10:53:06,867 - INFO -    ⚔️  Processando: JD Gaming vs Weibo Gaming (LOL - LPL Regional Finals) - ID: 181597160
+2025-10-15 10:53:06,867 - INFO -    ⏭️  Evento 181597160 está finalizado, não precisa atualizar
+2025-10-15 10:53:06,868 - INFO -    ⏭️  EVENTO PULADO: 181597160
+2025-10-15 10:53:06,868 - INFO -    📊 RESUMO DO DIA 2025-09-26:
+2025-10-15 10:53:06,868 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:06,868 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:06,868 - INFO -       ⏭️  Pulados: 2
+2025-10-15 10:53:06,868 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:06,868 - INFO -       📋 Total processado: 2
+2025-10-15 10:53:07,880 - INFO - 📅 PROCESSANDO DIA: 2025-09-25 (21/30)
+2025-10-15 10:53:07,880 - INFO -    🔍 Buscando eventos para o dia 20250925...
+2025-10-15 10:53:08,291 - INFO -    ✅ 50 eventos encontrados para o dia 20250925
+2025-10-15 10:53:08,292 - INFO -    🎯 4 jogos de LoL encontrados
+2025-10-15 10:53:08,292 - INFO -    ⚔️  Processando: KT Rolster.Ch vs T1.EA (LOL - LCK CL Season Playoffs) - ID: 181769731
+2025-10-15 10:53:08,293 - INFO -    ⏭️  Evento 181769731 está finalizado, não precisa atualizar
+2025-10-15 10:53:08,293 - INFO -    ⏭️  EVENTO PULADO: 181769731
+2025-10-15 10:53:08,293 - INFO -    ⚔️  Processando: Top Esports vs Invictus Gaming (LOL - LPL Regional Finals) - ID: 181715967
+2025-10-15 10:53:08,294 - INFO -    ⏭️  Evento 181715967 está finalizado, não precisa atualizar
+2025-10-15 10:53:08,294 - INFO -    ⏭️  EVENTO PULADO: 181715967
+2025-10-15 10:53:08,294 - INFO -    ⚔️  Processando: Veni Vidi Vici vs Besiktas Esports (LOL - EMEA Masters Summer) - ID: 181899093
+2025-10-15 10:53:08,295 - INFO -    ⏭️  Evento 181899093 está finalizado, não precisa atualizar
+2025-10-15 10:53:08,295 - INFO -    ⏭️  EVENTO PULADO: 181899093
+2025-10-15 10:53:08,295 - INFO -    ⚔️  Processando: Unicorns of Love SE vs GMBLERS ESPORTS (LOL - EMEA Masters Summer) - ID: 181899094
+2025-10-15 10:53:08,296 - INFO -    ⏭️  Evento 181899094 está finalizado, não precisa atualizar
+2025-10-15 10:53:08,296 - INFO -    ⏭️  EVENTO PULADO: 181899094
+2025-10-15 10:53:08,296 - INFO -    📊 RESUMO DO DIA 2025-09-25:
+2025-10-15 10:53:08,297 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:08,297 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:08,297 - INFO -       ⏭️  Pulados: 4
+2025-10-15 10:53:08,297 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:08,297 - INFO -       📋 Total processado: 4
+2025-10-15 10:53:09,298 - INFO - 📅 PROCESSANDO DIA: 2025-09-24 (22/30)
+2025-10-15 10:53:09,299 - INFO -    🔍 Buscando eventos para o dia 20250924...
+2025-10-15 10:53:09,590 - INFO -    ✅ 50 eventos encontrados para o dia 20250924
+2025-10-15 10:53:09,590 - INFO -    🎯 1 jogos de LoL encontrados
+2025-10-15 10:53:09,591 - INFO -    ⚔️  Processando: Veni Vidi Vici vs FlameHard (LOL - EMEA Masters Summer) - ID: 181471620
+2025-10-15 10:53:09,592 - INFO -    ⏭️  Evento 181471620 está finalizado, não precisa atualizar
+2025-10-15 10:53:09,592 - INFO -    ⏭️  EVENTO PULADO: 181471620
+2025-10-15 10:53:09,594 - INFO -    📊 RESUMO DO DIA 2025-09-24:
+2025-10-15 10:53:09,594 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:09,595 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:09,595 - INFO -       ⏭️  Pulados: 1
+2025-10-15 10:53:09,596 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:09,596 - INFO -       📋 Total processado: 1
+2025-10-15 10:53:10,607 - INFO - 📅 PROCESSANDO DIA: 2025-09-23 (23/30)
+2025-10-15 10:53:10,607 - INFO -    🔍 Buscando eventos para o dia 20250923...
+2025-10-15 10:53:10,912 - INFO -    ✅ 41 eventos encontrados para o dia 20250923
+2025-10-15 10:53:10,913 - INFO -    🎯 5 jogos de LoL encontrados
+2025-10-15 10:53:10,913 - INFO -    ⚔️  Processando: DN Freecs.Ch vs BNK FearX.Y (LOL - LCK CL Season Playoffs) - ID: 181769730
+2025-10-15 10:53:10,913 - INFO -    📥 Buscando detalhes do novo evento 181769730...
+2025-10-15 10:53:11,161 - INFO -    📊 Estatísticas salvas: 5 mapas, 30 estatísticas
+2025-10-15 10:53:11,171 - INFO -    💾 Evento 181769730 salvo com sucesso no banco de dados
+2025-10-15 10:53:11,171 - INFO -    ✅ NOVO EVENTO ADICIONADO: 181769730
+2025-10-15 10:53:11,171 - INFO -    ⚔️  Processando: Vitality.Bee vs Crvena Zvezda (LOL - EMEA Masters Summer) - ID: 181471616
+2025-10-15 10:53:11,173 - INFO -    📥 Buscando detalhes do novo evento 181471616...
+2025-10-15 10:53:11,471 - INFO -    📊 Estatísticas salvas: 2 mapas, 12 estatísticas
+2025-10-15 10:53:11,481 - INFO -    💾 Evento 181471616 salvo com sucesso no banco de dados
+2025-10-15 10:53:11,482 - INFO -    ✅ NOVO EVENTO ADICIONADO: 181471616
+2025-10-15 10:53:11,482 - INFO -    ⚔️  Processando: Rich Gang vs mCon esports (LOL - EMEA Masters Summer) - ID: 181471617
+2025-10-15 10:53:11,483 - INFO -    📥 Buscando detalhes do novo evento 181471617...
+2025-10-15 10:53:11,736 - INFO -    📊 Estatísticas salvas: 3 mapas, 18 estatísticas
+2025-10-15 10:53:11,746 - INFO -    💾 Evento 181471617 salvo com sucesso no banco de dados
+2025-10-15 10:53:11,746 - INFO -    ✅ NOVO EVENTO ADICIONADO: 181471617
+2025-10-15 10:53:11,746 - INFO -    ⚔️  Processando: aNc Legends vs Nightbirds (LOL - EMEA Masters Summer) - ID: 181471618
+2025-10-15 10:53:11,748 - INFO -    📥 Buscando detalhes do novo evento 181471618...
+2025-10-15 10:53:12,072 - INFO -    📊 Estatísticas salvas: 2 mapas, 12 estatísticas
+2025-10-15 10:53:12,081 - INFO -    💾 Evento 181471618 salvo com sucesso no banco de dados
+2025-10-15 10:53:12,082 - INFO -    ✅ NOVO EVENTO ADICIONADO: 181471618
+2025-10-15 10:53:12,082 - INFO -    ⚔️  Processando: FN Esports vs Forsaken (LOL - EMEA Masters Summer) - ID: 181471619
+2025-10-15 10:53:12,083 - INFO -    📥 Buscando detalhes do novo evento 181471619...
+2025-10-15 10:53:12,387 - INFO -    📊 Estatísticas salvas: 2 mapas, 12 estatísticas
+2025-10-15 10:53:12,397 - INFO -    💾 Evento 181471619 salvo com sucesso no banco de dados
+2025-10-15 10:53:12,397 - INFO -    ✅ NOVO EVENTO ADICIONADO: 181471619
+2025-10-15 10:53:12,397 - INFO -    📊 RESUMO DO DIA 2025-09-23:
+2025-10-15 10:53:12,397 - INFO -       ➕ Novos: 5
+2025-10-15 10:53:12,397 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:12,398 - INFO -       ⏭️  Pulados: 0
+2025-10-15 10:53:12,398 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:12,398 - INFO -       📋 Total processado: 5
+2025-10-15 10:53:13,399 - INFO - 📅 PROCESSANDO DIA: 2025-09-22 (24/30)
+2025-10-15 10:53:13,399 - INFO -    🔍 Buscando eventos para o dia 20250922...
+2025-10-15 10:53:13,915 - INFO -    ✅ 37 eventos encontrados para o dia 20250922
+2025-10-15 10:53:13,916 - INFO -    🎯 2 jogos de LoL encontrados
+2025-10-15 10:53:13,916 - INFO -    ⚔️  Processando: KT Rolster.Ch vs DN Freecs.Ch (LOL - LCK CL Season Playoffs) - ID: 181384203
+2025-10-15 10:53:13,918 - INFO -    ⏭️  Evento 181384203 está finalizado, não precisa atualizar
+2025-10-15 10:53:13,918 - INFO -    ⏭️  EVENTO PULADO: 181384203
+2025-10-15 10:53:13,918 - INFO -    ⚔️  Processando: T1.EA vs DRX.Ch (LOL - LCK CL Season Playoffs) - ID: 181384204
+2025-10-15 10:53:13,919 - INFO -    ⏭️  Evento 181384204 está finalizado, não precisa atualizar
+2025-10-15 10:53:13,919 - INFO -    ⏭️  EVENTO PULADO: 181384204
+2025-10-15 10:53:13,920 - INFO -    📊 RESUMO DO DIA 2025-09-22:
+2025-10-15 10:53:13,920 - INFO -       ➕ Novos: 0
+2025-10-15 10:53:13,920 - INFO -       🔄 Atualizados: 0
+2025-10-15 10:53:13,920 - INFO -       ⏭️  Pulados: 2
+2025-10-15 10:53:13,920 - INFO -       ❌ Erros: 0
+2025-10-15 10:53:13,920 - INFO -       📋 Total processado: 2
+2025-10-15 10:53:14,930 - INFO - 📅 PROCESSANDO DIA: 2025-09-21 (25/30)
+2025-10-15 10:53:14,930 - INFO -    🔍 Buscando eventos para o dia 20250921...
+2025-10-15 10:53:15,244 - INFO - 👋 Conexões encerradas. Script finalizado.

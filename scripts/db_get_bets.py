@@ -1,11 +1,12 @@
-import sqlite3
-import pandas as pd
-from typing import List, Dict, Optional, Tuple
-from datetime import datetime
-from get_roi_bets import ROIAnalyzer
-import sys
-from dotenv import load_dotenv
 import os
+import sqlite3
+import sys
+from datetime import datetime
+from typing import Dict, List, Optional, Tuple
+
+import pandas as pd
+from dotenv import load_dotenv
+from get_roi_bets import ROIAnalyzer
 
 # Carrega variáveis de ambiente do arquivo .env
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
@@ -28,7 +29,8 @@ class BetScanner:
         cursor = conn.cursor()
 
         # Tabela de eventos com status e resultado
-        cursor.execute("""
+        cursor.execute(
+            """
         CREATE TABLE IF NOT EXISTS events (
             event_id TEXT PRIMARY KEY,
             league_name TEXT,
@@ -42,10 +44,12 @@ class BetScanner:
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
-        """)
+        """
+        )
 
         # Tabela de apostas - ADICIONANDO actual_value
-        cursor.execute("""
+        cursor.execute(
+            """
         CREATE TABLE IF NOT EXISTS bets (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             event_id TEXT NOT NULL,
@@ -66,10 +70,12 @@ class BetScanner:
             FOREIGN KEY (event_id) REFERENCES events (event_id) ON DELETE CASCADE,
             UNIQUE(event_id, market_name, selection_line, handicap)
         )
-        """)
+        """
+        )
 
         # Tabela de resultados para histórico de verificações
-        cursor.execute("""
+        cursor.execute(
+            """
         CREATE TABLE IF NOT EXISTS results_verification (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             event_id TEXT NOT NULL,
@@ -82,7 +88,8 @@ class BetScanner:
             FOREIGN KEY (event_id) REFERENCES events (event_id) ON DELETE CASCADE,
             FOREIGN KEY (bet_id) REFERENCES bets (id) ON DELETE CASCADE
         )
-        """)
+        """
+        )
 
         # Índices para melhor performance
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_status ON events(status)")
@@ -217,7 +224,9 @@ class BetScanner:
                     # Mesma aposta em ambos os mapas
                     bet = maps_data["Mapa 1"][0]
                     message += f"🗺️ *Mercado:* {market_name} (Mapa 1 & 2)\n"
-                    message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
+                    message += (
+                        f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
+                    )
                     message += f"💰 *Odds:* {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f}\n"
                     message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
                     message += f"💵 *Stake:* {stake} unidade(s) por mapa\n\n"
@@ -230,7 +239,9 @@ class BetScanner:
                             # Apenas uma aposta neste mapa
                             bet = map_bets[0]
                             message += f"\n🗺️ *{map_name}:*\n"
-                            message += f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
+                            message += (
+                                f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
+                            )
                             message += f"   💰 Odds: {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f} | ROI: {bet['roi_average']:.1f}%\n"
                         else:
                             # Múltiplas apostas no mesmo mapa
@@ -246,7 +257,9 @@ class BetScanner:
             message += "#LoL #Bet365 #Aposta #EV+"
 
             # Enviar notificação
-            success = self.telegram_notifier.send_message(message, parse_mode="Markdown")
+            success = self.telegram_notifier.send_message(
+                message, parse_mode="Markdown"
+            )
 
             if success:
                 print(f"📤 Notificação agrupada enviada para Telegram")
@@ -322,7 +335,7 @@ class BetScanner:
                 """,
                     (event_id, bet_id, "win", "win", "correct", actual_win),
                 )
-                
+
                 # Notificar resultado vencedor
                 self._notify_bet_result(bet_id, "won", actual_win)
             else:
@@ -338,7 +351,7 @@ class BetScanner:
                 """,
                     (event_id, bet_id, "win", "loss", "incorrect", actual_win),
                 )
-                
+
                 # Notificar resultado perdedor
                 self._notify_bet_result(bet_id, "lost", actual_win)
 
@@ -387,12 +400,14 @@ class BetScanner:
 
         # Busca todos os eventos com odds em qualquer mercado de Totals
         odds_cursor = odds_conn.cursor()
-        odds_cursor.execute("""
+        odds_cursor.execute(
+            """
         SELECT DISTINCT event_id 
         FROM current_odds 
         WHERE market_name LIKE '%Totals'
         AND odds_type IN ('map_1', 'map_2')
-        """)
+        """
+        )
         all_events = {row[0] for row in odds_cursor.fetchall()}
 
         # Busca eventos já analisados
@@ -479,7 +494,7 @@ class BetScanner:
                     market_bets.append(bet_data)
 
             # Ordena as apostas deste mercado por ROI (decrescente) e pega as 2 melhores
-            market_bets.sort(key=lambda x: x['roi_average'], reverse=True)
+            market_bets.sort(key=lambda x: x["roi_average"], reverse=True)
             all_good_bets.extend(market_bets[:2])
 
         return all_good_bets
@@ -521,7 +536,9 @@ class BetScanner:
                 existing_bet = cursor.fetchone()
 
                 if existing_bet:
-                    print(f"⏭️ Aposta já existe: {bet['selection_line']} {bet['handicap']}")
+                    print(
+                        f"⏭️ Aposta já existe: {bet['selection_line']} {bet['handicap']}"
+                    )
                     continue
 
                 potential_win = (bet["house_odds"] - 1) * stake
@@ -672,9 +689,7 @@ class BetScanner:
                 status_icon = (
                     "✅"
                     if row["bet_status"] == "won"
-                    else "❌"
-                    if row["bet_status"] == "lost"
-                    else "⏳"
+                    else "❌" if row["bet_status"] == "lost" else "⏳"
                 )
                 print(
                     f"{status_icon} {row['match_date']} | {row['league_name']} | {row['status']}"
