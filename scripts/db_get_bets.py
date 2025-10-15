@@ -162,6 +162,20 @@ class BetScanner:
         return None
 
     @staticmethod
+    def _market_stat_label(market_name: str) -> str:
+        """Retorna rótulo curto do stat a partir do market_name."""
+        s = (market_name or "").lower()
+        if "player total kills" in s:
+            return "Kills"
+        if "player total deaths" in s:
+            return "Deaths"
+        if "player total assists" in s:
+            return "Assists"
+        if "totals" in s:
+            return "Totals"
+        return "Market"
+
+    @staticmethod
     def _extract_player(selection_name: str, candidates: List[str]) -> Optional[str]:
         """
         Encontra o nome do jogador dentro do selection_name (ex.: 'Over SkewMond').
@@ -436,13 +450,13 @@ class BetScanner:
                 try:
                     dt = datetime.strptime(match_date, "%Y-%m-%d %H:%M:%S")
                     formatted_date = dt.strftime("%d/%m/%Y às %H:%M")
-                except:
+                except Exception:
                     formatted_date = match_date
             else:
                 formatted_date = "Data não disponível"
 
             # Agrupa por tipo de mercado
-            market_groups = {}
+            market_groups: Dict[str, Dict[str, List[Dict]]] = {}
             for bet in bets:
                 market_name = bet["market_name"]
 
@@ -459,11 +473,21 @@ class BetScanner:
 
                 if base_market not in market_groups:
                     market_groups[base_market] = {}
-
                 if map_info not in market_groups[base_market]:
                     market_groups[base_market][map_info] = []
 
                 market_groups[base_market][map_info].append(bet)
+
+            # Helper local: adiciona sufixo (Kills/Deaths/Assists) somente para player markets
+            def _player_suffix(market_name: str) -> str:
+                s = (market_name or "").lower()
+                if "player total kills" in s:
+                    return " (Kills)"
+                if "player total deaths" in s:
+                    return " (Deaths)"
+                if "player total assists" in s:
+                    return " (Assists)"
+                return ""
 
             # Constrói mensagem agrupada
             message = f"🎯 *Nova Aposta Encontrada!*\n\n🏆 *Liga:* {league_name}\n"
@@ -481,7 +505,6 @@ class BetScanner:
                         for i in range(len(map1_bets)):
                             bet1 = map1_bets[i]
                             bet2 = map2_bets[i]
-
                             if (
                                 bet1["selection_line"] != bet2["selection_line"]
                                 or bet1["handicap"] != bet2["handicap"]
@@ -495,35 +518,32 @@ class BetScanner:
                     all_same = False
 
                 if all_same:
-                    # Mesma aposta em ambos os mapas
-                    bet = maps_data["Mapa 1"][0]
+                    # Mesmas apostas em ambos os mapas → lista TODAS (não só a primeira)
                     message += f"🗺️ *Mercado:* {market_name} (Mapa 1 & 2)\n"
-                    message += (
-                        f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}\n"
-                    )
-                    message += f"💰 *Odds:* {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f}\n"
-                    message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
+                    for bet in maps_data["Mapa 1"]:
+                        suffix = _player_suffix(bet["market_name"])
+                        message += f"✅ *Seleção:* {bet['selection_line']} {bet['handicap']}{suffix}\n"
+                        message += f"💰 *Odds:* {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f}\n"
+                        message += f"📊 *ROI:* {bet['roi_average']:.1f}%\n"
                     message += f"💵 *Stake:* {stake} unidade(s) por mapa\n\n"
-                else:
-                    # Apostas diferentes por mapa
-                    message += f"📊 *Mercado:* {market_name}\n"
 
+                else:
+                    # Apostas diferentes por mapa → mantém formato original, mas com sufixo só em player
+                    message += f"📊 *Mercado:* {market_name}\n"
                     for map_name, map_bets in maps_data.items():
                         if len(map_bets) == 1:
                             # Apenas uma aposta neste mapa
                             bet = map_bets[0]
+                            suffix = _player_suffix(bet["market_name"])
                             message += f"\n🗺️ *{map_name}:*\n"
-                            message += (
-                                f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
-                            )
+                            message += f"   ✅ {bet['selection_line']} {bet['handicap']}{suffix}\n"
                             message += f"   💰 Odds: {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f} | ROI: {bet['roi_average']:.1f}%\n"
                         else:
                             # Múltiplas apostas no mesmo mapa
                             message += f"\n🗺️ *{map_name}:*\n"
                             for bet in map_bets:
-                                message += (
-                                    f"   ✅ {bet['selection_line']} {bet['handicap']}\n"
-                                )
+                                suffix = _player_suffix(bet["market_name"])
+                                message += f"   ✅ {bet['selection_line']} {bet['handicap']}{suffix}\n"
                                 message += f"   💰 Odds: {bet['house_odds']} | Odd Justa: {bet['fair_odds']:.2f} | ROI: {bet['roi_average']:.1f}%\n"
 
                     message += f"\n💵 *Stake:* {stake} unidade(s) por aposta\n\n"
@@ -534,7 +554,6 @@ class BetScanner:
             success = self.telegram_notifier.send_message(
                 message, parse_mode="Markdown"
             )
-
             if success:
                 print(f"📤 Notificação agrupada enviada para Telegram")
             else:
