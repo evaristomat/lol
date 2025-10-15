@@ -1,27 +1,20 @@
 import sqlite3
 from pathlib import Path
 
-# Lista de IDs de eventos a serem removidos
-event_ids_to_delete = [
-    "183017512",
-    "182052047",
-    "183017503",
-    "183017505",
-    "183017508",
-    "183017511",
-    "183017510",
-    "183048751",
-    "183017509",
-    "183017506",
-]
-
-# Defina o caminho para o seu bets.db
-# Ajuste este caminho se o seu arquivo estiver em outro lugar!
+# Caminho para o banco de dados
 DB_PATH = Path(__file__).parent.parent / "data" / "bets.db"
 
+# Data que você quer excluir (ajuste se quiser outro dia)
+TARGET_DATE = "2025-10-16"
 
-def delete_events_from_db(db_path: Path, event_ids: list):
-    """Remove eventos e apostas relacionadas do bets.db."""
+# Nome exato da liga
+TARGET_LEAGUE = "LOL - World Champs"
+
+
+def delete_events_by_date_and_league(
+    db_path: Path, league_name: str, match_date_prefix: str
+):
+    """Remove eventos e apostas relacionadas de uma liga e data específica."""
     if not db_path.exists():
         print(f"❌ Erro: Banco de dados não encontrado em {db_path}")
         return
@@ -30,39 +23,53 @@ def delete_events_from_db(db_path: Path, event_ids: list):
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-        # O comando DELETE com WHERE IN é eficiente para múltiplos IDs
+        # Buscar os event_ids correspondentes para feedback
+        cursor.execute(
+            """
+            SELECT event_id FROM events
+            WHERE league_name = ? AND match_date LIKE ?
+        """,
+            (league_name, f"{match_date_prefix}%"),
+        )
+        event_ids = [str(row[0]) for row in cursor.fetchall()]
 
-        # 1. Remover apostas relacionadas (tabela 'bets')
-        # Isso é importante para garantir a integridade, embora a FK com ON DELETE CASCADE
-        # devesse cuidar disso se estivesse configurada corretamente. É mais seguro fazer manualmente.
+        if not event_ids:
+            print("⚠️ Nenhum evento encontrado com esses critérios.")
+            conn.close()
+            return
+
+        print(f"🧹 Encontrados {len(event_ids)} eventos para exclusão:")
+        print(", ".join(event_ids))
+
+        # Remover apostas relacionadas
         cursor.execute(
             f"DELETE FROM bets WHERE event_id IN ({','.join(['?'] * len(event_ids))})",
             event_ids,
         )
         deleted_bets = cursor.rowcount
 
-        # 2. Remover eventos (tabela 'events')
-        cursor.execute(
-            f"DELETE FROM events WHERE event_id IN ({','.join(['?'] * len(event_ids))})",
-            event_ids,
-        )
-        deleted_events = cursor.rowcount
-
-        # 3. Remover registros de verificação de resultados (tabela 'results_verification')
+        # Remover resultados verificados
         cursor.execute(
             f"DELETE FROM results_verification WHERE event_id IN ({','.join(['?'] * len(event_ids))})",
             event_ids,
         )
         deleted_results = cursor.rowcount
 
+        # Remover eventos principais
+        cursor.execute(
+            f"DELETE FROM events WHERE event_id IN ({','.join(['?'] * len(event_ids))})",
+            event_ids,
+        )
+        deleted_events = cursor.rowcount
+
         conn.commit()
         conn.close()
 
-        print(f"✅ Eventos removidos com sucesso do {db_path.name}:")
-        print(f"   - {deleted_events} eventos excluídos da tabela 'events'.")
-        print(f"   - {deleted_bets} apostas excluídas da tabela 'bets'.")
+        print(f"✅ Exclusão concluída:")
+        print(f"   - {deleted_events} eventos removidos da tabela 'events'")
+        print(f"   - {deleted_bets} apostas removidas da tabela 'bets'")
         print(
-            f"   - {deleted_results} resultados de verificação excluídos da tabela 'results_verification'."
+            f"   - {deleted_results} verificações removidas da tabela 'results_verification'"
         )
 
     except sqlite3.Error as e:
@@ -70,4 +77,4 @@ def delete_events_from_db(db_path: Path, event_ids: list):
 
 
 if __name__ == "__main__":
-    delete_events_from_db(DB_PATH, event_ids_to_delete)
+    delete_events_by_date_and_league(DB_PATH, TARGET_LEAGUE, TARGET_DATE)
