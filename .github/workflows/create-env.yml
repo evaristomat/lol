@@ -11,11 +11,10 @@ jobs:
       
       - name: Create .env
         run: |
-          cat << EOF > .env
-          BET365_API_TOKEN=${{ secrets.BET365_API_TOKEN }}
-          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
-          EOF
+          echo "BET365_API_TOKEN=${{ secrets.BETSAPI_API_KEY }}" > .env
+          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" >> .env
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+          cat .env
       
       - name: Upload .env as artifact
         uses: actions/upload-artifact@v4
