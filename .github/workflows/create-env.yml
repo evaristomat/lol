@@ -7,22 +7,14 @@ jobs:
   create-env:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Create .env
+      - name: Create and display .env
         run: |
-          echo "BET365_API_TOKEN=${{ secrets.BETSAPI_API_KEY }}" > .env
-          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" >> .env
-          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
-          echo "--- Content of .env ---"
-          cat .env
-          echo "--- File info ---"
-          ls -la .env
-          pwd
-      
-      - name: Upload .env as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: env-file
-          path: ${{ github.workspace }}/.env
-          retention-days: 1
+          echo "BET365_API_TOKEN=${{ secrets.BETSAPI_API_KEY }}"
+          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}"
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}"
+          echo ""
+          echo "=== COPIE O CONTEÚDO ABAIXO PARA SEU .env ==="
+          echo ""
+          echo "BET365_API_TOKEN=${{ secrets.BETSAPI_API_KEY }}"
+          echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}"
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}"
