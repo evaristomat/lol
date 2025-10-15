@@ -1,0 +1,25 @@
+name: Create .env file
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-env:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Create .env
+        run: |
+          cat << EOF > .env
+          BET365_API_TOKEN=${{ secrets.BET365_API_TOKEN }}
+          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+          EOF
+      
+      - name: Upload .env as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: env-file
+          path: .env
+          retention-days: 1
