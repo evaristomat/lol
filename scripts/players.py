@@ -1,287 +1,435 @@
-"""
-players_analyzer.py (v3 - Refatorado)
+# -*- coding: utf-8 -*-
+from __future__ import annotations
 
-Responsabilidade: Apenas a lógica de análise estatística e Bayesiana.
-Esta classe não deve mais se conectar diretamente ao banco de dados para buscar odds ou informações de eventos.
-Ela recebe os DataFrames e dicionários necessários para realizar a análise.
-"""
-
-import sqlite3
-import warnings
-from functools import lru_cache
-from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
 from scipy import stats
 
-warnings.filterwarnings("ignore")
+# ==============================
+# Utilitários de probabilidade
+# ==============================
 
 
-# ==============================================================================
-# FUNÇÕES DE CÁLCULO BAYESIANO (Auxiliares)
-# ==============================================================================
+def implied_prob(odds: float) -> float:
+    """Probabilidade implícita bruta (com vig)."""
+    p = 1.0 / max(float(odds), 1e-12)
+    return float(np.clip(p, 1e-6, 1 - 1e-6))
 
 
-def calculate_implied_probability(odds: float) -> float:
-    return 1 / odds
+def remove_vig_pair(p_over: float, p_under: float) -> Tuple[float, float]:
+    """Normaliza Over/Under para remover vig (soma = 1)."""
+    s = p_over + p_under
+    if s <= 0:
+        return p_over, p_under
+    return (
+        float(np.clip(p_over / s, 1e-6, 1 - 1e-6)),
+        float(np.clip(p_under / s, 1e-6, 1 - 1e-6)),
+    )
 
 
-def calculate_posterior_prob(
-    p_prior: float, p_likelihood: float, weight_prior: float
-) -> float:
-    weight_likelihood = 1 - weight_prior
-    return (weight_prior * p_prior) + (weight_likelihood * p_likelihood)
+def posterior(p_prior: float, p_like: float, w_prior: float = 0.5) -> float:
+    """Combinação Bayesiana simples (média ponderada)."""
+    p_prior = float(np.clip(p_prior, 1e-6, 1 - 1e-6))
+    p_like = float(np.clip(p_like, 1e-6, 1 - 1e-6))
+    return w_prior * p_prior + (1.0 - w_prior) * p_like
 
 
-def calculate_ev(p_real: float, odds: float) -> float:
-    return (p_real * odds) - 1
+def fair_from_p(p: float) -> float:
+    """Odds justas a partir de uma probabilidade."""
+    p = float(np.clip(p, 1e-6, 1 - 1e-6))
+    return 1.0 / p
 
 
-# ==============================================================================
-# CLASSE DE ANÁLISE DE PLAYERS
-# ==============================================================================
+def ev_from(p_real: float, odds: float) -> float:
+    """EV (em fração). Para % multiplique por 100 depois."""
+    p_real = float(np.clip(p_real, 1e-6, 1 - 1e-6))
+    return (p_real * float(odds)) - 1.0
 
 
-class PlayerAnalyzer:
-    BAYESIAN_WEIGHT_PRIOR = 0.5
+# ==============================
+# Parsing
+# ==============================
 
-    def __init__(self, db_path: str):
-        self.db_path = db_path
-        self.player_history_df = None
-        self.load_player_history()
 
-    def load_player_history(self) -> bool:
-        csv_path = Path(self.db_path).parent / "database" / "database.csv"
-        if not csv_path.exists():
-            print(f"❌ Arquivo de histórico de players não encontrado: {csv_path}")
-            return False
+def extract_side(selection_name: str) -> Optional[str]:
+    s = str(selection_name).lower()
+    if "over" in s:
+        return "over"
+    if "under" in s:
+        return "under"
+    return None
 
-        try:
-            df = pd.read_csv(
-                csv_path,
-                usecols=[
-                    "playername",
-                    "teamname",
-                    "date",
-                    "kills",
-                    "deaths",
-                    "assists",
-                ],
-                low_memory=False,
-            )
-            df["date"] = pd.to_datetime(df["date"], format="%Y-%m-%d", errors="coerce")
-            df = df.set_index(["playername", "teamname"], drop=False).sort_index()
-            for col in ["kills", "deaths", "assists"]:
-                df[col] = pd.to_numeric(df[col], errors="coerce")
-            self.player_history_df = df
-            print(f"✅ Player history loaded: {len(df):,} records")
-            return True
-        except Exception as e:
-            print(f"❌ Erro ao carregar dados de players: {e}")
-            return False
 
-    @lru_cache(maxsize=128)
-    def _get_player_data(self, player: str, team: str, stat: str) -> np.ndarray:
-        if self.player_history_df is None:
-            return np.array([])
-        try:
-            player_data = self.player_history_df.loc[
-                (player, team), ["date", stat]
-            ].copy()
-            player_data = player_data.sort_values("date", ascending=False)
+def extract_player_patched(selection_name: str, candidates: List[str]) -> Optional[str]:
+    """Busca por nome do jogador no selection_name (robusto a formatos)."""
+    low = str(selection_name).lower()
+    # 1) word boundary
+    for c in sorted(candidates, key=len, reverse=True):
+        if f" {c.lower()} " in f" {low} ":
+            return c
+    # 2) substring
+    for c in sorted(candidates, key=len, reverse=True):
+        if c.lower() in low:
+            return c
+    return None
+
+
+# ==============================
+# Estatísticas a partir do histórico
+# ==============================
+
+
+def get_player_values(
+    df_hist: pd.DataFrame, player: str, team: Optional[str], stat: str, n: int = 50
+) -> np.ndarray:
+    """Retorna vetor dos últimos n valores (ordenado por data desc).
+    Se team não bater, usa o time com mais entradas para o player."""
+    sub = df_hist[df_hist["playername"] == player]
+    if team is not None:
+        sub_team = sub[sub["teamname"] == team]
+    else:
+        sub_team = pd.DataFrame(columns=sub.columns)
+    if sub_team.empty:
+        if not sub.empty:
+            counts = sub.groupby("teamname").size().sort_values(ascending=False)
+            if len(counts) > 0:
+                fallback = counts.index[0]
+                sub_team = sub[sub["teamname"] == fallback]
+            else:
+                sub_team = sub
+    sub_team = sub_team.dropna(subset=[stat]).sort_values("date", ascending=False)
+    return sub_team[stat].astype(float).values[:n]
+
+
+def calc_window_stats(values: np.ndarray, handicap: float, side: str) -> Optional[dict]:
+    """Métricas de janela (l10/l20): mean, median, std, cv, hit_rate, trend, CI."""
+    if values is None or len(values) == 0:
+        return None
+    mean = float(np.mean(values))
+    median = float(np.median(values))
+    std = float(np.std(values, ddof=0))
+    cv = float((std / mean * 100.0) if mean > 0 else 0.0)
+    if side == "over":
+        hit_rate = float(np.mean(values > handicap))
+    else:
+        hit_rate = float(np.mean(values < handicap))
+    # IC 95%
+    if len(values) > 1:
+        ci = stats.t.interval(0.95, len(values) - 1, loc=mean, scale=stats.sem(values))
+        ci_low, ci_up = float(ci[0]), float(ci[1])
+    else:
+        ci_low = ci_up = mean
+    # Tendência
+    trend = 0.0
+    if len(values) >= 20:
+        recent = float(np.mean(values[:10]))
+        older = float(np.mean(values[10:20]))
+        trend = float(((recent - older) / older * 100.0) if older > 0 else 0.0)
+    return dict(
+        mean=mean,
+        median=median,
+        std=std,
+        cv=cv,
+        hit_rate=hit_rate,
+        ci_lower=ci_low,
+        ci_upper=ci_up,
+        trend=trend,
+    )
+
+
+def like_from_cdf(stat_l10: dict, stat_l20: dict, handicap: float, side: str) -> float:
+    """Likelihood via Mediana + CDF (ponderado 60/40 entre L10/L20)."""
+
+    def prob_from(median, std):
+        if std <= 0:
             return (
-                pd.to_numeric(player_data[stat], errors="coerce").dropna().values[:50]
+                1.0
+                if ((median > handicap) if side == "over" else (median < handicap))
+                else 0.0
             )
-        except KeyError:
-            return np.array([])
+        z = (handicap - median) / std
+        return (1.0 - stats.norm.cdf(z)) if side == "over" else stats.norm.cdf(z)
 
-    @staticmethod
-    @lru_cache(maxsize=256)
-    def calculate_statistics_cached(
-        values_tuple: tuple, handicap: float, side: str
-    ) -> dict:
-        values = np.array(values_tuple)
-        if len(values) == 0:
-            return {}
+    p10 = prob_from(stat_l10["median"], stat_l10["std"])
+    p20 = prob_from(stat_l20["median"], stat_l20["std"])
+    return 0.6 * p10 + 0.4 * p20
 
-        mean, median, std = values.mean(), np.median(values), values.std()
-        cv = (std / mean * 100) if mean > 0 else 0
-        hit_rate = (
-            (values > handicap).mean() if side == "over" else (values < handicap).mean()
+
+# ==============================
+# Núcleo: avaliação por evento
+# ==============================
+
+STAT_MAP = {
+    "Map 1 - Player Total Kills": "kills",
+    "Map 1 - Player Total Deaths": "deaths",
+    "Map 1 - Player Total Assists": "assists",
+}
+
+
+def _build_priors(valid_odds: pd.DataFrame, use_clean_prior: bool) -> pd.DataFrame:
+    """
+    Anexa colunas:
+      - p_prior_raw (sempre)
+      - p_prior_clean (se for possível normalizar o par Over/Under)
+    E retorna o DataFrame com a coluna 'p_prior' escolhida (raw ou clean, conforme flag).
+    """
+    frame = valid_odds.copy()
+    frame["p_prior_raw"] = frame["odds_value"].apply(implied_prob)
+
+    out = []
+    for (player, stat, line), grp in frame.groupby(
+        ["player", "stat", "handicap"], dropna=False
+    ):
+        grp = grp.copy()
+        if grp["side"].nunique() == 2 and len(grp) >= 2:
+            try:
+                p_over = float(grp.loc[grp["side"] == "over", "p_prior_raw"].iloc[0])
+                p_under = float(grp.loc[grp["side"] == "under", "p_prior_raw"].iloc[0])
+                cov, cuv = remove_vig_pair(p_over, p_under)
+                grp.loc[grp["side"] == "over", "p_prior_clean"] = cov
+                grp.loc[grp["side"] == "under", "p_prior_clean"] = cuv
+            except Exception:
+                grp["p_prior_clean"] = grp["p_prior_raw"]
+        else:
+            grp["p_prior_clean"] = grp["p_prior_raw"]
+        out.append(grp)
+
+    frame = pd.concat(out, ignore_index=True) if out else frame
+    frame["p_prior"] = (
+        frame["p_prior_clean"] if use_clean_prior else frame["p_prior_raw"]
+    )
+    return frame
+
+
+def _choose_team_for_player(
+    df_hist: pd.DataFrame, player: str, home_team: str, away_team: str
+) -> Optional[str]:
+    """Heurística simples para escolher time do jogador neste evento."""
+    v_home = get_player_values(df_hist, player, home_team, "kills", 1)
+    v_away = get_player_values(df_hist, player, away_team, "kills", 1)
+    return home_team if len(v_home) >= len(v_away) else away_team
+
+
+def evaluate_event_three_methods(
+    odds_df: pd.DataFrame,
+    history_df: pd.DataFrame,
+    home_team: str,
+    away_team: str,
+    weight_prior: float = 0.5,
+    min_roi: Optional[float] = None,
+) -> Tuple[pd.DataFrame, Dict[str, pd.DataFrame]]:
+    """
+    Calcula 3 abordagens para cada (player, stat, line, side, odds):
+      - original  : prior bruto (com vig) + likelihood hit-rate L10/L20
+      - bayes_hit : prior sem vig + likelihood hit-rate L10/L20
+      - bayes_cdf : prior sem vig + likelihood via mediana + CDF (L10/L20)
+    Retorna (df_combined, {"original": df1, "bayes_hit": df2, "bayes_cdf": df3}).
+    """
+    # ----------------------------
+    # Pré-processar odds
+    # ----------------------------
+    df = odds_df.copy()
+    df["handicap"] = pd.to_numeric(df["handicap"], errors="coerce")
+    df["odds_value"] = pd.to_numeric(df["odds_value"], errors="coerce")
+    df["side"] = df["selection_name"].apply(extract_side)
+    df["stat"] = df["market_name"].map(STAT_MAP)
+
+    candidates = history_df["playername"].dropna().unique().tolist()
+    df["player"] = df["selection_name"].apply(
+        lambda s: extract_player_patched(s, candidates)
+    )
+
+    valid = df[
+        df["handicap"].notna()
+        & df["odds_value"].notna()
+        & df["side"].notna()
+        & df["stat"].notna()
+        & df["player"].notna()
+    ].copy()
+
+    if valid.empty:
+        empty = pd.DataFrame(
+            columns=[
+                "method",
+                "player",
+                "stat",
+                "line",
+                "side",
+                "odds",
+                "p_real",
+                "p_prior",
+                "p_like",
+                "fair",
+                "roi",
+                "ev",
+                "l10_pct",
+                "l20_pct",
+                "mean_l10",
+                "median_l10",
+                "std_l10",
+                "cv_l10",
+                "trend",
+            ]
         )
-        trend = 0
-        if len(values) >= 20:
-            recent, older = values[:10].mean(), values[10:20].mean()
-            trend = ((recent - older) / older * 100) if older > 0 else 0
-
-        return {
-            "mean": mean,
-            "median": median,
-            "std": std,
-            "cv": cv,
-            "hit_rate": hit_rate,
-            "trend": trend,
+        return empty, {
+            "original": empty.copy(),
+            "bayes_hit": empty.copy(),
+            "bayes_cdf": empty.copy(),
         }
 
-    def analyze_player_odds(
-        self, odds_df: pd.DataFrame, player_teams: dict, min_roi: float
-    ) -> List[Dict]:
-        all_good_bets = []
-        processed = set()
-        stat_map = {
-            "Map 1 - Player Total Kills": "kills",
-            "Map 1 - Player Total Deaths": "deaths",
-            "Map 1 - Player Total Assists": "assists",
-        }
+    # ----------------------------
+    # Priors para cada abordagem
+    # ----------------------------
+    # original: prior bruto (com vig)
+    frame_orig = _build_priors(valid, use_clean_prior=False)
+    # bayes: prior sem vig (limpo)
+    frame_clean = _build_priors(valid, use_clean_prior=True)
 
-        odds_df["player"] = (
-            odds_df["selection_name"]
-            .str.replace("Over |Under ", "", regex=True)
-            .str.strip()
+    # ----------------------------
+    # Avaliação linha a linha
+    # ----------------------------
+    rows_original, rows_bhit, rows_bcdf = [], [], []
+
+    for _, r in frame_clean.iterrows():
+        player = r["player"]
+        stat = r["stat"]
+        side = r["side"]
+        line = float(r["handicap"])
+        odds = float(r["odds_value"])
+
+        # dados históricos
+        team_guess = _choose_team_for_player(history_df, player, home_team, away_team)
+        values = get_player_values(history_df, player, team_guess, stat, n=50)
+        if len(values) < 20:
+            continue
+
+        l10 = values[:10]
+        l20 = values[:20]
+        st10 = calc_window_stats(l10, line, side)
+        st20 = calc_window_stats(l20, line, side)
+        if st10 is None or st20 is None:
+            continue
+
+        # ------------------------
+        # ORIGINAL (prior bruto) + hit rate
+        # ------------------------
+        p_prior_o = float(
+            frame_orig.loc[
+                (frame_orig["player"] == player)
+                & (frame_orig["stat"] == stat)
+                & (frame_orig["handicap"] == line)
+                & (frame_orig["side"] == side),
+                "p_prior",
+            ].iloc[0]
         )
-        odds_df["side"] = odds_df["selection_name"].apply(
-            lambda x: "over" if "Over" in x else "under"
+        p_like_mean = 0.6 * st10["hit_rate"] + 0.4 * st20["hit_rate"]
+        p_real_o = posterior(p_prior_o, p_like_mean, weight_prior)
+        fair_o = fair_from_p(p_real_o)
+        roi_o = (odds / fair_o - 1.0) * 100.0
+        ev_o = ev_from(p_real_o, odds) * 100.0
+
+        rows_original.append(
+            dict(
+                method="original",
+                player=player,
+                stat=stat.upper(),
+                line=line,
+                side=side,
+                odds=odds,
+                p_real=p_real_o * 100.0,
+                p_prior=p_prior_o * 100.0,
+                p_like=p_like_mean * 100.0,
+                fair=fair_o,
+                roi=roi_o,
+                ev=ev_o,
+                l10_pct=st10["hit_rate"] * 100.0,
+                l20_pct=st20["hit_rate"] * 100.0,
+                mean_l10=st10["mean"],
+                median_l10=st10["median"],
+                std_l10=st10["std"],
+                cv_l10=st10["cv"],
+                trend=st10["trend"],
+            )
         )
-        odds_df["stat"] = odds_df["market_name"].map(stat_map)
 
-        valid_odds = odds_df[odds_df["player"].isin(player_teams.keys())].copy()
+        # ------------------------
+        # BAYES_HIT (prior limpo) + hit rate
+        # ------------------------
+        p_prior_h = float(r["p_prior"])  # limpo
+        p_real_h = posterior(p_prior_h, p_like_mean, weight_prior)
+        fair_h = fair_from_p(p_real_h)
+        roi_h = (odds / fair_h - 1.0) * 100.0
+        ev_h = ev_from(p_real_h, odds) * 100.0
 
-        for _, row in valid_odds.iterrows():
-            bet_key = f'{row["player"]}_{row["stat"]}_{row["side"]}_{row["handicap"]}'
-            if bet_key in processed:
-                continue
-            processed.add(bet_key)
-
-            values = self._get_player_data(
-                row["player"], player_teams[row["player"]], row["stat"]
+        rows_bhit.append(
+            dict(
+                method="bayes_hit",
+                player=player,
+                stat=stat.upper(),
+                line=line,
+                side=side,
+                odds=odds,
+                p_real=p_real_h * 100.0,
+                p_prior=p_prior_h * 100.0,
+                p_like=p_like_mean * 100.0,
+                fair=fair_h,
+                roi=roi_h,
+                ev=ev_h,
+                l10_pct=st10["hit_rate"] * 100.0,
+                l20_pct=st20["hit_rate"] * 100.0,
+                mean_l10=st10["mean"],
+                median_l10=st10["median"],
+                std_l10=st10["std"],
+                cv_l10=st10["cv"],
+                trend=st10["trend"],
             )
-            if len(values) < 20:
-                continue
+        )
 
-            stats_l10 = self.calculate_statistics_cached(
-                tuple(values[:10]), row["handicap"], row["side"]
+        # ------------------------
+        # BAYES_CDF (prior limpo) + CDF (mediana/std)
+        # ------------------------
+        p_like_cdf = like_from_cdf(st10, st20, line, side)
+        p_real_c = posterior(p_prior_h, p_like_cdf, weight_prior)
+        fair_c = fair_from_p(p_real_c)
+        roi_c = (odds / fair_c - 1.0) * 100.0
+        ev_c = ev_from(p_real_c, odds) * 100.0
+
+        rows_bcdf.append(
+            dict(
+                method="bayes_cdf",
+                player=player,
+                stat=stat.upper(),
+                line=line,
+                side=side,
+                odds=odds,
+                p_real=p_real_c * 100.0,
+                p_prior=p_prior_h * 100.0,
+                p_like=p_like_cdf * 100.0,
+                fair=fair_c,
+                roi=roi_c,
+                ev=ev_c,
+                l10_pct=st10["hit_rate"] * 100.0,
+                l20_pct=st20["hit_rate"] * 100.0,
+                mean_l10=st10["mean"],
+                median_l10=st10["median"],
+                std_l10=st10["std"],
+                cv_l10=st10["cv"],
+                trend=st10["trend"],
             )
-            stats_l20 = self.calculate_statistics_cached(
-                tuple(values[:20]), row["handicap"], row["side"]
-            )
-            if not stats_l10 or not stats_l20:
-                continue
+        )
 
-            p_prior_bruto = calculate_implied_probability(row["odds_value"])
+    df_original = pd.DataFrame(rows_original)
+    df_bhit = pd.DataFrame(rows_bhit)
+    df_bcdf = pd.DataFrame(rows_bcdf)
 
-            # Método 1: Média (Hit Rate)
-            p_likelihood_mean = (stats_l10["hit_rate"] * 0.6) + (
-                stats_l20["hit_rate"] * 0.4
-            )
-            p_real_mean = calculate_posterior_prob(
-                p_prior_bruto, p_likelihood_mean, self.BAYESIAN_WEIGHT_PRIOR
-            )
-            if p_real_mean > 0:
-                fair_odds_mean = 1 / p_real_mean
-                roi_mean = ((row["odds_value"] / fair_odds_mean) - 1) * 100
-                if roi_mean > min_roi and p_real_mean > p_prior_bruto:
-                    all_good_bets.append(
-                        self._create_bet_dict(
-                            row,
-                            roi_mean,
-                            fair_odds_mean,
-                            "Bayesian_Mean",
-                            p_real_mean,
-                            p_prior_bruto,
-                            p_likelihood_mean,
-                        )
-                    )
+    # Filtro min_roi (opcional)
+    if min_roi is not None:
+        for df_ in (df_original, df_bhit, df_bcdf):
+            if not df_.empty:
+                df_.query("roi >= @min_roi", inplace=True)
 
-            # Método 2: Mediana (CDF)
-            if stats_l10["std"] > 0 and stats_l20["std"] > 0:
-                if row["side"] == "over":
-                    prob_l10 = 1 - stats.norm.cdf(
-                        (row["handicap"] - stats_l10["median"]) / stats_l10["std"]
-                    )
-                    prob_l20 = 1 - stats.norm.cdf(
-                        (row["handicap"] - stats_l20["median"]) / stats_l20["std"]
-                    )
-                else:
-                    prob_l10 = stats.norm.cdf(
-                        (row["handicap"] - stats_l10["median"]) / stats_l10["std"]
-                    )
-                    prob_l20 = stats.norm.cdf(
-                        (row["handicap"] - stats_l20["median"]) / stats_l20["std"]
-                    )
-
-                p_likelihood_median = (prob_l10 * 0.6) + (prob_l20 * 0.4)
-                p_real_median = calculate_posterior_prob(
-                    p_prior_bruto, p_likelihood_median, self.BAYESIAN_WEIGHT_PRIOR
-                )
-                if p_real_median > 0:
-                    fair_odds_median = 1 / p_real_median
-                    roi_median = ((row["odds_value"] / fair_odds_median) - 1) * 100
-                    if roi_median > min_roi and p_real_median > p_prior_bruto:
-                        all_good_bets.append(
-                            self._create_bet_dict(
-                                row,
-                                roi_median,
-                                fair_odds_median,
-                                "Bayesian_Median",
-                                p_real_median,
-                                p_prior_bruto,
-                                p_likelihood_median,
-                            )
-                        )
-
-        return all_good_bets
-
-    def analyze_totals_odds(
-        self, event_id: str, betting_lines: List[Dict], min_roi: float
-    ) -> List[Dict]:
-        all_good_bets = []
-        for line in betting_lines:
-            odds = line["odds"]
-            p_prior_bruto = calculate_implied_probability(odds)
-            p_likelihood_simulated = min(p_prior_bruto * 1.05, 0.99)
-            p_real = calculate_posterior_prob(
-                p_prior_bruto, p_likelihood_simulated, self.BAYESIAN_WEIGHT_PRIOR
-            )
-
-            if p_real > 0:
-                fair_odds = 1 / p_real
-                roi = ((odds / fair_odds) - 1) * 100
-                if roi > min_roi and p_real > p_prior_bruto:
-                    bet_dict = self._create_bet_dict(
-                        line,
-                        roi,
-                        fair_odds,
-                        "Totals_Bayesian_Simulated",
-                        p_real,
-                        p_prior_bruto,
-                        p_likelihood_simulated,
-                    )
-                    bet_dict["event_id"] = event_id
-                    bet_dict["market_name"] = line.get(
-                        "market_name", "Unknown Market"
-                    )  # Garante que market_name exista
-                    all_good_bets.append(bet_dict)
-        return all_good_bets
-
-    def _create_bet_dict(
-        self, data_row, roi, fair_odds, method, p_real, p_prior, p_like
-    ) -> Dict:
-        selection_line = data_row.get("selection_name") or data_row.get("selection")
-        if "player" in data_row:
-            selection_line = f'{data_row["player"]} | {data_row["stat"].upper()} {data_row["side"].upper()}'
-
-        return {
-            "event_id": data_row.get("event_id"),
-            "market_name": data_row.get("market_name"),
-            "selection_line": selection_line,
-            "handicap": data_row.get("handicap"),
-            "house_odds": data_row.get("odds_value") or data_row.get("odds"),
-            "roi_average": roi,
-            "fair_odds": fair_odds,
-            "analysis_method": method,
-            "p_real": p_real,
-            "p_prior": p_prior,
-            "p_like": p_like,
-        }
+    # DF combinado
+    df_all = pd.concat([df_original, df_bhit, df_bcdf], ignore_index=True)
+    return df_all, {"original": df_original, "bayes_hit": df_bhit, "bayes_cdf": df_bcdf}

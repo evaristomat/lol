@@ -1,16 +1,12 @@
 import os
-import re
 import sqlite3
 import sys
 from datetime import datetime
-from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 from get_roi_bets import ROIAnalyzer
-from scipy import stats
 
 # Carrega variáveis de ambiente do arquivo .env
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
@@ -26,9 +22,6 @@ class BetScanner:
         self.analyzer = ROIAnalyzer(odds_db_path)
         self.telegram_notifier = TelegramNotifier()
         self.setup_database()
-
-        # Cache do histórico de players (CSV)
-        self.player_history_df: Optional[pd.DataFrame] = None
 
     def setup_database(self):
         """Cria as tabelas necessárias com estrutura expandida"""
@@ -108,273 +101,6 @@ class BetScanner:
 
         conn.commit()
         conn.close()
-
-    def _load_player_history(self) -> bool:
-        """
-        Carrega o CSV de histórico de players (kills, deaths, assists).
-        Esperado: ../data/database.csv  (ajuste se precisar)
-        """
-        try:
-            csv_path = (
-                Path(__file__).resolve().parent.parent
-                / "data"
-                / "database"
-                / "database.csv"
-            )
-            if not csv_path.exists():
-                print(f"⚠️ CSV de players não encontrado em: {csv_path}")
-                return False
-
-            df = pd.read_csv(csv_path, low_memory=False)
-            needed_cols = [
-                "playername",
-                "teamname",
-                "date",
-                "kills",
-                "deaths",
-                "assists",
-            ]
-            if not all(c in df.columns for c in needed_cols):
-                print(f"⚠️ CSV de players não contém colunas necessárias: {needed_cols}")
-                return False
-
-            df["date"] = pd.to_datetime(df["date"], errors="coerce")
-            for c in ["kills", "deaths", "assists"]:
-                df[c] = pd.to_numeric(df[c], errors="coerce")
-
-            self.player_history_df = df
-            return True
-        except Exception as e:
-            print(f"❌ Erro ao carregar CSV de players: {e}")
-            return False
-
-    @staticmethod
-    def _extract_side(selection_name: str) -> Optional[str]:
-        s = (selection_name or "").strip()
-        if not s:
-            return None
-        # pega a 1ª palavra e normaliza
-        head = s.split(maxsplit=1)[0].casefold()
-        if head == "over":
-            return "over"
-        if head == "under":
-            return "under"
-        return None
-
-    @staticmethod
-    def _extract_player(selection_name: str, candidates: List[str]) -> Optional[str]:
-        """
-        Encontra o nome do jogador dentro do selection_name (ex.: 'Over SkewMond').
-        Tenta word-boundary e depois substring, para robustez.
-        """
-        low = str(selection_name).lower()
-        for c in sorted(candidates, key=len, reverse=True):
-            if f" {c.lower()} " in f" {low} ":
-                return c
-        for c in sorted(candidates, key=len, reverse=True):
-            if c.lower() in low:
-                return c
-        return None
-
-    def _get_player_values(
-        self, player: str, team: Optional[str], stat: str, n: int = 50
-    ) -> np.ndarray:
-        """
-        Últimos n valores do player para um stat. Se team não bater, escolhe o time com mais registros do player.
-        """
-        if self.player_history_df is None or self.player_history_df.empty:
-            return np.array([])
-
-        sub = self.player_history_df[self.player_history_df["playername"] == player]
-        if team is not None:
-            sub_team = sub[sub["teamname"] == team]
-        else:
-            sub_team = pd.DataFrame(columns=sub.columns)
-        if sub_team.empty:
-            if not sub.empty:
-                counts = sub.groupby("teamname").size().sort_values(ascending=False)
-                if len(counts) > 0:
-                    fallback = counts.index[0]
-                    sub_team = sub[sub["teamname"] == fallback]
-                else:
-                    sub_team = sub
-        sub_team = sub_team.dropna(subset=[stat]).sort_values("date", ascending=False)
-        return sub_team[stat].astype(float).values[:n]
-
-    @staticmethod
-    def _calc_window_stats(
-        values: np.ndarray, handicap: float, side: str
-    ) -> Optional[dict]:
-        if values is None or len(values) == 0:
-            return None
-        mean = float(np.mean(values))
-        median = float(np.median(values))
-        std = float(np.std(values, ddof=0))
-        cv = float((std / mean * 100.0) if mean > 0 else 0.0)
-        hit_rate = (
-            float(np.mean(values > handicap))
-            if side == "over"
-            else float(np.mean(values < handicap))
-        )
-        # trend
-        trend = 0.0
-        if len(values) >= 20:
-            recent = float(np.mean(values[:10]))
-            older = float(np.mean(values[10:20]))
-            trend = float(((recent - older) / older * 100.0) if older > 0 else 0.0)
-        return dict(
-            mean=mean, median=median, std=std, cv=cv, hit_rate=hit_rate, trend=trend
-        )
-
-    @staticmethod
-    def _posterior(p_prior: float, p_like: float, w_prior: float = 0.5) -> float:
-        p_prior = float(np.clip(p_prior, 1e-6, 1 - 1e-6))
-        p_like = float(np.clip(p_like, 1e-6, 1 - 1e-6))
-        return w_prior * p_prior + (1.0 - w_prior) * p_like
-
-    @staticmethod
-    def _fair_from_p(p: float) -> float:
-        p = float(np.clip(p, 1e-6, 1 - 1e-6))
-        return 1.0 / p
-
-    @staticmethod
-    def _ev_percent(p_real: float, odds: float) -> float:
-        p_real = float(np.clip(p_real, 1e-6, 1 - 1e-6))
-        return (p_real * float(odds) - 1.0) * 100.0
-
-    @staticmethod
-    def _implied_prob(odds: float) -> float:
-        p = 1.0 / max(float(odds), 1e-12)
-        return float(np.clip(p, 1e-6, 1 - 1e-6))
-
-    def analyze_event_for_player_bets(
-        self, event_id: str, min_roi: float = 10
-    ) -> List[Dict]:
-        """
-        Analisa odds de players (odds_type='player') usando APENAS o método Original:
-        - Prior bruto (com vig): 1/odds
-        - Likelihood: hit-rate L10/L20 (60/40)
-        - Posterior: média ponderada (0.5 prior, 0.5 likelihood)
-        Retorna apostas no mesmo formato do restante do pipeline.
-        """
-        good_bets: List[Dict] = []
-
-        # Garantir histórico carregado
-        if self.player_history_df is None:
-            ok = self._load_player_history()
-            if not ok:
-                return good_bets
-
-        # Info do evento (times)
-        event_info = self.analyzer.get_event_info(event_id)
-        if not event_info:
-            return good_bets
-
-        home_team = event_info.get("home_team")
-        away_team = event_info.get("away_team")
-
-        # Buscar odds de players
-        conn = sqlite3.connect(self.odds_db_path)
-        q = """
-            SELECT market_name, selection_name, handicap, odds_value
-            FROM current_odds
-            WHERE event_id = ?
-              AND odds_type = 'player'
-              AND market_name IN (
-                'Map 1 - Player Total Kills',
-                'Map 1 - Player Total Deaths',
-                'Map 1 - Player Total Assists'
-              )
-        """
-        odds_df = pd.read_sql_query(q, conn, params=[event_id])
-        conn.close()
-
-        if odds_df.empty:
-            return good_bets
-
-        # Mapear mercado -> coluna do CSV
-        stat_map = {
-            "Map 1 - Player Total Kills": "kills",
-            "Map 1 - Player Total Deaths": "deaths",
-            "Map 1 - Player Total Assists": "assists",
-        }
-
-        # Parsing
-        odds_df["handicap"] = pd.to_numeric(odds_df["handicap"], errors="coerce")
-        odds_df["odds_value"] = pd.to_numeric(odds_df["odds_value"], errors="coerce")
-
-        odds_df["side"] = odds_df["selection_name"].apply(self._extract_side)
-        odds_df["stat"] = odds_df["market_name"].map(stat_map)
-
-        candidates = self.player_history_df["playername"].dropna().unique().tolist()
-        odds_df["player"] = odds_df["selection_name"].apply(
-            lambda s: self._extract_player(s, candidates)
-        )
-
-        # Filtrar válidas
-        dfv = odds_df[
-            odds_df["handicap"].notna()
-            & odds_df["odds_value"].notna()
-            & odds_df["side"].notna()
-            & odds_df["stat"].notna()
-            & odds_df["player"].notna()
-        ].copy()
-
-        if dfv.empty:
-            return good_bets
-
-        # Processar
-        for _, row in dfv.iterrows():
-            player = row["player"]
-            stat = row["stat"]
-            side = row["side"]
-            line = float(row["handicap"])
-            odds = float(row["odds_value"])
-            market_name = row["market_name"]
-            selection_line = row["selection_name"]  # manter exatamente como está
-
-            # Escolher time heurístico (qual tem mais registros do player)
-            # tenta com home/away e escolhe aquele que tiver mais dados
-            v_home = self._get_player_values(player, home_team, stat, n=1)
-            v_away = self._get_player_values(player, away_team, stat, n=1)
-            team_guess = home_team if len(v_home) >= len(v_away) else away_team
-
-            values = self._get_player_values(player, team_guess, stat, n=50)
-            if len(values) < 20:
-                continue
-
-            l10 = values[:10]
-            l20 = values[:20]
-            st10 = self._calc_window_stats(l10, line, side)
-            st20 = self._calc_window_stats(l20, line, side)
-            if st10 is None or st20 is None:
-                continue
-
-            # ORIGINAL:
-            p_prior = self._implied_prob(odds)  # prior bruto (com vig)
-            p_like = 0.6 * st10["hit_rate"] + 0.4 * st20["hit_rate"]  # hit rate L10/L20
-            p_real = self._posterior(p_prior, p_like, w_prior=0.5)
-            fair = self._fair_from_p(p_real)
-            roi = (odds / fair - 1.0) * 100.0
-            ev_pct = self._ev_percent(p_real, odds)
-
-            if roi >= min_roi and p_real > p_prior:
-                good_bets.append(
-                    {
-                        "event_id": event_id,
-                        "market_name": market_name,
-                        "selection_line": selection_line,
-                        "handicap": line,
-                        "house_odds": odds,
-                        "roi_average": roi,  # mantém nome
-                        "fair_odds": fair,  # mantém nome
-                        # opcionalmente podemos gravar 'actual_value' depois
-                    }
-                )
-
-        # Ordena por ROI desc e pega top 10 por segurança (mantém padrão)
-        good_bets.sort(key=lambda x: x["roi_average"], reverse=True)
-        return good_bets[:10]
 
     def update_event_status(
         self,
@@ -668,34 +394,33 @@ class BetScanner:
         return False  # Padrão: aposta perdida
 
     def get_future_events(self) -> List[str]:
+        """Busca eventos futuros que ainda não foram analisados"""
         odds_conn = sqlite3.connect(self.odds_db_path)
         bets_conn = sqlite3.connect(self.bets_db_path)
 
+        # Busca todos os eventos com odds em qualquer mercado de Totals
         odds_cursor = odds_conn.cursor()
         odds_cursor.execute(
             """
-            SELECT DISTINCT event_id
-            FROM current_odds
-            WHERE (
-                (market_name LIKE '%Totals' AND odds_type IN ('map_1','map_2'))
-                OR
-                (odds_type = 'player' AND market_name IN (
-                    'Map 1 - Player Total Kills',
-                    'Map 1 - Player Total Deaths',
-                    'Map 1 - Player Total Assists'
-                ))
-            )
-            """
+        SELECT DISTINCT event_id 
+        FROM current_odds 
+        WHERE market_name LIKE '%Totals'
+        AND odds_type IN ('map_1', 'map_2')
+        """
         )
         all_events = {row[0] for row in odds_cursor.fetchall()}
 
+        # Busca eventos já analisados
         bets_cursor = bets_conn.cursor()
         bets_cursor.execute("SELECT DISTINCT event_id FROM events")
         analyzed_events = {row[0] for row in bets_cursor.fetchall()}
 
+        # Retorna apenas eventos não analisados
         new_events = list(all_events - analyzed_events)
+
         odds_conn.close()
         bets_conn.close()
+
         return new_events
 
     def save_event_info(self, event_id: str, event_info: Dict):
@@ -735,9 +460,11 @@ class BetScanner:
         team1 = event_info.get("home_team", "Team A")
         team2 = event_info.get("away_team", "Team B")
 
-        # Processar cada mercado separadamente (TOTAlS)
+        # Processar cada mercado separadamente
         markets = ["Map 1 - Totals", "Map 2 - Totals"]
+
         for market in markets:
+            # Busca linhas de aposta para o mercado específico
             betting_lines = self.analyzer.get_betting_lines(event_id, market)
 
             market_bets = []
@@ -746,12 +473,14 @@ class BetScanner:
                 handicap = line["handicap"]
                 odds = line["odds"]
 
+                # Calcula ROI
                 roi_team1, roi_team2, roi_average, fair_odds_average = (
                     self.analyzer.calculate_average_roi(
                         team1, team2, selection, handicap, odds
                     )
                 )
 
+                # Filtra ROI > min_roi%
                 if roi_average > min_roi:
                     bet_data = {
                         "event_id": event_id,
@@ -764,15 +493,9 @@ class BetScanner:
                     }
                     market_bets.append(bet_data)
 
+            # Ordena as apostas deste mercado por ROI (decrescente) e pega as 2 melhores
             market_bets.sort(key=lambda x: x["roi_average"], reverse=True)
             all_good_bets.extend(market_bets[:2])
-
-        # ➕ NOVO: Apostas de Players (Original apenas)
-        player_bets = self.analyze_event_for_player_bets(event_id, min_roi=min_roi)
-        if player_bets:
-            # você pode limitar, por ex., top 3 apostas de players:
-            # all_good_bets.extend(player_bets[:3])
-            all_good_bets.extend(player_bets)
 
         return all_good_bets
 
